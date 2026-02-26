@@ -1,0 +1,190 @@
+/* Optional: title font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+/* Page + Dash mount */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #000;
+  /* avoid white flash */
+}
+
+#react-entry-point {
+  height: 100%;
+}
+
+/* App layout */
+.app-root {
+  height: 100vh;
+  /* fill viewport */
+  display: flex;
+  flex-direction: column;
+  background: #000;
+  overflow: hidden;
+}
+
+/* Header */
+.title-pane {
+  background: #F0F2F4;
+  border-bottom: 1px solid #C7D2DB;
+  padding: 10px 16px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+.title-pane__logo {
+  height: 60px;
+  width: auto;
+  justify-self: start;
+}
+
+.title-pane__title {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: clamp(1.4rem, 1.8vw, 2.2rem);
+  font-weight: 600;
+  color: #2F3A40;
+  margin: 0;
+  justify-self: center;
+  /* ← THIS centers it */
+  text-align: center;
+}
+
+
+/* Body row: sidebar + map */
+.body-row {
+  flex: 1 1 auto;
+  display: flex;
+  min-height: 0;
+  /* critical */
+  background: #000;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 320px;
+  flex: 0 0 320px;
+  background: #F0F2F4;
+  border-right: 1px solid #C7D2DB;
+  padding: 12px;
+  color: #2F3A40;
+  overflow-y: auto;
+  min-height: 0;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* Sidebar heading */
+.sidebar__heading {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  margin: 0 0 12px 0;
+  color: #2F3A40;
+}
+
+/* Divider */
+.sidebar__hr {
+  border: none;
+  height: 1px;
+  background: #C7D2DB;
+  margin: 14px 0;
+}
+
+/* Checklist visuals (optional) */
+.layer-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.layer-checklist__label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #2F3A40;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.95rem;
+}
+
+.layer-checklist__label:hover {
+  color: #2F3A40;
+}
+
+.layer-checklist__input {
+  width: 16px;
+  height: 16px;
+  accent-color: #7FDBFF;
+}
+
+/* Map area */
+.map-frame {
+  flex: 1 1 auto;
+  min-height: 0;
+  /* critical */
+  display: flex;
+  background: #000;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  background: #1a1a1a;
+  /* visible if canvas fails to paint */
+}
+
+
+/* OpenLayers popup card */
+.ol-popup {
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #C7D2DB;
+  border-radius: 6px;
+  padding: 10px 12px;
+  min-width: 240px;
+  max-width: 300px;
+
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: #2F3A40;
+
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  z-index: 1000;
+  /* ✅ ensures it floats above map */
+  pointer-events: auto;
+  /* ✅ doesn’t block map interaction */
+}
+
+.copy-email-btn {
+  background: transparent;
+  border: none;
+  padding: 2px;
+  cursor: pointer;
+  color: #6B7C86;
+}
+
+.copy-email-btn:hover {
+  color: #2F3A40;
+}
+
+.copy-email-btn.copied {
+  color: #2E7D32;
+  /* subtle green */
+}
+
+.ol-popup__content {
+  line-height: 1.4;
+}
+
+.popup-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #E3E9EE;
+}
+
+.ol-popup strong {
+  font-weight: 600;
+}
