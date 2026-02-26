@@ -1,11 +1,11 @@
-name: season-activities
+name: season-science
 description: Antarctica New Zealand Science Activities
 resources:
 
   # 1. Source repository
   # --------------------
   sources:
-    - name: season-activities-source
+    - name: season-science-source
       description: Source Code
       userSecretRef:
         name: "antnz-app-deployment"
@@ -17,11 +17,11 @@ resources:
   # 2. Build image
   # --------------
   builds:
-    - name: season-activities-build
+    - name: season-science-build
       resources:
         storage: 10G
       sourceRef:
-        name: season-activities-source
+        name: season-science-source
         branch: main
       # Use a stable Python base image for Dash deployments
       baseImage: python:3.11-slim
@@ -30,8 +30,8 @@ resources:
   # 3. Service definition
   # ---------------------
   services:
-    - name: season-activities
-      description: season-activities Dashboard service
+    - name: season-science
+      description: season-science
       autoscale:
         minReplicas: 1
         # maxReplicas: 5
@@ -46,7 +46,7 @@ resources:
         port: 80
 
       image:
-        buildRef: season-activities-build
+        buildRef: season-science-build
 
       # Production command (WSGI)
       command: gunicorn app:server --bind 0.0.0.0:80 --workers 2 --timeout 120
@@ -57,4 +57,4 @@ resources:
     - name: prod
       resources:
         services:
-          - name: season-activities
+          - name: season-science
