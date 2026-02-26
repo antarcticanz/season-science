@@ -1,27 +1,27 @@
-name: ebr-app
-description: Evolving Biogeography Register (EBR) Dashboard (Dash + Plotly)
+name: season-activities-app
+description: Antarctica New Zealand Science Activities
 resources:
 
   # 1. Source repository
   # --------------------
   sources:
-    - name: ebr-app-source
+    - name: season-activities-app-source
       description: Source Code
       userSecretRef:
         name: "antnz-app-deployment"
         key: "key"
       github:
-        repository: "antarcticanz/ecological-biogeography-register-dashboard"
+        repository: "antarcticanz/antarcticanz/season-science"
         username: "antnz-app-deployment"
 
   # 2. Build image
   # --------------
   builds:
-    - name: ebr-app-build
+    - name: season-activities-app-build
       resources:
         storage: 10G
       sourceRef:
-        name: ebr-app-source
+        name: season-activities-app-source
         branch: main
       # Use a stable Python base image for Dash deployments
       baseImage: python:3.11-slim
@@ -30,8 +30,8 @@ resources:
   # 3. Service definition
   # ---------------------
   services:
-    - name: ebr-app
-      description: EBR Dashboard service
+    - name: season-activities-app
+      description: season-activities Dashboard service
       autoscale:
         minReplicas: 1
         # maxReplicas: 5
@@ -46,7 +46,7 @@ resources:
         port: 80
 
       image:
-        buildRef: ebr-app-build
+        buildRef: season-activities-app-build
 
       # Production command (WSGI)
       command: gunicorn app:server --bind 0.0.0.0:80 --workers 2 --timeout 120
@@ -57,4 +57,4 @@ resources:
     - name: prod
       resources:
         services:
-          - name: ebr-app
+          - name: season-activities-app
