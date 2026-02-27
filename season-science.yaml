@@ -11,7 +11,7 @@ resources:
         name: "antnz-app-deployment"
         key: "key"
       github:
-        repository: "antarcticanz/antarcticanz/season-science"
+        repository: "antarcticanz/season-science"
         username: "antnz-app-deployment"
 
   # 2. Build image

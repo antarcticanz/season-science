@@ -1,2 +1,2 @@
 dash>=2.14
-gunicorn>=21.2,<22
+gunicorn>=21.2
