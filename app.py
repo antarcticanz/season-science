@@ -1,10 +1,29 @@
 from dash import Dash, html, dcc, Input, Output
 
+
+# -------------------------------------------------------------------
+# Dash application setup
+# -------------------------------------------------------------------
 app = Dash(__name__)
 
+# ✅ REQUIRED for gunicorn / PRAX deployment
+server = app.server
+
+
+# 3. Health Check Endpoint
+# -----------------------
+# Simple endpoint for container/orchestrator monitoring.
+
+@server.route("/health", methods=["GET"])
+def health():
+    return "OK", 200, {"Content-Type": "text/plain"}
+
+
+# -------------------------------------------------------------------
+# Application layout
+# -------------------------------------------------------------------
 app.layout = html.Div(
     [
-
         # Header
         html.Div(
             [
@@ -20,18 +39,19 @@ app.layout = html.Div(
             className="title-pane",
         ),
 
-
         # Body: sidebar + map
         html.Div(
             [
                 # Sidebar
                 html.Div(
                     [
-                        html.Div("Science Events", className="sidebar__heading"),
+                        html.Div("Science Events",
+                                 className="sidebar__heading"),
                         dcc.Checklist(
                             id="layer-checklist",
                             options=[
-                                {"label": "K872B – ApRES Sites", "value": "apres"}],
+                                {"label": "K872B – ApRES Sites", "value": "apres"}
+                            ],
                             value=["apres"],  # default visible
                             className="layer-checklist",
                             inputClassName="layer-checklist__input",
@@ -43,8 +63,10 @@ app.layout = html.Div(
                 ),
 
                 # Map container
-                html.Div(html.Div(id="ol-map", className="map"),
-                         className="map-frame"),
+                html.Div(
+                    html.Div(id="ol-map", className="map"),
+                    className="map-frame",
+                ),
             ],
             className="body-row",
         ),
@@ -55,8 +77,10 @@ app.layout = html.Div(
     className="app-root",
 )
 
-# ✅ Client-side callback uses Output/Input from dash (NOT dcc)
-#    Output goes to hidden 'js-sink' to avoid circular dependency.
+
+# -------------------------------------------------------------------
+# Client-side callback for OpenLayers layer visibility
+# -------------------------------------------------------------------
 app.clientside_callback(
     """
     function(values) {
@@ -71,6 +95,9 @@ app.clientside_callback(
     Input("layer-checklist", "value"),
 )
 
+
+# -------------------------------------------------------------------
+# Local development entrypoint
+# -------------------------------------------------------------------
 if __name__ == "__main__":
-    # If you keep seeing multiple "Dash is running..." lines, set debug=False or use_reloader=False
-    app.run(debug=True)  # or: app.run(debug=True, use_reloader=False)
+    app.run(debug=False)
