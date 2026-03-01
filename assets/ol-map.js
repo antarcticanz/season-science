@@ -29,6 +29,17 @@ const waitForDiv = (id) =>
     tick();
   });
 
+// Small helper to safely inject text into popup HTML
+function escapeHtml(value) {
+  if (value === null || value === undefined) return "";
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
 (async () => {
   await loadCss("https://cdn.jsdelivr.net/npm/ol@latest/ol.css");
   await loadScript("https://cdn.jsdelivr.net/npm/proj4@2.11.0/dist/proj4.js");
@@ -37,7 +48,7 @@ const waitForDiv = (id) =>
   const target = await waitForDiv("ol-map");
 
   // ------------------------------------------------------------------
-  // Popup container + overlay (✅ added / fixed)
+  // Popup container + overlay
   // ------------------------------------------------------------------
   const popupContainer = document.createElement("div");
   popupContainer.className = "ol-popup";
@@ -72,6 +83,7 @@ const waitForDiv = (id) =>
   // ------------------------------------------------------------------
   // BAS WMTS
   // ------------------------------------------------------------------
+  // IMPORTANT: this must use '&' in a real JS file (not '&amp;')
   const BAS_WMTS_URL =
     "https://tiles.arcgis.com/tiles/tPxy1hrFDhJfZ0Mf/arcgis/rest/services/Antarctica_and_the_Southern_Ocean/MapServer/wmts?SERVICE=WMTS&REQUEST=GetCapabilities";
 
@@ -100,22 +112,20 @@ const waitForDiv = (id) =>
   }
 
   // ------------------------------------------------------------------
-  // ApRES Points (scale‑dependent styling)
+  // K872B ApRES Points: Active + Wishlist (scale‑dependent styling)
   // ------------------------------------------------------------------
-  const apresSource = new ol.source.Vector();
-  const apresStyleCache = {};
 
-  const apresLayer = new ol.layer.Vector({
-    source: apresSource,
-    style: function (feature, resolution) {
+  function makeScaledPointStyle(fillColor) {
+    const cache = {};
+    return function (feature, resolution) {
       const radius = Math.max(3, Math.min(10, 8000 / resolution));
       const key = Math.round(radius);
 
-      if (!apresStyleCache[key]) {
-        apresStyleCache[key] = new ol.style.Style({
+      if (!cache[key]) {
+        cache[key] = new ol.style.Style({
           image: new ol.style.Circle({
             radius: radius,
-            fill: new ol.style.Fill({ color: "red" }),
+            fill: new ol.style.Fill({ color: fillColor }),
             stroke: new ol.style.Stroke({
               color: "white",
               width: Math.max(1, radius / 3),
@@ -123,16 +133,33 @@ const waitForDiv = (id) =>
           }),
         });
       }
-      return apresStyleCache[key];
-    },
-    visible: true,
+      return cache[key];
+    };
+  }
+
+  const ACTIVE_RED = "rgba(139, 0, 0, 0.95)";
+  const WISHLIST_RED = "rgba(255, 99, 71, 0.85)";
+
+  const k872bActiveSource = new ol.source.Vector();
+  const k872bWishlistSource = new ol.source.Vector();
+
+  const k872bWishlistLayer = new ol.layer.Vector({
+    source: k872bWishlistSource,
+    style: makeScaledPointStyle(WISHLIST_RED),
+    visible: false, // Wishlist OFF at startup
   });
+  k872bWishlistLayer.set("id", "k872b_wishlist");
 
-  apresLayer.set("id", "apres");
+  const k872bActiveLayer = new ol.layer.Vector({
+    source: k872bActiveSource,
+    style: makeScaledPointStyle(ACTIVE_RED),
+    visible: true, // Active ON at startup
+  });
+  k872bActiveLayer.set("id", "k872b_active");
 
-  fetch("/assets/apres_sites_enriched.geojson")
+  fetch("/assets/k872b_active_enriched.geojson")
     .then((r) => {
-      if (!r.ok) throw new Error(`GeoJSON HTTP ${r.status}`);
+      if (!r.ok) throw new Error(`Active GeoJSON HTTP ${r.status}`);
       return r.json();
     })
     .then((json) => {
@@ -140,21 +167,38 @@ const waitForDiv = (id) =>
         dataProjection: "EPSG:4326",
         featureProjection: "EPSG:3031",
       });
-      console.log("Loaded ApRES features:", features.length);
-      apresSource.addFeatures(features);
+      console.log("Loaded K872B Active features:", features.length);
+      k872bActiveSource.addFeatures(features);
     })
-    .catch((err) => console.error("ApRES load error:", err));
+    .catch((err) => console.error("K872B Active load error:", err));
+
+  fetch("/assets/k872b_wishlist_enriched.geojson")
+    .then((r) => {
+      if (!r.ok) throw new Error(`Wishlist GeoJSON HTTP ${r.status}`);
+      return r.json();
+    })
+    .then((json) => {
+      const features = new ol.format.GeoJSON().readFeatures(json, {
+        dataProjection: "EPSG:4326",
+        featureProjection: "EPSG:3031",
+      });
+      console.log("Loaded K872B Wishlist features:", features.length);
+      k872bWishlistSource.addFeatures(features);
+    })
+    .catch((err) => console.error("K872B Wishlist load error:", err));
 
   // ------------------------------------------------------------------
   // MAP
   // ------------------------------------------------------------------
   const map = new ol.Map({
     target,
-    layers: [basLayer, apresLayer],
+    layers: [basLayer, k872bWishlistLayer, k872bActiveLayer], // wishlist below active
     view: new ol.View({
       projection: projection3031,
       center: [0, 0],
       zoom: 2,
+      minZoom: 2,   // optional
+      maxZoom: 9,   // ✅ max zoom level
       extent: antarcticaExtent,
     }),
   });
@@ -163,7 +207,7 @@ const waitForDiv = (id) =>
   window.__ol_map__ = map;
 
   // ------------------------------------------------------------------
-  // Popup click handler (✅ added)
+  // Popup click handler (now includes Status)
   // ------------------------------------------------------------------
   map.on("singleclick", function (evt) {
     popupOverlay.setPosition(undefined);
@@ -173,23 +217,43 @@ const waitForDiv = (id) =>
       const props = feature.getProperties();
 
       const site = props.Site || "ApRES Site";
+      const statusRaw = props.Status || props.status || "—";
       const pi = props["Principal Investigator"] || "—";
       const email = props.Email || "—";
 
+      // Badge class based on status
+      const statusLower = String(statusRaw).toLowerCase();
+      const badgeClass =
+        statusLower === "active"
+          ? "status-badge status-badge--active"
+          : statusLower === "wishlist"
+            ? "status-badge status-badge--wishlist"
+            : "status-badge";
+
+      const siteEsc = escapeHtml(site);
+      const statusEsc = escapeHtml(statusRaw);
+      const piEsc = escapeHtml(pi);
+      const emailEsc = escapeHtml(email);
+
       popupContent.innerHTML = `
-        <div class="popup-title">${site}</div>
+        <div class="popup-title">${siteEsc}</div>
+
+        <div class="popup-status">
+          <strong>Status:</strong>
+          <span class="${badgeClass}">${statusEsc}</span>
+        </div>
 
         <div>
           <strong>Principal Investigator:</strong><br>
-          ${pi}
+          ${piEsc}
         </div>
 
         <div class="popup-email">
           <strong>Email:</strong><br>
-          <span class="email-text">${email}</span>
+          <span class="email-text">${emailEsc}</span>
           <button
             class="copy-email-btn"
-            data-email="${email}"
+            data-email="${emailEsc}"
             title="Copy email to clipboard"
             aria-label="Copy email"
           >
@@ -215,11 +279,10 @@ const waitForDiv = (id) =>
       popupOverlay.setPosition(evt.coordinate);
       popupContainer.style.display = "block";
 
-      return true; // stop after first feature
+      return true;
     });
   });
 })();
-
 
 // --- Copy-to-clipboard handler for popup ---
 document.addEventListener("click", function (e) {
@@ -230,9 +293,10 @@ document.addEventListener("click", function (e) {
   if (!email) return;
 
   navigator.clipboard.writeText(email).then(() => {
+    const oldHtml = btn.innerHTML;
     btn.textContent = "Copied";
     setTimeout(() => {
-      btn.textContent = "Copy";
+      btn.innerHTML = oldHtml;
     }, 1200);
   });
 });
@@ -244,10 +308,9 @@ window.setLayerVisibility = function (layerId, visible) {
   if (!window.__ol_map__) return;
 
   const layers = window.__ol_map__.getLayers().getArray();
-
   layers.forEach((layer) => {
     if (layer.get("id") === layerId) {
-      layer.setVisible(visible);
+      layer.setVisible(!!visible);
     }
   });
 };

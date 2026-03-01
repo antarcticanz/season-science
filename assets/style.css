@@ -64,8 +64,8 @@ body {
 
 /* Sidebar */
 .sidebar {
-  width: 320px;
-  flex: 0 0 320px;
+  width: 280px;
+  flex: 0 0 280px;
   background: #F0F2F4;
   border-right: 1px solid #C7D2DB;
   padding: 12px;
@@ -187,4 +187,19 @@ body {
 
 .ol-popup strong {
   font-weight: 600;
+}
+
+
+.nested-wrap {
+  margin-left: 22px;
+  /* indent under parent */
+  margin-top: 6px;
+  padding-left: 10px;
+  border-left: 2px solid #e5e7eb;
+  /* subtle guide line */
+}
+
+.layer-checklist--nested .layer-checklist__label {
+  font-size: 0.95em;
+  color: #374151;
 }
