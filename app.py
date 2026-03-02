@@ -119,7 +119,7 @@ app.layout = html.Div(
                                         dcc.Checklist(
                                             id="asp-status",
                                             options=[
-                                                {"label": "Planned", "value": "planned"}],
+                                                {"label": "Planned 2027", "value": "planned"}],
                                             value=["planned"],
                                             className="layer-checklist layer-checklist--nested",
                                             inputClassName="layer-checklist__input",
