@@ -12,8 +12,8 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
-        "description": "Site Name: RD01 -- Date Deployed: 05/12/21",
+        "Name": "ApRES Site: RD01",
+        "description": "null",
         "timestamp": null,
         "begin": null,
         "end": null,
@@ -28,6 +28,7 @@
         "Site": "K872B",
         "Principal Investigator": "Craig Stewart",
         "Email": "craig.stewart@niwa.co.nz",
+        "Event": "K872B",
         "Status": "Active"
       },
       "geometry": {
@@ -42,8 +43,8 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
-        "description": "Site Name: RD02 -- Date Deployed: 04/12/21",
+        "Name": "ApRES Site: RD02",
+        "description": "null",
         "timestamp": null,
         "begin": null,
         "end": null,
@@ -58,6 +59,7 @@
         "Site": "K872B",
         "Principal Investigator": "Craig Stewart",
         "Email": "craig.stewart@niwa.co.nz",
+        "Event": "K872B",
         "Status": "Active"
       },
       "geometry": {
@@ -72,8 +74,8 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
-        "description": "Site Name: RD03 -- Date Deployed: 07/12/21",
+        "Name": "ApRES Site: RD03",
+        "description": "null",
         "timestamp": null,
         "begin": null,
         "end": null,
@@ -88,6 +90,7 @@
         "Site": "K872B",
         "Principal Investigator": "Craig Stewart",
         "Email": "craig.stewart@niwa.co.nz",
+        "Event": "K872B",
         "Status": "Active"
       },
       "geometry": {
@@ -102,8 +105,8 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
-        "description": "Site Name: RD04 -- Date Deployed: 25/01/22",
+        "Name": "ApRES Site: RD04",
+        "description": null,
         "timestamp": null,
         "begin": null,
         "end": null,
@@ -118,6 +121,7 @@
         "Site": "K872B",
         "Principal Investigator": "Craig Stewart",
         "Email": "craig.stewart@niwa.co.nz",
+        "Event": "K872B",
         "Status": "Active"
       },
       "geometry": {
@@ -132,8 +136,8 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
-        "description": "Site Name: RD05a -- Date Deployed: 27/12/22",
+        "Name": "ApRES: RD05",
+        "description": null,
         "timestamp": null,
         "begin": null,
         "end": null,
@@ -148,6 +152,7 @@
         "Site": "K872B",
         "Principal Investigator": "Craig Stewart",
         "Email": "craig.stewart@niwa.co.nz",
+        "Event": "K872B",
         "Status": "Active"
       },
       "geometry": {
@@ -162,8 +167,8 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
-        "description": "Site Name: RD06 -- Date Deployed: 04/02/22",
+        "Name": "ApRES Site:: RD06",
+        "description": null,
         "timestamp": null,
         "begin": null,
         "end": null,
@@ -178,6 +183,7 @@
         "Site": "K872B",
         "Principal Investigator": "Craig Stewart",
         "Email": "craig.stewart@niwa.co.nz",
+        "Event": "K872B",
         "Status": "Active"
       },
       "geometry": {
@@ -192,8 +198,8 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
-        "description": "Site Name: RD07 -- Date Deployed: 08/12/21",
+        "Name": "ApRES Site: RD07",
+        "description": null,
         "timestamp": null,
         "begin": null,
         "end": null,
@@ -208,6 +214,7 @@
         "Site": "K872B",
         "Principal Investigator": "Craig Stewart",
         "Email": "craig.stewart@niwa.co.nz",
+        "Event": "K872B",
         "Status": "Active"
       },
       "geometry": {
@@ -222,8 +229,8 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
-        "description": "Site Name: RD08 -- Date Deployed: 01/12/21",
+        "Name": "ApRES Site: RD08",
+        "description": null,
         "timestamp": null,
         "begin": null,
         "end": null,
@@ -238,6 +245,7 @@
         "Site": "K872B",
         "Principal Investigator": "Craig Stewart",
         "Email": "craig.stewart@niwa.co.nz",
+        "Event": "K872B",
         "Status": "Active"
       },
       "geometry": {
@@ -252,8 +260,8 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
-        "description": "Site Name: RD09 -- Date Deployed: 16/01/22",
+        "Name": "ApRES Site: RD09",
+        "description": null,
         "timestamp": null,
         "begin": null,
         "end": null,
@@ -268,6 +276,7 @@
         "Site": "K872B",
         "Principal Investigator": "Craig Stewart",
         "Email": "craig.stewart@niwa.co.nz",
+        "Event": "K872B",
         "Status": "Active"
       },
       "geometry": {
@@ -282,8 +291,8 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
-        "description": "Site Name: RD10 -- Date Deployed: 05/12/21",
+        "Name": "ApRES Site: RD10",
+        "description": null,
         "timestamp": null,
         "begin": null,
         "end": null,
@@ -298,6 +307,7 @@
         "Site": "K872B",
         "Principal Investigator": "Craig Stewart",
         "Email": "craig.stewart@niwa.co.nz",
+        "Event": "K872B",
         "Status": "Active"
       },
       "geometry": {
@@ -312,8 +322,8 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
-        "description": "Site Name: RD11 -- Date Deployed: 06/12/21",
+        "Name": "ApRES Site: RD11",
+        "description": null,
         "timestamp": null,
         "begin": null,
         "end": null,
@@ -328,6 +338,7 @@
         "Site": "K872B",
         "Principal Investigator": "Craig Stewart",
         "Email": "craig.stewart@niwa.co.nz",
+        "Event": "K872B",
         "Status": "Active"
       },
       "geometry": {
@@ -342,8 +353,8 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
-        "description": "Site Name: RD12 -- Date Deployed: 13/12/21",
+        "Name": "ApRES Site: RD12",
+        "description": null,
         "timestamp": null,
         "begin": null,
         "end": null,
@@ -358,6 +369,7 @@
         "Site": "K872B",
         "Principal Investigator": "Craig Stewart",
         "Email": "craig.stewart@niwa.co.nz",
+        "Event": "K872B",
         "Status": "Active"
       },
       "geometry": {

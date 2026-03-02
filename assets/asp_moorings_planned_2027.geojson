@@ -1,0 +1,14 @@
+{
+"type": "FeatureCollection",
+"name": "asp_moorings_planned",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": null, "Name": "ANTOS", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 171.6293, -72.20176666449531, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": null, "Name": "PAM-A1", "description": "PAM 1 Iselin Bank (west) 1867 m", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 179.51215, -72.726716666666661, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": null, "Name": "PAM-A2", "description": "A2\t\t\nPAM 2 Scott C Seamount\n1038 m", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ -179.965533333333298, -68.33475, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": null, "Name": "PAM-A3", "description": "PAM 3 Pacific-Antarctic Ridge\n1629 m", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 176.1218, -63.6673, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": null, "Name": "Moor-R2(long)", "description": "long mooring ~600 m - deploy only", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 173.087832402484509, -77.406256404017782, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": null, "Name": "Moor-P2", "description": "P2\t\tP2, CALM mooring, CA1", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 172.302616666666694, -71.458233333333339, 0.0 ] } },
+{ "type": "Feature", "properties": { "id": null, "Name": "Moor-DT/R2", "description": "DTB / R2\t\t\t27-Jan-23\t9:27\t553\t\t\t2302DTB\tR2, Drygalski outflow", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 172.743066666666692, -72.328716666666665, 0.0 ] } }
+]
+}

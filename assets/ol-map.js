@@ -187,12 +187,51 @@ function escapeHtml(value) {
     })
     .catch((err) => console.error("K872B Wishlist load error:", err));
 
+
+
+  // ------------------------------------------------------------------
+  // ASP Moorings: Planned
+  // ------------------------------------------------------------------
+
+  const ASP_BLUE = "rgba(30, 144, 255, 0.9)";
+
+  const aspPlannedSource = new ol.source.Vector();
+
+  const aspPlannedLayer = new ol.layer.Vector({
+    source: aspPlannedSource,
+    style: makeScaledPointStyle(ASP_BLUE),
+    visible: true, // default ON (adjust if needed)
+  });
+  aspPlannedLayer.set("id", "asp_planned");
+
+  fetch("/assets/asp_moorings_planned_2027_enriched.geojson")
+    .then((r) => {
+      if (!r.ok) throw new Error(`ASP GeoJSON HTTP ${r.status}`);
+      return r.json();
+    })
+    .then((json) => {
+      const features = new ol.format.GeoJSON().readFeatures(json, {
+        dataProjection: "EPSG:4326",
+        featureProjection: "EPSG:3031",
+      });
+      console.log("Loaded ASP Planned features:", features.length);
+      aspPlannedSource.addFeatures(features);
+    })
+    .catch((err) => console.error("ASP load error:", err));
+
+
+
   // ------------------------------------------------------------------
   // MAP
   // ------------------------------------------------------------------
   const map = new ol.Map({
     target,
-    layers: [basLayer, k872bWishlistLayer, k872bActiveLayer], // wishlist below active
+    layers: [
+      basLayer,
+      k872bWishlistLayer,
+      k872bActiveLayer,
+      aspPlannedLayer
+    ],    
     view: new ol.View({
       projection: projection3031,
       center: [0, 0],
@@ -216,12 +255,16 @@ function escapeHtml(value) {
     map.forEachFeatureAtPixel(evt.pixel, function (feature) {
       const props = feature.getProperties();
 
-      const site = props.Site || "ApRES Site";
+      // Use GeoJSON Name for ApRES and ASP
+      const site = props.Name || props.Site || props.name || "Location";
+      const description = props.description || props.Description || null;
+      const descriptionEsc = description ? escapeHtml(description) : null;
+      const event = props.Event || props.event || null;
+      const eventEsc = event ? escapeHtml(event) : null;
       const statusRaw = props.Status || props.status || "—";
       const pi = props["Principal Investigator"] || "—";
       const email = props.Email || "—";
 
-      // Badge class based on status
       const statusLower = String(statusRaw).toLowerCase();
       const badgeClass =
         statusLower === "active"
@@ -236,49 +279,45 @@ function escapeHtml(value) {
       const emailEsc = escapeHtml(email);
 
       popupContent.innerHTML = `
-        <div class="popup-title">${siteEsc}</div>
+      <div class="popup-title">${siteEsc}</div>
 
-        <div class="popup-status">
-          <strong>Status:</strong>
-          <span class="${badgeClass}">${statusEsc}</span>
+      ${descriptionEsc ? `
+        <div class="popup-description">
+          <strong>Description:</strong> ${descriptionEsc}
         </div>
+      ` : ""}
 
-        <div>
-          <strong>Principal Investigator:</strong><br>
-          ${piEsc}
-        </div>
+      <div class="popup-status">
+        <strong>Status:</strong>
+        <span class="${badgeClass}">${statusEsc}</span>
+      </div>
 
-        <div class="popup-email">
-          <strong>Email:</strong><br>
-          <span class="email-text">${emailEsc}</span>
-          <button
-            class="copy-email-btn"
-            data-email="${emailEsc}"
-            title="Copy email to clipboard"
-            aria-label="Copy email"
-          >
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4
-                      a2 2 0 0 1 2-2h9
-                      a2 2 0 0 1 2 2v1"></path>
-            </svg>
-          </button>
+      ${eventEsc ? `
+        <div class="popup-event">
+          <strong>Event:</strong> ${eventEsc}
         </div>
-      `;
+      ` : ""}
+
+      <div class="popup-pi">
+        <strong>Principal Investigator:</strong> ${piEsc}
+      </div>
+
+      <div class="popup-email">
+        <strong>Email:</strong>
+        <span class="email-text">${emailEsc}</span>
+        <button
+          class="copy-email-btn"
+          data-email="${emailEsc}"
+          title="Copy email to clipboard"
+          aria-label="Copy email"
+        >
+          <!-- SVG icon -->
+        </button>
+      </div>
+    `;
 
       popupOverlay.setPosition(evt.coordinate);
       popupContainer.style.display = "block";
-
       return true;
     });
   });
