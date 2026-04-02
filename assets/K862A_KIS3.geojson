@@ -1,0 +1,48 @@
+{
+  "type": "FeatureCollection",
+  "name": "K862A",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K862A",
+        "name": "GNSS and Total Station Geodetic Stations",
+        "site": "Kamb Ice Stream 3",
+        "principal investigator": "Levy, R.",
+        "email": "r.levy@gns.cri.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -156.306129,
+          -82.628074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K862A",
+        "name": "ApRES",
+        "site": "Kamb Ice Stream 3",
+        "principal investigator": "Levy, R.",
+        "email": "r.levy@gns.cri.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -156.306129,
+          -82.628074
+        ]
+      }
+    }
+  ]
+}

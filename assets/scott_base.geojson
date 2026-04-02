@@ -1,0 +1,238 @@
+{
+  "type": "FeatureCollection",
+  "name": "SCOTTBASE",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+    "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K055A",
+        "name": "Microrain Radar Instrument",
+        "description": "Snowfall and vertical wind measurements",
+        "site": "Scott Base",
+        "principal investigator": "McDonald, A.",
+        "email": "adrian.mcdonald@canterbury.ac.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.77,
+          -77.85
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K055A",
+        "name": "Middle Frequency Radar",
+        "description": "Dynamics and Ionisation in the Antarctic Middle Atmosphere",
+        "site": "Scott Base",
+        "principal investigator": "McDonald, A.",
+        "email": "adrian.mcdonald@canterbury.ac.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.77,
+          -77.85
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K060A",
+        "name": "Very Low Frequency Radio Sensor",
+        "description": "Observations of Lightning Discharges",
+        "site": "Scott Base",
+        "principal investigator": "Rodger, C.",
+        "email": "craig.rodger@otago.ac.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.77,
+          -77.85
+        ]
+      }
+    },
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K085A",
+            "name": "Microwave Chlorine Monoxide Millimeter Wave Spectrometer",
+            "site": "Scott Base",
+            "description": "Chlorine monoxide measurements",
+            "principal investigator": "Smale, D.",
+            "email": "dan.smale@earthsciences.nz",
+            "status": "Active"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              166.77,
+              -77.85
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K085A",
+            "name": "AERI: Atmospheric Emission Radiation Interferometer",
+            "description": "Atmospheric down-welling thermal infrared radiance measurements",
+            "site": "Scott Base",
+            "principal investigator": "Smale, D.",
+            "email": "dan.smale@earthsciences.nz",
+            "status": "Active"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              166.77,
+              -77.85
+            ]
+          }
+        },
+
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K085A",
+            "name": "CNR4 and SI-411 Radiometers",
+            "description": "Surface radiative balance measurements",
+            "site": "Scott Base",
+            "principal investigator": "Smale, D.",
+            "email": "dan.smale@earthsciences.nz",
+            "status": "Active"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              166.77,
+              -77.85
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K085A",
+            "name": "SMOL-X: Lidar",
+            "description": "Atmospheric Profiles of Ozone, Temperature and Aerosols from the Ground to ~20km",
+            "site": "Scott Base",
+            "principal investigator": "Smale, D.",
+            "email": "dan.smale@earthsciences.nz",
+            "status": "Active"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              166.77,
+              -77.85
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K089A",
+            "name": "AWS",
+            "site": "Scott Base",
+            "principal investigator": "Jeremy Rutherford",
+            "email": "jeremy.rutherford@earthsciences.nz",
+            "status": "Active"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              166.77,
+              -77.85
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K102A",
+            "name": "Geomagnetic Instrument",
+            "site": "Scott Base",
+            "description": "Magnetic field measurements",
+            "principal investigator": "Petersen, T.",
+            "email": "t.petersen@gns.cri.nz",
+            "status": "Active"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              166.77,
+              -77.85
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K150A",
+            "name": "Tide Gauge",
+            "description": "Seal level measurements",
+            "site": "Scott Base",
+            "principal investigator": "Collett, D.",
+            "email": "dcollett@linz.govt.nz",
+            "status": "Active"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              166.77,
+              -77.85
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K150A",
+            "name": "GNSS Observations",
+            "site": "Scott Base",
+            "principal investigator": "Collett, D.",
+            "email": "dcollett@linz.govt.nz",
+            "status": "Active"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              166.77,
+              -77.85
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K881B",
+            "name": "Soil and Climate Station",
+            "site": "Scott Base",
+            "principal investigator": "Katurji, M.",
+            "email": "marwan.katurji@canterbury.ac.nz",
+            "status": "Active"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              166.77,
+              -77.85
+            ]
+          }
+        }
+  ]
+}

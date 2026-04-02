@@ -1,0 +1,29 @@
+{
+  "type": "FeatureCollection",
+  "name": "K884A",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K884A",
+        "name": "Sponge Timelapse Imagery, CTD, Dissolved Oxygen, and pH Logger Deployment, McMurdo Sound, Antarctica, 2024-2025",
+        "principal investigator": "Hawes, I.",
+        "email": "ian.hawes@waikato.ac.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.637389,
+          -77.842227
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "type": "FeatureCollection",
+  "name": "K150A",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K150A",
+        "name": "GNSS Station",
+        "site": "Butcher Ridge",
+        "principal investigator": "Collett, D.",
+        "email": "dcollett@linz.govt.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          155.894,
+          -79.147
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K150A",
+        "name": "Tide Gauge",
+        "site": "Cape Roberts",
+        "principal investigator": "Collett, D.",
+        "email": "dcollett@linz.govt.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          163.1897,
+          -77.0339
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K150A",
+        "name": "GNSS Station",
+        "site": "Minna Bluff",
+        "principal investigator": "Collett, D.",
+        "email": "dcollett@linz.govt.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          167.164,
+          -78.65
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K150A",
+        "name": "GNSS Station",
+        "site": "Cape Roberts",
+        "principal investigator": "Collett, D.",
+        "email": "dcollett@linz.govt.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          163.19,
+          -77.034
+        ]
+      }
+    }
+  ]
+}

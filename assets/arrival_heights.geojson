@@ -1,0 +1,143 @@
+{
+  "type": "FeatureCollection",
+  "name": "ARRIVALHEIGHTS",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+    "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K060A",
+            "name": "Very Low Frequency Radio Sensor",
+            "description": "Observations of Lightning Discharges",
+            "site": "Arrival Heights",
+            "principal investigator": "Rodger, C.",
+            "email": "craig.rodger@otago.ac.nz",
+            "status": "Active"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              166.67,
+              -77.83
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K085A",
+            "name": "In Situ Flask and Cylinder Air Sampling",
+            "description": "Greenhouse Gases and Isotopes",
+            "site": "Arrival Heights",
+            "principal investigator": "Smale, D.",
+            "email": "dan.smale@earthsciences.nz",
+            "status": "Active"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              166.67,
+              -77.83
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K085A",
+            "name": "Dobson Spectrophotometer",
+            "description": "Total Column Ozone Measurements",
+            "site": "Arrival Heights",
+            "principal investigator": "Smale, D.",
+            "email": "dan.smale@earthsciences.nz",
+            "status": "Active"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              166.67,
+              -77.83
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K085A",
+            "name": "Airyx & Envimeas Instruments",
+            "description": "Measurements NO2, OCIO, BrO, O3",
+            "site": "Arrival Heights",
+            "principal investigator": "Smale, D.",
+            "email": "dan.smale@earthsciences.nz",
+            "status": "Active"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              166.67,
+              -77.83
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K085A",
+            "name": "Ally-Sky Camera Systems",
+            "description": "Sky Imagery, Cloud Coverage",
+            "site": "Arrival Heights",
+            "principal investigator": "Smale, D.",
+            "email": "dan.smale@earthsciences.nz",
+            "status": "Active"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              166.67,
+              -77.83
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K085A",
+            "name": "Bruker Fourier Transform Spectrometer",
+            "site": "Arrival Heights",
+            "principal investigator": "Smale, D.",
+            "email": "dan.smale@earthsciences.nz",
+            "status": "Active"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              166.67,
+              -77.83
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K089A",
+            "name": "AWS",
+            "site": "Arrival Heights",
+            "principal investigator": "Jeremy Rutherford",
+            "email": "jeremy.rutherford@earthsciences.nz",
+            "status": "Active"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              166.67,
+              -77.83
+            ]
+          }
+        }
+  ]
+}

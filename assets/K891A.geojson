@@ -1,0 +1,46 @@
+{
+  "type": "FeatureCollection",
+  "name": "K891A",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K891A",
+            "name": "AWS",
+            "principal investigator": "Smith, I.J.",
+            "email": "inga.smith@otago.ac.nz",
+            "status": "Active"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              166.648457,
+              -77.868009
+            ]
+          }
+        },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K891A",
+        "name": "Sea Ice Mass Balance Station",
+        "principal investigator": "Smith, I.J.",
+        "email": "inga.smith@otago.ac.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.648457,
+          -77.868009
+        ]
+      }
+    }
+  ]
+}

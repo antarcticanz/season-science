@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "name": "K060A",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K060A",
+        "name": "Very Low Frequency Radio Sensor",
+        "description": "Observations of Lightning Discharges at Arrival Heights",
+        "principal investigator": "Rodger, C.",
+        "email": "craig.rodger@otago.ac.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.657,
+          -77.8298
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K060A",
+        "name": "Very Low Frequency Radio Sensor",
+        "description": "Observations of Lightning Discharges at Scott Base",
+        "principal investigator": "Rodger, C.",
+        "email": "craig.rodger@otago.ac.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.76,
+          -77.85
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K060A",
+        "name": "Very Low Frequency Subionospheric Communication Transmitter",
+        "description": "Observations at Arrival Heights",
+        "principal investigator": "Rodger, C.",
+        "email": "craig.rodger@otago.ac.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.6573,
+          -77.82983
+        ]
+      }
+    }
+  ]
+}

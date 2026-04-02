@@ -1,0 +1,114 @@
+{
+  "type": "FeatureCollection",
+  "name": "K865A",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K865A",
+        "name": "GNSS Receiver",
+        "principal investigator": "Alanna Alevropoulos-Borrill",
+        "email": "alanna.alevropoulosborrill@vuw.ac.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.868827,
+          -78.62964
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K865A",
+        "name": "GNSS Receiver",
+        "principal investigator": "Alanna Alevropoulos-Borrill",
+        "email": "alanna.alevropoulosborrill@vuw.ac.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.534068,
+          -80.296614
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K865A",
+        "name": "GNSS Receiver",
+        "principal investigator": "Alanna Alevropoulos-Borrill",
+        "email": "alanna.alevropoulosborrill@vuw.ac.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -180.0,
+          -78.98826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K865A",
+        "name": "GNSS Receiver",
+        "principal investigator": "Alanna Alevropoulos-Borrill",
+        "email": "alanna.alevropoulosborrill@vuw.ac.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.950828,
+          -78.031155
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K865A",
+        "name": "GNSS Receiver",
+        "principal investigator": "Alanna Alevropoulos-Borrill",
+        "email": "alanna.alevropoulosborrill@vuw.ac.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.325808,
+          -77.514412
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K865A",
+        "name": "GNSS Receiver",
+        "principal investigator": "Alanna Alevropoulos-Borrill",
+        "email": "alanna.alevropoulosborrill@vuw.ac.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.68855,
+          -78.208626
+        ]
+      }
+    }
+  ]
+}

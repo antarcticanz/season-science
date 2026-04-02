@@ -28,25 +28,25 @@ body {
   background: #F0F2F4;
   border-bottom: 1px solid #C7D2DB;
   padding: 10px 16px;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .title-pane__logo {
   height: 60px;
   width: auto;
-  justify-self: start;
+  flex-shrink: 0;
 }
 
+/* Title — page header */
 .title-pane__title {
   font-family: "Inter", system-ui, sans-serif;
-  font-size: clamp(1.4rem, 1.8vw, 2.2rem);
+  font-size: clamp(1.1rem, 1.4vw, 1.5rem);
+  /* responsive, not too large */
   font-weight: 600;
+  letter-spacing: -0.2px;
   color: #2F3A40;
-  margin: 0;
-  justify-self: center;
-  text-align: center;
 }
 
 /* Body row: sidebar + map */
@@ -108,14 +108,20 @@ body {
   border: 1px solid #C7D2DB;
   border-radius: 6px;
   padding: 10px 12px;
-  min-width: 240px;
-  max-width: 300px;
+  width: 360px;
+  /* fixed width — never resizes */
+  min-height: 160px;
+  /* fixed min-height — prevents jump between pages */
+  box-sizing: border-box;
   font-family: "Inter", system-ui, sans-serif;
   font-size: 0.85rem;
   color: #2F3A40;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
   z-index: 1000;
   pointer-events: auto;
+  white-space: normal;
+  /* allow wrapping */
+  word-break: break-word;
 }
 
 .copy-email-btn {
@@ -135,7 +141,10 @@ body {
 }
 
 .ol-popup__content {
-  line-height: 1.4;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .popup-title {
@@ -214,26 +223,105 @@ body {
 }
 
 
-.ol-popup {
-  min-width: 300px;
-  /* ensures popup is wide enough */
-  max-width: 450px;
-  /* optional, prevent it from being too wide */
-  white-space: nowrap;
-  /* prevent line breaks */
-  overflow: hidden;
-  /* hide overflow */
-  text-overflow: ellipsis;
-  /* show ... if text too long */
-}
-
-
 .popup-email {
   display: flex;
   align-items: center;
-  /* vertically aligns text and button */
   gap: 6px;
-  /* space between email text and button */
-  white-space: nowrap;
-  /* keeps everything on one line */
+  flex-wrap: wrap;
+  /* wrap long email addresses onto next line */
+  word-break: break-all;
+}
+
+/* ----- Status badges in popup ----- */
+.status-badge {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  background: #E3E9EE;
+  color: #2F3A40;
+}
+
+.status-badge--active {
+  background: rgba(32, 197, 41, 0.12);
+  color: rgba(39, 179, 74, 0.877);
+}
+
+.status-badge--wishlist {
+  background: rgba(255, 99, 71, 0.15);
+  color: rgb(230, 142, 28);
+}
+
+/* ----- Popup pagination controls ----- */
+.popup-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #E3E9EE;
+}
+
+.popup-nav-btn {
+  background: #F0F2F4;
+  border: 1px solid #C7D2DB;
+  border-radius: 4px;
+  padding: 2px 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #2F3A40;
+  line-height: 1.4;
+  transition: background 0.15s;
+}
+
+.popup-nav-btn:hover:not(:disabled) {
+  background: #C7D2DB;
+}
+
+.popup-nav-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.popup-page-indicator {
+  font-size: 0.8rem;
+  color: #6B7C86;
+  font-weight: 500;
+}
+
+/* ----- Status badge: planned ----- */
+.status-badge--planned {
+  background: rgba(30, 144, 255, 0.12);
+  color: rgb(20, 100, 200);
+}
+
+/* ----- Select all / Deselect all ----- */
+.sidebar__bulk-actions {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.sidebar__bulk-btn {
+  flex: 1;
+  background: #F0F2F4;
+  border: 1px solid #C7D2DB;
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 0.78rem;
+  font-family: "Inter", system-ui, sans-serif;
+  color: #2F3A40;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.15s;
+}
+
+.sidebar__bulk-btn:hover {
+  background: #C7D2DB;
+}
+
+.popup-site {
+  margin-bottom: 2px;
 }

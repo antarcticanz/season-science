@@ -1,0 +1,29 @@
+{
+  "type": "FeatureCollection",
+  "name": "KXXXX",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "KXXXX",
+        "name": "Chlorophyll Fluorescence Measurements with a PAMS Fluorometer, Scott Base, 2020-Present",
+        "principal investigator": "Green, T.G.A.",
+        "email": "greentga@waikato.ac.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.747472,
+          -77.847014
+        ]
+      }
+    }
+  ]
+}

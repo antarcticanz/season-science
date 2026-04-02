@@ -12,7 +12,7 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
+        "name": "ApRES - Wishlist Site",
         "description": null,
         "timestamp": null,
         "begin": null,
@@ -24,8 +24,10 @@
         "drawOrder": null,
         "icon": null,
         "Site": "K872B",
-        "Principal Investigator": "Craig Stewart",
-        "Email": "craig.stewart@niwa.co.nz"
+        "principal investigator": "Craig Stewart",
+        "email": "craig.stewart@niwa.co.nz",
+        "event": "K872B",
+        "status": "Wishlist"
       },
       "geometry": {
         "type": "Point",
@@ -40,7 +42,7 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
+        "name": "ApRES - Wishlist Site",
         "description": null,
         "timestamp": null,
         "begin": null,
@@ -52,8 +54,10 @@
         "drawOrder": null,
         "icon": null,
         "Site": "K872B",
-        "Principal Investigator": "Craig Stewart",
-        "Email": "craig.stewart@niwa.co.nz"
+        "principal investigator": "Craig Stewart",
+        "email": "craig.stewart@niwa.co.nz",
+        "event": "K872B",
+        "status": "Wishlist"
       },
       "geometry": {
         "type": "Point",
@@ -68,7 +72,7 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
+        "name": "ApRES - Wishlist Site",
         "description": null,
         "timestamp": null,
         "begin": null,
@@ -80,8 +84,10 @@
         "drawOrder": null,
         "icon": null,
         "Site": "K872B",
-        "Principal Investigator": "Craig Stewart",
-        "Email": "craig.stewart@niwa.co.nz"
+        "principal investigator": "Craig Stewart",
+        "email": "craig.stewart@niwa.co.nz",
+        "event": "K872B",
+        "status": "Wishlist"
       },
       "geometry": {
         "type": "Point",
@@ -96,7 +102,7 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
+        "name": "ApRES - Wishlist Site",
         "description": null,
         "timestamp": null,
         "begin": null,
@@ -108,8 +114,10 @@
         "drawOrder": null,
         "icon": null,
         "Site": "K872B",
-        "Principal Investigator": "Craig Stewart",
-        "Email": "craig.stewart@niwa.co.nz"
+        "principal investigator": "Craig Stewart",
+        "email": "craig.stewart@niwa.co.nz",
+        "event": "K872B",
+        "status": "Wishlist"
       },
       "geometry": {
         "type": "Point",
@@ -124,7 +132,7 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
+        "name": "ApRES - Wishlist Site",
         "description": null,
         "timestamp": null,
         "begin": null,
@@ -136,8 +144,10 @@
         "drawOrder": null,
         "icon": null,
         "Site": "K872B",
-        "Principal Investigator": "Craig Stewart",
-        "Email": "craig.stewart@niwa.co.nz"
+        "principal investigator": "Craig Stewart",
+        "email": "craig.stewart@niwa.co.nz",
+        "event": "K872B",
+        "status": "Wishlist"
       },
       "geometry": {
         "type": "Point",
@@ -152,7 +162,7 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
+        "name": "ApRES - Wishlist Site",
         "description": null,
         "timestamp": null,
         "begin": null,
@@ -164,8 +174,10 @@
         "drawOrder": null,
         "icon": null,
         "Site": "K872B",
-        "Principal Investigator": "Craig Stewart",
-        "Email": "craig.stewart@niwa.co.nz"
+        "principal investigator": "Craig Stewart",
+        "email": "craig.stewart@niwa.co.nz",
+        "event": "K872B",
+        "status": "Wishlist"
       },
       "geometry": {
         "type": "Point",
@@ -180,7 +192,7 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
+        "name": "ApRES - Wishlist Site",
         "description": null,
         "timestamp": null,
         "begin": null,
@@ -192,8 +204,10 @@
         "drawOrder": null,
         "icon": null,
         "Site": "K872B",
-        "Principal Investigator": "Craig Stewart",
-        "Email": "craig.stewart@niwa.co.nz"
+        "principal investigator": "Craig Stewart",
+        "email": "craig.stewart@niwa.co.nz",
+        "event": "K872B",
+        "status": "Wishlist"
       },
       "geometry": {
         "type": "Point",
@@ -208,7 +222,7 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
+        "name": "ApRES - Wishlist Site",
         "description": null,
         "timestamp": null,
         "begin": null,
@@ -220,8 +234,10 @@
         "drawOrder": null,
         "icon": null,
         "Site": "K872B",
-        "Principal Investigator": "Craig Stewart",
-        "Email": "craig.stewart@niwa.co.nz"
+        "principal investigator": "Craig Stewart",
+        "email": "craig.stewart@niwa.co.nz",
+        "event": "K872B",
+        "status": "Wishlist"
       },
       "geometry": {
         "type": "Point",
@@ -236,7 +252,7 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
+        "name": "ApRES - Wishlist Site",
         "description": null,
         "timestamp": null,
         "begin": null,
@@ -248,8 +264,10 @@
         "drawOrder": null,
         "icon": null,
         "Site": "K872B",
-        "Principal Investigator": "Craig Stewart",
-        "Email": "craig.stewart@niwa.co.nz"
+        "principal investigator": "Craig Stewart",
+        "email": "craig.stewart@niwa.co.nz",
+        "event": "K872B",
+        "status": "Wishlist"
       },
       "geometry": {
         "type": "Point",
@@ -264,7 +282,7 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
+        "name": "ApRES - Wishlist Site",
         "description": null,
         "timestamp": null,
         "begin": null,
@@ -276,8 +294,10 @@
         "drawOrder": null,
         "icon": null,
         "Site": "K872B",
-        "Principal Investigator": "Craig Stewart",
-        "Email": "craig.stewart@niwa.co.nz"
+        "principal investigator": "Craig Stewart",
+        "email": "craig.stewart@niwa.co.nz",
+        "event": "K872B",
+        "status": "Wishlist"
       },
       "geometry": {
         "type": "Point",
@@ -292,7 +312,7 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
+        "name": "ApRES - Wishlist Site",
         "description": null,
         "timestamp": null,
         "begin": null,
@@ -304,8 +324,10 @@
         "drawOrder": null,
         "icon": null,
         "Site": "K872B",
-        "Principal Investigator": "Craig Stewart",
-        "Email": "craig.stewart@niwa.co.nz"
+        "principal investigator": "Craig Stewart",
+        "email": "craig.stewart@niwa.co.nz",
+        "event": "K872B",
+        "status": "Wishlist"
       },
       "geometry": {
         "type": "Point",
@@ -320,7 +342,7 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
+        "name": "ApRES - Wishlist Site",
         "description": null,
         "timestamp": null,
         "begin": null,
@@ -332,8 +354,10 @@
         "drawOrder": null,
         "icon": null,
         "Site": "K872B",
-        "Principal Investigator": "Craig Stewart",
-        "Email": "craig.stewart@niwa.co.nz"
+        "principal investigator": "Craig Stewart",
+        "email": "craig.stewart@niwa.co.nz",
+        "event": "K872B",
+        "status": "Wishlist"
       },
       "geometry": {
         "type": "Point",
@@ -348,7 +372,7 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
+        "name": "ApRES - Wishlist Site",
         "description": null,
         "timestamp": null,
         "begin": null,
@@ -360,8 +384,10 @@
         "drawOrder": null,
         "icon": null,
         "Site": "K872B",
-        "Principal Investigator": "Craig Stewart",
-        "Email": "craig.stewart@niwa.co.nz"
+        "principal investigator": "Craig Stewart",
+        "email": "craig.stewart@niwa.co.nz",
+        "event": "K872B",
+        "status": "Wishlist"
       },
       "geometry": {
         "type": "Point",
@@ -376,7 +402,7 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "Name": null,
+        "name": "ApRES - Wishlist Site",
         "description": null,
         "timestamp": null,
         "begin": null,
@@ -388,8 +414,10 @@
         "drawOrder": null,
         "icon": null,
         "Site": "K872B",
-        "Principal Investigator": "Craig Stewart",
-        "Email": "craig.stewart@niwa.co.nz"
+        "principal investigator": "Craig Stewart",
+        "email": "craig.stewart@niwa.co.nz",
+        "event": "K872B",
+        "status": "Wishlist"
       },
       "geometry": {
         "type": "Point",
