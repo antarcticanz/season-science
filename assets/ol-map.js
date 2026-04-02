@@ -41,25 +41,6 @@ function escapeHtml(value) {
 
 // ------------------------------------------------------------------
 // LAYER REGISTRY
-//
-// Mirror of the LAYER_REGISTRY in app.py. Keep these in sync.
-// To add a new layer: append one entry here and one in app.py.
-//
-// Fields:
-//   id      – unique per file; used by setLayerVisibility()
-//   group   – logical grouping (matches app.py group)
-//   file    – GeoJSON filename inside /assets/
-//   status  – status label (matches app.py status; used for popup badge)
-//   color   – point fill colour
-//   visible – initial visibility
-//
-// GeoJSON feature schema (standard across all files):
-//   Name                   – display name in popup
-//   Status                 – e.g. "Active", "Wishlist", "Planned"
-//   Principal Investigator – PI name
-//   Email                  – PI email
-//   Event                  – event/voyage identifier
-//   description (optional) – freetext shown in popup
 // ------------------------------------------------------------------
 const LAYER_REGISTRY = [
   {
@@ -271,27 +252,49 @@ function buildLayer(entry) {
   const antarcticaExtent = [-4194304, -4194304, 4194304, 4194304];
   projection3031.setExtent(antarcticaExtent);
 
-  // ---- Base tile layer (BAS WMTS) ----------------------------------
-  let basLayer;
-  try {
-    const resp = await fetch(
-      "https://tiles.arcgis.com/tiles/tPxy1hrFDhJfZ0Mf/arcgis/rest/services/Antarctica_and_the_Southern_Ocean/MapServer/wmts?SERVICE=WMTS&REQUEST=GetCapabilities"
-    );
-    const xml = await resp.text();
-    const caps = new ol.format.WMTSCapabilities().read(xml);
-    const layerName = caps.Contents.Layer[0].Identifier;
-    const options = ol.source.WMTS.optionsFromCapabilities(caps, {
-      layer: layerName,
+  // ---- Basemap registry --------------------------------------------
+  const BASEMAP_REGISTRY = [
+    {
+      id: "bas",
+      label: "BAS Satellite",
+      capsUrl: "https://tiles.arcgis.com/tiles/tPxy1hrFDhJfZ0Mf/arcgis/rest/services/Antarctica_and_the_Southern_Ocean/MapServer/wmts?SERVICE=WMTS&REQUEST=GetCapabilities",
       format: "image/png",
-      crossOrigin: "anonymous",
-    });
-    basLayer = new ol.layer.Tile({ source: new ol.source.WMTS(options) });
-  } catch (err) {
-    console.error("WMTS error:", err);
-    basLayer = new ol.layer.Tile({
-      source: new ol.source.TileDebug({ projection: projection3031 }),
-    });
+    },
+    {
+      id: "esri_imagery",
+      label: "ESRI Satellite",
+      capsUrl: "https://services.arcgisonline.com/arcgis/rest/services/Polar/Antarctic_Imagery/MapServer/WMTS/1.0.0/WMTSCapabilities.xml",
+      format: "image/jpg",
+    },
+  ];
+
+  async function loadBasemapLayer(entry) {
+    try {
+      const resp = await fetch(entry.capsUrl);
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      const xml = await resp.text();
+      const caps = new ol.format.WMTSCapabilities().read(xml);
+      const layerName = caps.Contents.Layer[0].Identifier;
+      const options = ol.source.WMTS.optionsFromCapabilities(caps, {
+        layer: layerName,
+        format: entry.format,
+        crossOrigin: "anonymous",
+      });
+      const layer = new ol.layer.Tile({ source: new ol.source.WMTS(options) });
+      layer.set("basemap-id", entry.id);
+      return layer;
+    } catch (err) {
+      console.error(`Basemap "${entry.id}" load error:`, err);
+      const layer = new ol.layer.Tile({
+        source: new ol.source.TileDebug({ projection: projection3031 }),
+      });
+      layer.set("basemap-id", entry.id);
+      return layer;
+    }
   }
+
+  const baseLayers = await Promise.all(BASEMAP_REGISTRY.map(loadBasemapLayer));
+  baseLayers.forEach((l, i) => l.setVisible(i === 0));
 
   // ---- Build all data layers from registry -------------------------
   const dataLayers = LAYER_REGISTRY.map(buildLayer);
@@ -299,7 +302,7 @@ function buildLayer(entry) {
   // ---- Map ---------------------------------------------------------
   const map = new ol.Map({
     target,
-    layers: [basLayer, ...dataLayers],
+    layers: [...baseLayers, ...dataLayers],
     view: new ol.View({
       projection: projection3031,
       center: [0, 0],
@@ -313,34 +316,108 @@ function buildLayer(entry) {
   map.addOverlay(popupOverlay);
   window.__ol_map__ = map;
 
-  // ---- Popup helpers -----------------------------------------------
+  // ---- Basemap switcher -------------------------------------------
+  let activeBasemapId = "bas";
 
-  // Render one feature's details into popupContent
+  window.switchBasemap = function (selectedId) {
+    if (selectedId === activeBasemapId) return;
+    baseLayers.forEach((l) => l.setVisible(l.get("basemap-id") === selectedId));
+    activeBasemapId = selectedId;
+    renderBmPanel();
+  };
+
+  function renderBmPanel() {
+    const panel = document.getElementById("bm-panel");
+    if (!panel) return;
+    panel.innerHTML = `
+      <div class="bm-panel__heading">Base map</div>
+      ${BASEMAP_REGISTRY.map(entry => `
+        <button class="bm-option${entry.id === activeBasemapId ? " bm-option--active" : ""}"
+                onclick="window.switchBasemap('${entry.id}')">
+          ${entry.id === activeBasemapId ? "&#10003; " : ""}${entry.label}
+        </button>`).join("")}`;
+  }
+
+  // ---- Layers control button (right side, below zoom) -------------
+  const layersIconSvg = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+         fill="none" stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+      <polyline points="2 12 12 17 22 12"/>
+      <polyline points="2 17 12 22 22 17"/>
+    </svg>`;
+
+  const waitForZoom = () => new Promise((res) => {
+    const tick = () => {
+      const el = target.querySelector(".ol-zoom");
+      if (el) return res(el);
+      setTimeout(tick, 80);
+    };
+    tick();
+  });
+
+  const zoomEl = await waitForZoom();
+
+  const layersControl = document.createElement("div");
+  // NOTE: Do NOT add ol-unselectable — OL sets pointer-events:none on it,
+  // which swallows all clicks and makes the button invisible to the mouse.
+  layersControl.className = "ol-layers-control";
+  layersControl.style.pointerEvents = "auto";
+  layersControl.innerHTML = `
+    <button class="ol-layers-btn" title="Switch base map" aria-label="Switch base map" style="pointer-events:auto;">
+      ${layersIconSvg}
+    </button>
+    <div class="bm-panel" id="bm-panel" style="display:none;"></div>`;
+
+  zoomEl.parentNode.insertBefore(layersControl, zoomEl.nextSibling);
+  renderBmPanel();
+
+  // Block ALL mouse events from falling through to the map (prevents double-click zoom etc.)
+  ["click", "dblclick", "mousedown", "mouseup", "pointerdown", "pointerup"].forEach(function (evtName) {
+    layersControl.addEventListener(evtName, function (e) {
+      e.stopPropagation();
+    });
+  });
+
+  // Toggle the panel on button click
+  layersControl.querySelector(".ol-layers-btn").addEventListener("click", function (e) {
+    e.stopPropagation();
+    const panel = document.getElementById("bm-panel");
+    panel.style.display = panel.style.display === "none" ? "block" : "none";
+  });
+
+  // Close panel when clicking anywhere else on the map
+  target.addEventListener("click", function () {
+    const panel = document.getElementById("bm-panel");
+    if (panel) panel.style.display = "none";
+  });
+
+  // ---- Popup helpers -----------------------------------------------
   function renderFeaturePage(props, pageIndex, total) {
-    const site        = props.name || "Location";
+    const site = props.name || "Location";
     const description = props.description || null;
-    const event       = props.event || null;
-    const statusRaw   = props.status || "—";
-    const pi          = props["principal investigator"] || "—";
-    const email       = props.email || "—";
+    const event = props.event || null;
+    const statusRaw = props.status || "—";
+    const pi = props["principal investigator"] || "—";
+    const email = props.email || "—";
 
     const statusLower = String(statusRaw).toLowerCase();
-    const badgeClass  =
-      statusLower === "active"   ? "status-badge status-badge--active"   :
-      statusLower === "wishlist" ? "status-badge status-badge--wishlist" :
-      statusLower === "planned"  ? "status-badge status-badge--planned"  :
-                                   "status-badge";
+    const badgeClass =
+      statusLower === "active" ? "status-badge status-badge--active" :
+        statusLower === "wishlist" ? "status-badge status-badge--wishlist" :
+          statusLower === "planned" ? "status-badge status-badge--planned" :
+            "status-badge";
 
-    const site_name      = props.site || null;
-    const siteEsc        = escapeHtml(site);
-    const statusEsc      = escapeHtml(statusRaw);
-    const piEsc          = escapeHtml(pi);
-    const emailEsc       = escapeHtml(email);
+    const site_name = props.site || null;
+    const siteEsc = escapeHtml(site);
+    const statusEsc = escapeHtml(statusRaw);
+    const piEsc = escapeHtml(pi);
+    const emailEsc = escapeHtml(email);
     const descriptionEsc = description ? escapeHtml(description) : null;
-    const eventEsc       = event ? escapeHtml(event) : null;
-    const siteNameEsc    = site_name ? escapeHtml(site_name) : null;
+    const eventEsc = event ? escapeHtml(event) : null;
+    const siteNameEsc = site_name ? escapeHtml(site_name) : null;
 
-    // Pagination controls — only shown when there are multiple features
     const paginationHtml = total > 1 ? `
       <div class="popup-pagination">
         <button class="popup-nav-btn" id="popup-prev" ${pageIndex === 0 ? "disabled" : ""}>&#8592;</button>
@@ -350,42 +427,19 @@ function buildLayer(entry) {
 
     popupContent.innerHTML = `
       ${paginationHtml}
-
       <div class="popup-title">${siteEsc}</div>
-
-      ${siteNameEsc ? `
-        <div class="popup-site">
-          <strong>Site:</strong> ${siteNameEsc}
-        </div>` : ""}
-
-      ${descriptionEsc ? `
-        <div class="popup-description">
-          <strong>Description:</strong> ${descriptionEsc}
-        </div>` : ""}
-
+      ${siteNameEsc ? `<div class="popup-site"><strong>Site:</strong> ${siteNameEsc}</div>` : ""}
+      ${descriptionEsc ? `<div class="popup-description"><strong>Description:</strong> ${descriptionEsc}</div>` : ""}
       <div class="popup-status">
         <strong>Status:</strong>
         <span class="${badgeClass}">${statusEsc}</span>
       </div>
-
-      ${eventEsc ? `
-        <div class="popup-event">
-          <strong>Event:</strong> ${eventEsc}
-        </div>` : ""}
-
-      <div class="popup-pi">
-        <strong>Principal Investigator:</strong> ${piEsc}
-      </div>
-
+      ${eventEsc ? `<div class="popup-event"><strong>Event:</strong> ${eventEsc}</div>` : ""}
+      <div class="popup-pi"><strong>Principal Investigator:</strong> ${piEsc}</div>
       <div class="popup-email">
         <strong>Email:</strong>
         <span class="email-text">${emailEsc}</span>
-        <button
-          class="copy-email-btn"
-          data-email="${emailEsc}"
-          title="Copy email to clipboard"
-          aria-label="Copy email"
-        >
+        <button class="copy-email-btn" data-email="${emailEsc}" title="Copy email to clipboard" aria-label="Copy email">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -394,7 +448,6 @@ function buildLayer(entry) {
       </div>
     `;
 
-    // Wire up prev/next buttons after innerHTML is set
     if (total > 1) {
       document.getElementById("popup-prev").addEventListener("click", function () {
         window.__popup_page__ = Math.max(0, window.__popup_page__ - 1);
@@ -420,7 +473,6 @@ function buildLayer(entry) {
     popupOverlay.setPosition(undefined);
     popupContainer.style.display = "none";
 
-    // Collect all features at the clicked pixel across all visible layers
     const featuresAtPixel = [];
     map.forEachFeatureAtPixel(evt.pixel, function (feature) {
       featuresAtPixel.push(feature.getProperties());
@@ -428,7 +480,6 @@ function buildLayer(entry) {
 
     if (featuresAtPixel.length === 0) return;
 
-    // Group by coordinate key — features sharing exact coords are paginated together
     const coordKey = (props) => {
       const geom = props.geometry;
       if (!geom) return "unknown";
@@ -436,15 +487,12 @@ function buildLayer(entry) {
       return coords[0].toFixed(4) + "," + coords[1].toFixed(4);
     };
 
-    // Use the coordinate of the first hit as the popup anchor, and collect
-    // all features that share that exact coordinate
     const firstGeom = featuresAtPixel[0].geometry;
     const firstCoords = firstGeom.flatCoordinates || firstGeom.getCoordinates();
     const anchorKey = firstCoords[0].toFixed(4) + "," + firstCoords[1].toFixed(4);
 
     const grouped = featuresAtPixel.filter(props => coordKey(props) === anchorKey);
 
-    // Store pagination state globally so nav buttons can access it
     window.__popup_features__ = grouped;
     window.__popup_page__ = 0;
 

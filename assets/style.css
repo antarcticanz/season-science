@@ -325,3 +325,128 @@ body {
 .popup-site {
   margin-bottom: 2px;
 }
+/* ================================================================
+   OL map controls — zoom + layers button, right-aligned
+   ================================================================ */
+
+.ol-zoom {
+  top: 12px;
+  left: auto !important;
+  right: 12px;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+.ol-zoom .ol-zoom-in,
+.ol-zoom .ol-zoom-out {
+  width: 34px !important;
+  height: 34px !important;
+  font-size: 20px !important;
+  line-height: 34px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #ffffff !important;
+  color: #2F3A40 !important;
+  border: 1px solid #C7D2DB !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  transition: background 0.15s !important;
+  box-sizing: border-box !important;
+}
+
+.ol-zoom .ol-zoom-in:hover,
+.ol-zoom .ol-zoom-out:hover {
+  background: #F0F2F4 !important;
+}
+
+.ol-layers-control {
+  position: absolute;
+  top: 92px;
+  right: 12px;
+  left: auto;
+  z-index: 10;
+}
+
+.ol-layers-btn {
+  width: 34px !important;
+  height: 34px !important;
+  background: #ffffff;
+  border: 1px solid #C7D2DB;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2F3A40;
+  padding: 0;
+  transition: background 0.15s;
+  box-sizing: border-box;
+}
+
+.ol-layers-btn:hover {
+  background: #F0F2F4;
+}
+
+.bm-panel {
+  position: absolute;
+  top: 0;
+  right: 42px;
+  left: auto;
+  background: #ffffff;
+  border: 1px solid #C7D2DB;
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+  padding: 8px;
+  min-width: 150px;
+  font-family: "Inter", system-ui, sans-serif;
+  z-index: 20;
+  white-space: nowrap;
+}
+
+.bm-panel__heading {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6B7C86;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #E3E9EE;
+}
+
+.bm-option {
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 8px;
+  text-align: left;
+  font-size: 0.85rem;
+  font-family: "Inter", system-ui, sans-serif;
+  color: #2F3A40;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.bm-option:hover {
+  background: #F0F2F4;
+}
+
+.bm-option--active {
+  background: #2F3A40;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: default;
+  border-radius: 4px;
+}
+
+.bm-option--active:hover {
+  background: #2F3A40;
+}
