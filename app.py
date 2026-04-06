@@ -129,6 +129,38 @@ LAYER_REGISTRY = [
 ]
 
 # -------------------------------------------------------------------
+# CAMP SITE REGISTRY
+#
+# One entry per season GeoJSON file. The checklist label is the season
+# string (e.g. "2024-25") and each entry maps to a single layer id.
+# -------------------------------------------------------------------
+CAMP_REGISTRY = [
+    {
+        "id": "camp_sites_2324",
+        "file": "camp_sites_2324.geojson",
+        "season": "2023-24",
+        "value": "camp_sites_2324",
+        "visible": False,
+    },
+    {
+        "id": "camp_sites_2425",
+        "file": "camp_sites_2425.geojson",
+        "season": "2024-25",
+        "value": "camp_sites_2425",
+        "visible": False,
+    },
+    {
+        "id": "camp_sites_2526",
+        "file": "camp_sites_2526.geojson",
+        "season": "2025-26",
+        "value": "camp_sites_2526",
+        "visible": False,
+    },
+]
+
+CAMP_DEFAULT_VISIBILITY = {e["id"]: e["visible"] for e in CAMP_REGISTRY}
+
+# -------------------------------------------------------------------
 # Derived structures (computed once at startup)
 # -------------------------------------------------------------------
 
@@ -142,7 +174,10 @@ def _get_groups(registry):
 GROUPS = _get_groups(LAYER_REGISTRY)
 
 # Pre-compute the correct default visibility map (fixes issue 1)
-DEFAULT_VISIBILITY = {e["id"]: e["visible"] for e in LAYER_REGISTRY}
+DEFAULT_VISIBILITY = {
+    **{e["id"]: e["visible"] for e in LAYER_REGISTRY},
+    **CAMP_DEFAULT_VISIBILITY,
+}
 
 
 def _slug(group_name):
@@ -230,9 +265,19 @@ def build_sidebar():
     return group_divs
 
 
-# -------------------------------------------------------------------
-# Application layout
-# -------------------------------------------------------------------
+def build_camp_sidebar():
+    """Build the Camp Sites checklist — one checkbox per season."""
+    default_values = [e["value"] for e in CAMP_REGISTRY if e["visible"]]
+    return dcc.Checklist(
+        id="camp-checklist",
+        options=[{"label": e["season"], "value": e["value"]} for e in CAMP_REGISTRY],
+        value=default_values,
+        className="layer-checklist",
+        inputClassName="layer-checklist__input",
+        labelClassName="layer-checklist__label",
+    )
+
+
 app.layout = html.Div(
     [
         # Header
@@ -258,7 +303,7 @@ app.layout = html.Div(
                     [
                         html.Div("Science Events", className="sidebar__heading"),
 
-                        # Select all / Deselect all buttons
+                        # Science Events: Select all / Deselect all
                         html.Div(
                             [
                                 html.Button(
@@ -280,6 +325,43 @@ app.layout = html.Div(
                         *build_sidebar(),
 
                         html.Hr(className="sidebar__hr"),
+
+                        html.Div("Camp Sites", className="sidebar__heading sidebar__heading--section"),
+
+                        # Camp Sites: Select all / Deselect all
+                        html.Div(
+                            [
+                                html.Button(
+                                    "Select all",
+                                    id="btn-camp-select-all",
+                                    className="sidebar__bulk-btn",
+                                ),
+                                html.Button(
+                                    "Deselect all",
+                                    id="btn-camp-deselect-all",
+                                    className="sidebar__bulk-btn",
+                                ),
+                            ],
+                            className="sidebar__bulk-actions",
+                        ),
+
+                        html.Hr(className="sidebar__hr"),
+
+                        build_camp_sidebar(),
+
+                        html.Hr(className="sidebar__hr sidebar__hr--export"),
+
+                        # Export GeoJSON button
+                        html.Div(
+                            html.Button(
+                                "⬇ Export visible layers as GeoJSON",
+                                id="btn-export-geojson",
+                                className="sidebar__export-btn",
+                            ),
+                            className="sidebar__export-wrap",
+                        ),
+                        # Hidden anchor used by the clientside callback to trigger download
+                        html.A(id="export-download-link", style={"display": "none"}),
                     ],
                     className="sidebar",
                 ),
@@ -313,8 +395,8 @@ all_children_outputs = [Output(_children_id(g), "value") for g in GROUPS]
 
 
 # -------------------------------------------------------------------
-# Select all / Deselect all (issue 3)
-# Sets every parent and every children checklist in one callback
+# Science Events: Select all / Deselect all
+# Only controls science layer parents + children
 # -------------------------------------------------------------------
 @app.callback(
     all_parent_outputs + all_children_outputs,
@@ -324,8 +406,7 @@ all_children_outputs = [Output(_children_id(g), "value") for g in GROUPS]
 )
 def bulk_select(n_select, n_deselect):
     selecting = ctx.triggered_id == "btn-select-all"
-
-    parent_vals   = [[g] if selecting else [] for g in GROUPS]
+    parent_vals = [[g] if selecting else [] for g in GROUPS]
     children_vals = [
         [e["value"] for e in entries] if selecting else []
         for entries in GROUPS.values()
@@ -334,16 +415,33 @@ def bulk_select(n_select, n_deselect):
 
 
 # -------------------------------------------------------------------
+# Camp Sites: Select all / Deselect all
+# Only controls the camp checklist
+# -------------------------------------------------------------------
+@app.callback(
+    Output("camp-checklist", "value"),
+    Input("btn-camp-select-all",   "n_clicks"),
+    Input("btn-camp-deselect-all", "n_clicks"),
+    prevent_initial_call=True,
+)
+def bulk_select_camps(n_select, n_deselect):
+    if ctx.triggered_id == "btn-camp-select-all":
+        return [e["value"] for e in CAMP_REGISTRY]
+    return []
+
+
+# -------------------------------------------------------------------
 # Compute {layer_id: bool} visibility map → Store
 # -------------------------------------------------------------------
 @app.callback(
     Output("layer-visibility-store", "data"),
-    all_parent_inputs + all_children_inputs,
+    all_parent_inputs + all_children_inputs + [Input("camp-checklist", "value")],
 )
 def compute_visibility(*args):
     n = len(GROUPS)
     parent_values   = args[:n]
-    children_values = args[n:]
+    children_values = args[n:2*n]
+    camp_values     = args[2*n] or []
 
     visibility = {}
     for i, (group_name, entries) in enumerate(GROUPS.items()):
@@ -352,10 +450,12 @@ def compute_visibility(*args):
 
         for entry in entries:
             if len(entries) == 1:
-                # Single-entry group: no child checkbox visible, parent drives it directly
                 visibility[entry["id"]] = parent_on
             else:
                 visibility[entry["id"]] = parent_on and entry["value"] in active_children
+
+    for entry in CAMP_REGISTRY:
+        visibility[entry["id"]] = entry["value"] in camp_values
 
     return visibility
 
@@ -408,6 +508,73 @@ app.clientside_callback(
     """,
     Output("js-sink", "children"),
     Input("layer-visibility-store", "data"),
+)
+
+
+# -------------------------------------------------------------------
+# Export GeoJSON — clientside, fetches visible layer files in-browser
+# and triggers a blob download with all visible features merged.
+# -------------------------------------------------------------------
+
+# Build the JS-side registry of all layer files so the clientside
+# callback knows which file to fetch for each layer id.
+_ALL_LAYER_FILES = {
+    e["id"]: e["file"]
+    for e in LAYER_REGISTRY + CAMP_REGISTRY
+    if "file" in e
+}
+
+app.clientside_callback(
+    f"""
+    function(n_clicks, visibilityData) {{
+        if (!n_clicks || !visibilityData) return window.dash_clientside.no_update;
+
+        const fileMap = {_ALL_LAYER_FILES};
+
+        const visibleIds = Object.entries(visibilityData)
+            .filter(([id, vis]) => vis && fileMap[id])
+            .map(([id]) => id);
+
+        if (visibleIds.length === 0) {{
+            alert("No visible layers to export.");
+            return window.dash_clientside.no_update;
+        }}
+
+        Promise.all(
+            visibleIds.map(id =>
+                fetch("/assets/" + fileMap[id])
+                    .then(r => r.ok ? r.json() : null)
+                    .catch(() => null)
+            )
+        ).then(results => {{
+            const features = [];
+            results.forEach(fc => {{
+                if (fc && fc.features) features.push(...fc.features);
+            }});
+            const merged = {{
+                type: "FeatureCollection",
+                features: features
+            }};
+            const blob = new Blob(
+                [JSON.stringify(merged, null, 2)],
+                {{type: "application/geo+json"}}
+            );
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "anz_visible_layers.geojson";
+            document.body.appendChild(a);
+            a.click();
+            setTimeout(() => {{ URL.revokeObjectURL(url); a.remove(); }}, 1000);
+        }});
+
+        return window.dash_clientside.no_update;
+    }}
+    """,
+    Output("export-download-link", "href"),
+    Input("btn-export-geojson", "n_clicks"),
+    Input("layer-visibility-store", "data"),
+    prevent_initial_call=True,
 )
 
 

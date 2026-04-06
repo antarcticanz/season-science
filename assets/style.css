@@ -450,3 +450,48 @@ body {
 .bm-option--active:hover {
   background: #2F3A40;
 }
+
+/* ----- Export GeoJSON button ----- */
+.sidebar__export-wrap {
+  margin-top: 4px;
+}
+
+/* Extra breathing room above the Camp Sites section heading */
+.sidebar__heading--section {
+  margin-top: 10px;
+}
+
+/* More space between the export hr and the export button */
+.sidebar__hr--export {
+  margin-bottom: 20px;
+}
+
+.sidebar__export-btn {
+  width: 100%;
+  background: #2F3A40;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 7px 10px;
+  font-size: 0.8rem;
+  font-family: "Inter", system-ui, sans-serif;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.15s;
+  letter-spacing: 0.1px;
+}
+
+.sidebar__export-btn:hover {
+  background: #4A5A62;
+}
+
+/* Extra top margin on the Camp Sites heading to space it from Science Events */
+.sidebar__heading--section {
+  margin-top: 18px;
+}
+
+/* Extra margin above and below the hr that precedes the export button */
+.sidebar__hr--export {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

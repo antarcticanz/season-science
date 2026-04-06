@@ -13,7 +13,7 @@
       "properties": {
         "event": "K082A",
         "name": "Benthic Lander",
-        "description": "Gas Flux Measurements",
+        "description": "Seafloor gas flux",
         "site": "Granite Harbour",
         "principal investigator": "Seabrook. S.",
         "email": "sarah.seabrook@otago.ac.nz",
@@ -31,8 +31,8 @@
       "type": "Feature",
       "properties": {
         "event": "K082A",
-        "name": "Benthic Lander ",
-        "description": "Gas Flux Measurements",
+        "name": "Benthic Lander",
+        "description": "Seafloor gas flux",
         "site": "Cape Evans",
         "principal investigator": "Seabrook. S.",
         "email": "sarah.seabrook@otago.ac.nz",

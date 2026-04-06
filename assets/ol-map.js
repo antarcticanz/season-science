@@ -154,6 +154,34 @@ const LAYER_REGISTRY = [
     status: "Active",
     color: "rgba(190, 223, 43, 0.9)",
     visible: true,
+  },
+  // ---- Camp Sites (one layer per season) ---------------------------
+  {
+    id: "camp_sites_2324",
+    group: "Camp Sites",
+    file: "camp_sites_2324.geojson",
+    season: "2023-24",
+    color: "rgba(255, 165, 0, 0.92)",
+    isCampSite: true,
+    visible: false,
+  },
+  {
+    id: "camp_sites_2425",
+    group: "Camp Sites",
+    file: "camp_sites_2425.geojson",
+    season: "2024-25",
+    color: "rgba(255, 120, 0, 0.92)",
+    isCampSite: true,
+    visible: false,
+  },
+  {
+    id: "camp_sites_2526",
+    group: "Camp Sites",
+    file: "camp_sites_2526.geojson",
+    season: "2025-26",
+    color: "rgba(220, 80, 0, 0.92)",
+    isCampSite: true,
+    visible: false,
   }
 ];
 
@@ -197,7 +225,10 @@ function buildLayer(entry) {
         dataProjection: "EPSG:4326",
         featureProjection: "EPSG:3031",
       });
-      console.log(`Loaded "${entry.id}" (${entry.status}): ${features.length} features`);
+      if (entry.isCampSite) {
+        features.forEach(f => f.set("__isCampSite__", true));
+      }
+      console.log(`Loaded "${entry.id}" (${entry.status || entry.season}): ${features.length} features`);
       source.addFeatures(features);
     })
     .catch((err) => console.error(`Layer "${entry.id}" load error:`, err));
@@ -396,7 +427,7 @@ function buildLayer(entry) {
   // ---- Popup helpers -----------------------------------------------
   function renderFeaturePage(props, pageIndex, total) {
     const site = props.name || "Location";
-    const description = props.description || null;
+    const measurement = props.measurement || null;
     const event = props.event || null;
     const statusRaw = props.status || "—";
     const pi = props["principal investigator"] || "—";
@@ -414,7 +445,7 @@ function buildLayer(entry) {
     const statusEsc = escapeHtml(statusRaw);
     const piEsc = escapeHtml(pi);
     const emailEsc = escapeHtml(email);
-    const descriptionEsc = description ? escapeHtml(description) : null;
+    const measurementEsc = measurement ? escapeHtml(measurement) : null;
     const eventEsc = event ? escapeHtml(event) : null;
     const siteNameEsc = site_name ? escapeHtml(site_name) : null;
 
@@ -429,7 +460,7 @@ function buildLayer(entry) {
       ${paginationHtml}
       <div class="popup-title">${siteEsc}</div>
       ${siteNameEsc ? `<div class="popup-site"><strong>Site:</strong> ${siteNameEsc}</div>` : ""}
-      ${descriptionEsc ? `<div class="popup-description"><strong>Description:</strong> ${descriptionEsc}</div>` : ""}
+      ${measurementEsc ? `<div class="popup-measurement"><strong>Measurement:</strong> ${measurementEsc}</div>` : ""}
       <div class="popup-status">
         <strong>Status:</strong>
         <span class="${badgeClass}">${statusEsc}</span>
@@ -468,6 +499,39 @@ function buildLayer(entry) {
     }
   }
 
+  function renderCampSitePage(props, pageIndex, total) {
+    const site    = props.site    ? escapeHtml(props.site)    : null;
+    const event   = props.event   ? escapeHtml(props.event)   : "—";
+    const season  = props.season  ? escapeHtml(props.season)  : "—";
+
+    const paginationHtml = total > 1 ? `
+      <div class="popup-pagination">
+        <button class="popup-nav-btn" id="popup-prev" ${pageIndex === 0 ? "disabled" : ""}>&#8592;</button>
+        <span class="popup-page-indicator">${pageIndex + 1} / ${total}</span>
+        <button class="popup-nav-btn" id="popup-next" ${pageIndex === total - 1 ? "disabled" : ""}>&#8594;</button>
+      </div>` : "";
+
+    popupContent.innerHTML = `
+      ${paginationHtml}
+      <div class="popup-title">Camp Site${site ? ": " + site : ""}</div>
+      <div><strong>Event:</strong> ${event}</div>
+      <div><strong>Season:</strong> ${season}</div>
+    `;
+
+    if (total > 1) {
+      document.getElementById("popup-prev").addEventListener("click", function () {
+        window.__popup_page__ = Math.max(0, window.__popup_page__ - 1);
+        const p = window.__popup_features__[window.__popup_page__];
+        (p.__isCampSite__ ? renderCampSitePage : renderFeaturePage)(p, window.__popup_page__, total);
+      });
+      document.getElementById("popup-next").addEventListener("click", function () {
+        window.__popup_page__ = Math.min(total - 1, window.__popup_page__ + 1);
+        const p = window.__popup_features__[window.__popup_page__];
+        (p.__isCampSite__ ? renderCampSitePage : renderFeaturePage)(p, window.__popup_page__, total);
+      });
+    }
+  }
+
   // ---- Popup click handler -----------------------------------------
   map.on("singleclick", function (evt) {
     popupOverlay.setPosition(undefined);
@@ -496,7 +560,12 @@ function buildLayer(entry) {
     window.__popup_features__ = grouped;
     window.__popup_page__ = 0;
 
-    renderFeaturePage(grouped[0], 0, grouped.length);
+    const firstProps = grouped[0];
+    if (firstProps.__isCampSite__) {
+      renderCampSitePage(firstProps, 0, grouped.length);
+    } else {
+      renderFeaturePage(firstProps, 0, grouped.length);
+    }
     popupOverlay.setPosition(evt.coordinate);
     popupContainer.style.display = "block";
   });

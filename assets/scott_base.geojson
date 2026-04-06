@@ -8,12 +8,31 @@
     }
   },
     "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "event": "",
+          "name": "PAMS Fluorometer",
+          "measurement": "Chlorophyll fluorescence",
+          "site": "Scott Base",
+          "principal investigator": "Green, T.G.A.",
+          "email": "greentga@waikato.ac.nz",
+          "status": "Active"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+              166.77,
+              -77.85
+          ]
+        }
+      },
     {
       "type": "Feature",
       "properties": {
         "event": "K055A",
         "name": "Microrain Radar Instrument",
-        "description": "Snowfall and vertical wind measurements",
+        "measurement": "Snowfall and vertical wind measurements",
         "site": "Scott Base",
         "principal investigator": "McDonald, A.",
         "email": "adrian.mcdonald@canterbury.ac.nz",
@@ -32,7 +51,7 @@
       "properties": {
         "event": "K055A",
         "name": "Middle Frequency Radar",
-        "description": "Dynamics and Ionisation in the Antarctic Middle Atmosphere",
+        "measurement": "Dynamics and ionisation in the middle atmosphere",
         "site": "Scott Base",
         "principal investigator": "McDonald, A.",
         "email": "adrian.mcdonald@canterbury.ac.nz",
@@ -51,7 +70,7 @@
       "properties": {
         "event": "K060A",
         "name": "Very Low Frequency Radio Sensor",
-        "description": "Observations of Lightning Discharges",
+        "measurement": "Lightning discharges",
         "site": "Scott Base",
         "principal investigator": "Rodger, C.",
         "email": "craig.rodger@otago.ac.nz",
@@ -71,7 +90,7 @@
             "event": "K085A",
             "name": "Microwave Chlorine Monoxide Millimeter Wave Spectrometer",
             "site": "Scott Base",
-            "description": "Chlorine monoxide measurements",
+            "measurement": "Chlorine monoxide",
             "principal investigator": "Smale, D.",
             "email": "dan.smale@earthsciences.nz",
             "status": "Active"
@@ -89,7 +108,7 @@
           "properties": {
             "event": "K085A",
             "name": "AERI: Atmospheric Emission Radiation Interferometer",
-            "description": "Atmospheric down-welling thermal infrared radiance measurements",
+            "measurement": "Atmospheric down-welling thermal infrared radiance",
             "site": "Scott Base",
             "principal investigator": "Smale, D.",
             "email": "dan.smale@earthsciences.nz",
@@ -109,7 +128,7 @@
           "properties": {
             "event": "K085A",
             "name": "CNR4 and SI-411 Radiometers",
-            "description": "Surface radiative balance measurements",
+            "measurement": "Surface radiative balance",
             "site": "Scott Base",
             "principal investigator": "Smale, D.",
             "email": "dan.smale@earthsciences.nz",
@@ -128,7 +147,7 @@
           "properties": {
             "event": "K085A",
             "name": "SMOL-X: Lidar",
-            "description": "Atmospheric Profiles of Ozone, Temperature and Aerosols from the Ground to ~20km",
+            "measurement": "Atmospheric profiles of ozone, temperature and aerosols",
             "site": "Scott Base",
             "principal investigator": "Smale, D.",
             "email": "dan.smale@earthsciences.nz",
@@ -166,7 +185,7 @@
             "event": "K102A",
             "name": "Geomagnetic Instrument",
             "site": "Scott Base",
-            "description": "Magnetic field measurements",
+            "measurement": "Magnetic field",
             "principal investigator": "Petersen, T.",
             "email": "t.petersen@gns.cri.nz",
             "status": "Active"
@@ -184,7 +203,7 @@
           "properties": {
             "event": "K150A",
             "name": "Tide Gauge",
-            "description": "Seal level measurements",
+            "measurement": "Sea level",
             "site": "Scott Base",
             "principal investigator": "Collett, D.",
             "email": "dcollett@linz.govt.nz",
@@ -202,7 +221,7 @@
           "type": "Feature",
           "properties": {
             "event": "K150A",
-            "name": "GNSS Observations",
+            "name": "GNSS Station",
             "site": "Scott Base",
             "principal investigator": "Collett, D.",
             "email": "dcollett@linz.govt.nz",

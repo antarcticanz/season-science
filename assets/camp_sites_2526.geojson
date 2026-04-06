@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "name": "KXXXX",
+  "name": "Campe Sites",
   "crs": {
     "type": "name",
     "properties": {
@@ -11,17 +11,14 @@
     {
       "type": "Feature",
       "properties": {
-        "event": "KXXXX",
-        "name": "Chlorophyll Fluorescence Measurements with a PAMS Fluorometer, Scott Base, 2020-Present",
-        "principal investigator": "Green, T.G.A.",
-        "email": "greentga@waikato.ac.nz",
-        "status": "Active"
+        "event": "K025",
+        "season": "2025-26"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          166.747472,
-          -77.847014
+          163.344592,
+          -77.587143
         ]
       }
     }

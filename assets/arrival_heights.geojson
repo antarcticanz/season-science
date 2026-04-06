@@ -13,7 +13,7 @@
           "properties": {
             "event": "K060A",
             "name": "Very Low Frequency Radio Sensor",
-            "description": "Observations of Lightning Discharges",
+            "measurement": "Lightning Discharges",
             "site": "Arrival Heights",
             "principal investigator": "Rodger, C.",
             "email": "craig.rodger@otago.ac.nz",
@@ -32,7 +32,7 @@
           "properties": {
             "event": "K085A",
             "name": "In Situ Flask and Cylinder Air Sampling",
-            "description": "Greenhouse Gases and Isotopes",
+            "measurement": "Greenhouse gases and isotopes",
             "site": "Arrival Heights",
             "principal investigator": "Smale, D.",
             "email": "dan.smale@earthsciences.nz",
@@ -51,7 +51,7 @@
           "properties": {
             "event": "K085A",
             "name": "Dobson Spectrophotometer",
-            "description": "Total Column Ozone Measurements",
+            "measurement": "Total column ozone measurements",
             "site": "Arrival Heights",
             "principal investigator": "Smale, D.",
             "email": "dan.smale@earthsciences.nz",
@@ -70,7 +70,7 @@
           "properties": {
             "event": "K085A",
             "name": "Airyx & Envimeas Instruments",
-            "description": "Measurements NO2, OCIO, BrO, O3",
+            "measurement": "Nitrogen dioxide, chlorine dioxide, bromine oxide, ozone",
             "site": "Arrival Heights",
             "principal investigator": "Smale, D.",
             "email": "dan.smale@earthsciences.nz",
@@ -89,7 +89,7 @@
           "properties": {
             "event": "K085A",
             "name": "Ally-Sky Camera Systems",
-            "description": "Sky Imagery, Cloud Coverage",
+            "measurement": "Sky imagery, cloud coverage",
             "site": "Arrival Heights",
             "principal investigator": "Smale, D.",
             "email": "dan.smale@earthsciences.nz",
@@ -108,6 +108,7 @@
           "properties": {
             "event": "K085A",
             "name": "Bruker Fourier Transform Spectrometer",
+            "measurement": "Sky imagery, cloud coverage",
             "site": "Arrival Heights",
             "principal investigator": "Smale, D.",
             "email": "dan.smale@earthsciences.nz",
