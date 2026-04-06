@@ -284,7 +284,7 @@ app.layout = html.Div(
         html.Div(
             [
                 html.H1(
-                    "Antarctica NZ Supported Instruments & Activities 2026-27",
+                    "Antarctica NZ Supported Activities & Instruments - 2026-27",
                     className="title-pane__title",
                 ),
                 html.Img(
