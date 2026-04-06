@@ -562,7 +562,7 @@ app.clientside_callback(
             const url = URL.createObjectURL(blob);
             const a = document.createElement("a");
             a.href = url;
-            a.download = "anz_visible_layers.geojson";
+            a.download = "antarcticanz_activity_locations.geojson";
             document.body.appendChild(a);
             a.click();
             setTimeout(() => {{ URL.revokeObjectURL(url); a.remove(); }}, 1000);
