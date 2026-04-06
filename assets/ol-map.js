@@ -339,7 +339,7 @@ function buildLayer(entry) {
       center: [0, 0],
       zoom: 2,
       minZoom: 2,
-      maxZoom: 9,
+      maxZoom: 11,
       extent: antarcticaExtent,
     }),
   });
