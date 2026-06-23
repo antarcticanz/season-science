@@ -17,7 +17,8 @@
         "site": "new",
         "principal investigator": "Alanna Alevropoulos-Borrill",
         "email": "alanna.alevropoulosborrill@vuw.ac.nz",
-        "status": "Planned"
+        "status": "Planned",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/4440567a-5147-418a-98a9-1176f9f581be"
       },
       "geometry": {
         "type": "Point",

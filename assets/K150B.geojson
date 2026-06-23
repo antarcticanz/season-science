@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "name": "K150B",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K150B",
+        "name": "South Pan",
+        "site": "Scott Base",
+        "principal investigator": "Collett, D.",
+        "email": "dcollett@linz.govt.nz",
+        "status": "Planned"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            166.77,
+            -77.85
+        ]
+      }
+    }
+  ]
+}

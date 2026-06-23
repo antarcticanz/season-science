@@ -4,6 +4,26 @@
     {
       "type": "Feature",
       "properties": {
+        "event": "",
+        "name": "PAMS Fluorometer",
+        "description": "To measure chlorophyll fluorescence.",
+        "site": "Scott Base",
+        "principal investigator": "Green, T.G.A.",
+        "email": "greentga@waikato.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/bb9fb8dc-fd91-4b7d-80f7-5621b38df3fb"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            166.77,
+            -77.85
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "event": "K055A",
         "name": "Microrain Radar Instrument",
         "description": "Snowfall and vertical wind measurements.",
@@ -110,7 +130,9 @@
         "site": "Cape Evans",
         "principal investigator": "Seabrook. S.",
         "email": "sarah.seabrook@otago.ac.nz",
-        "status": "Active"      },
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/903f0967-9fee-483a-8413-e47d1cda2e1d"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -366,7 +388,8 @@
         "site": "Scott Base",
         "principal investigator": "Petersen, T.",
         "email": "t.petersen@gns.cri.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/0f54761a-fbf1-4da0-bf84-3e24c42d144e"
       },
       "geometry": {
         "type": "Point",
@@ -384,7 +407,8 @@
         "site": "Astro A",
         "principal investigator": "Petersen, T.",
         "email": "t.petersen@gns.cri.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/0f54761a-fbf1-4da0-bf84-3e24c42d144e"
       },
       "geometry": {
         "type": "Point",
@@ -403,7 +427,8 @@
         "description": "Magnetic field measurements.",
         "principal investigator": "Petersen, T.",
         "email": "t.petersen@gns.cri.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/0f54761a-fbf1-4da0-bf84-3e24c42d144e"
       },
       "geometry": {
         "type": "Point",
@@ -421,7 +446,8 @@
         "site": "Vanda Weir",
         "principal investigator": "Petersen, T.",
         "email": "t.petersen@gns.cri.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/0f54761a-fbf1-4da0-bf84-3e24c42d144e"
       },
       "geometry": {
         "type": "Point",
@@ -439,7 +465,8 @@
         "site": "Lake Vanda",
         "principal investigator": "Petersen, T.",
         "email": "t.petersen@gns.cri.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/0f54761a-fbf1-4da0-bf84-3e24c42d144e"
       },
       "geometry": {
         "type": "Point",
@@ -457,7 +484,8 @@
         "site": "Cape Evans",
         "principal investigator": "Petersen, T.",
         "email": "t.petersen@gns.cri.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/0f54761a-fbf1-4da0-bf84-3e24c42d144e"
       },
       "geometry": {
         "type": "Point",
@@ -476,7 +504,8 @@
         "site": "Scott Base",
         "principal investigator": "Collett, D.",
         "email": "dcollett@linz.govt.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/007be6df-e385-46e4-9ee4-2ee3e040003d"
       },
       "geometry": {
         "type": "Point",
@@ -495,7 +524,8 @@
         "site": "Scott Base",
         "principal investigator": "Collett, D.",
         "email": "dcollett@linz.govt.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/f1f352eb-e3d2-4d13-bbf4-f1acbfdc7fee"
       },
       "geometry": {
         "type": "Point",
@@ -514,7 +544,8 @@
         "site": "Butcher Ridge",
         "principal investigator": "Collett, D.",
         "email": "dcollett@linz.govt.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/f1f352eb-e3d2-4d13-bbf4-f1acbfdc7fee"
       },
       "geometry": {
         "type": "Point",
@@ -533,7 +564,8 @@
         "site": "Cape Roberts",
         "principal investigator": "Collett, D.",
         "email": "dcollett@linz.govt.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/b5faabfa-a3c2-48f5-9a2c-3ba433ba2c7f"
       },
       "geometry": {
         "type": "Point",
@@ -552,7 +584,8 @@
         "site": "Minna Bluff",
         "principal investigator": "Collett, D.",
         "email": "dcollett@linz.govt.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/f1f352eb-e3d2-4d13-bbf4-f1acbfdc7fee"
       },
       "geometry": {
         "type": "Point",
@@ -688,7 +721,7 @@
         "event": "K865A",
         "name": "GNSS Receiver",
         "desription": "To measure ice shelf movement.",
-        "site": "5",
+        "site": "1",
         "principal investigator": "Alanna Alevropoulos-Borrill",
         "email": "alanna.alevropoulosborrill@vuw.ac.nz",
         "status": "Active",
@@ -697,46 +730,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          169.90343674044,
-          -78.6025272193672
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "event": "K865A",
-        "name": "GNSS Receiver",
-        "desription": "To measure ice shelf movement.",
-        "principal investigator": "Alanna Alevropoulos-Borrill",
-        "email": "alanna.alevropoulosborrill@vuw.ac.nz",
-        "status": "Active",
-        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/4440567a-5147-418a-98a9-1176f9f581be"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          173.534068,
-          -80.296614
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "event": "K865A",
-        "name": "GNSS Receiver",
-        "desription": "To measure ice shelf movement.",
-        "principal investigator": "Alanna Alevropoulos-Borrill",
-        "email": "alanna.alevropoulosborrill@vuw.ac.nz",
-        "status": "Active",
-        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/4440567a-5147-418a-98a9-1176f9f581be"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -180.0,
-          -78.98826
+          171.305442197011,
+          -77.4800091460952
         ]
       }
     },
@@ -766,7 +761,47 @@
         "event": "K865A",
         "name": "GNSS Receiver",
         "desription": "To measure ice shelf movement.",
-        "site": "1",
+        "principal investigator": "Alanna Alevropoulos-Borrill",
+        "email": "alanna.alevropoulosborrill@vuw.ac.nz",
+        "status": "Active",
+        "site": "3",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/4440567a-5147-418a-98a9-1176f9f581be"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -180.0,
+          -78.98826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K865A",
+        "name": "GNSS Receiver",
+        "desription": "To measure ice shelf movement.",
+        "principal investigator": "Alanna Alevropoulos-Borrill",
+        "email": "alanna.alevropoulosborrill@vuw.ac.nz",
+        "site": "4",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/4440567a-5147-418a-98a9-1176f9f581be"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.534068,
+          -80.296614
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K865A",
+        "name": "GNSS Receiver",
+        "desription": "To measure ice shelf movement.",
+        "site": "5",
         "principal investigator": "Alanna Alevropoulos-Borrill",
         "email": "alanna.alevropoulosborrill@vuw.ac.nz",
         "status": "Active",
@@ -775,8 +810,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          171.305442197011,
-          -77.4800091460952
+          169.90343674044,
+          -78.6025272193672
         ]
       }
     },

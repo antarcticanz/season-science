@@ -17,7 +17,8 @@
         "site": "Butcher Ridge",
         "principal investigator": "Collett, D.",
         "email": "dcollett@linz.govt.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/f1f352eb-e3d2-4d13-bbf4-f1acbfdc7fee"
       },
       "geometry": {
         "type": "Point",
@@ -36,7 +37,8 @@
         "site": "Cape Roberts",
         "principal investigator": "Collett, D.",
         "email": "dcollett@linz.govt.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/b5faabfa-a3c2-48f5-9a2c-3ba433ba2c7f"
       },
       "geometry": {
         "type": "Point",
@@ -55,7 +57,8 @@
         "site": "Minna Bluff",
         "principal investigator": "Collett, D.",
         "email": "dcollett@linz.govt.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/f1f352eb-e3d2-4d13-bbf4-f1acbfdc7fee"
       },
       "geometry": {
         "type": "Point",
@@ -74,7 +77,8 @@
         "site": "Cape Roberts",
         "principal investigator": "Collett, D.",
         "email": "dcollett@linz.govt.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/f1f352eb-e3d2-4d13-bbf4-f1acbfdc7fee"
       },
       "geometry": {
         "type": "Point",

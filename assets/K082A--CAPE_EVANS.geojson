@@ -13,7 +13,7 @@
         "properties": {
             "event": "K082A",
             "name": "Benthic Lander",
-            "description": "Recovery of benthic lander measuring seafloor gas flux.",
+            "description": "Recovery of benthic lander measuring CTD, ADCP, Methane, Oxygen, Carbon Dioxide at a seafloor seep.",
             "site": "Cape Evans",
             "principal investigator": "Seabrook. S.",
             "email": "sarah.seabrook@otago.ac.nz",
@@ -32,7 +32,7 @@
         "properties": {
             "event": "K082A",
             "name": "Flow Meter and Osmosampler Deployment",
-            "description": "Sample biogeochemical variability.",
+            "description": "Sample biogeochemical (Methane, Trace metals, Nutrients, Ions, Oxygen Isotopes) variability.",
             "site": "Cape Evans",
             "principal investigator": "Seabrook. S.",
             "email": "sarah.seabrook@otago.ac.nz",

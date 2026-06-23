@@ -30,10 +30,11 @@
       "properties": {
         "event": "K891A",
         "name": "Sea Ice Mass Balance Station",
-        "description": "",
+        "description": "To record ice temperature profiles and snow depths.",
         "principal investigator": "Smith, I.J.",
         "email": "inga.smith@otago.ac.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/79234cb5-401a-48de-9d58-0f65b881fb7a"
       },
       "geometry": {
         "type": "Point",

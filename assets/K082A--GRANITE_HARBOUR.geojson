@@ -13,11 +13,12 @@
         "properties": {
             "event": "K082A",
             "name": "Benthic Lander Recovery",
-            "description": "Recovery of benthic lander measuring seafloor gas flux.",
+            "description": "Recovery of benthic lander measuring CTD, ADCP, Methane, Oxygen, Carbon Dioxide at a seafloor seep.",
             "site": "Granite Harbour",
             "principal investigator": "Seabrook. S.",
             "email": "sarah.seabrook@otago.ac.nz",
-            "status": "Active"
+            "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/21a91948-3871-47b5-a2f7-9468dfd58d16"
         },
         "geometry": {
             "type": "Point",

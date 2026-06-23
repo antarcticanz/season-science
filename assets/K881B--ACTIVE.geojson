@@ -16,7 +16,8 @@
         "site": "Granite Harbour",
         "principal investigator": "Katurji, M.",
         "email": "marwan.katurji@canterbury.ac.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/6bc04f66-3e79-4591-9030-0016fe8dbd27"
       },
       "geometry": {
         "type": "Point",
@@ -34,7 +35,8 @@
         "site": "Mount Flemming",
         "principal investigator": "Katurji, M.",
         "email": "marwan.katurji@canterbury.ac.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/6bc04f66-3e79-4591-9030-0016fe8dbd27"
       },
       "geometry": {
         "type": "Point",
@@ -52,7 +54,8 @@
         "site": "Victoria Valley",
         "principal investigator": "Katurji, M.",
         "email": "marwan.katurji@canterbury.ac.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/6bc04f66-3e79-4591-9030-0016fe8dbd27"
       },
       "geometry": {
         "type": "Point",
@@ -70,7 +73,8 @@
         "site": "Miers Valley",
         "principal investigator": "Katurji, M.",
         "email": "marwan.katurji@canterbury.ac.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/2b8c0319-8b3d-41a6-a586-38393e22696a"
       },
       "geometry": {
         "type": "Point",
@@ -88,7 +92,8 @@
         "site": "Miers Ridge",
         "principal investigator": "Katurji, M.",
         "email": "marwan.katurji@canterbury.ac.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/2b8c0319-8b3d-41a6-a586-38393e22696a"
       },
       "geometry": {
         "type": "Point",
@@ -106,7 +111,8 @@
         "site": "Commonwealth Glacier",
         "principal investigator": "Katurji, M.",
         "email": "marwan.katurji@canterbury.ac.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/2b8c0319-8b3d-41a6-a586-38393e22696a"
       },
       "geometry": {
         "type": "Point",
@@ -124,7 +130,8 @@
         "site": "Cape Christie",
         "principal investigator": "Katurji, M.",
         "email": "marwan.katurji@canterbury.ac.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/2b8c0319-8b3d-41a6-a586-38393e22696a"
       },
       "geometry": {
         "type": "Point",
@@ -142,7 +149,8 @@
         "site": "Haystack Mountain",
         "principal investigator": "Katurji, M.",
         "email": "marwan.katurji@canterbury.ac.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/2b8c0319-8b3d-41a6-a586-38393e22696a"
       },
       "geometry": {
         "type": "Point",
@@ -160,7 +168,8 @@
         "site": "Granite Harbour",
         "principal investigator": "Katurji, M.",
         "email": "marwan.katurji@canterbury.ac.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/2b8c0319-8b3d-41a6-a586-38393e22696a"
       },
       "geometry": {
         "type": "Point",
@@ -178,7 +187,8 @@
         "site": "Mount Flemming",
         "principal investigator": "Katurji, M.",
         "email": "marwan.katurji@canterbury.ac.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/2b8c0319-8b3d-41a6-a586-38393e22696a"
       },
       "geometry": {
         "type": "Point",
@@ -196,7 +206,8 @@
         "site": "Cape Adare Ridge",
         "principal investigator": "Katurji, M.",
         "email": "marwan.katurji@canterbury.ac.nz",
-        "status": "Offline"
+        "status": "Offline",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/819fea93-da68-4a32-8639-6474217034ec"
       },
       "geometry": {
         "type": "Point",

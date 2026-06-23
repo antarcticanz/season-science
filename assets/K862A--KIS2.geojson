@@ -17,7 +17,8 @@
         "description": "To measure ice shelf basal melt.",
         "principal investigator": "Levy, R.",
         "email": "r.levy@gns.cri.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/038c2e99-953e-4d0f-bbcc-999c30fb87e3"
       },
       "geometry": {
         "type": "Point",

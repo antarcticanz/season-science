@@ -17,7 +17,8 @@
         "desription": "To measure ice shelf movement.",
         "principal investigator": "Levy, R.",
         "email": "r.levy@gns.cri.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/452bfd28-bed8-44aa-8ea3-1e1a9152f73d"
       },
       "geometry": {
         "type": "Point",
@@ -36,7 +37,8 @@
         "name": "ApRES",
         "principal investigator": "Levy, R.",
         "email": "r.levy@gns.cri.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/a1822ca8-1cb9-4ca9-985f-b411e8fd14ca"
       },
       "geometry": {
         "type": "Point",

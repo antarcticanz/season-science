@@ -21,7 +21,7 @@ LAYER_REGISTRY = [
         "file": "ARRIVAL_HEIGHTS.geojson",
         "status": "Active",
         "value": "arrival_heights",
-        "visible": True
+        "visible": False
     },
     {
         "id": "pyramid_trough",
@@ -29,7 +29,7 @@ LAYER_REGISTRY = [
         "file": "PYRAMID_TROUGH.geojson",
         "status": "Planned",
         "value": "pyramid_trough",
-        "visible": True
+        "visible": False
     },
     {
         "id": "scott_base",
@@ -37,7 +37,7 @@ LAYER_REGISTRY = [
         "file": "SCOTT_BASE.geojson",
         "status": "Active",
         "value": "scott_base",
-        "visible": True
+        "visible": False
     },
     {
         "id": "K020A--BUDDAH_LAKE",
@@ -189,6 +189,14 @@ LAYER_REGISTRY = [
         "file": "K150A.geojson",
         "status": "Active",
         "value": "K150A",
+        "visible": True,
+    },
+    {
+        "id": "K150B",
+        "group": "K150B - SouthPAN",
+        "file": "K150B.geojson",
+        "status": "Planned",
+        "value": "K150B",
         "visible": True,
     },
     {
@@ -491,7 +499,7 @@ def _build_group_divs(groups):
             dcc.Checklist(
                 id=_parent_id(group_name),
                 options=[{"label": group_name, "value": group_name}],
-                value=[group_name],
+                value=[group_name] if any(e["visible"] for e in entries) else [],
                 className="layer-checklist",
                 inputClassName="layer-checklist__input",
                 labelClassName="layer-checklist__label",
@@ -657,13 +665,16 @@ all_children_inputs  = [Input(_children_id(g), "value") for g in ALL_GROUPS]
 all_parent_outputs   = [Output(_parent_id(g),   "value") for g in ALL_GROUPS]
 all_children_outputs = [Output(_children_id(g), "value") for g in ALL_GROUPS]
 
+science_parent_outputs   = [Output(_parent_id(g),   "value") for g in SCIENCE_GROUPS]
+science_children_outputs = [Output(_children_id(g), "value") for g in SCIENCE_GROUPS]
+
 
 # -------------------------------------------------------------------
 # Science Events: Select all / Deselect all
 # Only controls science layer parents + children
 # -------------------------------------------------------------------
 @app.callback(
-    all_parent_outputs + all_children_outputs,
+    science_parent_outputs + science_children_outputs,
     Input("btn-select-all",   "n_clicks"),
     Input("btn-deselect-all", "n_clicks"),
     prevent_initial_call=True,
@@ -675,12 +686,7 @@ def bulk_select(n_select, n_deselect):
         [e["value"] for e in entries] if selecting else []
         for entries in SCIENCE_GROUPS.values()
     ]
-    loc_parent_vals = [[g] if selecting else [] for g in LOCATION_GROUPS]
-    loc_count = len(LOCATION_GROUPS)
-    return (
-        science_parent_vals + loc_parent_vals +
-        science_children_vals + [no_update] * loc_count
-    )
+    return science_parent_vals + science_children_vals
 
 
 

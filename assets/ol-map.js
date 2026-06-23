@@ -220,6 +220,14 @@ const LAYER_REGISTRY = [
     visible: true,
   },
   {
+    id: "K150B",
+    group: "K150B - SouthPAN",
+    file: "K150B.geojson",
+    status: "Planned",
+    color: "rgba(165, 160, 255, 0.9)",
+    visible: true,
+  },
+  {
     id: "K170A",
     group: "K170A - AHT",
     file: "K170A.geojson",
@@ -403,7 +411,7 @@ const LAYER_REGISTRY = [
     group: "Instruments",
     file: "INSTALLATIONS_DEACTIVATED.geojson",
     status: "Planned Removal",
-    color: "rgba(220, 55, 55, 0.95)",
+    color: "rgba(255, 100, 0, 0.95)",
     visible: false,
   },
 ];
@@ -672,7 +680,8 @@ function buildLayer(entry) {
       statusLower === "active" ? "status-badge status-badge--active" :
         statusLower === "wishlist" ? "status-badge status-badge--wishlist" :
           statusLower === "planned" ? "status-badge status-badge--planned" :
-            "status-badge";
+            statusLower === "planned removal" ? "status-badge status-badge--planned-removal" :
+              "status-badge";
 
     const site_name = props.site || null;
     const information = props.information || null;

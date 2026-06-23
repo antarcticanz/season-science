@@ -17,7 +17,8 @@
                 "site": "Scott Base",
                 "principal investigator": "Petersen, T.",
                 "email": "t.petersen@gns.cri.nz",
-                "status": "Active"
+                "status": "Active",
+                "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/0f54761a-fbf1-4da0-bf84-3e24c42d144e"
             },
             "geometry": {
                 "type": "Point",

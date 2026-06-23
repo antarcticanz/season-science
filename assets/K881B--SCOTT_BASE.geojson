@@ -16,7 +16,8 @@
                 "site": "Scott Base",
                 "principal investigator": "Katurji, M.",
                 "email": "marwan.katurji@canterbury.ac.nz",
-                "status": "Active"
+                "status": "Active",
+                "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/6bc04f66-3e79-4591-9030-0016fe8dbd27"
             },
             "geometry": {
                 "type": "Point",

@@ -36,7 +36,8 @@
           "site": "Scott Base",
           "principal investigator": "Green, T.G.A.",
           "email": "greentga@waikato.ac.nz",
-          "status": "Active"
+          "status": "Active",
+          "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/bb9fb8dc-fd91-4b7d-80f7-5621b38df3fb"
         },
         "geometry": {
           "type": "Point",
@@ -55,7 +56,8 @@
         "site": "Scott Base",
         "principal investigator": "McDonald, A.",
         "email": "adrian.mcdonald@canterbury.ac.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/17a29315-96bd-4939-93ab-75c73139b3c0"
       },
       "geometry": {
         "type": "Point",
@@ -74,7 +76,8 @@
         "site": "Scott Base",
         "principal investigator": "McDonald, A.",
         "email": "adrian.mcdonald@canterbury.ac.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/214d8f22-4b32-48a5-8920-29371b560d5e"
       },
       "geometry": {
         "type": "Point",
@@ -93,7 +96,8 @@
         "site": "Scott Base",
         "principal investigator": "Rodger, C.",
         "email": "craig.rodger@otago.ac.nz",
-        "status": "Active"
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/7abe21bd-605d-4462-8623-24fb53dd987f"
       },
       "geometry": {
         "type": "Point",
@@ -112,7 +116,8 @@
             "description": "To measure chlorine monoxide.",
             "principal investigator": "Smale, D.",
             "email": "dan.smale@earthsciences.nz",
-            "status": "Active"
+            "status": "Active",
+            "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/1b0d1890-8a20-4e54-aff7-932546bab84e"
           },
           "geometry": {
             "type": "Point",
@@ -131,7 +136,8 @@
             "site": "Scott Base",
             "principal investigator": "Smale, D.",
             "email": "dan.smale@earthsciences.nz",
-            "status": "Active"
+            "status": "Active",
+            "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/73a18188-9d88-4d86-aa9a-34811fadd519"
           },
           "geometry": {
             "type": "Point",
@@ -151,7 +157,8 @@
             "site": "Scott Base",
             "principal investigator": "Smale, D.",
             "email": "dan.smale@earthsciences.nz",
-            "status": "Active"
+            "status": "Active",
+            "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/6173cfab-f441-40fb-9a76-17946b5b2981"
           },
           "geometry": {
             "type": "Point",
@@ -170,7 +177,8 @@
             "site": "Scott Base",
             "principal investigator": "Smale, D.",
             "email": "dan.smale@earthsciences.nz",
-            "status": "Active"
+            "status": "Active",
+            "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/1dbada55-aa32-4781-9fe4-c809b5abfec4"
           },
           "geometry": {
             "type": "Point",
@@ -188,7 +196,8 @@
             "site": "Scott Base",
             "principal investigator": "Jeremy Rutherford",
             "email": "jeremy.rutherford@earthsciences.nz",
-            "status": "Active"
+            "status": "Active",
+            "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/ef4e2c24-71e9-44d8-833d-bae7376f0a20"
           },
           "geometry": {
             "type": "Point",
@@ -207,7 +216,8 @@
             "description": "Magnetic field measurements.",
             "principal investigator": "Petersen, T.",
             "email": "t.petersen@gns.cri.nz",
-            "status": "Active"
+            "status": "Active",
+            "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/0f54761a-fbf1-4da0-bf84-3e24c42d144e"
           },
           "geometry": {
             "type": "Point",
@@ -226,7 +236,8 @@
             "site": "Scott Base",
             "principal investigator": "Collett, D.",
             "email": "dcollett@linz.govt.nz",
-            "status": "Active"
+            "status": "Active",
+            "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/007be6df-e385-46e4-9ee4-2ee3e040003d"
           },
           "geometry": {
             "type": "Point",
@@ -245,7 +256,8 @@
             "site": "Scott Base",
             "principal investigator": "Collett, D.",
             "email": "dcollett@linz.govt.nz",
-            "status": "Active"
+            "status": "Active",
+            "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/f1f352eb-e3d2-4d13-bbf4-f1acbfdc7fee"
           },
           "geometry": {
             "type": "Point",
@@ -263,7 +275,8 @@
             "site": "Scott Base",
             "principal investigator": "Katurji, M.",
             "email": "marwan.katurji@canterbury.ac.nz",
-            "status": "Active"
+            "status": "Active",
+            "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/6bc04f66-3e79-4591-9030-0016fe8dbd27"
           },
           "geometry": {
             "type": "Point",

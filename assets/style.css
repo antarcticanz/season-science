@@ -457,6 +457,11 @@ body {
   color: var(--color-badge-wishlist-text);
 }
 
+.status-badge--planned-removal {
+  background: rgba(255, 100, 0, 0.2);
+  color: rgba(255, 130, 40, 1);
+}
+
 /* ================================================================
    POPUP PAGINATION CONTROLS
    ================================================================ */
