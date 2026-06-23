@@ -18,7 +18,7 @@ LAYER_REGISTRY = [
     {
         "id": "arrival_heights",
         "group": "Arrival Heights",
-        "file": "ARRIVAL_HEIGHTS.geojson",
+        "file": "arrival_heights.geojson",
         "status": "Active",
         "value": "arrival_heights",
         "visible": False
@@ -34,7 +34,7 @@ LAYER_REGISTRY = [
     {
         "id": "scott_base",
         "group": "Scott Base",
-        "file": "SCOTT_BASE.geojson",
+        "file": "scott_base.geojson",
         "status": "Active",
         "value": "scott_base",
         "visible": False

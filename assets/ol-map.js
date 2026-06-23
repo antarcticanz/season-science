@@ -46,7 +46,7 @@ const LAYER_REGISTRY = [
   {
     id: "arrival_heights",
     group: "Arrival Heights",
-    file: "ARRIVAL_HEIGHTS.geojson",
+    file: "arrival_heights.geojson",
     status: "Active",
     color: "rgba(219, 135, 24, 0.9)",
     visible: true
@@ -62,7 +62,7 @@ const LAYER_REGISTRY = [
   {
     id: "scott_base",
     group: "Scott Base",
-    file: "SCOTT_BASE.geojson",
+    file: "scott_base.geojson",
     status: "Active",
     color: "rgba(0, 180, 120, 0.9)",
     visible: true
