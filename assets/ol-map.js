@@ -403,7 +403,7 @@ const LAYER_REGISTRY = [
     group: "Instruments",
     file: "INSTALLATIONS_ACTIVE.geojson",
     status: "Active",
-    color: "rgba(255, 210, 0, 0.95)",
+    color: "rgba(0, 200, 80, 0.95)",
     visible: false,
   },
   {
