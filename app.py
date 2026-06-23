@@ -1,5 +1,5 @@
 import re
-from dash import Dash, html, dcc, Input, Output, ALL, ctx
+from dash import Dash, html, dcc, Input, Output, ALL, ctx, no_update
 
 # -------------------------------------------------------------------
 # LAYER REGISTRY
@@ -16,65 +16,163 @@ from dash import Dash, html, dcc, Input, Output, ALL, ctx
 # -------------------------------------------------------------------
 LAYER_REGISTRY = [
     {
-        "id": "scott_base",
-        "group": "Scott Base",
-        "status": "Active",
-        "value": "scott_base",
-        "visible": True
-    },
-    {
         "id": "arrival_heights",
         "group": "Arrival Heights",
+        "file": "ARRIVAL_HEIGHTS.geojson",
         "status": "Active",
         "value": "arrival_heights",
         "visible": True
     },
     {
-        "id": "asp_planned",
-        "group": "ASP Moorings",
-        "file": "asp_moorings_planned_2027.geojson",
+        "id": "pyramid_trough",
+        "group": "Pyramid Trough",
+        "file": "PYRAMID_TROUGH.geojson",
         "status": "Planned",
-        "value": "asp_planned",
+        "value": "pyramid_trough",
+        "visible": True
+    },
+    {
+        "id": "scott_base",
+        "group": "Scott Base",
+        "file": "SCOTT_BASE.geojson",
+        "status": "Active",
+        "value": "scott_base",
+        "visible": True
+    },
+    {
+        "id": "K020A--BUDDAH_LAKE",
+        "group": "K020A - Virus Dispersal",
+        "file": "K020A--BUDDAH_LAKE.geojson",
+        "status": "Buddah Lake",
+        "value": "K020A--BUDDAH_LAKE",
         "visible": True,
     },
     {
-        "id": "K082A",
-        "group": "K082A - Benthic Landers",
-        "file": "K082A.geojson",
-        "status": "Active",
-        "value": "K082A",
+        "id": "K020A--MINNA_BLUFF",
+        "group": "K020A - Virus Dispersal",
+        "file": "K020A--MINNA_BLUFF.geojson",
+        "status": "Minna Bluff",
+        "value": "K020A--MINNA_BLUFF",
         "visible": True,
     },
     {
-        "id": "K872B",
-        "group": "K872B - ApRES",
-        "file": "K872B.geojson",
-        "status": "Active",
-        "value": "K872B_active",
+        "id": "K020A--PYRAMID_TROUGH",
+        "group": "K020A - Virus Dispersal",
+        "file": "K020A--PYRAMID_TROUGH.geojson",
+        "status": "Pyramid Trough",
+        "value": "K020A--PYRAMID_TROUGH",
         "visible": True,
     },
     {
-        "id": "K872B_wishlist",
-        "group": "K872B - ApRES",
-        "file": "K872B_wishlist.geojson",
-        "status": "Wishlist",
-        "value": "K872B_wishlist",
-        "visible": False,
-    },
-    {
-        "id": "K881B",
-        "group": "K881B - AWS",
-        "file": "K881B.geojson",
-        "status": "Active",
-        "value": "K881B",
+        "id": "K026A--PYRAMID_TROUGH",
+        "group": "K026A - Ecosystem Mapping",
+        "file": "K026A--PYRAMID_TROUGH.geojson",
+        "status": "Pyramid Trough",
+        "value": "K026A--PYRAMID_TROUGH",
         "visible": True,
     },
     {
-        "id": "K150A",
-        "group": "K150A - GNSS & Tide Gauge",
-        "file": "K150A.geojson",
-        "status": "Active",
-        "value": "K150A",
+        "id": "K055A--SCOTT_BASE",
+        "group": "K055A - Atmospheric Dynamics",
+        "file": "K055A--SCOTT_BASE.geojson",
+        "status": "Scott Base",
+        "value": "K055A--SCOTT_BASE",
+        "visible": True,
+    },
+    {
+        "id": "K060A--SCOTT_BASE",
+        "group": "K060A - VLF Sensors",
+        "file": "K060A--SCOTT_BASE.geojson",
+        "status": "Scott Base",
+        "value": "K060A--SCOTT_BASE",
+        "visible": True,
+    },
+    {
+        "id": "K060A--ARRIVAL_HEIGHTS",
+        "group": "K060A - VLF Sensors",
+        "file": "K060A--ARRIVAL_HEIGHTS.geojson",
+        "status": "Arrival Heights",
+        "value": "K060A--ARRIVAL_HEIGHTS",
+        "visible": True,
+    },
+    {
+        "id": "K082A--BLOOD_FALLS",
+        "group": "K082A - Seafloor Seeps",
+        "file": "K082A--BLOOD_FALLS.geojson",
+        "status": "Blood Falls",
+        "value": "K082A--BLOOD_FALLS",
+        "visible": True,
+    },
+    {
+        "id": "K082A--CAPE_EVANS",
+        "group": "K082A - Seafloor Seeps",
+        "file": "K082A--CAPE_EVANS.geojson",
+        "status": "Cape Evans",
+        "value": "K082A--CAPE_EVANS",
+        "visible": True,
+    },
+    {
+        "id": "K082A--GRANITE_HARBOUR",
+        "group": "K082A - Seafloor Seeps",
+        "file": "K082A--GRANITE_HARBOUR.geojson",
+        "status": "Granite Harbour",
+        "value": "K082A--GRANITE_HARBOUR",
+        "visible": True,
+    },
+    {
+        "id": "K082A--LAKE_FRYXELL",
+        "group": "K082A - Seafloor Seeps",
+        "file": "K082A--LAKE_FRYXELL.geojson",
+        "status": "Lake Fryxell",
+        "value": "K082A--LAKE_FRYXELL",
+        "visible": True,
+    },
+    {
+        "id": "K082A--MCMURDO_SOUND",
+        "group": "K082A - Seafloor Seeps",
+        "file": "K082A--MCMURDO_SOUND.geojson",
+        "status": "McMurdo Sound",
+        "value": "K082A--MCMURDO_SOUND",
+        "visible": True,
+    },
+    {
+        "id": "K082A--NEW_HARBOUR",
+        "group": "K082A - Seafloor Seeps",
+        "file": "K082A--NEW_HARBOUR.geojson",
+        "status": "New Harbour",
+        "value": "K082A--NEW_HARBOUR",
+        "visible": True,
+    },
+    {
+        "id": "K085A--SCOTT_BASE",
+        "group": "K085A - Atmospheric Composition",
+        "file": "K085A--SCOTT_BASE.geojson",
+        "status": "Scott Base",
+        "value": "K085A--SCOTT_BASE",
+        "visible": True,
+    },
+    {
+        "id": "K085A--ARRIVAL_HEIGHTS",
+        "group": "K085A - Atmospheric Composition",
+        "file": "K085A--ARRIVAL_HEIGHTS.geojson",
+        "status": "Arrival Heights",
+        "value": "K085A--ARRIVAL_HEIGHTS",
+        "visible": True,
+    },
+    {
+        "id": "K089A--SCOTT_BASE",
+        "group": "K089A - AWS",
+        "file": "K089A--SCOTT_BASE.geojson",
+        "status": "Scott Base",
+        "value": "K089A--SCOTT_BASE",
+        "visible": True,
+    },
+    {
+        "id": "K089A--ARRIVAL_HEIGHTS",
+        "group": "K089A - AWS",
+        "file": "K089A--ARRIVAL_HEIGHTS.geojson",
+        "status": "Arrival Heights",
+        "value": "K089A--ARRIVAL_HEIGHTS",
         "visible": True,
     },
     {
@@ -86,46 +184,157 @@ LAYER_REGISTRY = [
         "visible": True,
     },
     {
-        "id": "K862A_KIS2",
+        "id": "K150A",
+        "group": "K150A - GNSS & Tide Gauge",
+        "file": "K150A.geojson",
+        "status": "Active",
+        "value": "K150A",
+        "visible": True,
+    },
+    {
+        "id": "K170A",
+        "group": "K170A - AHT",
+        "file": "K170A.geojson",
+        "status": "Active",
+        "value": "K170A",
+        "visible": True,
+    },
+    {
+        "id": "K850A",
+        "group": "K850A - Penguin Census",
+        "file": "K850A.geojson",
+        "status": "Planned",
+        "value": "K850A",
+        "visible": True,
+    },
+    {
+        "id": "K862A--KIS2",
         "group": "K862A - ApRES & GNSS",
-        "file": "K862A_KIS2.geojson",
+        "file": "K862A--KIS2.geojson",
         "status": "Kamb Ice Stream Site 2",
-        "value": "K862A_KIS2",
+        "value": "K862A--KIS2",
         "visible": True,
-    }
-    ,
+    },
     {
-        "id": "K862A_KIS3",
+        "id": "K862A--KIS3",
         "group": "K862A - ApRES & GNSS",
-        "file": "K862A_KIS3.geojson",
+        "file": "K862A--KIS3.geojson",
         "status": "Kamb Ice Stream Site 3",
-        "value": "K862A_KIS3",
+        "value": "K862A--KIS3",
         "visible": True,
     },
     {
-        "id": "K862A_CIR",
+        "id": "K862A--CIR",
         "group": "K862A - ApRES & GNSS",
-        "file": "K862A_CIR.geojson",
+        "file": "K862A--CIR.geojson",
         "status": "Crary Ice Rise",
-        "value": "K862A_CIR",
+        "value": "K862A--CIR",
         "visible": True,
     },
     {
-        "id": "K865A",
+        "id": "K865A--ACTIVE",
         "group": "K865A - GNSS",
-        "file": "K865A.geojson",
+        "file": "K865A--ACTIVE.geojson",
         "status": "Active",
-        "value": "K865A",
+        "value": "K865A--ACTIVE",
         "visible": True,
     },
     {
-        "id": "K891A",
-        "group": "K891A - Sea Ice",
-        "file": "K891A.geojson",
-        "status": "Active",
-        "value": "K891A",
+        "id": "K865A--PLANNED",
+        "group": "K865A - GNSS",
+        "file": "K865A--PLANNED.geojson",
+        "status": "Planned",
+        "value": "K865A--PLANNED",
         "visible": True,
-    }
+    },
+    {
+        "id": "K872B--ACTIVE",
+        "group": "K872B - ApRES",
+        "file": "K872B--ACTIVE.geojson",
+        "status": "Active",
+        "value": "K872B--ACTIVE",
+        "visible": True,
+    },
+    {
+        "id": "K872B--PLANNED",
+        "group": "K872B - ApRES",
+        "file": "K872B--PLANNED.geojson",
+        "status": "Planned",
+        "value": "K872B--PLANNED",
+        "visible": True,
+    },
+    {
+        "id": "K881B--ACTIVE",
+        "group": "K881B - AWS",
+        "file": "K881B--ACTIVE.geojson",
+        "status": "Active",
+        "value": "K881B--ACTIVE",
+        "visible": True,
+    },
+    {
+        "id": "K881B--PLANNED",
+        "group": "K881B - AWS",
+        "file": "K881B--PLANNED.geojson",
+        "status": "Planned",
+        "value": "K881B--PLANNED",
+        "visible": True,
+    },
+    {
+        "id": "K891A--ACTIVE",
+        "group": "K891A - Sea Ice",
+        "file": "K891A--ACTIVE.geojson",
+        "status": "Active",
+        "value": "K891A--ACTIVE",
+        "visible": True,
+    },
+    {
+        "id": "K891A--PLANNED",
+        "group": "K891A - Sea Ice",
+        "file": "K891A--PLANNED.geojson",
+        "status": "Planned",
+        "value": "K891A--PLANNED",
+        "visible": True,
+    },
+    {
+        "id": "K893A--COMMONWEALTH_GLACIER",
+        "group": "K893A - Super Site",
+        "file": "K893A--COMMONWEALTH_GLACIER.geojson",
+        "status": "Commonwealth Glacier",
+        "value": "K893A--COMMONWEALTH_GLACIER",
+        "visible": True,
+    },
+    {
+        "id": "K893A--LOWER_WRIGHT_GLACIER",
+        "group": "K893A - Super Site",
+        "file": "K893A--LOWER_WRIGHT_GLACIER.geojson",
+        "status": "Lower Wright Glacier",
+        "value": "K893A--LOWER_WRIGHT_GLACIER",
+        "visible": True,
+    },
+    {
+        "id": "K893A--PYRAMID_TROUGH",
+        "group": "K893A - Super Site",
+        "file": "K893A--PYRAMID_TROUGH.geojson",
+        "status": "Pyramid Trough",
+        "value": "K893A--PYRAMID_TROUGH",
+        "visible": True,
+    },
+    {
+        "id": "K894A",
+        "group": "K894A - Terrestrial Survey",
+        "file": "K894A.geojson",
+        "status": "Planned",
+        "value": "K894A",
+        "visible": True,
+    },
+    {
+        "id": "asp_planned",
+        "group": "Tangaroa - ASP Moorings",
+        "file": "ASP_MOORINGS-PLANNED_2027.geojson",
+        "status": "Planned",
+        "value": "asp_planned",
+        "visible": True,
+    },
 ]
 
 # -------------------------------------------------------------------
@@ -136,29 +345,53 @@ LAYER_REGISTRY = [
 # -------------------------------------------------------------------
 CAMP_REGISTRY = [
     {
-        "id": "camp_sites_2324",
-        "file": "camp_sites_2324.geojson",
+        "id": "CAMPSITES-2324",
+        "file": "CAMPSITES-2324.geojson",
         "season": "2023-24",
-        "value": "camp_sites_2324",
+        "value": "CAMPSITES-2324",
         "visible": False,
     },
     {
-        "id": "camp_sites_2425",
-        "file": "camp_sites_2425.geojson",
+        "id": "CAMPSITES-2425",
+        "file": "CAMPSITES-2425.geojson",
         "season": "2024-25",
-        "value": "camp_sites_2425",
+        "value": "CAMPSITES-2425",
         "visible": False,
     },
     {
-        "id": "camp_sites_2526",
-        "file": "camp_sites_2526.geojson",
+        "id": "CAMPSITES-2526",
+        "file": "CAMPSITES-2526.geojson",
         "season": "2025-26",
-        "value": "camp_sites_2526",
+        "value": "CAMPSITES-2526",
         "visible": False,
     },
 ]
 
 CAMP_DEFAULT_VISIBILITY = {e["id"]: e["visible"] for e in CAMP_REGISTRY}
+
+# -------------------------------------------------------------------
+# INSTRUMENTS REGISTRY
+#
+# Cross-cutting views that aggregate features from science event files.
+# -------------------------------------------------------------------
+INSTRUMENTS_REGISTRY = [
+    {
+        "id": "instruments_active",
+        "file": "INSTALLATIONS_ACTIVE.geojson",
+        "label": "Active",
+        "value": "instruments_active",
+        "visible": False,
+    },
+    {
+        "id": "instruments_decommissioned",
+        "file": "INSTALLATIONS_DEACTIVATED.geojson",
+        "label": "Planned Removal",
+        "value": "instruments_decommissioned",
+        "visible": False,
+    },
+]
+
+INSTRUMENTS_DEFAULT_VISIBILITY = {e["id"]: e["visible"] for e in INSTRUMENTS_REGISTRY}
 
 # -------------------------------------------------------------------
 # Derived structures (computed once at startup)
@@ -171,12 +404,23 @@ def _get_groups(registry):
         groups.setdefault(entry["group"], []).append(entry)
     return groups
 
-GROUPS = _get_groups(LAYER_REGISTRY)
+_RAW_GROUPS = _get_groups(LAYER_REGISTRY)
+
+# IDs that belong in the "Locations" section rather than "Science Events"
+_LOCATION_IDS = {"scott_base", "arrival_heights", "pyramid_trough"}
+
+SCIENCE_GROUPS  = {g: e for g, e in _RAW_GROUPS.items()
+                   if not any(x["id"] in _LOCATION_IDS for x in e)}
+LOCATION_GROUPS = {g: e for g, e in _RAW_GROUPS.items()
+                   if any(x["id"] in _LOCATION_IDS for x in e)}
+# Combined dict used by all callbacks — science first, locations second
+ALL_GROUPS = {**SCIENCE_GROUPS, **LOCATION_GROUPS}
 
 # Pre-compute the correct default visibility map (fixes issue 1)
 DEFAULT_VISIBILITY = {
     **{e["id"]: e["visible"] for e in LAYER_REGISTRY},
     **CAMP_DEFAULT_VISIBILITY,
+    **INSTRUMENTS_DEFAULT_VISIBILITY,
 }
 
 
@@ -226,10 +470,10 @@ def health():
 # -------------------------------------------------------------------
 # Sidebar builder — driven entirely by LAYER_REGISTRY
 # -------------------------------------------------------------------
-def build_sidebar():
+def _build_group_divs(groups):
     group_divs = []
 
-    for group_name, entries in GROUPS.items():
+    for group_name, entries in groups.items():
         default_children = [e["value"] for e in entries if e["visible"]]
         multi = len(entries) > 1  # only show nested children when >1 entry in group
 
@@ -257,12 +501,20 @@ def build_sidebar():
                 children_checklist,
                 id=_wrap_id(group_name),
                 className="nested-wrap",
-                # Hidden entirely for single-entry groups
-                style={"display": "block"} if multi else {"display": "none"},
+                # Collapsed on startup; toggle_nested expands on first interaction
+                style={"display": "none"},
             ),
         ]))
 
     return group_divs
+
+
+def build_sidebar():
+    return _build_group_divs(SCIENCE_GROUPS)
+
+
+def build_location_sidebar():
+    return _build_group_divs(LOCATION_GROUPS)
 
 
 def build_camp_sidebar():
@@ -271,6 +523,19 @@ def build_camp_sidebar():
     return dcc.Checklist(
         id="camp-checklist",
         options=[{"label": e["season"], "value": e["value"]} for e in CAMP_REGISTRY],
+        value=default_values,
+        className="layer-checklist",
+        inputClassName="layer-checklist__input",
+        labelClassName="layer-checklist__label",
+    )
+
+
+def build_instruments_sidebar():
+    """Build the Instruments checklist — Active and Planned Removal."""
+    default_values = [e["value"] for e in INSTRUMENTS_REGISTRY if e["visible"]]
+    return dcc.Checklist(
+        id="instruments-checklist",
+        options=[{"label": e["label"], "value": e["value"]} for e in INSTRUMENTS_REGISTRY],
         value=default_values,
         className="layer-checklist",
         inputClassName="layer-checklist__input",
@@ -288,7 +553,7 @@ app.layout = html.Div(
                     className="title-pane__title",
                 ),
                 html.Img(
-                    src="/assets/ANZ_Logo_Horrizontal_CMYK.png",
+                    src="/assets/ANZ_Logo_Horizontal_Badge_White_RGB.png",
                     className="title-pane__logo",
                 ),
             ],
@@ -326,24 +591,23 @@ app.layout = html.Div(
 
                         html.Hr(className="sidebar__hr"),
 
-                        html.Div("Camp Sites", className="sidebar__heading sidebar__heading--section"),
+                        html.Div("Locations", className="sidebar__heading sidebar__heading--section"),
 
-                        # Camp Sites: Select all / Deselect all
-                        html.Div(
-                            [
-                                html.Button(
-                                    "Select all",
-                                    id="btn-camp-select-all",
-                                    className="sidebar__bulk-btn",
-                                ),
-                                html.Button(
-                                    "Deselect all",
-                                    id="btn-camp-deselect-all",
-                                    className="sidebar__bulk-btn",
-                                ),
-                            ],
-                            className="sidebar__bulk-actions",
-                        ),
+                        html.Hr(className="sidebar__hr"),
+
+                        *build_location_sidebar(),
+
+                        html.Hr(className="sidebar__hr"),
+
+                        html.Div("Instruments", className="sidebar__heading sidebar__heading--section"),
+
+                        html.Hr(className="sidebar__hr"),
+
+                        build_instruments_sidebar(),
+
+                        html.Hr(className="sidebar__hr"),
+
+                        html.Div("Camp Sites", className="sidebar__heading sidebar__heading--section"),
 
                         html.Hr(className="sidebar__hr"),
 
@@ -354,7 +618,7 @@ app.layout = html.Div(
                         # Export GeoJSON button
                         html.Div(
                             html.Button(
-                                "⬇ Export visible layers as GeoJSON",
+                                "↓ Export visible layers as GeoJSON",
                                 id="btn-export-geojson",
                                 className="sidebar__export-btn",
                             ),
@@ -388,10 +652,10 @@ app.layout = html.Div(
 # -------------------------------------------------------------------
 # Callback inputs — derived from registry, never written by hand
 # -------------------------------------------------------------------
-all_parent_inputs    = [Input(_parent_id(g),   "value") for g in GROUPS]
-all_children_inputs  = [Input(_children_id(g), "value") for g in GROUPS]
-all_parent_outputs   = [Output(_parent_id(g),   "value") for g in GROUPS]
-all_children_outputs = [Output(_children_id(g), "value") for g in GROUPS]
+all_parent_inputs    = [Input(_parent_id(g),   "value") for g in ALL_GROUPS]
+all_children_inputs  = [Input(_children_id(g), "value") for g in ALL_GROUPS]
+all_parent_outputs   = [Output(_parent_id(g),   "value") for g in ALL_GROUPS]
+all_children_outputs = [Output(_children_id(g), "value") for g in ALL_GROUPS]
 
 
 # -------------------------------------------------------------------
@@ -406,28 +670,20 @@ all_children_outputs = [Output(_children_id(g), "value") for g in GROUPS]
 )
 def bulk_select(n_select, n_deselect):
     selecting = ctx.triggered_id == "btn-select-all"
-    parent_vals = [[g] if selecting else [] for g in GROUPS]
-    children_vals = [
+    science_parent_vals = [[g] if selecting else [] for g in SCIENCE_GROUPS]
+    science_children_vals = [
         [e["value"] for e in entries] if selecting else []
-        for entries in GROUPS.values()
+        for entries in SCIENCE_GROUPS.values()
     ]
-    return parent_vals + children_vals
+    loc_parent_vals = [[g] if selecting else [] for g in LOCATION_GROUPS]
+    loc_count = len(LOCATION_GROUPS)
+    return (
+        science_parent_vals + loc_parent_vals +
+        science_children_vals + [no_update] * loc_count
+    )
 
 
-# -------------------------------------------------------------------
-# Camp Sites: Select all / Deselect all
-# Only controls the camp checklist
-# -------------------------------------------------------------------
-@app.callback(
-    Output("camp-checklist", "value"),
-    Input("btn-camp-select-all",   "n_clicks"),
-    Input("btn-camp-deselect-all", "n_clicks"),
-    prevent_initial_call=True,
-)
-def bulk_select_camps(n_select, n_deselect):
-    if ctx.triggered_id == "btn-camp-select-all":
-        return [e["value"] for e in CAMP_REGISTRY]
-    return []
+
 
 
 # -------------------------------------------------------------------
@@ -435,16 +691,20 @@ def bulk_select_camps(n_select, n_deselect):
 # -------------------------------------------------------------------
 @app.callback(
     Output("layer-visibility-store", "data"),
-    all_parent_inputs + all_children_inputs + [Input("camp-checklist", "value")],
+    all_parent_inputs + all_children_inputs + [
+        Input("camp-checklist", "value"),
+        Input("instruments-checklist", "value"),
+    ],
 )
 def compute_visibility(*args):
-    n = len(GROUPS)
-    parent_values   = args[:n]
-    children_values = args[n:2*n]
-    camp_values     = args[2*n] or []
+    n = len(ALL_GROUPS)
+    parent_values      = args[:n]
+    children_values    = args[n:2*n]
+    camp_values        = args[2*n] or []
+    instruments_values = args[2*n + 1] or []
 
     visibility = {}
-    for i, (group_name, entries) in enumerate(GROUPS.items()):
+    for i, (group_name, entries) in enumerate(ALL_GROUPS.items()):
         parent_on       = bool(parent_values[i] and group_name in parent_values[i])
         active_children = children_values[i] or []
 
@@ -452,10 +712,45 @@ def compute_visibility(*args):
             if len(entries) == 1:
                 visibility[entry["id"]] = parent_on
             else:
-                visibility[entry["id"]] = parent_on and entry["value"] in active_children
+                if not parent_on:
+                    visibility[entry["id"]] = False
+                elif not active_children:
+                    visibility[entry["id"]] = True
+                else:
+                    visibility[entry["id"]] = entry["value"] in active_children
 
     for entry in CAMP_REGISTRY:
         visibility[entry["id"]] = entry["value"] in camp_values
+
+    for entry in INSTRUMENTS_REGISTRY:
+        visibility[entry["id"]] = entry["value"] in instruments_values
+
+    # When an aggregate layer is on, suppress its event sub-layers to avoid
+    # duplicate features rendering at the same point.
+    if visibility.get("pyramid_trough"):
+        for layer_id in (
+            "K020A--PYRAMID_TROUGH",
+            "K026A--PYRAMID_TROUGH",
+            "K893A--PYRAMID_TROUGH",
+        ):
+            visibility[layer_id] = False
+
+    if visibility.get("scott_base"):
+        for layer_id in (
+            "K055A--SCOTT_BASE",
+            "K060A--SCOTT_BASE",
+            "K085A--SCOTT_BASE",
+            "K089A--SCOTT_BASE",
+        ):
+            visibility[layer_id] = False
+
+    if visibility.get("arrival_heights"):
+        for layer_id in (
+            "K060A--ARRIVAL_HEIGHTS",
+            "K085A--ARRIVAL_HEIGHTS",
+            "K089A--ARRIVAL_HEIGHTS",
+        ):
+            visibility[layer_id] = False
 
     return visibility
 
@@ -464,15 +759,16 @@ def compute_visibility(*args):
 # Show/hide nested wrap when parent is toggled (only for multi-entry groups)
 # -------------------------------------------------------------------
 @app.callback(
-    [o for g, entries in GROUPS.items() for o in (
+    [o for g, entries in ALL_GROUPS.items() for o in (
         Output(_children_id(g), "disabled"),
         Output(_wrap_id(g), "style"),
     )],
     all_parent_inputs,
+    prevent_initial_call=True,
 )
 def toggle_nested(*parent_values):
     result = []
-    for i, (group_name, entries) in enumerate(GROUPS.items()):
+    for i, (group_name, entries) in enumerate(ALL_GROUPS.items()):
         parent_on = bool(parent_values[i] and group_name in parent_values[i])
         multi = len(entries) > 1
         result.append(not parent_on)
@@ -520,7 +816,7 @@ app.clientside_callback(
 # callback knows which file to fetch for each layer id.
 _ALL_LAYER_FILES = {
     e["id"]: e["file"]
-    for e in LAYER_REGISTRY + CAMP_REGISTRY
+    for e in LAYER_REGISTRY + CAMP_REGISTRY + INSTRUMENTS_REGISTRY
     if "file" in e
 }
 

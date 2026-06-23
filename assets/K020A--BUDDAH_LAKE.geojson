@@ -1,0 +1,69 @@
+{
+  "type": "FeatureCollection",
+  "name": "K020A",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K020A",
+        "name": "Soil and Permafrost Sampling",
+        "description": "Sample surface soils.",
+        "site": "Buddah Lake",
+        "principal investigator": "McDonald, I.",
+        "email": "ian.mcdonald@waikato.ac.nz",
+        "status": "Planned"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          164.1576,
+          -78.0513
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K020A",
+        "name": "Soil and Permafrost Sampling",
+        "description": "Permafrost/subsurface soil sampling; including high altitude (>2000m) air sampling.",
+        "site": "Buddah Lake",
+        "principal investigator": "McDonald, I.",
+        "email": "ian.mcdonald@waikato.ac.nz",
+        "status": "Planned"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          164.1576,
+          -78.0513
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K020A",
+        "name": "Soil and Permafrost Sampling",
+        "description": "Aerosol sampling at ground level and at high altitude (>2000m).",
+        "site": "Buddah Lake",
+        "principal investigator": "McDonald, I.",
+        "email": "ian.mcdonald@waikato.ac.nz",
+        "status": "Planned"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          164.1576,
+          -78.0513
+        ]
+      }
+    }
+  ]
+}

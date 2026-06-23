@@ -8,22 +8,22 @@
     }
   },
   "features": [
-    {
+	{
       "type": "Feature",
       "properties": {
         "event": "K082A",
-        "name": "Benthic Lander",
-        "description": "Seafloor gas flux",
-        "site": "Granite Harbour",
+        "name": "WalkTEM Electromagnetic Surveys",
+        "description": "Terrestrial mapping/sampling.",
+        "site": "Coral Ridge/Lake Fryxell",
         "principal investigator": "Seabrook. S.",
         "email": "sarah.seabrook@otago.ac.nz",
-        "status": "Active"
+        "status": "Planned"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          162.9004,
-          -76.9044
+          162.588017,
+          -77.004083
         ]
       }
     },
@@ -31,18 +31,18 @@
       "type": "Feature",
       "properties": {
         "event": "K082A",
-        "name": "Benthic Lander",
-        "description": "Seafloor gas flux",
-        "site": "Cape Evans",
+        "name": "Lake Physical Measurements",
+        "description": "ADCP (currents), temperature, salinity, oxygen, CO2, methane, turbidity, radon, and other proxies.",
+        "site": "Lake Fryxell",
         "principal investigator": "Seabrook. S.",
         "email": "sarah.seabrook@otago.ac.nz",
-        "status": "Active"
+        "status": "Planned"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          166.411694,
-          -77.635842
+          163.10617,
+          -77.61567
         ]
       }
     }

@@ -13,6 +13,8 @@
       "properties": {
         "event": "K865A",
         "name": "GNSS Receiver",
+        "desription": "To measure ice shelf movement.",
+        "site": "5",
         "principal investigator": "Alanna Alevropoulos-Borrill",
         "email": "alanna.alevropoulosborrill@vuw.ac.nz",
         "status": "Active"
@@ -20,8 +22,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          169.868827,
-          -78.62964
+          169.90343674044,
+          -78.6025272193672
         ]
       }
     },
@@ -30,6 +32,7 @@
       "properties": {
         "event": "K865A",
         "name": "GNSS Receiver",
+        "desription": "To measure ice shelf movement.",
         "principal investigator": "Alanna Alevropoulos-Borrill",
         "email": "alanna.alevropoulosborrill@vuw.ac.nz",
         "status": "Active"
@@ -47,6 +50,7 @@
       "properties": {
         "event": "K865A",
         "name": "GNSS Receiver",
+        "desription": "To measure ice shelf movement.",
         "principal investigator": "Alanna Alevropoulos-Borrill",
         "email": "alanna.alevropoulosborrill@vuw.ac.nz",
         "status": "Active"
@@ -64,6 +68,8 @@
       "properties": {
         "event": "K865A",
         "name": "GNSS Receiver",
+        "desription": "To measure ice shelf movement.",
+        "site": "2",
         "principal investigator": "Alanna Alevropoulos-Borrill",
         "email": "alanna.alevropoulosborrill@vuw.ac.nz",
         "status": "Active"
@@ -71,8 +77,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          168.950828,
-          -78.031155
+          168.957111039335,
+          -78.0103711919417
         ]
       }
     },
@@ -81,6 +87,8 @@
       "properties": {
         "event": "K865A",
         "name": "GNSS Receiver",
+        "desription": "To measure ice shelf movement.",
+        "site": "1",
         "principal investigator": "Alanna Alevropoulos-Borrill",
         "email": "alanna.alevropoulosborrill@vuw.ac.nz",
         "status": "Active"
@@ -88,8 +96,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          171.325808,
-          -77.514412
+          171.305442197011,
+          -77.4800091460952
         ]
       }
     },
@@ -98,6 +106,8 @@
       "properties": {
         "event": "K865A",
         "name": "GNSS Receiver",
+        "desription": "To measure ice shelf movement.",
+        "site": "6",
         "principal investigator": "Alanna Alevropoulos-Borrill",
         "email": "alanna.alevropoulosborrill@vuw.ac.nz",
         "status": "Active"
@@ -105,8 +115,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.68855,
-          -78.208626
+          174.712381294673,
+          -78.1702053389386
         ]
       }
     }

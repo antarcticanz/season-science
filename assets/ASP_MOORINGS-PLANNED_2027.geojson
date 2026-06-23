@@ -13,7 +13,7 @@
       "properties": {
         "id": null,
         "name": "ASP Mooring",
-        "measurement": "ANTOS deployment",
+        "description": "ANTOS deployment",
         "timestamp": null,
         "begin": null,
         "end": null,
@@ -25,15 +25,14 @@
         "icon": null,
         "principal investigator": "Craig Stevens",
         "email": "craig.stevens@niwa.co.nz",
-        "event": "ASP",
+        "event": "Tangaroa",
         "status": "Planned"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           171.6293,
-          -72.20176666449531,
-          0.0
+          -72.20176666449531
         ]
       }
     },
@@ -42,7 +41,8 @@
       "properties": {
         "id": null,
         "name": "ASP Mooring",
-        "measurement": "PAM 1 Iselin Bank (PAM-A1) - 1867 m",
+        "description": "1867 m deployment",
+        "site": "PAM 1 Iselin Bank (PAM-A1)",
         "timestamp": null,
         "begin": null,
         "end": null,
@@ -54,16 +54,15 @@
         "icon": null,
         "principal investigator": "Craig Stevens",
         "email": "craig.stevens@niwa.co.nz",
-        "event": "ASP",
+        "event": "Tangaroa",
         "status": "Planned"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           179.51215,
-          -72.72671666666666,
-          0.0
-        ]
+          -72.72671666666666
+          ]
       }
     },
     {
@@ -71,7 +70,8 @@
       "properties": {
         "id": null,
         "name": "ASP Mooring",
-        "measurement": "PAM 2 Scott C Seamount (PAM-A2)\n1038 m deployment",
+        "description": "1038 m deployment",
+        "site": "PAM 2 Scott C Seamount (PAM-A2)",
         "timestamp": null,
         "begin": null,
         "end": null,
@@ -83,15 +83,14 @@
         "icon": null,
         "principal investigator": "Craig Stevens",
         "email": "craig.stevens@niwa.co.nz",
-        "event": "ASP",
+        "event": "Tangaroa",
         "status": "Planned"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           -179.9655333333333,
-          -68.33475,
-          0.0
+          -68.33475
         ]
       }
     },
@@ -100,7 +99,8 @@
       "properties": {
         "id": null,
         "name": "ASP Mooring",
-        "measurement": "PAM 3 Pacific-Antarctic Ridge\n1629 m deployment",
+        "description": "1629 m deployment",
+        "site": "PAM 3 Pacific-Antarctic Ridge",
         "timestamp": null,
         "begin": null,
         "end": null,
@@ -112,15 +112,14 @@
         "icon": null,
         "principal investigator": "Craig Stevens",
         "email": "craig.stevens@niwa.co.nz",
-        "event": "ASP",
+        "event": "Tangaroa",
         "status": "Planned"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           176.1218,
-          -63.6673,
-          0.0
+          -63.6673
         ]
       }
     },
@@ -129,7 +128,8 @@
       "properties": {
         "id": null,
         "name": "ASP Mooring",
-        "measurement": "Long mooring\n~600 m deployment",
+        "description": "~600 m deployment",
+        "site": "Long Mooring",
         "timestamp": null,
         "begin": null,
         "end": null,
@@ -141,16 +141,15 @@
         "icon": null,
         "principal investigator": "Craig Stevens",
         "email": "craig.stevens@niwa.co.nz",
-        "event": "ASP",
+        "event": "Tangaroa",
         "status": "Planned"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           173.0878324024845,
-          -77.40625640401778,
-          0.0
-        ]
+          -77.40625640401778
+          ]
       }
     },
     {
@@ -158,7 +157,8 @@
       "properties": {
         "id": null,
         "name": "ASP Mooring",
-        "measurement": "P2\t\t CALM mooring (CA1)",
+        "description": "",
+        "site": "P2 CALM mooring (CA1)",
         "timestamp": null,
         "begin": null,
         "end": null,
@@ -170,15 +170,14 @@
         "icon": null,
         "principal investigator": "Craig Stevens",
         "email": "craig.stevens@niwa.co.nz",
-        "event": "ASP",
+        "event": "Tangaroa",
         "status": "Planned"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           172.3026166666667,
-          -71.45823333333334,
-          0.0
+          -71.45823333333334        
         ]
       }
     },
@@ -187,7 +186,8 @@
       "properties": {
         "id": null,
         "name": "ASP Mooring",
-        "measurement": "DTB, Drygalski outflow (DT/R2)",
+        "description": "",
+        "site": "DTB, Drygalski outflow (DT/R2)",
         "timestamp": null,
         "begin": null,
         "end": null,
@@ -199,15 +199,14 @@
         "icon": null,
         "principal investigator": "Craig Stevens",
         "email": "craig.stevens@niwa.co.nz",
-        "event": "ASP",
+        "event": "Tangaroa",
         "status": "Planned"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           172.7430666666667,
-          -72.32871666666666,
-          0.0
+          -72.32871666666666
         ]
       }
     }

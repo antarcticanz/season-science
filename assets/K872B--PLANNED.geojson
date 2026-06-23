@@ -1,0 +1,31 @@
+{
+  "type": "FeatureCollection",
+  "name": "K872B",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K872B",
+        "name": "ApRES",
+        "description": "Equipment service.",
+        "site": "RD08",
+        "principal investigator": "Stewart, C.",
+        "email": "craig.stewart@niwa.co.nz",
+        "status": "Planned"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          167.2133156,
+          -77.84560349
+        ]
+      }
+    }
+  ]
+}

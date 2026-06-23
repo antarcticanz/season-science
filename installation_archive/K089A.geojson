@@ -13,8 +13,8 @@
       "properties": {
         "event": "K089A",
         "name": "Climate Data (Wind Speed and Direction, Air Temperature, Relative Humidity, Barometric Pressure, and Solar Radiation) from Manual Observations and Automatic Weather Stations at Arrival Heights",
-        "principal investigator": "Katurji, M.",
-        "email": "",
+        "principal investigator": "Jeremy Rutherford",
+        "email": "jeremy.rutherford@earthsciences.n",
         "status": "Active"
       },
       "geometry": {
@@ -30,8 +30,8 @@
       "properties": {
         "event": "K089A",
         "name": "Climate Data (Wind Speed and Direction, Air Temperature, Relative Humidity, Barometric Pressure, and Solar Radiation) from Manual Observations and a Automatic Weather Station at Scott Base",
-        "principal investigator": "Katurji, M.",
-        "email": "",
+        "principal investigator": "Jeremy Rutherford",
+        "email": "jeremy.rutherford@earthsciences.n",
         "status": "Active"
       },
       "geometry": {

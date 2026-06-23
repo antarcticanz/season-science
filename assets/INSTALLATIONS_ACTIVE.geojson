@@ -1,0 +1,1310 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K055A",
+        "name": "Microrain Radar Instrument",
+        "description": "Snowfall and vertical wind measurements.",
+        "site": "Scott Base",
+        "principal investigator": "McDonald, A.",
+        "email": "adrian.mcdonald@canterbury.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/17a29315-96bd-4939-93ab-75c73139b3c0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.77,
+          -77.85
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K055A",
+        "name": "Middle Frequency Radar",
+        "description": "Dynamics and ionisation in the middle atmosphere.",
+        "site": "Scott Base",
+        "principal investigator": "McDonald, A.",
+        "email": "adrian.mcdonald@canterbury.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/214d8f22-4b32-48a5-8920-29371b560d5e"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.77,
+          -77.85
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K060A",
+        "name": "Very Low Frequency Radio Sensor",
+        "description": "Lightning Discharges.",
+        "site": "Arrival Heights",
+        "principal investigator": "Rodger, C.",
+        "email": "craig.rodger@otago.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/7abe21bd-605d-4462-8623-24fb53dd987f"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.67,
+          -77.83
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K060A",
+        "name": "Very Low Frequency Subionospheric Communication Transmitter",
+        "description": "Observations at Arrival Heights.",
+        "site": "Arrival Heights",
+        "principal investigator": "Rodger, C.",
+        "email": "craig.rodger@otago.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/56ce3306-a8c9-4439-88df-21e891c389e6"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.67,
+          -77.83
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K060A",
+        "name": "Very Low Frequency Radio Sensor",
+        "description": "Lightning discharges.",
+        "site": "Scott Base",
+        "principal investigator": "Rodger, C.",
+        "email": "craig.rodger@otago.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/a998b777-ba36-4562-99fc-4ae4d21039cd"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.77,
+          -77.85
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K082A",
+        "name": "Benthic Lander",
+        "description": "Recovery of benthic lander measuring seafloor gas flux.",
+        "site": "Cape Evans",
+        "principal investigator": "Seabrook. S.",
+        "email": "sarah.seabrook@otago.ac.nz",
+        "status": "Active"      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.411694,
+          -77.635842
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K082A",
+        "name": "Benthic Lander Recovery",
+        "description": "Recovery of benthic lander measuring seafloor gas flux.",
+        "site": "Granite Harbour",
+        "principal investigator": "Seabrook. S.",
+        "email": "sarah.seabrook@otago.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/21a91948-3871-47b5-a2f7-9468dfd58d16"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          162.9004,
+          -76.9044
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K085A",
+        "name": "In Situ Flask and Cylinder Air Sampling",
+        "description": "Measurement of greenhouse gases and isotopes.",
+        "site": "Arrival Heights",
+        "principal investigator": "Smale, D.",
+        "email": "dan.smale@earthsciences.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/c912b420-66fc-4724-ae9a-c452fca9e09c"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.67,
+          -77.83
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K085A",
+        "name": "Dobson Spectrophotometer",
+        "description": "Measurement of total column ozone measurements.",
+        "site": "Arrival Heights",
+        "principal investigator": "Smale, D.",
+        "email": "dan.smale@earthsciences.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/ea482f08-ee91-4cf5-a570-5526e378cdeb"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.67,
+          -77.83
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K085A",
+        "name": "Airyx & Envimeas Instruments",
+        "description": "Measurement of nitrogen dioxide, chlorine dioxide, bromine oxide, ozone.",
+        "site": "Arrival Heights",
+        "principal investigator": "Smale, D.",
+        "email": "dan.smale@earthsciences.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/0fd089eb-d4aa-4b02-8707-90107aa81e4c"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.67,
+          -77.83
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K085A",
+        "name": "Ally-Sky Camera Systems",
+        "description": "Sky imagery and cloud coverage measurements.",
+        "site": "Arrival Heights",
+        "principal investigator": "Smale, D.",
+        "email": "dan.smale@earthsciences.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/cd8e7960-f192-49b3-bf2b-0be7cabf8053"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.67,
+          -77.83
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K085A",
+        "name": "Far- and Mid- Infrared FTS Measurements",
+        "description": "Measurement of greenhouse and Ozone Depleting Gases (O3, HCl, N2O, CH4, HNO3, ClONO2, HCN, HF, OCS, CO, C2H6, CFC-11, CFC-12, COF2 + Others).",
+        "site": "Arrival Heights",
+        "principal investigator": "Smale, D.",
+        "email": "dan.smale@earthsciences.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/6a7b389a-c8e9-4c56-b603-0f179bac90ab"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.67,
+          -77.83
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K085A",
+        "name": "Microwave Chlorine Monoxide Millimeter Wave Spectrometer",
+        "description": "Chlorine monoxide.",
+        "site": "Scott Base",
+        "principal investigator": "Smale, D.",
+        "email": "dan.smale@earthsciences.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/1b0d1890-8a20-4e54-aff7-932546bab84e"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.77,
+          -77.85
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K085A",
+        "name": "AERI: Atmospheric Emission Radiation Interferometer",
+        "description": "Atmospheric down-welling thermal infrared radiance.",
+        "site": "Scott Base",
+        "principal investigator": "Smale, D.",
+        "email": "dan.smale@earthsciences.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/73a18188-9d88-4d86-aa9a-34811fadd519"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.77,
+          -77.85
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K085A",
+        "name": "CNR4 and SI-411 Radiometers",
+        "description": "Surface radiative balance.",
+        "site": "Scott Base",
+        "principal investigator": "Smale, D.",
+        "email": "dan.smale@earthsciences.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/6173cfab-f441-40fb-9a76-17946b5b2981"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.77,
+          -77.85
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K085A",
+        "name": "SMOL-X: Lidar",
+        "description": "Atmospheric profiles of ozone, temperature and aerosols.",
+        "site": "Scott Base",
+        "principal investigator": "Smale, D.",
+        "email": "dan.smale@earthsciences.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/1dbada55-aa32-4781-9fe4-c809b5abfec4"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.77,
+          -77.85
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K089A",
+        "name": "AWS",
+        "site": "Arrival Heights",
+        "principal investigator": "Jeremy Rutherford",
+        "email": "jeremy.rutherford@earthsciences.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/95daa243-c23d-4fa8-9370-970a1d3bfdde"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.67,
+          -77.83
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K089A",
+        "name": "AWS",
+        "site": "Scott Base",
+        "principal investigator": "Jeremy Rutherford",
+        "email": "jeremy.rutherford@earthsciences.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/ef4e2c24-71e9-44d8-833d-bae7376f0a20"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.77,
+          -77.85
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K102A",
+        "name": "Geomagnetic Instrument",
+        "description": "Magnetic field.",
+        "site": "Scott Base",
+        "principal investigator": "Petersen, T.",
+        "email": "t.petersen@gns.cri.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.77,
+          -77.85
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K102A",
+        "name": "Geomagnetic Instrument",
+        "site": "Astro A",
+        "principal investigator": "Petersen, T.",
+        "email": "t.petersen@gns.cri.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          161.67,
+          -77.52
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K102A",
+        "name": "Geomagnetic Instrument",
+        "site": "Vanda Granite",
+        "description": "Magnetic field measurements.",
+        "principal investigator": "Petersen, T.",
+        "email": "t.petersen@gns.cri.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          161.704,
+          -77.523
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K102A",
+        "name": "Geomagnetic Instrument",
+        "site": "Vanda Weir",
+        "principal investigator": "Petersen, T.",
+        "email": "t.petersen@gns.cri.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          161.696,
+          -77.524
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K102A",
+        "name": "Geomagnetic Instrument",
+        "site": "Lake Vanda",
+        "principal investigator": "Petersen, T.",
+        "email": "t.petersen@gns.cri.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          161.67,
+          -77.52
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K102A",
+        "name": "Geomagnetic Instrument",
+        "site": "Cape Evans",
+        "principal investigator": "Petersen, T.",
+        "email": "t.petersen@gns.cri.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.417,
+          -77.637
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K150A",
+        "name": "Tide Gauge",
+        "description": "To measure sea level.",
+        "site": "Scott Base",
+        "principal investigator": "Collett, D.",
+        "email": "dcollett@linz.govt.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.77,
+          -77.85
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K150A",
+        "name": "GNSS Station",
+        "description": "Support New Zealand's geodetic datum maintenance, national deformation modelling, and connection to the global terrestrial reference frame.",
+        "site": "Scott Base",
+        "principal investigator": "Collett, D.",
+        "email": "dcollett@linz.govt.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.77,
+          -77.85
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K150A",
+        "name": "GNSS Station",
+        "description": "Support New Zealand's geodetic datum maintenance, national deformation modelling, and connection to the global terrestrial reference frame.",
+        "site": "Butcher Ridge",
+        "principal investigator": "Collett, D.",
+        "email": "dcollett@linz.govt.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          155.894,
+          -79.147
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K150A",
+        "name": "Tide Gauge",
+        "description": "To measure sea level.",
+        "site": "Cape Roberts",
+        "principal investigator": "Collett, D.",
+        "email": "dcollett@linz.govt.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          163.1897,
+          -77.0339
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K150A",
+        "name": "GNSS Station",
+        "description": "Support New Zealand's geodetic datum maintenance, national deformation modelling, and connection to the global terrestrial reference frame.",
+        "site": "Minna Bluff",
+        "principal investigator": "Collett, D.",
+        "email": "dcollett@linz.govt.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          167.164,
+          -78.65
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K150A",
+        "name": "GNSS Station",
+        "description": "Support New Zealand's geodetic datum maintenance, national deformation modelling, and connection to the global terrestrial reference frame.",
+        "site": "Cape Roberts",
+        "principal investigator": "Collett, D.",
+        "email": "dcollett@linz.govt.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/f1f352eb-e3d2-4d13-bbf4-f1acbfdc7fee"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          163.19,
+          -77.034
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K862A",
+        "site": "Crary Ice Rise",
+        "name": "GNSS and Total Station Geodetic Stations",
+        "desription": "To measure ice shelf movement.",
+        "principal investigator": "Levy, R.",
+        "email": "r.levy@gns.cri.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/452bfd28-bed8-44aa-8ea3-1e1a9152f73d"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -172.625911,
+          -83.026673
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K862A",
+        "site": "Crary Ice Rise",
+        "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
+        "principal investigator": "Levy, R.",
+        "email": "r.levy@gns.cri.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/a1822ca8-1cb9-4ca9-985f-b411e8fd14ca"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -172.625911,
+          -83.026673
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K862A",
+        "site": "Kamb Ice Stream 2",
+        "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
+        "principal investigator": "Levy, R.",
+        "email": "r.levy@gns.cri.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/038c2e99-953e-4d0f-bbcc-999c30fb87e3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -152.240079969754,
+          -82.4753964196359
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K862A",
+        "name": "GNSS and Total Station Geodetic Stations",
+        "desription": "To measure ice shelf movement.",
+        "site": "Kamb Ice Stream 3",
+        "principal investigator": "Levy, R.",
+        "email": "r.levy@gns.cri.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/3be0489f-7632-4022-9d7f-8613c8595148"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -156.306129,
+          -82.628074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K862A",
+        "name": "ApRES",
+        "site": "Kamb Ice Stream 3",
+        "principal investigator": "Levy, R.",
+        "description": "To measure ice shelf basal melt.",
+        "email": "r.levy@gns.cri.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/ddfeafde-8ccd-4cae-8b36-f1690fa74256"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -156.306129,
+          -82.628074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K865A",
+        "name": "GNSS Receiver",
+        "desription": "To measure ice shelf movement.",
+        "site": "5",
+        "principal investigator": "Alanna Alevropoulos-Borrill",
+        "email": "alanna.alevropoulosborrill@vuw.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/4440567a-5147-418a-98a9-1176f9f581be"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.90343674044,
+          -78.6025272193672
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K865A",
+        "name": "GNSS Receiver",
+        "desription": "To measure ice shelf movement.",
+        "principal investigator": "Alanna Alevropoulos-Borrill",
+        "email": "alanna.alevropoulosborrill@vuw.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/4440567a-5147-418a-98a9-1176f9f581be"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.534068,
+          -80.296614
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K865A",
+        "name": "GNSS Receiver",
+        "desription": "To measure ice shelf movement.",
+        "principal investigator": "Alanna Alevropoulos-Borrill",
+        "email": "alanna.alevropoulosborrill@vuw.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/4440567a-5147-418a-98a9-1176f9f581be"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -180.0,
+          -78.98826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K865A",
+        "name": "GNSS Receiver",
+        "desription": "To measure ice shelf movement.",
+        "site": "2",
+        "principal investigator": "Alanna Alevropoulos-Borrill",
+        "email": "alanna.alevropoulosborrill@vuw.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/4440567a-5147-418a-98a9-1176f9f581be"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.957111039335,
+          -78.0103711919417
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K865A",
+        "name": "GNSS Receiver",
+        "desription": "To measure ice shelf movement.",
+        "site": "1",
+        "principal investigator": "Alanna Alevropoulos-Borrill",
+        "email": "alanna.alevropoulosborrill@vuw.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/4440567a-5147-418a-98a9-1176f9f581be"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.305442197011,
+          -77.4800091460952
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K865A",
+        "name": "GNSS Receiver",
+        "desription": "To measure ice shelf movement.",
+        "site": "6",
+        "principal investigator": "Alanna Alevropoulos-Borrill",
+        "email": "alanna.alevropoulosborrill@vuw.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/4440567a-5147-418a-98a9-1176f9f581be"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.712381294673,
+          -78.1702053389386
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K872B",
+        "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
+        "site": "RD01",
+        "principal investigator": "Stewart, C.",
+        "email": "craig.stewart@niwa.co.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/40b1e023-5109-4946-a452-6a1fd5143351"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.134565,
+          -77.464872
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K872B",
+        "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
+        "principal investigator": "Stewart, C.",
+        "site": "RD08",
+        "email": "craig.stewart@niwa.co.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/40b1e023-5109-4946-a452-6a1fd5143351"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          167.2133156,
+          -77.84560349
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K872B",
+        "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
+        "site": "RD02",
+        "principal investigator": "Stewart, C.",
+        "email": "craig.stewart@niwa.co.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/40b1e023-5109-4946-a452-6a1fd5143351"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.261147,
+          -77.63243
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K872B",
+        "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
+        "site": "RD03",
+        "principal investigator": "Stewart, C.",
+        "email": "craig.stewart@niwa.co.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/40b1e023-5109-4946-a452-6a1fd5143351"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.122108,
+          -77.904175
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K872B",
+        "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
+        "site": "RD05a",
+        "principal investigator": "Stewart, C.",
+        "email": "craig.stewart@niwa.co.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/40b1e023-5109-4946-a452-6a1fd5143351"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.74,
+          -78.681
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K872B",
+        "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
+        "site": "RD06",
+        "principal investigator": "Stewart, C.",
+        "email": "craig.stewart@niwa.co.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/40b1e023-5109-4946-a452-6a1fd5143351"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.5601,
+          -77.4866
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K872B",
+        "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
+        "principal investigator": "Stewart, C.",
+        "site": "RD12",
+        "email": "craig.stewart@niwa.co.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/40b1e023-5109-4946-a452-6a1fd5143351"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.65441,
+          -78.018062
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K872B",
+        "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
+        "site": "RD11",
+        "principal investigator": "Stewart, C.",
+        "email": "craig.stewart@niwa.co.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/40b1e023-5109-4946-a452-6a1fd5143351"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.527977,
+          -77.423263
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K872B",
+        "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
+        "site": "RD10",
+        "principal investigator": "Stewart, C.",
+        "email": "craig.stewart@niwa.co.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/40b1e023-5109-4946-a452-6a1fd5143351"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.708992,
+          -77.416537
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K872B",
+        "description": "To measure ice shelf basal melt.",
+        "name": "ApRES",
+        "site": "RD09",
+        "principal investigator": "Stewart, C.",
+        "email": "craig.stewart@niwa.co.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/40b1e023-5109-4946-a452-6a1fd5143351"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          167.904868,
+          -77.980512
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K872B",
+        "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
+        "site": "RD07",
+        "principal investigator": "Stewart, C.",
+        "email": "craig.stewart@niwa.co.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/40b1e023-5109-4946-a452-6a1fd5143351"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.960822,
+          -77.793043
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K872B",
+        "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
+        "site": "RD04",
+        "principal investigator": "Stewart, C.",
+        "email": "craig.stewart@niwa.co.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/40b1e023-5109-4946-a452-6a1fd5143351"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.3944,
+          -78.2046
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K881B",
+        "name": "Soil and Climate Station",
+        "site": "Granite Harbour",
+        "principal investigator": "Katurji, M.",
+        "email": "marwan.katurji@canterbury.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/6bc04f66-3e79-4591-9030-0016fe8dbd27"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          162.525611,
+          -77.006556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K881B",
+        "name": "Soil and Climate Station",
+        "site": "Mount Flemming",
+        "principal investigator": "Katurji, M.",
+        "email": "marwan.katurji@canterbury.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/6bc04f66-3e79-4591-9030-0016fe8dbd27"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          160.290278,
+          -77.545194
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K881B",
+        "name": "Soil and Climate Station",
+        "site": "Victoria Valley",
+        "principal investigator": "Katurji, M.",
+        "email": "marwan.katurji@canterbury.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/6bc04f66-3e79-4591-9030-0016fe8dbd27"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          161.600694,
+          -77.33094
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K881B",
+        "name": "AWS",
+        "site": "Miers Valley",
+        "principal investigator": "Katurji, M.",
+        "email": "marwan.katurji@canterbury.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/2b8c0319-8b3d-41a6-a586-38393e22696a"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          163.794283,
+          -78.09805
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K881B",
+        "name": "AWS",
+        "site": "Miers Ridge",
+        "principal investigator": "Katurji, M.",
+        "email": "marwan.katurji@canterbury.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/2b8c0319-8b3d-41a6-a586-38393e22696a"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          163.863319,
+          -78.123205
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K881B",
+        "name": "AWS",
+        "site": "Commonwealth Glacier",
+        "principal investigator": "Katurji, M.",
+        "email": "marwan.katurji@canterbury.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/2b8c0319-8b3d-41a6-a586-38393e22696a"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          163.281064,
+          -77.563987
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K881B",
+        "name": "AWS",
+        "site": "Cape Christie",
+        "principal investigator": "Katurji, M.",
+        "email": "marwan.katurji@canterbury.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/2b8c0319-8b3d-41a6-a586-38393e22696a"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.9847222,
+          -72.2972222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K881B",
+        "name": "AWS",
+        "site": "Haystack Mountain",
+        "principal investigator": "Katurji, M.",
+        "email": "marwan.katurji@canterbury.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/2b8c0319-8b3d-41a6-a586-38393e22696a"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          162.585,
+          -77.05
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K881B",
+        "name": "AWS",
+        "site": "Granite Harbour",
+        "principal investigator": "Katurji, M.",
+        "email": "marwan.katurji@canterbury.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/2b8c0319-8b3d-41a6-a586-38393e22696a"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          162.5256,
+          -77.00655
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K881B",
+        "name": "AWS",
+        "site": "Mount Flemming",
+        "principal investigator": "Katurji, M.",
+        "email": "marwan.katurji@canterbury.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/2b8c0319-8b3d-41a6-a586-38393e22696a"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          160.29028,
+          -77.5452
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K881B",
+        "name": "Soil and Climate Station",
+        "site": "Scott Base",
+        "principal investigator": "Katurji, M.",
+        "email": "marwan.katurji@canterbury.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/6bc04f66-3e79-4591-9030-0016fe8dbd27"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.77,
+          -77.85
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K884A",
+        "site": "McMurdo Sound",
+        "name": "Sponge Timelapse Imagery, CTD, Dissolved Oxygen, and pH Logger Deployment",
+        "principal investigator": "Hawes, I.",
+        "email": "ian.hawes@waikato.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/b84fe66e-4c46-48aa-ae31-a4fbb6c24fb8"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.637389,
+          -77.842227
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K891A",
+        "name": "AWS",
+        "site": "Scott Base",
+        "principal investigator": "Smith, I.J.",
+        "email": "inga.smith@otago.ac.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.648457,
+          -77.868009
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K891A",
+        "site": "Scott Base",
+        "name": "Sea Ice Mass Balance Station",
+        "description": "",
+        "principal investigator": "Smith, I.J.",
+        "email": "inga.smith@otago.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/79234cb5-401a-48de-9d58-0f65b881fb7a"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.648457,
+          -77.868009
+        ]
+      }
+    }
+  ]
+}

@@ -32,7 +32,7 @@
         "event": "K102A",
         "name": "Geomagnetic Instrument",
         "site": "Vanda Granite",
-        "description": "Magnetic field measurements",
+        "description": "Magnetic field measurements.",
         "principal investigator": "Petersen, T.",
         "email": "t.petersen@gns.cri.nz",
         "status": "Active"

@@ -1,0 +1,71 @@
+{
+  "type": "FeatureCollection",
+  "name": "K022A",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+	{
+      "type": "Feature",
+      "properties": {
+        "event": "K022A",
+        "name": "Cyanobacterial Mats",
+        "description": "Install cyanobacterial mat shade experiments.",
+		    "site": "Mount Erebus",
+        "principal investigator": "Noell, S.",
+        "email": "stephen.noell@waikato.ac.nz",
+        "status": "Planned",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/5275b90b-a00c-40ae-bfa8-c553a439f45d"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          167.102103,
+          -77.518894
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K022A",
+        "name": "Ice and Volcanic Soil Sampling",
+        "description": "Samples collected for DNA and RNA sequencing of cyanobacteria, moss and mixed microbial communities.",
+        "site": "Mount Erebus",
+        "principal investigator": "Noell, S.",
+        "email": "stephen.noell@waikato.ac.nz",
+        "status": "Planned",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/006fc2dc-7dfe-4d3c-a5c1-01c550a449aa"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          167.102103,
+          -77.518894
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K022A",
+        "name": "Datalogger",
+        "description": "Service temperature, humidity, and irradiance monitoirng equipment.",
+        "site": "Mount Erebus",
+        "principal investigator": "Noell, S.",
+        "email": "stephen.noell@waikato.ac.nz",
+        "status": "Planned"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          167.102103,
+          -77.518894
+        ]
+      }
+    }
+  ]
+}

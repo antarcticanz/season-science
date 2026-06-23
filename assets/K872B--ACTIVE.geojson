@@ -13,6 +13,8 @@
       "properties": {
         "event": "K872B",
         "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
+        "site": "RD01",
         "principal investigator": "Stewart, C.",
         "email": "craig.stewart@niwa.co.nz",
         "status": "Active"
@@ -30,6 +32,27 @@
       "properties": {
         "event": "K872B",
         "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
+        "principal investigator": "Stewart, C.",
+        "site": "RD08",
+        "email": "craig.stewart@niwa.co.nz",
+        "status": "Active"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          167.2133156,
+          -77.84560349
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K872B",
+        "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
+        "site": "RD02",
         "principal investigator": "Stewart, C.",
         "email": "craig.stewart@niwa.co.nz",
         "status": "Active"
@@ -47,6 +70,8 @@
       "properties": {
         "event": "K872B",
         "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
+        "site": "RD03",
         "principal investigator": "Stewart, C.",
         "email": "craig.stewart@niwa.co.nz",
         "status": "Active"
@@ -64,23 +89,8 @@
       "properties": {
         "event": "K872B",
         "name": "ApRES",
-        "principal investigator": "Stewart, C.",
-        "email": "craig.stewart@niwa.co.nz",
-        "status": "Active"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          167.22977,
-          -77.844936
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "event": "K872B",
-        "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
+        "site": "RD05a",
         "principal investigator": "Stewart, C.",
         "email": "craig.stewart@niwa.co.nz",
         "status": "Active"
@@ -98,6 +108,8 @@
       "properties": {
         "event": "K872B",
         "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
+        "site": "RD06",
         "principal investigator": "Stewart, C.",
         "email": "craig.stewart@niwa.co.nz",
         "status": "Active"
@@ -115,7 +127,9 @@
       "properties": {
         "event": "K872B",
         "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
         "principal investigator": "Stewart, C.",
+        "site": "RD12",
         "email": "craig.stewart@niwa.co.nz",
         "status": "Active"
       },
@@ -132,6 +146,8 @@
       "properties": {
         "event": "K872B",
         "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
+        "site": "RD11",
         "principal investigator": "Stewart, C.",
         "email": "craig.stewart@niwa.co.nz",
         "status": "Active"
@@ -149,6 +165,8 @@
       "properties": {
         "event": "K872B",
         "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
+        "site": "RD10",
         "principal investigator": "Stewart, C.",
         "email": "craig.stewart@niwa.co.nz",
         "status": "Active"
@@ -165,7 +183,9 @@
       "type": "Feature",
       "properties": {
         "event": "K872B",
+        "description": "To measure ice shelf basal melt.",
         "name": "ApRES",
+        "site": "RD09",
         "principal investigator": "Stewart, C.",
         "email": "craig.stewart@niwa.co.nz",
         "status": "Active"
@@ -183,6 +203,8 @@
       "properties": {
         "event": "K872B",
         "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
+        "site": "RD07",
         "principal investigator": "Stewart, C.",
         "email": "craig.stewart@niwa.co.nz",
         "status": "Active"
@@ -200,6 +222,8 @@
       "properties": {
         "event": "K872B",
         "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
+        "site": "RD04",
         "principal investigator": "Stewart, C.",
         "email": "craig.stewart@niwa.co.nz",
         "status": "Active"

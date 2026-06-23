@@ -1,0 +1,88 @@
+{
+    "type": "FeatureCollection",
+    "name": "K894A",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K894A",
+                "name": "Lake Level Monitoring",
+                "description": "To establish a new benchmark at Lake Vanda to allow ongoing monitoring of lake level rise.",
+                "site": "Pyramid Trough",
+                "principal investigator": "Hawes, I.",
+                "email": "ian.hawes@waikato.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.453306,
+                    -78.295703
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K894A",
+                "name": "Sensor Transect Deployment",
+                "description": "To record soil temperature and summer water content.",
+                "site": "Pyramid Trough",
+                "principal investigator": "Hawes, I.",
+                "email": "ian.hawes@waikato.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.453306,
+                    -78.295703
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K894A",
+                "name": "Vegetation Transects",
+                "description": "To establish a series of transects through natural wetness gradients in the Pyramid Trough wetlands and document the vegetation present and the elevation.",
+                "site": "Pyramid Trough",
+                "principal investigator": "Hawes, I.",
+                "email": "ian.hawes@waikato.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.453306,
+                    -78.295703
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K894A",
+                "name": "Cyanobacterial Reflectance Measurements",
+                "description": "Use robotic and manual techniques to assess the spectral reflectance of cyanobacterial and moss communities at the Boulder Pavement and Pyramid Trough.",
+                "site": "Pyramid Trough",
+                "principal investigator": "Hawes, I.",
+                "email": "ian.hawes@waikato.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.453306,
+                    -78.295703
+                ]
+            }
+        }
+    ]
+}

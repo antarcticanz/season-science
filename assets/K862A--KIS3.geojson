@@ -13,6 +13,7 @@
       "properties": {
         "event": "K862A",
         "name": "GNSS and Total Station Geodetic Stations",
+        "desription": "To measure ice shelf movement.",
         "site": "Kamb Ice Stream 3",
         "principal investigator": "Levy, R.",
         "email": "r.levy@gns.cri.nz",
@@ -33,6 +34,7 @@
         "name": "ApRES",
         "site": "Kamb Ice Stream 3",
         "principal investigator": "Levy, R.",
+        "description": "To measure ice shelf basal melt.",
         "email": "r.levy@gns.cri.nz",
         "status": "Active"
       },

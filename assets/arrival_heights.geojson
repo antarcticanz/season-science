@@ -13,11 +13,32 @@
           "properties": {
             "event": "K060A",
             "name": "Very Low Frequency Radio Sensor",
-            "measurement": "Lightning Discharges",
+            "description": "Lightning Discharges.",
             "site": "Arrival Heights",
             "principal investigator": "Rodger, C.",
             "email": "craig.rodger@otago.ac.nz",
-            "status": "Active"
+            "status": "Active",
+            "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/7abe21bd-605d-4462-8623-24fb53dd987f"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              166.67,
+              -77.83
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K060A",
+            "site": "Arrival Heights",
+            "name": "Very Low Frequency Subionospheric Communication Transmitter",
+            "description": "Detect changes in ionisation levels from ~30-85 km altitude",
+            "principal investigator": "Rodger, C.",
+            "email": "craig.rodger@otago.ac.nz",
+            "status": "Active",
+            "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/56ce3306-a8c9-4439-88df-21e891c389e6"
           },
           "geometry": {
             "type": "Point",
@@ -32,11 +53,12 @@
           "properties": {
             "event": "K085A",
             "name": "In Situ Flask and Cylinder Air Sampling",
-            "measurement": "Greenhouse gases and isotopes",
+            "description": "Greenhouse gases and isotopes.",
             "site": "Arrival Heights",
             "principal investigator": "Smale, D.",
             "email": "dan.smale@earthsciences.nz",
-            "status": "Active"
+            "status": "Active",
+            "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/c912b420-66fc-4724-ae9a-c452fca9e09c"
           },
           "geometry": {
             "type": "Point",
@@ -51,11 +73,12 @@
           "properties": {
             "event": "K085A",
             "name": "Dobson Spectrophotometer",
-            "measurement": "Total column ozone measurements",
+            "description": "Total column ozone measurements.",
             "site": "Arrival Heights",
             "principal investigator": "Smale, D.",
             "email": "dan.smale@earthsciences.nz",
-            "status": "Active"
+            "status": "Active",
+            "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/ea482f08-ee91-4cf5-a570-5526e378cdeb"
           },
           "geometry": {
             "type": "Point",
@@ -70,11 +93,12 @@
           "properties": {
             "event": "K085A",
             "name": "Airyx & Envimeas Instruments",
-            "measurement": "Nitrogen dioxide, chlorine dioxide, bromine oxide, ozone",
+            "description": "Nitrogen dioxide, chlorine dioxide, bromine oxide, ozone.",
             "site": "Arrival Heights",
             "principal investigator": "Smale, D.",
             "email": "dan.smale@earthsciences.nz",
-            "status": "Active"
+            "status": "Active",
+            "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/0fd089eb-d4aa-4b02-8707-90107aa81e4c"
           },
           "geometry": {
             "type": "Point",
@@ -89,11 +113,12 @@
           "properties": {
             "event": "K085A",
             "name": "Ally-Sky Camera Systems",
-            "measurement": "Sky imagery, cloud coverage",
+            "description": "Sky imagery, cloud coverage.",
             "site": "Arrival Heights",
             "principal investigator": "Smale, D.",
             "email": "dan.smale@earthsciences.nz",
-            "status": "Active"
+            "status": "Active",
+            "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/cd8e7960-f192-49b3-bf2b-0be7cabf8053"
           },
           "geometry": {
             "type": "Point",
@@ -107,12 +132,13 @@
           "type": "Feature",
           "properties": {
             "event": "K085A",
-            "name": "Bruker Fourier Transform Spectrometer",
-            "measurement": "Sky imagery, cloud coverage",
             "site": "Arrival Heights",
+            "name": "Far- and Mid- Infrared FTS Measurements",
+            "description": "Greenhouse and Ozone Depleting Gases (O3, HCl, N2O, CH4, HNO3, ClONO2, HCN, HF, OCS, CO, C2H6, CFC-11, CFC-12, COF2 + Others).",
             "principal investigator": "Smale, D.",
             "email": "dan.smale@earthsciences.nz",
-            "status": "Active"
+            "status": "Active",
+            "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/6a7b389a-c8e9-4c56-b603-0f179bac90ab"
           },
           "geometry": {
             "type": "Point",
@@ -130,7 +156,8 @@
             "site": "Arrival Heights",
             "principal investigator": "Jeremy Rutherford",
             "email": "jeremy.rutherford@earthsciences.nz",
-            "status": "Active"
+            "status": "Active",
+            "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/95daa243-c23d-4fa8-9370-970a1d3bfdde"
           },
           "geometry": {
             "type": "Point",

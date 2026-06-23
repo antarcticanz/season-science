@@ -1,0 +1,69 @@
+{
+    "type": "FeatureCollection",
+    "name": "K082A_NEW_HARBOUR",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K082A",
+                "name": "Benthic Lander Deployment",
+                "description": "To measure seafloor gas flux.",
+                "site": "New Harbour",
+                "principal investigator": "Seabrook. S.",
+                "email": "sarah.seabrook@otago.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.5122,
+                    -77.5692
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K082A",
+                "name": "ADCP Measurements",
+                "description": "To measure water speed and direction.",
+                "site": "New Harbour",
+                "principal investigator": "Seabrook. S.",
+                "email": "sarah.seabrook@otago.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.5122,
+                    -77.5692
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K082A",
+                "name": "Acoustic Echousounder Measurements",
+                "description": "To measure water column acoustics.",
+                "site": "New Harbour",
+                "principal investigator": "Seabrook. S.",
+                "email": "sarah.seabrook@otago.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.5122,
+                    -77.5692
+                ]
+            }
+        }
+    ]
+}

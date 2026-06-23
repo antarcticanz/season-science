@@ -44,67 +44,163 @@ function escapeHtml(value) {
 // ------------------------------------------------------------------
 const LAYER_REGISTRY = [
   {
-    id: "scott_base",
-    group: "Scott Base",
-    file: "scott_base.geojson",
-    status: "Active",
-    color: "rgba(0, 180, 120, 0.9)",
-    visible: true
-  },
-  {
     id: "arrival_heights",
     group: "Arrival Heights",
-    file: "arrival_heights.geojson",
+    file: "ARRIVAL_HEIGHTS.geojson",
     status: "Active",
     color: "rgba(219, 135, 24, 0.9)",
     visible: true
   },
   {
-    id: "asp_planned",
-    group: "ASP - Moorings",
-    file: "asp_moorings_planned_2027.geojson",
-    status: "Planned 2027",
-    color: "rgba(30, 144, 255, 0.9)",
+    id: "pyramid_trough",
+    group: "Pyramid Trough",
+    file: "PYRAMID_TROUGH.geojson",
+    status: "Active",
+    color: "rgba(219, 135, 24, 0.9)",
+    visible: true
+  },
+  {
+    id: "scott_base",
+    group: "Scott Base",
+    file: "SCOTT_BASE.geojson",
+    status: "Active",
+    color: "rgba(0, 180, 120, 0.9)",
+    visible: true
+  },
+  {
+    id: "K020A--BUDDAH_LAKE",
+    group: "K020A - Virus Dispersal",
+    file: "K020A--BUDDAH_LAKE.geojson",
+    status: "Buddah Lake",
+    color: "rgba(230, 180, 50, 0.9)",
     visible: true,
   },
   {
-    id: "K082A",
-    group: "K082A - Benthic Landers",
-    file: "K082A.geojson",
-    status: "Active",
-    color: "rgba(235, 216, 53, 0.9)",
+    id: "K020A--MINNA_BLUFF",
+    group: "K020A - Virus Dispersal",
+    file: "K020A--MINNA_BLUFF.geojson",
+    status: "Minna Bluff",
+    color: "rgba(230, 180, 50, 0.9)",
     visible: true,
   },
   {
-    id: "K872B",
-    group: "K872B – ApRES",
-    file: "K872B.geojson",
-    status: "Active",
-    color: "rgba(139, 0, 0, 0.95)",
+    id: "K020A--PYRAMID_TROUGH",
+    group: "K020A - Virus Dispersal",
+    file: "K020A--PYRAMID_TROUGH.geojson",
+    status: "Pyramid Trough",
+    color: "rgba(230, 180, 50, 0.9)",
     visible: true,
   },
   {
-    id: "K872B_wishlist",
-    group: "K872B – ApRES",
-    file: "K872B_wishlist.geojson",
-    status: "Wishlist",
-    color: "rgba(255, 99, 71, 0.85)",
-    visible: false,
-  },
-  {
-    id: "K881B",
-    group: "K881B - AWS",
-    file: "K881B.geojson",
-    status: "Active",
-    color: "rgba(25, 209, 40, 0.9)",
+    id: "K026A--PYRAMID_TROUGH",
+    group: "K026A - Ecosystem Mapping",
+    file: "K026A--PYRAMID_TROUGH.geojson",
+    status: "Pyramid Trough",
+    color: "rgba(205, 100, 205, 0.9)",
     visible: true,
   },
   {
-    id: "K150A",
-    group: "K150A - GNSS & Tide Gauge",
-    file: "K150A.geojson",
-    status: "Active",
-    color: "rgba(27, 57, 189, 0.9)",
+    id: "K055A--SCOTT_BASE",
+    group: "K055A - Atmospheric Dynamics",
+    file: "K055A--SCOTT_BASE.geojson",
+    status: "Scott Base",
+    color: "rgba(100, 149, 237, 0.9)",
+    visible: true,
+  },
+  {
+    id: "K060A--SCOTT_BASE",
+    group: "K060A - VLF Sensors",
+    file: "K060A--SCOTT_BASE.geojson",
+    status: "Scott Base",
+    color: "rgba(255, 140, 0, 0.9)",
+    visible: true,
+  },
+  {
+    id: "K060A--ARRIVAL_HEIGHTS",
+    group: "K060A - VLF Sensors",
+    file: "K060A--ARRIVAL_HEIGHTS.geojson",
+    status: "Arrival Heights",
+    color: "rgba(255, 140, 0, 0.9)",
+    visible: true,
+  },
+  {
+    id: "K082A--BLOOD_FALLS",
+    group: "K082A - Seafloor Seeps",
+    file: "K082A--BLOOD_FALLS.geojson",
+    status: "Blood Falls",
+    color: "rgba(40, 195, 200, 0.9)",
+    visible: true,
+  },
+  {
+    id: "K082A--CAPE_EVANS",
+    group: "K082A - Seafloor Seeps",
+    file: "K082A--CAPE_EVANS.geojson",
+    status: "Cape Evans",
+    color: "rgba(40, 195, 200, 0.9)",
+    visible: true,
+  },
+  {
+    id: "K082A--GRANITE_HARBOUR",
+    group: "K082A - Seafloor Seeps",
+    file: "K082A--GRANITE_HARBOUR.geojson",
+    status: "Granite Harbour",
+    color: "rgba(40, 195, 200, 0.9)",
+    visible: true,
+  },
+  {
+    id: "K082A--LAKE_FRYXELL",
+    group: "K082A - Seafloor Seeps",
+    file: "K082A--LAKE_FRYXELL.geojson",
+    status: "Lake Fryxell",
+    color: "rgba(40, 195, 200, 0.9)",
+    visible: true,
+  },
+  {
+    id: "K082A--MCMURDO_SOUND",
+    group: "K082A - Seafloor Seeps",
+    file: "K082A--MCMURDO_SOUND.geojson",
+    status: "McMurdo Sound",
+    color: "rgba(40, 195, 200, 0.9)",
+    visible: true,
+  },
+  {
+    id: "K082A--NEW_HARBOUR",
+    group: "K082A - Seafloor Seeps",
+    file: "K082A--NEW_HARBOUR.geojson",
+    status: "New Harbour",
+    color: "rgba(40, 195, 200, 0.9)",
+    visible: true,
+  },
+  {
+    id: "K085A--SCOTT_BASE",
+    group: "K085A - Atmospheric Composition",
+    file: "K085A--SCOTT_BASE.geojson",
+    status: "Scott Base",
+    color: "rgba(147, 112, 219, 0.9)",
+    visible: true,
+  },
+  {
+    id: "K085A--ARRIVAL_HEIGHTS",
+    group: "K085A - Atmospheric Composition",
+    file: "K085A--ARRIVAL_HEIGHTS.geojson",
+    status: "Arrival Heights",
+    color: "rgba(147, 112, 219, 0.9)",
+    visible: true,
+  },
+  {
+    id: "K089A--SCOTT_BASE",
+    group: "K089A - AWS",
+    file: "K089A--SCOTT_BASE.geojson",
+    status: "Scott Base",
+    color: "rgba(64, 224, 208, 0.9)",
+    visible: true,
+  },
+  {
+    id: "K089A--ARRIVAL_HEIGHTS",
+    group: "K089A - AWS",
+    file: "K089A--ARRIVAL_HEIGHTS.geojson",
+    status: "Arrival Heights",
+    color: "rgba(64, 224, 208, 0.9)",
     visible: true,
   },
   {
@@ -112,77 +208,204 @@ const LAYER_REGISTRY = [
     group: "K102A - Geomagnetic",
     file: "K102A.geojson",
     status: "Active",
-    color: "rgba(69, 165, 189, 0.9)",
+    color: "rgba(65, 200, 130, 0.9)",
     visible: true,
   },
   {
-    id: "K862A_KIS2",
+    id: "K150A",
+    group: "K150A - GNSS & Tide Gauge",
+    file: "K150A.geojson",
+    status: "Active",
+    color: "rgba(80, 160, 255, 0.9)",
+    visible: true,
+  },
+  {
+    id: "K170A",
+    group: "K170A - AHT",
+    file: "K170A.geojson",
+    status: "Planned",
+    color: "rgba(235, 110, 65, 0.9)",
+    visible: true,
+  },
+  {
+    id: "K850A",
+    group: "K850A - Penguin Census",
+    file: "K850A.geojson",
+    status: "Planned",
+    color: "rgba(230, 100, 145, 0.9)",
+    visible: true,
+  },
+  {
+    id: "K862A--KIS2",
     group: "K862A - ApRES & GNSS",
-    file: "K862A_KIS2.geojson",
+    file: "K862A--KIS2.geojson",
     status: "Kamb Ice Stream Site 2",
-    color: "rgba(160, 62, 83, 0.9)",
+    color: "rgba(160, 90, 230, 0.9)",
     visible: true,
   },
   {
-    id: "K862A_KIS3",
+    id: "K862A--KIS3",
     group: "K862A - ApRES & GNSS",
-    file: "K862A_KIS3.geojson",
+    file: "K862A--KIS3.geojson",
     status: "Kamb Ice Stream Site 3",
-    color: "rgba(69, 165, 189, 0.9)",
+    color: "rgba(160, 90, 230, 0.9)",
     visible: true,
   },
   {
-    id: "K862A_CIR",
-    group: "KK862A - ApRES & GNSS",
-    file: "K862A_CIR.geojson",
+    id: "K862A--CIR",
+    group: "K862A - ApRES & GNSS",
+    file: "K862A--CIR.geojson",
     status: "Crary Ice Rise",
-    color: "rgba(158, 39, 132, 0.9)",
+    color: "rgba(160, 90, 230, 0.9)",
     visible: true,
   },
   {
-    id: "K865A",
+    id: "K865A--ACTIVE",
     group: "K865A - GNSS",
-    file: "K865A.geojson",
+    file: "K865A--ACTIVE.geojson",
     status: "Active",
-    color: "rgba(250, 15, 219, 0.9)",
+    color: "rgba(225, 80, 150, 0.9)",
     visible: true,
   },
   {
-    id: "K891A",
+    id: "K865A--PLANNED",
+    group: "K865A - GNSS",
+    file: "K865A--PLANNED.geojson",
+    status: "Planned",
+    color: "rgba(225, 80, 150, 0.9)",
+    visible: true,
+  },
+  {
+    id: "K872B--ACTIVE",
+    group: "K872B – ApRES",
+    file: "K872B--ACTIVE.geojson",
+    status: "Active",
+    color: "rgba(220, 60, 60, 0.95)",
+    visible: true,
+  },
+  {
+    id: "K872B--PLANNED",
+    group: "K872B – ApRES",
+    file: "K872B--PLANNED.geojson",
+    status: "Planned",
+    color: "rgba(220, 60, 60, 0.95)",
+    visible: true,
+  },
+  {
+    id: "K881B--ACTIVE",
+    group: "K881B - AWS",
+    file: "K881B--ACTIVE.geojson",
+    status: "Active",
+    color: "rgba(25, 209, 40, 0.9)",
+    visible: true,
+  },
+  {
+    id: "K881B--PLANNED",
+    group: "K881B - AWS",
+    file: "K881B--PLANNED.geojson",
+    status: "Planned",
+    color: "rgba(25, 209, 40, 0.9)",
+    visible: true,
+  },
+  {
+    id: "K891A--ACTIVE",
     group: "K891A - Sea Ice",
-    file: "K891A.geojson",
+    file: "K891A--ACTIVE.geojson",
     status: "Active",
-    color: "rgba(190, 223, 43, 0.9)",
+    color: "rgba(195, 220, 55, 0.9)",
     visible: true,
   },
-  // ---- Camp Sites (one layer per season) ---------------------------
   {
-    id: "camp_sites_2324",
+    id: "K891A--PLANNED",
+    group: "K891A - Sea Ice",
+    file: "K891A--PLANNED.geojson",
+    status: "PLANNED",
+    color: "rgba(195, 220, 55, 0.9)",
+    visible: true,
+  },
+  {
+    id: "K893A--COMMONWEALTH_GLACIER",
+    group: "K893A - Super Site",
+    file: "K893A--COMMONWEALTH_GLACIER.geojson",
+    status: "Commonwealth Glacier",
+    color: "rgba(130, 210, 70, 0.9)",
+    visible: true,
+  },
+  {
+    id: "K893A--LOWER_WRIGHT_GLACIER",
+    group: "K893A - Super Site",
+    file: "K893A--LOWER_WRIGHT_GLACIER.geojson",
+    status: "Lower Wright Glacier",
+    color: "rgba(130, 210, 70, 0.9)",
+    visible: true,
+  },
+  {
+    id: "K893A--PYRAMID_TROUGH",
+    group: "K893A - Super Site",
+    file: "K893A--PYRAMID_TROUGH.geojson",
+    status: "Pyramid Trough",
+    color: "rgba(130, 210, 70, 0.9)",
+    visible: true,
+  },
+  {
+    id: "K894A",
+    group: "K894A - Terrestrial Survey",
+    file: "K894A.geojson",
+    status: "Planned",
+    color: "rgba(240, 170, 80, 0.9)",
+    visible: true,
+  },
+  {
+    id: "asp_planned",
+    group: "Tangaroa - ASP Moorings",
+    file: "ASP_MOORINGS-PLANNED_2027.geojson",
+    status: "Planned",
+    color: "rgba(30, 144, 255, 0.9)",
+    visible: true,
+  },
+  {
+    id: "CAMPSITES-2324",
     group: "Camp Sites",
-    file: "camp_sites_2324.geojson",
+    file: "CAMPSITES-2324.geojson",
     season: "2023-24",
     color: "rgba(255, 165, 0, 0.92)",
     isCampSite: true,
     visible: false,
   },
   {
-    id: "camp_sites_2425",
+    id: "CAMPSITES-2425",
     group: "Camp Sites",
-    file: "camp_sites_2425.geojson",
+    file: "CAMPSITES-2425.geojson",
     season: "2024-25",
     color: "rgba(255, 120, 0, 0.92)",
     isCampSite: true,
     visible: false,
   },
   {
-    id: "camp_sites_2526",
+    id: "CAMPSITES-2526",
     group: "Camp Sites",
-    file: "camp_sites_2526.geojson",
+    file: "CAMPSITES-2526.geojson",
     season: "2025-26",
     color: "rgba(220, 80, 0, 0.92)",
     isCampSite: true,
     visible: false,
-  }
+  },
+  {
+    id: "instruments_active",
+    group: "Instruments",
+    file: "INSTALLATIONS_ACTIVE.geojson",
+    status: "Active",
+    color: "rgba(255, 210, 0, 0.95)",
+    visible: false,
+  },
+  {
+    id: "instruments_decommissioned",
+    group: "Instruments",
+    file: "INSTALLATIONS_DEACTIVATED.geojson",
+    status: "Planned Removal",
+    color: "rgba(220, 55, 55, 0.95)",
+    visible: false,
+  },
 ];
 
 // ------------------------------------------------------------------
@@ -258,10 +481,21 @@ function buildLayer(entry) {
   popupContainer.className = "ol-popup";
   popupContainer.style.display = "none";
 
+  const popupCloseBtn = document.createElement("button");
+  popupCloseBtn.className = "ol-popup__close";
+  popupCloseBtn.innerHTML = "&#10005;";
+  popupCloseBtn.title = "Close";
+  popupCloseBtn.setAttribute("aria-label", "Close popup");
+  popupCloseBtn.addEventListener("click", function () {
+    popupContainer.style.display = "none";
+    popupOverlay.setPosition(undefined);
+  });
+
   const popupContent = document.createElement("div");
   popupContent.className = "ol-popup__content";
   popupContent.id = "ol-popup-content";
 
+  popupContainer.appendChild(popupCloseBtn);
   popupContainer.appendChild(popupContent);
   target.appendChild(popupContainer);
 
@@ -325,7 +559,7 @@ function buildLayer(entry) {
   }
 
   const baseLayers = await Promise.all(BASEMAP_REGISTRY.map(loadBasemapLayer));
-  baseLayers.forEach((l, i) => l.setVisible(i === 0));
+  baseLayers.forEach((l) => l.setVisible(l.get("basemap-id") === "esri_imagery"));
 
   // ---- Build all data layers from registry -------------------------
   const dataLayers = LAYER_REGISTRY.map(buildLayer);
@@ -348,7 +582,7 @@ function buildLayer(entry) {
   window.__ol_map__ = map;
 
   // ---- Basemap switcher -------------------------------------------
-  let activeBasemapId = "bas";
+  let activeBasemapId = "esri_imagery";
 
   window.switchBasemap = function (selectedId) {
     if (selectedId === activeBasemapId) return;
@@ -427,7 +661,7 @@ function buildLayer(entry) {
   // ---- Popup helpers -----------------------------------------------
   function renderFeaturePage(props, pageIndex, total) {
     const site = props.name || "Location";
-    const measurement = props.measurement || null;
+    const measurement = props.description || null;
     const event = props.event || null;
     const statusRaw = props.status || "—";
     const pi = props["principal investigator"] || "—";
@@ -441,6 +675,7 @@ function buildLayer(entry) {
             "status-badge";
 
     const site_name = props.site || null;
+    const information = props.information || null;
     const siteEsc = escapeHtml(site);
     const statusEsc = escapeHtml(statusRaw);
     const piEsc = escapeHtml(pi);
@@ -448,6 +683,9 @@ function buildLayer(entry) {
     const measurementEsc = measurement ? escapeHtml(measurement) : null;
     const eventEsc = event ? escapeHtml(event) : null;
     const siteNameEsc = site_name ? escapeHtml(site_name) : null;
+    // Only allow http/https URLs to prevent javascript: injection
+    const informationUrl = information && /^https?:\/\//i.test(information)
+      ? escapeHtml(information) : null;
 
     const paginationHtml = total > 1 ? `
       <div class="popup-pagination">
@@ -460,13 +698,13 @@ function buildLayer(entry) {
       ${paginationHtml}
       <div class="popup-title">${siteEsc}</div>
       ${siteNameEsc ? `<div class="popup-site"><strong>Site:</strong> ${siteNameEsc}</div>` : ""}
-      ${measurementEsc ? `<div class="popup-measurement"><strong>Measurement:</strong> ${measurementEsc}</div>` : ""}
+      ${eventEsc ? `<div class="popup-event"><strong>Event:</strong> ${eventEsc}</div>` : ""}
       <div class="popup-status">
         <strong>Status:</strong>
         <span class="${badgeClass}">${statusEsc}</span>
       </div>
-      ${eventEsc ? `<div class="popup-event"><strong>Event:</strong> ${eventEsc}</div>` : ""}
-      <div class="popup-pi"><strong>Principal Investigator:</strong> ${piEsc}</div>
+      ${measurementEsc ? `<div class="popup-measurement"><strong>Description:</strong> ${measurementEsc}</div>` : ""}
+      <div class="popup-pi"><strong>Contact:</strong> ${piEsc}</div>
       <div class="popup-email">
         <strong>Email:</strong>
         <span class="email-text">${emailEsc}</span>
@@ -477,6 +715,16 @@ function buildLayer(entry) {
           </svg>
         </button>
       </div>
+      ${informationUrl ? `<div class="popup-info">
+        <a class="popup-info-link" href="${informationUrl}" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+          More Information
+        </a>
+      </div>` : ""}
     `;
 
     if (total > 1) {
@@ -540,31 +788,18 @@ function buildLayer(entry) {
     const featuresAtPixel = [];
     map.forEachFeatureAtPixel(evt.pixel, function (feature) {
       featuresAtPixel.push(feature.getProperties());
-    });
+    }, { hitTolerance: 10 });
 
     if (featuresAtPixel.length === 0) return;
 
-    const coordKey = (props) => {
-      const geom = props.geometry;
-      if (!geom) return "unknown";
-      const coords = geom.flatCoordinates || geom.getCoordinates();
-      return coords[0].toFixed(4) + "," + coords[1].toFixed(4);
-    };
-
-    const firstGeom = featuresAtPixel[0].geometry;
-    const firstCoords = firstGeom.flatCoordinates || firstGeom.getCoordinates();
-    const anchorKey = firstCoords[0].toFixed(4) + "," + firstCoords[1].toFixed(4);
-
-    const grouped = featuresAtPixel.filter(props => coordKey(props) === anchorKey);
-
-    window.__popup_features__ = grouped;
+    window.__popup_features__ = featuresAtPixel;
     window.__popup_page__ = 0;
 
-    const firstProps = grouped[0];
+    const firstProps = featuresAtPixel[0];
     if (firstProps.__isCampSite__) {
-      renderCampSitePage(firstProps, 0, grouped.length);
+      renderCampSitePage(firstProps, 0, featuresAtPixel.length);
     } else {
-      renderFeaturePage(firstProps, 0, grouped.length);
+      renderFeaturePage(firstProps, 0, featuresAtPixel.length);
     }
     popupOverlay.setPosition(evt.coordinate);
     popupContainer.style.display = "block";

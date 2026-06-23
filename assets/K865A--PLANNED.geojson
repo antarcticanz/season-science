@@ -1,0 +1,31 @@
+{
+  "type": "FeatureCollection",
+  "name": "K865A",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K865A",
+        "name": "GNSS Reciever",
+        "description": "To measure ice shelf movement. New site design and durability test.",
+        "site": "new",
+        "principal investigator": "Alanna Alevropoulos-Borrill",
+        "email": "alanna.alevropoulosborrill@vuw.ac.nz",
+        "status": "Planned"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          167.2133156,
+          -77.84560349
+        ]
+      }
+    }
+  ]
+}

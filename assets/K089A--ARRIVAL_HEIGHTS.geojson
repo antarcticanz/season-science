@@ -1,0 +1,29 @@
+{
+    "type": "FeatureCollection",
+    "name": "K089A",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K089A",
+                "name": "AWS",
+                "site": "Arrival Heights",
+                "principal investigator": "Jeremy Rutherford",
+                "email": "jeremy.rutherford@earthsciences.nz",
+                "status": "Active",
+                "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/95daa243-c23d-4fa8-9370-970a1d3bfdde"
+
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [166.67, -77.83]
+            }
+        }
+    ]
+}

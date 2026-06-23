@@ -1,0 +1,107 @@
+{
+  "type": "FeatureCollection",
+  "name": "K893A",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K893A",
+        "name": "AWS Service",
+        "description": "Service automatic weather station.",
+        "site": "Commonwealth Glacier",
+        "principal investigator": "MacDonnell, S..",
+        "email": "shelly.macdonnell@canterbury.ac.nz",
+        "status": "Planned"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          163.281064,
+          -77.563987
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K893A",
+        "name": "Snow and Water Sampling",
+        "description": "Sampling for isotope analysis.",
+        "site": "Commonwealth Glacier",
+        "principal investigator": "MacDonnell, S..",
+        "email": "shelly.macdonnell@canterbury.ac.nz",
+        "status": "Planned"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          163.281064,
+          -77.563987
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K893A",
+        "name": "Snow, Firn and/or Ice Core Sampling",
+        "description": "",
+        "site": "Commonwealth Glacier",
+        "principal investigator": "MacDonnell, S..",
+        "email": "shelly.macdonnell@canterbury.ac.nz",
+        "status": "Planned"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          163.281064,
+          -77.563987
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K893A",
+        "name": "Glacier Albedo Survey",
+        "description": "",
+        "site": "Commonwealth Glacier",
+        "principal investigator": "MacDonnell, S..",
+        "email": "shelly.macdonnell@canterbury.ac.nz",
+        "status": "Planned"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          163.281064,
+          -77.563987
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K893A",
+        "name": "Glacier Mass Balance Measurements",
+        "description": "",
+        "site": "Commonwealth Glacier",
+        "principal investigator": "MacDonnell, S..",
+        "email": "shelly.macdonnell@canterbury.ac.nz",
+        "status": "Planned"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          163.281064,
+          -77.563987
+        ]
+      }
+    }
+  ]
+}

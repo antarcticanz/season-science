@@ -1,0 +1,69 @@
+{
+    "type": "FeatureCollection",
+    "name": "K026A",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K026A",
+                "name": "Terrestrial Ecosystem Mapping",
+                "description": "Spectral sampling using handheld spectrometers.",
+                "site": "Trough Lake",
+                "principal investigator": "Lee, C.",
+                "email": "charles.lee@waikato.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.453306,
+                    -78.295703
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K026A",
+                "name": "Terrestrial Ecosystem Mapping",
+                "description": "Biological sampling of vegetation for molecular analyses.",
+                "site": "Trough Lake",
+                "principal investigator": "Lee, C.",
+                "email": "charles.lee@waikato.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.453306,
+                    -78.295703
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K026A",
+                "name": "Terrestrial Ecosystem Mapping",
+                "description": "Aerial survey using hyperspectral imagers onboard UAVs.",
+                "site": "Trough Lake",
+                "principal investigator": "Lee, C.",
+                "email": "charles.lee@waikato.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.453306,
+                    -78.295703
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,138 @@
+{
+  "type": "FeatureCollection",
+  "name": "K881B",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K881B",
+            "name": "Soil and Climate Station",
+            "site": "Don Juan Pond",
+            "principal investigator": "Katurji, M.",
+            "email": "marwan.katurji@canterbury.ac.nz",
+            "status": "Decommissioned"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              161.238778,
+              -77.573889
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K881B",
+            "name": "Soil and Climate Station",
+            "site": "Marble Point",
+            "principal investigator": "Katurji, M.",
+            "email": "marwan.katurji@canterbury.ac.nz",
+            "status": "Decommissioned"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              163.682722,
+              -77.419583
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K881B",
+            "name": "Soil and Climate Station",
+            "site": "Minna Bluff",
+            "principal investigator": "Katurji, M.",
+            "email": "marwan.katurji@canterbury.ac.nz",
+            "status": "Decommissioned"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              166.766167,
+              -78.511556
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K881B",
+            "name": "Soil and Climate Station",
+            "site": "Bull Pass",
+            "principal investigator": "Katurji, M.",
+            "email": "marwan.katurji@canterbury.ac.nz",
+            "status": "Decommissioned"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              161.862694,
+              -77.518472
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K881B",
+            "name": "Soil and Climate Station",
+            "site": "Bull Pass East",
+            "principal investigator": "Katurji, M.",
+            "email": "marwan.katurji@canterbury.ac.nz",
+            "status": "Decommissioned"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              162.06475000,
+              -77.50219444
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K881B",
+            "name": "Borehole Ground Temperature Station",
+            "site": "Bull Pass",
+            "principal investigator": "Katurji, M.",
+            "email": "marwan.katurji@canterbury.ac.nz",
+            "status": "Decommissioned"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              161.851167,
+              -77.518083
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K881B",
+            "name": "Borehole Ground Temperature Station",
+            "site": "Marble Point",
+            "principal investigator": "Katurji, M.",
+            "email": "marwan.katurji@canterbury.ac.nz",
+            "status": "Decommissioned"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              163.729133,
+              -77.407316
+            ]
+          }
+        }
+      ]
+    }

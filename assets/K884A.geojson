@@ -24,6 +24,42 @@
           -77.842227
         ]
       }
+    },
+	{
+      "type": "Feature",
+      "properties": {
+        "event": "K884A",
+        "name": "Sponge Sampling and Experiments",
+		    "site": "Arrival Heights",
+        "principal investigator": "Tait, L.",
+        "email": "leight.tait@earthsciences.nz",
+        "status": "Planned"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.637389,
+          -77.842227
+        ]
+      }
+    },
+	{
+      "type": "Feature",
+      "properties": {
+        "event": "K884A",
+        "name": "Sponge Sampling and Experiments",
+		    "site": "Cape Armitage",
+        "principal investigator": "Tait, L.",
+        "email": "leight.tait@earthsciences.nz",
+        "status": "Planned"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.6833,
+          -77.86028
+        ]
+      }
     }
   ]
 }

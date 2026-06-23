@@ -12,8 +12,27 @@
         "type": "Feature",
         "properties": {
           "event": "",
+          "name": "Hauwai20 Automatic Sampler",
+          "description": "To determine present-day spatial and temporal variability in key ecosystem characteristics across land-coast-ocean communities and attribute biological patterns to key environmental drivers.",
+          "site": "Scott Base",
+          "principal investigator": "Charlie Lee",
+          "email": "charles.lee@waikato.ac.nz",
+          "status": "Planned"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            166.77,
+            -77.85
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "event": "",
           "name": "PAMS Fluorometer",
-          "measurement": "Chlorophyll fluorescence",
+          "description": "To measure chlorophyll fluorescence.",
           "site": "Scott Base",
           "principal investigator": "Green, T.G.A.",
           "email": "greentga@waikato.ac.nz",
@@ -32,7 +51,7 @@
       "properties": {
         "event": "K055A",
         "name": "Microrain Radar Instrument",
-        "measurement": "Snowfall and vertical wind measurements",
+        "description": "To measure snowfall and vertical wind measurements.",
         "site": "Scott Base",
         "principal investigator": "McDonald, A.",
         "email": "adrian.mcdonald@canterbury.ac.nz",
@@ -51,7 +70,7 @@
       "properties": {
         "event": "K055A",
         "name": "Middle Frequency Radar",
-        "measurement": "Dynamics and ionisation in the middle atmosphere",
+        "description": "To measure dynamics and ionisation in the middle atmosphere.",
         "site": "Scott Base",
         "principal investigator": "McDonald, A.",
         "email": "adrian.mcdonald@canterbury.ac.nz",
@@ -70,7 +89,7 @@
       "properties": {
         "event": "K060A",
         "name": "Very Low Frequency Radio Sensor",
-        "measurement": "Lightning discharges",
+        "description": "To measure lightning discharges.",
         "site": "Scott Base",
         "principal investigator": "Rodger, C.",
         "email": "craig.rodger@otago.ac.nz",
@@ -90,7 +109,7 @@
             "event": "K085A",
             "name": "Microwave Chlorine Monoxide Millimeter Wave Spectrometer",
             "site": "Scott Base",
-            "measurement": "Chlorine monoxide",
+            "description": "To measure chlorine monoxide.",
             "principal investigator": "Smale, D.",
             "email": "dan.smale@earthsciences.nz",
             "status": "Active"
@@ -108,7 +127,7 @@
           "properties": {
             "event": "K085A",
             "name": "AERI: Atmospheric Emission Radiation Interferometer",
-            "measurement": "Atmospheric down-welling thermal infrared radiance",
+            "description": "To measure atmospheric down-welling thermal infrared radiance.",
             "site": "Scott Base",
             "principal investigator": "Smale, D.",
             "email": "dan.smale@earthsciences.nz",
@@ -128,7 +147,7 @@
           "properties": {
             "event": "K085A",
             "name": "CNR4 and SI-411 Radiometers",
-            "measurement": "Surface radiative balance",
+            "description": "To measure surface radiative balance.",
             "site": "Scott Base",
             "principal investigator": "Smale, D.",
             "email": "dan.smale@earthsciences.nz",
@@ -147,7 +166,7 @@
           "properties": {
             "event": "K085A",
             "name": "SMOL-X: Lidar",
-            "measurement": "Atmospheric profiles of ozone, temperature and aerosols",
+            "description": "To record atmospheric profiles of ozone, temperature and aerosols.",
             "site": "Scott Base",
             "principal investigator": "Smale, D.",
             "email": "dan.smale@earthsciences.nz",
@@ -185,7 +204,7 @@
             "event": "K102A",
             "name": "Geomagnetic Instrument",
             "site": "Scott Base",
-            "measurement": "Magnetic field",
+            "description": "Magnetic field measurements.",
             "principal investigator": "Petersen, T.",
             "email": "t.petersen@gns.cri.nz",
             "status": "Active"
@@ -203,7 +222,7 @@
           "properties": {
             "event": "K150A",
             "name": "Tide Gauge",
-            "measurement": "Sea level",
+            "description": "To measure sea level.",
             "site": "Scott Base",
             "principal investigator": "Collett, D.",
             "email": "dcollett@linz.govt.nz",
@@ -222,6 +241,7 @@
           "properties": {
             "event": "K150A",
             "name": "GNSS Station",
+            "description": "Support New Zealand's geodetic datum maintenance, national deformation modelling, and connection to the global terrestrial reference frame.",
             "site": "Scott Base",
             "principal investigator": "Collett, D.",
             "email": "dcollett@linz.govt.nz",

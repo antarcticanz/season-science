@@ -1,0 +1,28 @@
+{
+    "type": "FeatureCollection",
+    "name": "K089A",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K089A",
+                "name": "AWS",
+                "site": "Scott Base",
+                "principal investigator": "Jeremy Rutherford",
+                "email": "jeremy.rutherford@earthsciences.nz",
+                "status": "Active",
+                "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/ef4e2c24-71e9-44d8-833d-bae7376f0a20"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [166.77, -77.85]
+            }
+        }
+    ]
+}

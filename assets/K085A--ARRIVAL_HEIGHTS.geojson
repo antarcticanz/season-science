@@ -1,0 +1,101 @@
+{
+    "type": "FeatureCollection",
+    "name": "K085A",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K085A",
+                "name": "In Situ Flask and Cylinder Air Sampling",
+                "description": "Measurement of greenhouse gases and isotopes.",
+                "site": "Arrival Heights",
+                "principal investigator": "Smale, D.",
+                "email": "dan.smale@earthsciences.nz",
+                "status": "Active",
+                "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/c912b420-66fc-4724-ae9a-c452fca9e09c"
+
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [166.67, -77.83]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K085A",
+                "name": "Dobson Spectrophotometer",
+                "description": "Measurement of total column ozone measurements.",
+                "site": "Arrival Heights",
+                "principal investigator": "Smale, D.",
+                "email": "dan.smale@earthsciences.nz",
+                "status": "Active",
+                "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/ea482f08-ee91-4cf5-a570-5526e378cdeb"
+
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [166.67, -77.83]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K085A",
+                "name": "Airyx & Envimeas Instruments",
+                "description": "Measurement of nitrogen dioxide, chlorine dioxide, bromine oxide, ozone.",
+                "site": "Arrival Heights",
+                "principal investigator": "Smale, D.",
+                "email": "dan.smale@earthsciences.nz",
+                "status": "Active",
+                "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/0fd089eb-d4aa-4b02-8707-90107aa81e4c"
+
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [166.67, -77.83]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K085A",
+                "name": "Ally-Sky Camera Systems",
+                "description": "Sky imagery and cloud coverage measurements.",
+                "site": "Arrival Heights",
+                "principal investigator": "Smale, D.",
+                "email": "dan.smale@earthsciences.nz",
+                "status": "Active",
+                "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/cd8e7960-f192-49b3-bf2b-0be7cabf8053"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [166.67, -77.83]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K085A",
+                "name": "Far- and Mid- Infrared FTS Measurements",
+                "description": "Measurement of greenhouse and Ozone Depleting Gases (O3, HCl, N2O, CH4, HNO3, ClONO2, HCN, HF, OCS, CO, C2H6, CFC-11, CFC-12, COF2 + Others).",
+                "site": "Arrival Heights",
+                "principal investigator": "Smale, D.",
+                "email": "dan.smale@earthsciences.nz",
+                "status": "Active",
+                "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/6a7b389a-c8e9-4c56-b603-0f179bac90ab"
+
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [166.67, -77.83]
+            }
+        }
+    ]
+}

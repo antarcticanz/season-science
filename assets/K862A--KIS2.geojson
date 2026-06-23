@@ -14,6 +14,7 @@
         "event": "K862A",
         "site": "Kamb Ice Stream 2",
         "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
         "principal investigator": "Levy, R.",
         "email": "r.levy@gns.cri.nz",
         "status": "Active"

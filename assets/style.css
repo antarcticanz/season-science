@@ -1,32 +1,108 @@
 /* Optional: title font */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
-/* Page + Dash mount */
+/* ================================================================
+   DESIGN TOKENS — all colour values are defined here once and
+   used everywhere below via var(). No raw hex values appear
+   outside this :root block.
+   ================================================================ */
+:root {
+  /* Backgrounds — darkest to lightest */
+  --color-bg-base:             #0b0f14; /* html, body, app shell, map background */
+  --color-bg-surface:          #111820; /* sidebar, title-pane */
+  --color-bg-elevated:         #18222e; /* popup, basemap panel */
+  --color-bg-control:          #1c2a38; /* zoom buttons, layers btn, bulk btns */
+  --color-bg-control-hover:    #253648; /* hover on all control buttons */
+
+  /* Borders */
+  --color-border-subtle:       #1f2e3d; /* dividers, popup borders, nested indent */
+  --color-border-control:      #2c4055; /* border on buttons */
+
+  /* Text */
+  --color-text-primary:        #dce8f0; /* all primary labels, headings, values */
+  --color-text-muted:          #6e8fa8; /* secondary text — section headings, indicators */
+  --color-text-inverse:        #dce8f0; /* text on dark active bm state */
+
+  /* Accent — export button */
+  --color-accent-export:       #3a94d4;
+  --color-accent-export-hover: #1f6090;
+
+  /* Basemap active state */
+  --color-active-bm:           #1f3c58;
+  --color-active-bm-text:      #dce8f0;
+
+  /* Status badges */
+  --color-badge-default-bg:    rgba(220, 232, 240, 0.10);
+  --color-badge-default-text:  #dce8f0;
+  --color-badge-active-bg:     rgba(32, 197, 41, 0.15);
+  --color-badge-active-text:   #4dd966;
+  --color-badge-planned-bg:    rgba(56, 152, 255, 0.15);
+  --color-badge-planned-text:  #6ab4ff;
+  --color-badge-wishlist-bg:   rgba(255, 165, 30, 0.15);
+  --color-badge-wishlist-text: #ffb347;
+
+  /* Feedback */
+  --color-copy-success:        #4dd966;
+
+  /* Scrollbar */
+  --color-scrollbar-track:        #0e1720;
+  --color-scrollbar-thumb:        #2c4055;
+  --color-scrollbar-thumb-hover:  #3d5a77;
+}
+
+/* ================================================================
+   GLOBAL SCROLLBAR — dark-themed, applies to the whole page
+   ================================================================ */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-scrollbar-thumb);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-scrollbar-thumb-hover);
+}
+
+/* ================================================================
+   PAGE + DASH MOUNT
+   ================================================================ */
 html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: #000;
+  background: var(--color-bg-base);
 }
 
 #react-entry-point {
   height: 100%;
 }
 
-/* App layout */
+/* ================================================================
+   APP LAYOUT
+   ================================================================ */
 .app-root {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #000;
+  background: var(--color-bg-base);
   overflow: hidden;
 }
 
-/* Header */
+/* ================================================================
+   HEADER
+   ================================================================ */
 .title-pane {
-  background: #F0F2F4;
-  border-bottom: 1px solid #C7D2DB;
+  background: var(--color-bg-surface);
+  border-bottom: 1px solid var(--color-border-subtle);
   padding: 10px 16px;
   display: flex;
   align-items: center;
@@ -42,130 +118,98 @@ body {
 /* Title — page header */
 .title-pane__title {
   font-family: "Inter", system-ui, sans-serif;
-  font-size: clamp(1.1rem, 1.4vw, 1.5rem);
-  /* responsive, not too large */
+  font-size: clamp(1.1rem, 1.4vw, 1.5rem); /* responsive, not too large */
   font-weight: 600;
   letter-spacing: -0.2px;
-  color: #2F3A40;
+  color: var(--color-text-primary);
 }
 
-/* Body row: sidebar + map */
+/* ================================================================
+   BODY ROW: sidebar + map
+   ================================================================ */
 .body-row {
   flex: 1 1 auto;
   display: flex;
   min-height: 0;
-  background: #000;
+  background: var(--color-bg-base);
 }
 
-/* Sidebar */
+/* ================================================================
+   SIDEBAR
+   ================================================================ */
 .sidebar {
-  width: 280px;
-  flex: 0 0 280px;
-  background: #F0F2F4;
-  border-right: 1px solid #C7D2DB;
+  width: 320px;
+  flex: 0 0 320px;
+  background: var(--color-bg-surface);
+  border-right: 1px solid var(--color-border-subtle);
   padding: 12px;
-  color: #2F3A40;
+  color: var(--color-text-primary);
   overflow-y: auto;
   min-height: 0;
   font-family: "Inter", system-ui, sans-serif;
+  /* Firefox scrollbar */
+  scrollbar-color: var(--color-scrollbar-thumb) transparent;
+  scrollbar-width: thin;
 }
 
-/* Sidebar heading */
+/* ----- Section headings ----- */
+/* Uppercase, tracked, small, muted — reads as category label, not content */
 .sidebar__heading {
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.2px;
-  margin: 0 0 12px 0;
-  color: #2F3A40;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 10px 0;
+  color: var(--color-text-muted);
+  padding-top: 4px; /* visual separation from preceding divider */
 }
 
-/* Divider */
+/* Extra breathing room above non-first section headings */
+.sidebar__heading--section {
+  margin-top: 18px;
+}
+
+/* ================================================================
+   DIVIDERS — reduced visual weight for dark theme
+   ================================================================ */
 .sidebar__hr {
   border: none;
   height: 1px;
-  background: #C7D2DB;
+  background: var(--color-border-subtle);
   margin: 14px 0;
 }
 
-/* Map area */
+/* Extra margin above and below the hr that precedes the export button */
+.sidebar__hr--export {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+/* ================================================================
+   MAP AREA
+   ================================================================ */
 .map-frame {
   flex: 1 1 auto;
   min-height: 0;
   display: flex;
-  background: #000;
+  background: var(--color-bg-base);
 }
 
 .map {
   width: 100%;
   height: 100%;
-  background: #1a1a1a;
+  background: var(--color-bg-base);
 }
 
-/* OpenLayers popup card */
-.ol-popup {
-  position: absolute;
-  background: #ffffff;
-  border: 1px solid #C7D2DB;
-  border-radius: 6px;
-  padding: 10px 12px;
-  width: 360px;
-  /* fixed width — never resizes */
-  min-height: 160px;
-  /* fixed min-height — prevents jump between pages */
-  box-sizing: border-box;
-  font-family: "Inter", system-ui, sans-serif;
-  font-size: 0.85rem;
-  color: #2F3A40;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
-  z-index: 1000;
-  pointer-events: auto;
-  white-space: normal;
-  /* allow wrapping */
-  word-break: break-word;
-}
-
-.copy-email-btn {
-  background: transparent;
-  border: none;
-  padding: 2px;
-  cursor: pointer;
-  color: #6B7C86;
-}
-
-.copy-email-btn:hover {
-  color: #2F3A40;
-}
-
-.copy-email-btn.copied {
-  color: #2E7D32;
-}
-
-.ol-popup__content {
-  line-height: 1.5;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.popup-title {
-  font-weight: 600;
-  margin-bottom: 6px;
-  padding-bottom: 4px;
-  border-bottom: 1px solid #E3E9EE;
-}
-
-.ol-popup strong {
-  font-weight: 600;
-}
-
-/* ----- Checklist & Nested Styling ----- */
+/* ================================================================
+   CHECKLIST & NESTED STYLING
+   ================================================================ */
 
 /* Parent checklist items */
 .layer-checklist {
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  /* space between parent items */
+  gap: 3px; /* space between parent items */
   margin-bottom: 6px;
 }
 
@@ -173,30 +217,35 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #2F3A40;
+  color: var(--color-text-primary);
   cursor: pointer;
   user-select: none;
-  font-size: 0.95rem;
+  font-size: 0.88rem;
+  font-weight: 400;
+}
+
+/* Subtle brightness lift on hover — no background change */
+.layer-checklist__label:hover {
+  color: #ffffff;
 }
 
 .layer-checklist__input {
   width: 16px;
   height: 16px;
-  accent-color: #7FDBFF;
+  accent-color: #7FDBFF; /* sky-blue fallback — legible on dark surface */
 }
 
 /* Nested checklists wrapper */
 .nested-wrap {
-  margin-left: 22px;
-  /* indent under parent */
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-left: 22px; /* indent under parent */
+  margin-top: 0;
+  margin-bottom: 0;
   padding-left: 0;
-  border-left: 2px solid #e5e7eb;
+  border-left: 2px solid var(--color-border-subtle);
 }
 
 /* Remove vertical gaps inside nested checklists */
-.layer-checklist--nested>div {
+.layer-checklist--nested > div {
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -205,7 +254,7 @@ body {
   display: flex;
   align-items: center;
   margin: 0 !important;
-  padding: 0 !important;
+  padding: 3px 0 !important; /* minimum 24px hit target height */
   line-height: 1.2;
 }
 
@@ -218,86 +267,13 @@ body {
 }
 
 /* Space between parent and nested wrap */
-.layer-checklist+.nested-wrap {
+.layer-checklist + .nested-wrap {
   margin-top: 2px;
 }
 
-
-.popup-email {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
-  /* wrap long email addresses onto next line */
-  word-break: break-all;
-}
-
-/* ----- Status badges in popup ----- */
-.status-badge {
-  display: inline-block;
-  padding: 1px 7px;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  background: #E3E9EE;
-  color: #2F3A40;
-}
-
-.status-badge--active {
-  background: rgba(32, 197, 41, 0.12);
-  color: rgba(39, 179, 74, 0.877);
-}
-
-.status-badge--wishlist {
-  background: rgba(255, 99, 71, 0.15);
-  color: rgb(230, 142, 28);
-}
-
-/* ----- Popup pagination controls ----- */
-.popup-pagination {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 8px;
-  padding-bottom: 6px;
-  border-bottom: 1px solid #E3E9EE;
-}
-
-.popup-nav-btn {
-  background: #F0F2F4;
-  border: 1px solid #C7D2DB;
-  border-radius: 4px;
-  padding: 2px 8px;
-  cursor: pointer;
-  font-size: 0.85rem;
-  color: #2F3A40;
-  line-height: 1.4;
-  transition: background 0.15s;
-}
-
-.popup-nav-btn:hover:not(:disabled) {
-  background: #C7D2DB;
-}
-
-.popup-nav-btn:disabled {
-  opacity: 0.35;
-  cursor: default;
-}
-
-.popup-page-indicator {
-  font-size: 0.8rem;
-  color: #6B7C86;
-  font-weight: 500;
-}
-
-/* ----- Status badge: planned ----- */
-.status-badge--planned {
-  background: rgba(30, 144, 255, 0.12);
-  color: rgb(20, 100, 200);
-}
-
-/* ----- Select all / Deselect all ----- */
+/* ================================================================
+   BULK ACTIONS — ghost treatment for dark theme
+   ================================================================ */
 .sidebar__bulk-actions {
   display: flex;
   gap: 6px;
@@ -306,29 +282,244 @@ body {
 
 .sidebar__bulk-btn {
   flex: 1;
-  background: #F0F2F4;
-  border: 1px solid #C7D2DB;
+  background: var(--color-bg-control);
+  border: 1px solid var(--color-border-control);
   border-radius: 4px;
   padding: 3px 8px;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
+  font-weight: 500;
   font-family: "Inter", system-ui, sans-serif;
-  color: #2F3A40;
+  color: var(--color-text-primary);
   cursor: pointer;
   text-align: center;
   transition: background 0.15s;
 }
 
 .sidebar__bulk-btn:hover {
-  background: #C7D2DB;
+  background: var(--color-bg-control-hover);
+  border-color: #3d5a77;
 }
+
+/* ================================================================
+   EXPORT BUTTON — accent ice-blue treatment
+   ================================================================ */
+.sidebar__export-wrap {
+  margin-top: 4px;
+}
+
+.sidebar__export-btn {
+  width: 100%;
+  background: var(--color-accent-export);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 7px 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: "Inter", system-ui, sans-serif;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.15s;
+  letter-spacing: 0.1px;
+}
+
+.sidebar__export-btn:hover {
+  background: var(--color-accent-export-hover);
+}
+
+/* ================================================================
+   OL POPUP CARD
+   ================================================================ */
+.ol-popup {
+  position: absolute;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 6px;
+  padding: 10px 36px 10px 12px;
+  width: 360px;       /* fixed width — never resizes */
+  min-height: 160px;  /* fixed min-height — prevents jump between pages */
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: var(--color-text-primary);
+  /* heavier shadow than light theme — dark popups need contrast to lift off dark map */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+  z-index: 1000;
+  pointer-events: auto;
+  white-space: normal; /* allow wrapping */
+  word-break: break-word;
+}
+
+.ol-popup__close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  line-height: 1;
+  padding: 2px 5px;
+  border-radius: 3px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.ol-popup__close:hover {
+  color: var(--color-text-primary);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.ol-popup__content {
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.popup-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-text-primary);
+  margin-bottom: 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+/* Field labels inside popup */
+.ol-popup strong {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* Field values (plain text) inherit popup color — var(--color-text-primary) */
 
 .popup-site {
   margin-bottom: 2px;
 }
-/* ================================================================
-   OL map controls — zoom + layers button, right-aligned
-   ================================================================ */
 
+.popup-email {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;   /* wrap long email addresses onto next line */
+  word-break: break-all;
+}
+
+.popup-info {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.popup-info-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.82rem;
+  color: var(--color-accent-export);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.popup-info-link:hover {
+  color: var(--color-text-primary);
+  text-decoration: underline;
+}
+
+/* ================================================================
+   STATUS BADGES
+   ================================================================ */
+.status-badge {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  background: var(--color-badge-default-bg);
+  color: var(--color-badge-default-text);
+}
+
+.status-badge--active {
+  background: var(--color-badge-active-bg);
+  color: var(--color-badge-active-text);
+}
+
+.status-badge--planned {
+  background: var(--color-badge-planned-bg);
+  color: var(--color-badge-planned-text);
+}
+
+.status-badge--wishlist {
+  background: var(--color-badge-wishlist-bg);
+  color: var(--color-badge-wishlist-text);
+}
+
+/* ================================================================
+   POPUP PAGINATION CONTROLS
+   ================================================================ */
+.popup-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.popup-nav-btn {
+  background: var(--color-bg-control);
+  border: 1px solid var(--color-border-control);
+  border-radius: 4px;
+  padding: 2px 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--color-text-primary);
+  line-height: 1;
+  transition: background 0.15s;
+}
+
+.popup-nav-btn:hover:not(:disabled) {
+  background: var(--color-bg-control-hover);
+}
+
+.popup-nav-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.popup-page-indicator {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  line-height: 1;
+}
+
+/* ================================================================
+   COPY EMAIL BUTTON
+   ================================================================ */
+.copy-email-btn {
+  background: transparent;
+  border: none;
+  padding: 2px;
+  cursor: pointer;
+  color: var(--color-text-muted);
+}
+
+.copy-email-btn:hover {
+  color: var(--color-text-primary);
+}
+
+.copy-email-btn.copied {
+  color: var(--color-copy-success);
+}
+
+/* ================================================================
+   OL MAP CONTROLS — zoom + layers button, right-aligned
+   ================================================================ */
 .ol-zoom {
   top: 12px;
   left: auto !important;
@@ -350,9 +541,9 @@ body {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  background: #ffffff !important;
-  color: #2F3A40 !important;
-  border: 1px solid #C7D2DB !important;
+  background: var(--color-bg-control) !important;
+  color: var(--color-text-primary) !important;
+  border: 1px solid var(--color-border-control) !important;
   border-radius: 4px !important;
   cursor: pointer !important;
   padding: 0 !important;
@@ -362,9 +553,12 @@ body {
 
 .ol-zoom .ol-zoom-in:hover,
 .ol-zoom .ol-zoom-out:hover {
-  background: #F0F2F4 !important;
+  background: var(--color-bg-control-hover) !important;
 }
 
+/* NOTE: Do NOT add ol-unselectable class to this control — OL sets
+   pointer-events:none on it, which swallows all clicks and makes the
+   button invisible to the mouse. */
 .ol-layers-control {
   position: absolute;
   top: 92px;
@@ -376,32 +570,35 @@ body {
 .ol-layers-btn {
   width: 34px !important;
   height: 34px !important;
-  background: #ffffff;
-  border: 1px solid #C7D2DB;
+  background: var(--color-bg-control);
+  border: 1px solid var(--color-border-control);
   border-radius: 4px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #2F3A40;
+  color: var(--color-text-primary);
   padding: 0;
   transition: background 0.15s;
   box-sizing: border-box;
 }
 
 .ol-layers-btn:hover {
-  background: #F0F2F4;
+  background: var(--color-bg-control-hover);
 }
 
+/* ================================================================
+   BASEMAP PANEL
+   ================================================================ */
 .bm-panel {
   position: absolute;
   top: 0;
   right: 42px;
   left: auto;
-  background: #ffffff;
-  border: 1px solid #C7D2DB;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-subtle);
   border-radius: 6px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
   padding: 8px;
   min-width: 150px;
   font-family: "Inter", system-ui, sans-serif;
@@ -410,14 +607,14 @@ body {
 }
 
 .bm-panel__heading {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  color: #6B7C86;
+  color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 6px;
   padding-bottom: 5px;
-  border-bottom: 1px solid #E3E9EE;
+  border-bottom: 1px solid var(--color-border-subtle);
 }
 
 .bm-option {
@@ -430,68 +627,23 @@ body {
   text-align: left;
   font-size: 0.85rem;
   font-family: "Inter", system-ui, sans-serif;
-  color: #2F3A40;
+  color: var(--color-text-primary);
   cursor: pointer;
   transition: background 0.12s;
 }
 
 .bm-option:hover {
-  background: #F0F2F4;
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .bm-option--active {
-  background: #2F3A40;
-  color: #ffffff;
+  background: var(--color-active-bm);
+  color: var(--color-active-bm-text);
   font-weight: 600;
   cursor: default;
   border-radius: 4px;
 }
 
 .bm-option--active:hover {
-  background: #2F3A40;
-}
-
-/* ----- Export GeoJSON button ----- */
-.sidebar__export-wrap {
-  margin-top: 4px;
-}
-
-/* Extra breathing room above the Camp Sites section heading */
-.sidebar__heading--section {
-  margin-top: 10px;
-}
-
-/* More space between the export hr and the export button */
-.sidebar__hr--export {
-  margin-bottom: 20px;
-}
-
-.sidebar__export-btn {
-  width: 100%;
-  background: #2F3A40;
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  padding: 7px 10px;
-  font-size: 0.8rem;
-  font-family: "Inter", system-ui, sans-serif;
-  cursor: pointer;
-  text-align: center;
-  transition: background 0.15s;
-  letter-spacing: 0.1px;
-}
-
-.sidebar__export-btn:hover {
-  background: #4A5A62;
-}
-
-/* Extra top margin on the Camp Sites heading to space it from Science Events */
-.sidebar__heading--section {
-  margin-top: 18px;
-}
-
-/* Extra margin above and below the hr that precedes the export button */
-.sidebar__hr--export {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  background: var(--color-active-bm); /* no change on hover for active */
 }

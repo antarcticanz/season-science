@@ -1,0 +1,354 @@
+{
+    "type": "FeatureCollection",
+    "name": "Pyramid Trough",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K020A",
+                "name": "Soil and Permafrost Sampling",
+                "description": "Sample surface soils.",
+                "site": "Pyramid Trough",
+                "principal investigator": "McDonald, I.",
+                "email": "ian.mcdonald@waikato.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.453306,
+                    -78.295703
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K020A",
+                "name": "Soil and Permafrost Sampling",
+                "description": "Permafrost/subsurface soil sampling; including high altitude (>2000m) air sampling.",
+                "site": "Pyramid Trough",
+                "principal investigator": "McDonald, I.",
+                "email": "ian.mcdonald@waikato.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.453306,
+                    -78.295703
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K020A",
+                "name": "Soil and Permafrost Sampling",
+                "description": "Aerosol sampling at ground level and at high altitude (>2000m).",
+                "site": "Pyramid Trough",
+                "principal investigator": "McDonald, I.",
+                "email": "ian.mcdonald@waikato.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.453306,
+                    -78.295703
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K020A",
+                "name": "Soil and Permafrost Sampling",
+                "description": "Sample surface soils.",
+                "site": "Trough Lake",
+                "principal investigator": "McDonald, I.",
+                "email": "ian.mcdonald@waikato.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.453306,
+                    -78.295703
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K020A",
+                "name": "Soil and Permafrost Sampling",
+                "description": "Permafrost/subsurface soil sampling; including high altitude (>2000m) air sampling.",
+                "site": "Trough Lake",
+                "principal investigator": "McDonald, I.",
+                "email": "ian.mcdonald@waikato.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.453306,
+                    -78.295703
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K020A",
+                "name": "Soil and Permafrost Sampling",
+                "description": "Aerosol sampling at ground level and at high altitude (>2000m).",
+                "site": "Trough Lake",
+                "principal investigator": "McDonald, I.",
+                "email": "ian.mcdonald@waikato.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.453306,
+                    -78.295703
+                ]
+            }
+        },        
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K026A",
+                "name": "Terrestrial Ecosystem Mapping",
+                "description": "Spectral sampling using handheld spectrometers.",
+                "site": "Trough Lake",
+                "principal investigator": "Lee, C.",
+                "email": "charles.lee@waikato.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.453306,
+                    -78.295703
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K026A",
+                "name": "Terrestrial Ecosystem Mapping",
+                "description": "Biological sampling of vegetation for molecular analyses.",
+                "site": "Trough Lake",
+                "principal investigator": "Lee, C.",
+                "email": "charles.lee@waikato.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.453306,
+                    -78.295703
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K026A",
+                "name": "Terrestrial Ecosystem Mapping",
+                "description": "Aerial survey using hyperspectral imagers onboard UAVs.",
+                "site": "Trough Lake",
+                "principal investigator": "Lee, C.",
+                "email": "charles.lee@waikato.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.453306,
+                    -78.295703
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K894A",
+                "name": "Lake Level Monitoring",
+                "description": "To establish a new benchmark at Lake Vanda to allow ongoing monitoring of lake level rise.",
+                "site": "Pyramid Trough",
+                "principal investigator": "Hawes, I.",
+                "email": "ian.hawes@waikato.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.453306,
+                    -78.295703
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K894A",
+                "name": "Sensor Transect Deployment",
+                "description": "To record soil temperature and summer water content.",
+                "site": "Pyramid Trough",
+                "principal investigator": "Hawes, I.",
+                "email": "ian.hawes@waikato.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.453306,
+                    -78.295703
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K894A",
+                "name": "Vegetation Transects",
+                "description": "To establish a series of transects through natural wetness gradients in the Pyramid Trough wetlands and document the vegetation present and the elevation.",
+                "site": "Pyramid Trough",
+                "principal investigator": "Hawes, I.",
+                "email": "ian.hawes@waikato.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.453306,
+                    -78.295703
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K894A",
+                "name": "Cyanobacterial Reflectance Measurements",
+                "description": "Use robotic and manual techniques to assess the spectral reflectance of cyanobacterial and moss communities at the Boulder Pavement and Pyramid Trough.",
+                "site": "Pyramid Trough",
+                "principal investigator": "Hawes, I.",
+                "email": "ian.hawes@waikato.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.453306,
+                    -78.295703
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K893A",
+                "name": "AWS Install",
+                "description": "Measure energy balance gradients with elevation by installing one automatic weather station and auxiliary environmental measurements.",
+                "site": "Pyramid Trough",
+                "principal investigator": "MacDonnell, S..",
+                "email": "shelly.macdonnell@canterbury.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.453306,
+                    -78.295703
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K893A",
+                "name": "Soil Moisture Sensors and Stream Pressure Transducers",
+                "description": "Install soil moisture sensors and stream pressure transducers to evaluate wetness distribution and hydrological connectivity.",
+                "site": "Pyramid Trough",
+                "principal investigator": "MacDonnell, S..",
+                "email": "shelly.macdonnell@canterbury.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.453306,
+                    -78.295703
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K893A",
+                "name": "Discharge Gauging Sensors",
+                "description": "Install discharge gauging sensors to measure stream discharge.",
+                "site": "Pyramid Trough",
+                "principal investigator": "MacDonnell, S..",
+                "email": "shelly.macdonnell@canterbury.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.453306,
+                    -78.295703
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K893A",
+                "name": "Snow Distribution",
+                "description": "Measure and monitor snow distribution with elevation using drones and automatic cameras.",
+                "site": "Pyramid Trough",
+                "principal investigator": "MacDonnell, S..",
+                "email": "shelly.macdonnell@canterbury.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                     163.453306,
+                    -78.295703
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K893A",
+                "name": "Snow and Water Sampling",
+                "description": "Take snow and water samples for isotope analysis.",
+                "site": "Pyramid Trough",
+                "principal investigator": "MacDonnell, S..",
+                "email": "shelly.macdonnell@canterbury.ac.nz",
+                "status": "Planned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    163.453306,
+                    -78.295703
+                ]
+            }
+        }
+    ]
+}

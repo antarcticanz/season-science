@@ -14,6 +14,7 @@
         "event": "K862A", 
         "site": "Crary Ice Rise",
         "name": "GNSS and Total Station Geodetic Stations",
+        "desription": "To measure ice shelf movement.",
         "principal investigator": "Levy, R.",
         "email": "r.levy@gns.cri.nz",
         "status": "Active"
@@ -31,6 +32,7 @@
       "properties": {
         "event": "K862A", 
         "site": "Crary Ice Rise",
+        "description": "To measure ice shelf basal melt.",
         "name": "ApRES",
         "principal investigator": "Levy, R.",
         "email": "r.levy@gns.cri.nz",
