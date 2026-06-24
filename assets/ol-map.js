@@ -93,7 +93,7 @@ const LAYER_REGISTRY = [
   },
   {
     id: "K022A",
-    group: "K022A - Cyanobacteria",
+    group: "K022A - Mount Erebus",
     file: "K022A.geojson",
     status: "Planned",
     color: "rgba(255, 222, 33, 0.9)",
@@ -109,7 +109,7 @@ const LAYER_REGISTRY = [
   },
   {
     id: "K044A",
-    group: "K044A - Ice Core",
+    group: "K044A - Ice Cores",
     file: "K044A.geojson",
     status: "Planned",
     color: "rgba(45, 220, 175, 0.9)",
