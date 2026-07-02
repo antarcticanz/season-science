@@ -46,9 +46,28 @@ const LAYER_REGISTRY = [
   {
     id: "arrival_heights",
     group: "Arrival Heights",
-    file: "arrival_heights.geojson",
+    file: "ARRIVAL_HEIGHTS.geojson",
     status: "Active",
     color: "rgba(219, 135, 24, 0.9)",
+    zIndex: 15,
+    visible: true
+  },
+  {
+    id: "CRARY_ICE_RISE",
+    group: "Crary Ice Rise",
+    file: "CRARY_ICE_RISE.geojson",
+    status: "Active",
+    color: "rgba(219, 135, 24, 0.9)",
+    zIndex: 15,
+    visible: true
+  },
+  {
+    id: "KAMB_ICE_STREAM",
+    group: "Kamb Ice Stream",
+    file: "KAMB_ICE_STREAM.geojson",
+    status: "Active",
+    color: "rgba(219, 135, 24, 0.9)",
+    zIndex: 15,
     visible: true
   },
   {
@@ -57,14 +76,16 @@ const LAYER_REGISTRY = [
     file: "PYRAMID_TROUGH.geojson",
     status: "Active",
     color: "rgba(219, 135, 24, 0.9)",
+    zIndex: 15,
     visible: true
   },
   {
     id: "scott_base",
     group: "Scott Base",
-    file: "scott_base.geojson",
+    file: "SCOTT_BASE.geojson",
     status: "Active",
     color: "rgba(0, 180, 120, 0.9)",
+    zIndex: 15,
     visible: true
   },
   {
@@ -73,6 +94,8 @@ const LAYER_REGISTRY = [
     file: "K020A--BUDDAH_LAKE.geojson",
     status: "Buddah Lake",
     color: "rgba(230, 180, 50, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
@@ -81,6 +104,8 @@ const LAYER_REGISTRY = [
     file: "K020A--MINNA_BLUFF.geojson",
     status: "Minna Bluff",
     color: "rgba(230, 180, 50, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
@@ -89,14 +114,18 @@ const LAYER_REGISTRY = [
     file: "K020A--PYRAMID_TROUGH.geojson",
     status: "Pyramid Trough",
     color: "rgba(230, 180, 50, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
-    id: "K022A",
+    id: "K022A--PLANNED",
     group: "K022A - Mount Erebus",
-    file: "K022A.geojson",
+    file: "K022A--PLANNED.geojson",
     status: "Planned",
     color: "rgba(255, 222, 33, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
@@ -105,46 +134,58 @@ const LAYER_REGISTRY = [
     file: "K026A--PYRAMID_TROUGH.geojson",
     status: "Pyramid Trough",
     color: "rgba(205, 100, 205, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
-    id: "K044A",
+    id: "K026A--LAKE_FRYXELL",
+    group: "K026A - Ecosystem Mapping",
+    file: "K026A--LAKE_FRYXELL.geojson",
+    status: "Lake Fryxell",
+    color: "rgba(205, 100, 205, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
+    visible: true,
+  },
+  {
+    id: "K044A--PLANNED",
     group: "K044A - Ice Cores",
-    file: "K044A.geojson",
+    file: "K044A--PLANNED.geojson",
     status: "Planned",
     color: "rgba(45, 220, 175, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
-    id: "K053A",
+    id: "K053A--PLANNED",
     group: "K053A - Pack-Ice Survey",
-    file: "K053A.geojson",
+    file: "K053A--PLANNED.geojson",
     status: "Planned",
     color: "rgba(210, 90, 255, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
-    id: "K055A--SCOTT_BASE",
+    id: "K055A--PLANNED",
     group: "K055A - Atmospheric Dynamics",
-    file: "K055A--SCOTT_BASE.geojson",
-    status: "Scott Base",
+    file: "K055A--PLANNED.geojson",
+    status: "Planned",
     color: "rgba(100, 149, 237, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
-    id: "K060A--SCOTT_BASE",
+    id: "K060A--PLANNED",
     group: "K060A - VLF Sensors",
-    file: "K060A--SCOTT_BASE.geojson",
-    status: "Scott Base",
+    file: "K060A--PLANNED.geojson",
+    status: "Planned",
     color: "rgba(255, 140, 0, 0.9)",
-    visible: true,
-  },
-  {
-    id: "K060A--ARRIVAL_HEIGHTS",
-    group: "K060A - VLF Sensors",
-    file: "K060A--ARRIVAL_HEIGHTS.geojson",
-    status: "Arrival Heights",
-    color: "rgba(255, 140, 0, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
@@ -153,6 +194,8 @@ const LAYER_REGISTRY = [
     file: "K082A--BLOOD_FALLS.geojson",
     status: "Blood Falls",
     color: "rgba(40, 195, 200, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
@@ -161,6 +204,8 @@ const LAYER_REGISTRY = [
     file: "K082A--CAPE_EVANS.geojson",
     status: "Cape Evans",
     color: "rgba(40, 195, 200, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
@@ -169,6 +214,8 @@ const LAYER_REGISTRY = [
     file: "K082A--GRANITE_HARBOUR.geojson",
     status: "Granite Harbour",
     color: "rgba(40, 195, 200, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
@@ -177,6 +224,8 @@ const LAYER_REGISTRY = [
     file: "K082A--LAKE_FRYXELL.geojson",
     status: "Lake Fryxell",
     color: "rgba(40, 195, 200, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
@@ -185,6 +234,8 @@ const LAYER_REGISTRY = [
     file: "K082A--MCMURDO_SOUND.geojson",
     status: "McMurdo Sound",
     color: "rgba(40, 195, 200, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
@@ -193,102 +244,88 @@ const LAYER_REGISTRY = [
     file: "K082A--NEW_HARBOUR.geojson",
     status: "New Harbour",
     color: "rgba(40, 195, 200, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
-    id: "K085A--SCOTT_BASE",
+    id: "K085A--PLANNED",
     group: "K085A - Atmospheric Composition",
-    file: "K085A--SCOTT_BASE.geojson",
-    status: "Scott Base",
+    file: "K085A--PLANNED.geojson",
+    status: "Planned",
     color: "rgba(147, 112, 219, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
-    id: "K085A--ARRIVAL_HEIGHTS",
-    group: "K085A - Atmospheric Composition",
-    file: "K085A--ARRIVAL_HEIGHTS.geojson",
-    status: "Arrival Heights",
-    color: "rgba(147, 112, 219, 0.9)",
-    visible: true,
-  },
-  {
-    id: "K089A--SCOTT_BASE",
+    id: "K089A--PLANNED",
     group: "K089A - AWS",
-    file: "K089A--SCOTT_BASE.geojson",
-    status: "Scott Base",
+    file: "K089A--PLANNED.geojson",
+    status: "Planned",
     color: "rgba(64, 224, 208, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
-    id: "K089A--ARRIVAL_HEIGHTS",
-    group: "K089A - AWS",
-    file: "K089A--ARRIVAL_HEIGHTS.geojson",
-    status: "Arrival Heights",
-    color: "rgba(64, 224, 208, 0.9)",
-    visible: true,
-  },
-  {
-    id: "K102A",
+    id: "K102A--PLANNED",
     group: "K102A - Geomagnetic",
-    file: "K102A.geojson",
-    status: "Active",
+    file: "K102A--PLANNED.geojson",
+    status: "Planned",
     color: "rgba(65, 200, 130, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
-    id: "K150A",
+    id: "K150A--PLANNED",
     group: "K150A - GNSS & Tide Gauge",
-    file: "K150A.geojson",
-    status: "Active",
+    file: "K150A--PLANNED.geojson",
+    status: "Planned",
     color: "rgba(80, 160, 255, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
-    id: "K150B",
+    id: "K150B--PLANNED",
     group: "K150B - SouthPAN",
-    file: "K150B.geojson",
+    file: "K150B--PLANNED.geojson",
     status: "Planned",
     color: "rgba(165, 160, 255, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
-    id: "K170A",
+    id: "K170A--PLANNED",
     group: "K170A - AHT",
-    file: "K170A.geojson",
+    file: "K170A--PLANNED.geojson",
     status: "Planned",
     color: "rgba(235, 110, 65, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
-    id: "K850A",
+    id: "K500A--PLANNED",
+    group: "K500A - PAMS",
+    file: "K500A--PLANNED.geojson",
+    status: "Planned",
+    color: "rgba(0, 210, 230, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
+    visible: true,
+  },
+  {
+    id: "K850A--PLANNED",
     group: "K850A - Penguin Census",
-    file: "K850A.geojson",
+    file: "K850A--PLANNED.geojson",
     status: "Planned",
     color: "rgba(230, 100, 145, 0.9)",
-    visible: true,
-  },
-  {
-    id: "K862A--KIS2",
-    group: "K862A - ApRES & GNSS",
-    file: "K862A--KIS2.geojson",
-    status: "Kamb Ice Stream Site 2",
-    color: "rgba(160, 90, 230, 0.9)",
-    visible: true,
-  },
-  {
-    id: "K862A--KIS3",
-    group: "K862A - ApRES & GNSS",
-    file: "K862A--KIS3.geojson",
-    status: "Kamb Ice Stream Site 3",
-    color: "rgba(160, 90, 230, 0.9)",
-    visible: true,
-  },
-  {
-    id: "K862A--CIR",
-    group: "K862A - ApRES & GNSS",
-    file: "K862A--CIR.geojson",
-    status: "Crary Ice Rise",
-    color: "rgba(160, 90, 230, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
@@ -297,6 +334,8 @@ const LAYER_REGISTRY = [
     file: "K865A--ACTIVE.geojson",
     status: "Active",
     color: "rgba(225, 80, 150, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
@@ -305,6 +344,8 @@ const LAYER_REGISTRY = [
     file: "K865A--PLANNED.geojson",
     status: "Planned",
     color: "rgba(225, 80, 150, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
@@ -313,6 +354,8 @@ const LAYER_REGISTRY = [
     file: "K872B--ACTIVE.geojson",
     status: "Active",
     color: "rgba(220, 60, 60, 0.95)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
@@ -321,6 +364,8 @@ const LAYER_REGISTRY = [
     file: "K872B--PLANNED.geojson",
     status: "Planned",
     color: "rgba(220, 60, 60, 0.95)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
@@ -329,6 +374,8 @@ const LAYER_REGISTRY = [
     file: "K881B--ACTIVE.geojson",
     status: "Active",
     color: "rgba(25, 209, 40, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
@@ -337,6 +384,28 @@ const LAYER_REGISTRY = [
     file: "K881B--PLANNED.geojson",
     status: "Planned",
     color: "rgba(25, 209, 40, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
+    visible: true,
+  },
+  {
+    id: "K882B--PLANNED",
+    group: "K882B - Hauwai",
+    file: "K882B--PLANNED.geojson",
+    status: "Planned",
+    color: "rgba(255, 180, 100, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
+    visible: true,
+  },
+  {
+    id: "K884A--PLANNED",
+    group: "K884A - Sponges",
+    file: "K884A--PLANNED.geojson",
+    status: "Planned",
+    color: "rgba(180, 230, 100, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
@@ -345,6 +414,8 @@ const LAYER_REGISTRY = [
     file: "K891A--ACTIVE.geojson",
     status: "Active",
     color: "rgba(195, 220, 55, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
@@ -353,6 +424,8 @@ const LAYER_REGISTRY = [
     file: "K891A--PLANNED.geojson",
     status: "PLANNED",
     color: "rgba(195, 220, 55, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
@@ -361,6 +434,8 @@ const LAYER_REGISTRY = [
     file: "K893A--COMMONWEALTH_GLACIER.geojson",
     status: "Commonwealth Glacier",
     color: "rgba(130, 210, 70, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
@@ -369,6 +444,8 @@ const LAYER_REGISTRY = [
     file: "K893A--LOWER_WRIGHT_GLACIER.geojson",
     status: "Lower Wright Glacier",
     color: "rgba(130, 210, 70, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
@@ -377,14 +454,18 @@ const LAYER_REGISTRY = [
     file: "K893A--PYRAMID_TROUGH.geojson",
     status: "Pyramid Trough",
     color: "rgba(130, 210, 70, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
-    id: "K894A",
+    id: "K894A--PLANNED",
     group: "K894A - Terrestrial Survey",
-    file: "K894A.geojson",
+    file: "K894A--PLANNED.geojson",
     status: "Planned",
     color: "rgba(240, 170, 80, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
@@ -393,6 +474,8 @@ const LAYER_REGISTRY = [
     file: "ASP_MOORINGS-PLANNED_2027.geojson",
     status: "Planned",
     color: "rgba(30, 144, 255, 0.9)",
+    filterStatus: "planned",
+    zIndex: 20,
     visible: true,
   },
   {
@@ -402,6 +485,7 @@ const LAYER_REGISTRY = [
     season: "2023-24",
     color: "rgba(255, 165, 0, 0.92)",
     isCampSite: true,
+    zIndex: 5,
     visible: false,
   },
   {
@@ -411,6 +495,7 @@ const LAYER_REGISTRY = [
     season: "2024-25",
     color: "rgba(255, 120, 0, 0.92)",
     isCampSite: true,
+    zIndex: 5,
     visible: false,
   },
   {
@@ -420,6 +505,7 @@ const LAYER_REGISTRY = [
     season: "2025-26",
     color: "rgba(220, 80, 0, 0.92)",
     isCampSite: true,
+    zIndex: 5,
     visible: false,
   },
   {
@@ -428,6 +514,16 @@ const LAYER_REGISTRY = [
     file: "INSTALLATIONS_ACTIVE.geojson",
     status: "Active",
     color: "rgba(0, 200, 80, 0.95)",
+    zIndex: 10,
+    visible: false,
+  },
+  {
+    id: "instruments_offline",
+    group: "Instruments",
+    file: "computed/offline.geojson",
+    status: "Offline",
+    color: "rgba(255, 165, 0, 0.9)",
+    zIndex: 10,
     visible: false,
   },
   {
@@ -436,6 +532,7 @@ const LAYER_REGISTRY = [
     file: "INSTALLATIONS_DEACTIVATED.geojson",
     status: "Planned Removal",
     color: "rgba(255, 100, 0, 0.95)",
+    zIndex: 10,
     visible: false,
   },
 ];
@@ -465,6 +562,84 @@ function makeScaledPointStyle(fillColor) {
 }
 
 // ------------------------------------------------------------------
+// Active instruments event filter — module-scope so buildLayer and
+// setLayerVisibility can both reference it.
+// ------------------------------------------------------------------
+let __instruments_active_events__ = [];
+
+const instrumentsActiveStyleFn = (function () {
+  const cache = {};
+  return function (feature, resolution) {
+    if (__instruments_active_events__.length > 0) {
+      const evt = feature.get("event") || "";
+      if (!__instruments_active_events__.includes(evt)) return null;
+    }
+    const radius = Math.max(3, Math.min(10, 8000 / resolution));
+    const key = Math.round(radius);
+    if (!cache[key]) {
+      cache[key] = new ol.style.Style({
+        image: new ol.style.Circle({
+          radius,
+          fill: new ol.style.Fill({ color: "rgba(0, 200, 80, 0.95)" }),
+          stroke: new ol.style.Stroke({ color: "white", width: Math.max(1, radius / 3) }),
+        }),
+      });
+    }
+    return cache[key];
+  };
+})();
+
+// ------------------------------------------------------------------
+// Location layer dedup: hide features already shown by active science
+// event layers so the same point never renders twice.
+// ------------------------------------------------------------------
+const SCIENCE_EVENT_CODES = {}; // layerId → K-event code
+for (const entry of LAYER_REGISTRY) {
+  if (entry.filterStatus === "planned") {
+    const parts = (entry.group || "").split(" - ");
+    if (parts.length >= 2) SCIENCE_EVENT_CODES[entry.id] = parts[0].trim();
+  }
+}
+
+const LOCATION_LAYER_IDS = new Set([
+  "arrival_heights", "pyramid_trough", "scott_base",
+  "KAMB_ICE_STREAM", "CRARY_ICE_RISE",
+]);
+
+let __covered_event_codes__ = new Set();
+
+function refreshCoveredEventCodes() {
+  __covered_event_codes__ = new Set();
+  if (!window.__ol_map__) return;
+  window.__ol_map__.getLayers().getArray().forEach(function (layer) {
+    const id = layer.get("id");
+    if (SCIENCE_EVENT_CODES[id] !== undefined && layer.getVisible()) {
+      __covered_event_codes__.add(SCIENCE_EVENT_CODES[id]);
+    }
+  });
+}
+
+function makeLocationLayerStyle(fillColor) {
+  const cache = {};
+  return function (feature, resolution) {
+    const eventCode = feature.get("event") || "";
+    if (eventCode && __covered_event_codes__.has(eventCode)) return null;
+    const radius = Math.max(3, Math.min(10, 8000 / resolution));
+    const key = Math.round(radius);
+    if (!cache[key]) {
+      cache[key] = new ol.style.Style({
+        image: new ol.style.Circle({
+          radius,
+          fill: new ol.style.Fill({ color: fillColor }),
+          stroke: new ol.style.Stroke({ color: "white", width: Math.max(1, radius / 3) }),
+        }),
+      });
+    }
+    return cache[key];
+  };
+}
+
+// ------------------------------------------------------------------
 // Build one OL vector layer from a registry entry
 // ------------------------------------------------------------------
 function buildLayer(entry) {
@@ -476,10 +651,16 @@ function buildLayer(entry) {
       return r.json();
     })
     .then((json) => {
-      const features = new ol.format.GeoJSON().readFeatures(json, {
+      let features = new ol.format.GeoJSON().readFeatures(json, {
         dataProjection: "EPSG:4326",
         featureProjection: "EPSG:3031",
       });
+      if (entry.filterStatus) {
+        const fs = entry.filterStatus.toLowerCase();
+        features = features.filter(f =>
+          String(f.get("status") || "").toLowerCase() === fs
+        );
+      }
       if (entry.isCampSite) {
         features.forEach(f => f.set("__isCampSite__", true));
       }
@@ -488,10 +669,17 @@ function buildLayer(entry) {
     })
     .catch((err) => console.error(`Layer "${entry.id}" load error:`, err));
 
+  const style = entry.id === "instruments_active"
+    ? instrumentsActiveStyleFn
+    : LOCATION_LAYER_IDS.has(entry.id)
+      ? makeLocationLayerStyle(entry.color)
+      : makeScaledPointStyle(entry.color);
+
   const layer = new ol.layer.Vector({
     source,
-    style: makeScaledPointStyle(entry.color),
-    visible: false,  // always start hidden; Dash store sets correct state on load
+    style,
+    visible: false,
+    zIndex: entry.zIndex !== undefined ? entry.zIndex : 1,
   });
   layer.set("id", entry.id);
   layer.set("status", entry.status);
@@ -855,7 +1043,24 @@ document.addEventListener("click", function (e) {
 // ---- Layer visibility (called from Dash store callback) ----------
 window.setLayerVisibility = function (layerId, visible) {
   if (!window.__ol_map__) return;
-  window.__ol_map__.getLayers().getArray().forEach((layer) => {
+  if (layerId === "__active_events__") {
+    __instruments_active_events__ = Array.isArray(visible) ? visible : [];
+    window.__ol_map__.getLayers().getArray().forEach(function (layer) {
+      if (layer.get("id") === "instruments_active") layer.changed();
+    });
+    window.__ol_map__.render();
+    return;
+  }
+  window.__ol_map__.getLayers().getArray().forEach(function (layer) {
     if (layer.get("id") === layerId) layer.setVisible(!!visible);
   });
+  // When a science event layer changes visibility, refresh which event codes
+  // are covered so location layers can filter out duplicate features.
+  if (SCIENCE_EVENT_CODES[layerId] !== undefined) {
+    refreshCoveredEventCodes();
+    window.__ol_map__.getLayers().getArray().forEach(function (layer) {
+      if (LOCATION_LAYER_IDS.has(layer.get("id"))) layer.changed();
+    });
+    window.__ol_map__.render();
+  }
 };

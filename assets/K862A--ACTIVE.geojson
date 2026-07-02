@@ -1,0 +1,112 @@
+{
+  "type": "FeatureCollection",
+  "name": "K862A",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K862A", 
+        "site": "Crary Ice Rise",
+        "name": "GNSS and Total Station Geodetic Stations",
+        "desription": "To measure ice shelf movement.",
+        "principal investigator": "Levy, R.",
+        "email": "r.levy@gns.cri.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/452bfd28-bed8-44aa-8ea3-1e1a9152f73d"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -172.625911,
+          -83.026673
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K862A", 
+        "site": "Crary Ice Rise",
+        "description": "To measure ice shelf basal melt.",
+        "name": "ApRES",
+        "principal investigator": "Levy, R.",
+        "email": "r.levy@gns.cri.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/a1822ca8-1cb9-4ca9-985f-b411e8fd14ca"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -172.625911,
+          -83.026673
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K862A",
+        "site": "Kamb Ice Stream 2",
+        "name": "ApRES",
+        "description": "To measure ice shelf basal melt.",
+        "principal investigator": "Levy, R.",
+        "email": "r.levy@gns.cri.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/038c2e99-953e-4d0f-bbcc-999c30fb87e3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -152.240079969754,
+          -82.4753964196359
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K862A",
+        "name": "GNSS and Total Station Geodetic Stations",
+        "desription": "To measure ice shelf movement.",
+        "site": "Kamb Ice Stream 3",
+        "principal investigator": "Levy, R.",
+        "email": "r.levy@gns.cri.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/ddfeafde-8ccd-4cae-8b36-f1690fa74256"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -156.306129,
+          -82.628074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K862A",
+        "name": "ApRES",
+        "site": "Kamb Ice Stream 3",
+        "principal investigator": "Levy, R.",
+        "description": "To measure ice shelf basal melt.",
+        "email": "r.levy@gns.cri.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/ddfeafde-8ccd-4cae-8b36-f1690fa74256"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -156.306129,
+          -82.628074
+        ]
+      }
+    }
+  ]
+}

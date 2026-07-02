@@ -13,10 +13,30 @@
           "properties": {
             "event": "K881B",
             "name": "Soil and Climate Station",
+            "site": "Scott Base",
+            "principal investigator": "Katurji, M.",
+            "email": "marwan.katurji@canterbury.ac.nz",
+            "status": "Active",
+            "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/6bc04f66-3e79-4591-9030-0016fe8dbd27"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              166.77,
+              -77.85
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K881B",
+            "name": "Soil and Climate Station",
+            "description": "Remove",
             "site": "Don Juan Pond",
             "principal investigator": "Katurji, M.",
             "email": "marwan.katurji@canterbury.ac.nz",
-            "status": "Planned Removal",
+            "status": "Planned",
             "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/6bc04f66-3e79-4591-9030-0016fe8dbd27"
           },
           "geometry": {
@@ -32,10 +52,11 @@
           "properties": {
             "event": "K881B",
             "name": "Soil and Climate Station",
+            "description": "Remove",
             "site": "Marble Point",
             "principal investigator": "Katurji, M.",
             "email": "marwan.katurji@canterbury.ac.nz",
-            "status": "Planned Removal",
+            "status": "Planned",
             "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/6bc04f66-3e79-4591-9030-0016fe8dbd27"
           },
           "geometry": {
@@ -51,10 +72,11 @@
           "properties": {
             "event": "K881B",
             "name": "Soil and Climate Station",
+            "description": "Remove",
             "site": "Minna Bluff",
             "principal investigator": "Katurji, M.",
             "email": "marwan.katurji@canterbury.ac.nz",
-            "status": "Planned Removal",
+            "status": "Planned",
             "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/6bc04f66-3e79-4591-9030-0016fe8dbd27"
           },
           "geometry": {
@@ -70,10 +92,11 @@
           "properties": {
             "event": "K881B",
             "name": "Soil and Climate Station",
+            "description": "Remove",
             "site": "Bull Pass",
             "principal investigator": "Katurji, M.",
             "email": "marwan.katurji@canterbury.ac.nz",
-            "status": "Planned Removal",
+            "status": "Planned",
             "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/6bc04f66-3e79-4591-9030-0016fe8dbd27"
           },
           "geometry": {
@@ -89,10 +112,11 @@
           "properties": {
             "event": "K881B",
             "name": "Soil and Climate Station",
+            "description": "Remove",
             "site": "Bull Pass East",
             "principal investigator": "Katurji, M.",
             "email": "marwan.katurji@canterbury.ac.nz",
-            "status": "Planned Removal",
+            "status": "Planned",
             "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/6bc04f66-3e79-4591-9030-0016fe8dbd27"
           },
           "geometry": {
@@ -108,10 +132,11 @@
           "properties": {
             "event": "K881B",
             "name": "Borehole Ground Temperature Station",
+            "description": "Remove",
             "site": "Bull Pass",
             "principal investigator": "Katurji, M.",
             "email": "marwan.katurji@canterbury.ac.nz",
-            "status": "Planned Removal",
+            "status": "Planned",
             "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/88d77a12-f1ea-44d2-95f7-bdee9c9cd193"
           },
           "geometry": {
@@ -127,10 +152,11 @@
           "properties": {
             "event": "K881B",
             "name": "Borehole Ground Temperature Station",
+            "description": "Remove",
             "site": "Marble Point",
             "principal investigator": "Katurji, M.",
             "email": "marwan.katurji@canterbury.ac.nz",
-            "status": "Planned Removal",
+            "status": "Planned",
             "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/88d77a12-f1ea-44d2-95f7-bdee9c9cd193"
           },
           "geometry": {

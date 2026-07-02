@@ -1,0 +1,31 @@
+{
+  "type": "FeatureCollection",
+  "name": "K102A",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+  {
+    "type": "Feature",
+    "properties": {
+      "event": "K102A",
+      "name": "Geomagnetic Instrument",
+      "site": "Arrival Heights",
+      "principal investigator": "Tanja Petersen",
+      "email": "t.petersen@gns.cri.nz",
+      "status": "Planned",
+      "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/0f54761a-fbf1-4da0-bf84-3e24c42d144e"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        166.67,
+        -77.83
+        ]
+      }
+    }
+  ]
+}

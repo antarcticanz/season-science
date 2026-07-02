@@ -102,6 +102,60 @@
         ]
       }
     },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K891A",
+        "name": "Ice-Ocean-Buoy Deployment",
+        "description": "To measure sea-ice-ocean physical measurements.",
+        "principal investigator": "Smith, I.J.",
+        "email": "inga.smith@otago.ac.nz",
+        "status": "Planned"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.384324586979375,
+          -77.841589025400225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K891A",
+        "name": "Ice-Ocean-Buoy Deployment",
+        "description": "To measure sea-ice-ocean physical measurements.",
+        "principal investigator": "Smith, I.J.",
+        "email": "inga.smith@otago.ac.nz",
+        "status": "Planned"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          165.605770305640618,
+          -77.841527533168929
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K891A",
+        "name": "Ice-Ocean-Buoy Deployment",
+        "description": "To measure sea-ice-ocean physical measurements.",
+        "principal investigator": "Smith, I.J.",
+        "email": "inga.smith@otago.ac.nz",
+        "status": "Planned"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          164.827155627883542,
+          -77.841351967922336
+        ]
+      }
+    },
         {
           "type": "Feature",
           "properties": {
@@ -115,8 +169,8 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
-              166.648457,
-              -77.868009
+              164.437766719835906,
+              -77.373685278374012
             ]
           }
         },

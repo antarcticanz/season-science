@@ -4,7 +4,7 @@
     {
       "type": "Feature",
       "properties": {
-        "event": "",
+        "event": "K500A",
         "name": "PAMS Fluorometer",
         "description": "To measure chlorophyll fluorescence.",
         "site": "Scott Base",

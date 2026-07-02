@@ -11,7 +11,7 @@
       {
         "type": "Feature",
         "properties": {
-          "event": "",
+          "event": "K882B",
           "name": "Hauwai20 Automatic Sampler",
           "description": "To determine present-day spatial and temporal variability in key ecosystem characteristics across land-coast-ocean communities and attribute biological patterns to key environmental drivers.",
           "site": "Scott Base",
@@ -30,7 +30,7 @@
       {
         "type": "Feature",
         "properties": {
-          "event": "",
+          "event": "K500A",
           "name": "PAMS Fluorometer",
           "description": "To measure chlorophyll fluorescence.",
           "site": "Scott Base",

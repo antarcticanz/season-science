@@ -12,6 +12,46 @@
       "type": "Feature",
       "properties": {
         "event": "K150A",
+        "name": "Tide Gauge",
+        "description": "To measure sea level.",
+        "site": "Scott Base",
+        "principal investigator": "Collett, D.",
+        "email": "dcollett@linz.govt.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/007be6df-e385-46e4-9ee4-2ee3e040003d"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.77,
+          -77.85
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K150A",
+        "name": "GNSS Station",
+        "description": "Support New Zealand's geodetic datum maintenance, national deformation modelling, and connection to the global terrestrial reference frame.",
+        "site": "Scott Base",
+        "principal investigator": "Collett, D.",
+        "email": "dcollett@linz.govt.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/f1f352eb-e3d2-4d13-bbf4-f1acbfdc7fee"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.77,
+          -77.85
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K150A",
         "name": "GNSS Station",
         "description": "Support New Zealand's geodetic datum maintenance, national deformation modelling, and connection to the global terrestrial reference frame.",
         "site": "Butcher Ridge",

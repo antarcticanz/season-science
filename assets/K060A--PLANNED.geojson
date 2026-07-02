@@ -17,7 +17,7 @@
                 "site": "Arrival Heights",
                 "principal investigator": "Craig Rodger.",
                 "email": "craig.rodger@otago.ac.nz",
-                "status": "Active",
+                "status": "Planned",
                 "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/7abe21bd-605d-4462-8623-24fb53dd987f"
             },
             "geometry": {
@@ -34,12 +34,32 @@
                 "site": "Arrival Heights",
                 "principal investigator": "Rodger, C.",
                 "email": "craig.rodger@otago.ac.nz",
-                "status": "Active",
+                "status": "Planned",
                 "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/56ce3306-a8c9-4439-88df-21e891c389e6"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [166.67, -77.83]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "event": "K060A",
+                "name": "Very Low Frequency Radio Sensor",
+                "description": "Lightning discharges.",
+                "site": "Scott Base",
+                "principal investigator": "Rodger, C.",
+                "email": "craig.rodger@otago.ac.nz",
+                "status": "Planned",
+                "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/a998b777-ba36-4562-99fc-4ae4d21039cd"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    166.77,
+                    -77.85
+                ]
             }
         }
     ]

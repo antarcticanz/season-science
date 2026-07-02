@@ -166,6 +166,25 @@
               -77.83
             ]
           }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "event": "K102A",
+            "name": "Geomagnetic Instrument",
+            "site": "Arrival Heights",
+            "principal investigator": "Tanya Petersen",
+            "email": "t.petersen@gns.cri.nz",
+            "status": "Active",
+            "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/0f54761a-fbf1-4da0-bf84-3e24c42d144e"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              166.67,
+              -77.83
+            ]
+          }
         }
   ]
 }
