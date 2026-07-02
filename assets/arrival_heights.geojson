@@ -15,7 +15,7 @@
             "name": "Very Low Frequency Radio Sensor",
             "description": "Lightning Discharges.",
             "site": "Arrival Heights",
-            "principal investigator": "Rodger, C.",
+            "principal investigator": "Craig Rodger",
             "email": "craig.rodger@otago.ac.nz",
             "status": "Active",
             "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/7abe21bd-605d-4462-8623-24fb53dd987f"
@@ -35,7 +35,7 @@
             "site": "Arrival Heights",
             "name": "Very Low Frequency Subionospheric Communication Transmitter",
             "description": "Detect changes in ionisation levels from ~30-85 km altitude",
-            "principal investigator": "Rodger, C.",
+            "principal investigator": "Craig Rodger",
             "email": "craig.rodger@otago.ac.nz",
             "status": "Active",
             "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/56ce3306-a8c9-4439-88df-21e891c389e6"
@@ -55,7 +55,7 @@
             "name": "In Situ Flask and Cylinder Air Sampling",
             "description": "Greenhouse gases and isotopes.",
             "site": "Arrival Heights",
-            "principal investigator": "Smale, D.",
+            "principal investigator": "Dan Smale",
             "email": "dan.smale@earthsciences.nz",
             "status": "Active",
             "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/c912b420-66fc-4724-ae9a-c452fca9e09c"
@@ -75,7 +75,7 @@
             "name": "Dobson Spectrophotometer",
             "description": "Total column ozone measurements.",
             "site": "Arrival Heights",
-            "principal investigator": "Smale, D.",
+            "principal investigator": "Dan Smale",
             "email": "dan.smale@earthsciences.nz",
             "status": "Active",
             "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/ea482f08-ee91-4cf5-a570-5526e378cdeb"
@@ -95,7 +95,7 @@
             "name": "Airyx & Envimeas Instruments",
             "description": "Nitrogen dioxide, chlorine dioxide, bromine oxide, ozone.",
             "site": "Arrival Heights",
-            "principal investigator": "Smale, D.",
+            "principal investigator": "Dan Smale",
             "email": "dan.smale@earthsciences.nz",
             "status": "Active",
             "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/0fd089eb-d4aa-4b02-8707-90107aa81e4c"
@@ -115,7 +115,7 @@
             "name": "Ally-Sky Camera Systems",
             "description": "Sky imagery, cloud coverage.",
             "site": "Arrival Heights",
-            "principal investigator": "Smale, D.",
+            "principal investigator": "Dan Smale",
             "email": "dan.smale@earthsciences.nz",
             "status": "Active",
             "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/cd8e7960-f192-49b3-bf2b-0be7cabf8053"
@@ -135,7 +135,7 @@
             "site": "Arrival Heights",
             "name": "Far- and Mid- Infrared FTS Measurements",
             "description": "Greenhouse and Ozone Depleting Gases (O3, HCl, N2O, CH4, HNO3, ClONO2, HCN, HF, OCS, CO, C2H6, CFC-11, CFC-12, COF2 + Others).",
-            "principal investigator": "Smale, D.",
+            "principal investigator": "Dan Smale",
             "email": "dan.smale@earthsciences.nz",
             "status": "Active",
             "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/6a7b389a-c8e9-4c56-b603-0f179bac90ab"

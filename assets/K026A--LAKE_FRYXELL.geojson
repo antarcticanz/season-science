@@ -13,9 +13,9 @@
       "properties": {
         "event": "K026A",
         "name": "Terrestrial Ecosystem Mapping",
-        "description": "Spectral sampling, biological sampling of vegetation, Aerial hyperspectral imaging.",
+        "description": "Spectral sampling, biological sampling of vegetation, aerial hyperspectral imaging.",
 		    "site": "Lake Fryxell",
-        "principal investigator": "Lee, C.",
+        "principal investigator": "Charlie Lee",
         "email": "charles.lee@waikato.ac.nz",
         "status": "Planned"
       },

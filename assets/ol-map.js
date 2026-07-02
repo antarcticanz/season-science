@@ -263,7 +263,7 @@ const LAYER_REGISTRY = [
     group: "K089A - AWS",
     file: "K089A--PLANNED.geojson",
     status: "Planned",
-    color: "rgba(64, 224, 208, 0.9)",
+    color: "rgba(130, 40, 240, 0.9)",
     filterStatus: "planned",
     zIndex: 20,
     visible: true,
@@ -273,7 +273,7 @@ const LAYER_REGISTRY = [
     group: "K102A - Geomagnetic",
     file: "K102A--PLANNED.geojson",
     status: "Planned",
-    color: "rgba(65, 200, 130, 0.9)",
+    color: "rgba(255, 90, 40, 0.9)",
     filterStatus: "planned",
     zIndex: 20,
     visible: true,
@@ -313,7 +313,7 @@ const LAYER_REGISTRY = [
     group: "K500A - PAMS",
     file: "K500A--PLANNED.geojson",
     status: "Planned",
-    color: "rgba(0, 210, 230, 0.9)",
+    color: "rgba(215, 235, 20, 0.9)",
     filterStatus: "planned",
     zIndex: 20,
     visible: true,
@@ -329,31 +329,11 @@ const LAYER_REGISTRY = [
     visible: true,
   },
   {
-    id: "K865A--ACTIVE",
-    group: "K865A - GNSS",
-    file: "K865A--ACTIVE.geojson",
-    status: "Active",
-    color: "rgba(225, 80, 150, 0.9)",
-    filterStatus: "planned",
-    zIndex: 20,
-    visible: true,
-  },
-  {
     id: "K865A--PLANNED",
     group: "K865A - GNSS",
     file: "K865A--PLANNED.geojson",
     status: "Planned",
-    color: "rgba(225, 80, 150, 0.9)",
-    filterStatus: "planned",
-    zIndex: 20,
-    visible: true,
-  },
-  {
-    id: "K872B--ACTIVE",
-    group: "K872B – ApRES",
-    file: "K872B--ACTIVE.geojson",
-    status: "Active",
-    color: "rgba(220, 60, 60, 0.95)",
+    color: "rgba(240, 40, 185, 0.9)",
     filterStatus: "planned",
     zIndex: 20,
     visible: true,
@@ -363,17 +343,7 @@ const LAYER_REGISTRY = [
     group: "K872B – ApRES",
     file: "K872B--PLANNED.geojson",
     status: "Planned",
-    color: "rgba(220, 60, 60, 0.95)",
-    filterStatus: "planned",
-    zIndex: 20,
-    visible: true,
-  },
-  {
-    id: "K881B--ACTIVE",
-    group: "K881B - AWS",
-    file: "K881B--ACTIVE.geojson",
-    status: "Active",
-    color: "rgba(25, 209, 40, 0.9)",
+    color: "rgba(255, 120, 110, 0.9)",
     filterStatus: "planned",
     zIndex: 20,
     visible: true,
@@ -383,7 +353,7 @@ const LAYER_REGISTRY = [
     group: "K881B - AWS",
     file: "K881B--PLANNED.geojson",
     status: "Planned",
-    color: "rgba(25, 209, 40, 0.9)",
+    color: "rgba(20, 180, 240, 0.9)",
     filterStatus: "planned",
     zIndex: 20,
     visible: true,
@@ -403,17 +373,7 @@ const LAYER_REGISTRY = [
     group: "K884A - Sponges",
     file: "K884A--PLANNED.geojson",
     status: "Planned",
-    color: "rgba(180, 230, 100, 0.9)",
-    filterStatus: "planned",
-    zIndex: 20,
-    visible: true,
-  },
-  {
-    id: "K891A--ACTIVE",
-    group: "K891A - Sea Ice",
-    file: "K891A--ACTIVE.geojson",
-    status: "Active",
-    color: "rgba(195, 220, 55, 0.9)",
+    color: "rgba(60, 110, 235, 0.9)",
     filterStatus: "planned",
     zIndex: 20,
     visible: true,
@@ -423,7 +383,7 @@ const LAYER_REGISTRY = [
     group: "K891A - Sea Ice",
     file: "K891A--PLANNED.geojson",
     status: "PLANNED",
-    color: "rgba(195, 220, 55, 0.9)",
+    color: "rgba(20, 215, 195, 0.9)",
     filterStatus: "planned",
     zIndex: 20,
     visible: true,
@@ -433,7 +393,7 @@ const LAYER_REGISTRY = [
     group: "K893A - Super Site",
     file: "K893A--COMMONWEALTH_GLACIER.geojson",
     status: "Commonwealth Glacier",
-    color: "rgba(130, 210, 70, 0.9)",
+    color: "rgba(235, 30, 60, 0.9)",
     filterStatus: "planned",
     zIndex: 20,
     visible: true,
@@ -443,7 +403,7 @@ const LAYER_REGISTRY = [
     group: "K893A - Super Site",
     file: "K893A--LOWER_WRIGHT_GLACIER.geojson",
     status: "Lower Wright Glacier",
-    color: "rgba(130, 210, 70, 0.9)",
+    color: "rgba(235, 30, 60, 0.9)",
     filterStatus: "planned",
     zIndex: 20,
     visible: true,
@@ -453,7 +413,7 @@ const LAYER_REGISTRY = [
     group: "K893A - Super Site",
     file: "K893A--PYRAMID_TROUGH.geojson",
     status: "Pyramid Trough",
-    color: "rgba(130, 210, 70, 0.9)",
+    color: "rgba(235, 30, 60, 0.9)",
     filterStatus: "planned",
     zIndex: 20,
     visible: true,
@@ -644,6 +604,7 @@ function makeLocationLayerStyle(fillColor) {
 // ------------------------------------------------------------------
 function buildLayer(entry) {
   const source = new ol.source.Vector();
+  const projOpts = { dataProjection: "EPSG:4326", featureProjection: "EPSG:3031" };
 
   fetch(`/assets/${entry.file}`)
     .then((r) => {
@@ -651,10 +612,7 @@ function buildLayer(entry) {
       return r.json();
     })
     .then((json) => {
-      let features = new ol.format.GeoJSON().readFeatures(json, {
-        dataProjection: "EPSG:4326",
-        featureProjection: "EPSG:3031",
-      });
+      let features = new ol.format.GeoJSON().readFeatures(json, projOpts);
       if (entry.filterStatus) {
         const fs = entry.filterStatus.toLowerCase();
         features = features.filter(f =>
@@ -668,6 +626,18 @@ function buildLayer(entry) {
       source.addFeatures(features);
     })
     .catch((err) => console.error(`Layer "${entry.id}" load error:`, err));
+
+  if (entry.filterStatus === "planned" && entry.file.endsWith("--PLANNED.geojson")) {
+    const activeFile = entry.file.replace("--PLANNED.geojson", "--ACTIVE.geojson");
+    fetch(`/assets/${activeFile}`)
+      .then((r) => r.ok ? r.json() : null)
+      .then((json) => {
+        if (!json) return;
+        const features = new ol.format.GeoJSON().readFeatures(json, projOpts);
+        source.addFeatures(features);
+      })
+      .catch(() => {});
+  }
 
   const style = entry.id === "instruments_active"
     ? instrumentsActiveStyleFn
@@ -1023,22 +993,24 @@ function buildLayer(entry) {
     const site = props.name || "Location";
     const measurement = props.description || null;
     const event = props.event || null;
-    const statusRaw = props.status || "—";
+    const statuses = props.__statuses__ || [props.status || "—"];
     const pi = props["principal investigator"] || "—";
     const email = props.email || "—";
 
-    const statusLower = String(statusRaw).toLowerCase();
-    const badgeClass =
-      statusLower === "active" ? "status-badge status-badge--active" :
-        statusLower === "wishlist" ? "status-badge status-badge--wishlist" :
-          statusLower === "planned" ? "status-badge status-badge--planned" :
-            statusLower === "planned removal" ? "status-badge status-badge--planned-removal" :
-              "status-badge";
+    function statusBadge(s) {
+      const sl = String(s).toLowerCase();
+      const cls = sl === "active" ? "status-badge status-badge--active" :
+        sl === "wishlist" ? "status-badge status-badge--wishlist" :
+        sl === "planned" ? "status-badge status-badge--planned" :
+        sl === "planned removal" ? "status-badge status-badge--planned-removal" :
+        "status-badge";
+      return `<span class="${cls}">${escapeHtml(s)}</span>`;
+    }
+    const statusBadgesHtml = statuses.map(statusBadge).join(" ");
 
     const site_name = props.site || null;
     const information = props.information || null;
     const siteEsc = escapeHtml(site);
-    const statusEsc = escapeHtml(statusRaw);
     const piEsc = escapeHtml(pi);
     const emailEsc = escapeHtml(email);
     const measurementEsc = measurement ? escapeHtml(measurement) : null;
@@ -1062,7 +1034,7 @@ function buildLayer(entry) {
       ${eventEsc ? `<div class="popup-event"><strong>Event:</strong> ${eventEsc}</div>` : ""}
       <div class="popup-status">
         <strong>Status:</strong>
-        <span class="${badgeClass}">${statusEsc}</span>
+        ${statusBadgesHtml}
       </div>
       ${measurementEsc ? `<div class="popup-measurement"><strong>Description:</strong> ${measurementEsc}</div>` : ""}
       <div class="popup-pi"><strong>Contact:</strong> ${piEsc}</div>
@@ -1147,12 +1119,27 @@ function buildLayer(entry) {
     popupOverlay.setPosition(undefined);
     popupContainer.style.display = "none";
 
-    const featuresAtPixel = [];
+    const rawFeatures = [];
     map.forEachFeatureAtPixel(evt.pixel, function (feature) {
-      featuresAtPixel.push(feature.getProperties());
+      rawFeatures.push(feature.getProperties());
     }, { hitTolerance: 10 });
 
-    if (featuresAtPixel.length === 0) return;
+    if (rawFeatures.length === 0) return;
+
+    const seen = new Map();
+    const featuresAtPixel = [];
+    for (const props of rawFeatures) {
+      const key = (props.event || "") + "::" + (props.name || "") + "::" + (props.site || "");
+      if (seen.has(key)) {
+        const existing = seen.get(key);
+        const cur = existing.__statuses__ || [existing.status];
+        if (!cur.includes(props.status)) existing.__statuses__ = [...cur, props.status];
+      } else {
+        const merged = { ...props };
+        seen.set(key, merged);
+        featuresAtPixel.push(merged);
+      }
+    }
 
     window.__popup_features__ = featuresAtPixel;
     window.__popup_page__ = 0;

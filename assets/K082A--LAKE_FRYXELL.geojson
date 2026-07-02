@@ -14,16 +14,16 @@
         "event": "K082A",
         "name": "WalkTEM Electromagnetic Surveys",
         "description": "Terrestrial mapping/sampling.",
-        "site": "Coral Ridge/Lake Fryxell",
-        "principal investigator": "Seabrook. S.",
+        "site": "Lake Fryxell/Coral Ridge",
+        "principal investigator": "Sarah Seabrook",
         "email": "sarah.seabrook@otago.ac.nz",
         "status": "Planned"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          162.588017,
-          -77.004083
+          163.10617,
+          -77.61567
         ]
       }
     },
@@ -34,7 +34,7 @@
         "name": "Lake Physical Measurements",
         "description": "ADCP (currents), temperature, salinity, oxygen, CO2, methane, turbidity, radon, and other proxies.",
         "site": "Lake Fryxell",
-        "principal investigator": "Seabrook. S.",
+        "principal investigator": "Sarah Seabrook",
         "email": "sarah.seabrook@otago.ac.nz",
         "status": "Planned"
       },

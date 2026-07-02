@@ -15,7 +15,7 @@
                 "name": "AWS Install",
                 "description": "To measure energy balance gradients with elevation by installing one automatic weather station and auxiliary environmental measurements.",
                 "site": "Pyramid Trough",
-                "principal investigator": "MacDonnell, S.",
+                "principal investigator": "Shelly MacDonnell",
                 "email": "shelly.macdonnell@canterbury.ac.nz",
                 "status": "Planned"
             },
@@ -34,7 +34,7 @@
                 "name": "Soil Moisture Sensors and Stream Pressure Transducers Install",
                 "description": "To evaluate wetness distribution and hydrological connectivity.",
                 "site": "Pyramid Trough",
-                "principal investigator": "MacDonnell, S.",
+                "principal investigator": "Shelly MacDonnell",
                 "email": "shelly.macdonnell@canterbury.ac.nz",
                 "status": "Planned"
             },
@@ -53,7 +53,7 @@
                 "name": "Discharge Gauging Sensor Install",
                 "description": "To measure stream discharge.",
                 "site": "Pyramid Trough",
-                "principal investigator": "MacDonnell, S.",
+                "principal investigator": "Shelly MacDonnell",
                 "email": "shelly.macdonnell@canterbury.ac.nz",
                 "status": "Planned"
             },
@@ -72,7 +72,7 @@
                 "name": "Snow Distribution",
                 "description": "To measure and monitor snow distribution with elevation using drones and automatic cameras.",
                 "site": "Pyramid Trough",
-                "principal investigator": "MacDonnell, S.",
+                "principal investigator": "Shelly MacDonnell",
                 "email": "shelly.macdonnell@canterbury.ac.nz",
                 "status": "Planned"
             },
@@ -91,7 +91,7 @@
                 "name": "Snow and Water Sampling",
                 "description": "For isotope analysis.",
                 "site": "Pyramid Trough",
-                "principal investigator": "MacDonnell, S.",
+                "principal investigator": "Shelly MacDonnell",
                 "email": "shelly.macdonnell@canterbury.ac.nz",
                 "status": "Planned"
             },

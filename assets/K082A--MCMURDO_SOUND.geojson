@@ -15,7 +15,7 @@
         "name": "Water Sampling",
         "description": "Measuring isotope, genetic, and associated analysis.",
         "site": "McMurdo Sound",
-        "principal investigator": "Seabrook. S.",
+        "principal investigator": "Sarah Seabrook",
         "email": "sarah.seabrook@otago.ac.nz",
         "status": "Planned"
         },
@@ -34,7 +34,7 @@
             "name": "Sediment Coring and Porewater Collection",
             "description": "Measure biogeochemical parameters.",
             "site": "McMurdo Sound",
-            "principal investigator": "Seabrook. S.",
+            "principal investigator": "Sarah Seabrook",
             "email": "sarah.seabrook@otago.ac.nz",
             "status": "Planned"
         },
@@ -53,7 +53,7 @@
             "name": "Sediment Sampling",
             "description": "Isotope, genetic, and associated analysis.",
             "site": "McMurdo Sound",
-            "principal investigator": "Seabrook. S.",
+            "principal investigator": "Sarah Seabrook",
             "email": "sarah.seabrook@otago.ac.nz",
             "status": "Planned"
         },
@@ -72,7 +72,7 @@
             "name": "ROV",
             "description": "Explore and sample area.",
             "site": "McMurdo Sound",
-            "principal investigator": "Seabrook. S.",
+            "principal investigator": "Sarah Seabrook",
             "email": "sarah.seabrook@otago.ac.nz",
             "status": "Planned"
         },
@@ -91,7 +91,7 @@
             "name": "Flow Meters and Osmosamplers",
             "description": "To sample biogeochemical variability.",
             "site": "McMurdo Sound",
-            "principal investigator": "Seabrook. S.",
+            "principal investigator": "Sarah Seabrook",
             "email": "sarah.seabrook@otago.ac.nz",
             "status": "Planned"
         },
@@ -110,7 +110,7 @@
             "name": "Drop Cam Deployment",
             "description": "To visualise region.",
             "site": "McMurdo Sound",
-            "principal investigator": "Seabrook. S.",
+            "principal investigator": "Sarah Seabrook",
             "email": "sarah.seabrook@otago.ac.nz",
             "status": "Planned"
         },
@@ -129,7 +129,7 @@
             "name": "Diffusion Sandwiches",
             "description": "To sample biogeochemical parameters.",
             "site": "McMurdo Sound",
-            "principal investigator": "Seabrook. S.",
+            "principal investigator": "Sarah Seabrook",
             "email": "sarah.seabrook@otago.ac.nz",
             "status": "Planned"
         },
@@ -148,7 +148,7 @@
             "name": "Oceanographic Sensor Deployment",
             "description": "To measure temperature, salinity, oxygen, CO2, methane, turbidity, radon, and other proxies.",
             "site": "McMurdo Sound",
-            "principal investigator": "Seabrook. S.",
+            "principal investigator": "Sarah Seabrook",
             "email": "sarah.seabrook@otago.ac.nz",
             "status": "Planned"
         },
@@ -167,7 +167,7 @@
             "name": "Acoustic Echosounder Measurements",
             "description": "To measure water column acoustics.",
             "site": "Cinder Cones, Turtle Rock, Arrival Heights, Cape Barne and other opportunistic seeps",
-            "principal investigator": "Seabrook. S.",
+            "principal investigator": "Sarah Seabrook",
             "email": "sarah.seabrook@otago.ac.nz",
             "status": "Planned"
         },
@@ -186,7 +186,7 @@
             "name": "ADCP Measurements",
             "description": "To measure water speed and direction.",
             "site": "Cinder Cones, Turtle Rock, Arrival Heights, Cape Barne and other opportunistic seeps",
-            "principal investigator": "Seabrook. S.",
+            "principal investigator": "Sarah Seabrook",
             "email": "sarah.seabrook@otago.ac.nz",
             "status": "Planned"
         },

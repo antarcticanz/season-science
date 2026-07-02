@@ -15,7 +15,7 @@
         "name": "Ice Core Collection",
         "description": "Collect a 150 m ice core and a 10 m firn core for ice chemistry and biomarker analysis.",
 		    "site": "Upper Priestly Glacier",
-        "principal investigator": "Winton, H.",
+        "principal investigator": "Holly Winton",
         "email": "holly.winton@vuw.ac.nz",
         "status": "Planned"
       },
@@ -34,7 +34,7 @@
         "name": "Snow Pit Sampling",
         "description": "Sample a 2 m snow pit for snow chemistry and biomarker analysis (biomarkers, soluble ions, fluorescence and trace elements, dust).",
         "site": "Upper Priestly Glacier",
-        "principal investigator": "Winton, H.",
+        "principal investigator": "Holly Winton",
         "email": "holly.winton@vuw.ac.nz",
         "status": "Planned"
       },
@@ -53,7 +53,7 @@
         "name": "Snow Surface Sampling",
         "description": "Collect daily surface snow samples over 3 week period for snow chemistry and biomarker analysis.",
         "site": "Upper Priestly Glacier",
-        "principal investigator": "Winton, H.",
+        "principal investigator": "Holly Winton",
         "email": "holly.winton@vuw.ac.nz",
         "status": "Planned"
       },
@@ -72,7 +72,7 @@
         "name": "Meteorological Measurements",
         "description": "Colect meterological data over three weeks.",
         "site": "Upper Priestly Glacier",
-        "principal investigator": "Winton, H.",
+        "principal investigator": "Holly Winton",
         "email": "holly.winton@vuw.ac.nz",
         "status": "Planned"
       },

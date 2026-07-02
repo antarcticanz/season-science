@@ -252,14 +252,6 @@ LAYER_REGISTRY = [
         "visible": True,
     },
     {
-        "id": "K865A--ACTIVE",
-        "group": "K865A - GNSS",
-        "file": "K865A--ACTIVE.geojson",
-        "status": "Active",
-        "value": "K865A--ACTIVE",
-        "visible": True,
-    },
-    {
         "id": "K865A--PLANNED",
         "group": "K865A - GNSS",
         "file": "K865A--PLANNED.geojson",
@@ -268,27 +260,11 @@ LAYER_REGISTRY = [
         "visible": True,
     },
     {
-        "id": "K872B--ACTIVE",
-        "group": "K872B - ApRES",
-        "file": "K872B--ACTIVE.geojson",
-        "status": "Active",
-        "value": "K872B--ACTIVE",
-        "visible": True,
-    },
-    {
         "id": "K872B--PLANNED",
         "group": "K872B - ApRES",
         "file": "K872B--PLANNED.geojson",
         "status": "Planned",
         "value": "K872B--PLANNED",
-        "visible": True,
-    },
-    {
-        "id": "K881B--ACTIVE",
-        "group": "K881B - AWS",
-        "file": "K881B--ACTIVE.geojson",
-        "status": "Active",
-        "value": "K881B--ACTIVE",
         "visible": True,
     },
     {
@@ -313,14 +289,6 @@ LAYER_REGISTRY = [
         "file": "K884A--PLANNED.geojson",
         "status": "Planned",
         "value": "K884A--PLANNED",
-        "visible": True,
-    },
-    {
-        "id": "K891A--ACTIVE",
-        "group": "K891A - Sea Ice",
-        "file": "K891A--ACTIVE.geojson",
-        "status": "Active",
-        "value": "K891A--ACTIVE",
         "visible": True,
     },
     {
@@ -686,7 +654,7 @@ app.layout = html.Div(
                 # Sidebar — fully dynamic from LAYER_REGISTRY
                 html.Div(
                     [
-                        html.Div("Planned Science Events", className="sidebar__heading"),
+                        html.Div("Planned Science Events 2026-27", className="sidebar__heading"),
 
                         html.Div(
                             [

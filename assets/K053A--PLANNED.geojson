@@ -13,7 +13,7 @@
       "properties": {
         "event": "K053A",
         "name": "Pack-Ice Survey",
-        "description": "EM-bird to measure sea ice thickness over transects along the Antarctic coastline between Scott Base and DDU.",
+        "description": "EM-bird to measure sea ice thickness over transects along the Antarctic coastline.",
 		    "site": "Mario Zucchelli Station",
         "principal investigator": "Wolfgang Rack",
         "email": "wolfgang.rack@canterbury.ac.nz",

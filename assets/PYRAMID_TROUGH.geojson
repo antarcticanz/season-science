@@ -15,7 +15,7 @@
                 "name": "Soil and Permafrost Sampling",
                 "description": "Sample surface soils.",
                 "site": "Pyramid Trough",
-                "principal investigator": "McDonald, I.",
+                "principal investigator": "Ian McDonald",
                 "email": "ian.mcdonald@waikato.ac.nz",
                 "status": "Planned"
             },
@@ -34,7 +34,7 @@
                 "name": "Soil and Permafrost Sampling",
                 "description": "Permafrost/subsurface soil sampling; including high altitude (>2000m) air sampling.",
                 "site": "Pyramid Trough",
-                "principal investigator": "McDonald, I.",
+                "principal investigator": "Ian McDonald",
                 "email": "ian.mcdonald@waikato.ac.nz",
                 "status": "Planned"
             },
@@ -53,7 +53,7 @@
                 "name": "Soil and Permafrost Sampling",
                 "description": "Aerosol sampling at ground level and at high altitude (>2000m).",
                 "site": "Pyramid Trough",
-                "principal investigator": "McDonald, I.",
+                "principal investigator": "Ian McDonald",
                 "email": "ian.mcdonald@waikato.ac.nz",
                 "status": "Planned"
             },
@@ -72,7 +72,7 @@
                 "name": "Soil and Permafrost Sampling",
                 "description": "Sample surface soils.",
                 "site": "Trough Lake",
-                "principal investigator": "McDonald, I.",
+                "principal investigator": "Ian McDonald",
                 "email": "ian.mcdonald@waikato.ac.nz",
                 "status": "Planned"
             },
@@ -91,7 +91,7 @@
                 "name": "Soil and Permafrost Sampling",
                 "description": "Permafrost/subsurface soil sampling; including high altitude (>2000m) air sampling.",
                 "site": "Trough Lake",
-                "principal investigator": "McDonald, I.",
+                "principal investigator": "Ian McDonald",
                 "email": "ian.mcdonald@waikato.ac.nz",
                 "status": "Planned"
             },
@@ -110,7 +110,7 @@
                 "name": "Soil and Permafrost Sampling",
                 "description": "Aerosol sampling at ground level and at high altitude (>2000m).",
                 "site": "Trough Lake",
-                "principal investigator": "McDonald, I.",
+                "principal investigator": "Ian McDonald",
                 "email": "ian.mcdonald@waikato.ac.nz",
                 "status": "Planned"
             },
@@ -129,7 +129,7 @@
                 "name": "Terrestrial Ecosystem Mapping",
                 "description": "Spectral sampling using handheld spectrometers.",
                 "site": "Trough Lake",
-                "principal investigator": "Lee, C.",
+                "principal investigator": "Charlie Lee",
                 "email": "charles.lee@waikato.ac.nz",
                 "status": "Planned"
             },
@@ -148,7 +148,7 @@
                 "name": "Terrestrial Ecosystem Mapping",
                 "description": "Biological sampling of vegetation for molecular analyses.",
                 "site": "Trough Lake",
-                "principal investigator": "Lee, C.",
+                "principal investigator": "Charlie Lee",
                 "email": "charles.lee@waikato.ac.nz",
                 "status": "Planned"
             },
@@ -167,7 +167,7 @@
                 "name": "Terrestrial Ecosystem Mapping",
                 "description": "Aerial survey using hyperspectral imagers onboard UAVs.",
                 "site": "Trough Lake",
-                "principal investigator": "Lee, C.",
+                "principal investigator": "Charlie Lee",
                 "email": "charles.lee@waikato.ac.nz",
                 "status": "Planned"
             },
@@ -186,7 +186,7 @@
                 "name": "Lake Level Monitoring",
                 "description": "To establish a new benchmark at Lake Vanda to allow ongoing monitoring of lake level rise.",
                 "site": "Pyramid Trough",
-                "principal investigator": "Hawes, I.",
+                "principal investigator": "Ian Hawes",
                 "email": "ian.hawes@waikato.ac.nz",
                 "status": "Planned"
             },
@@ -205,7 +205,7 @@
                 "name": "Sensor Transect Deployment",
                 "description": "To record soil temperature and summer water content.",
                 "site": "Pyramid Trough",
-                "principal investigator": "Hawes, I.",
+                "principal investigator": "Ian Hawes",
                 "email": "ian.hawes@waikato.ac.nz",
                 "status": "Planned"
             },
@@ -224,7 +224,7 @@
                 "name": "Vegetation Transects",
                 "description": "To establish a series of transects through natural wetness gradients in the Pyramid Trough wetlands and document the vegetation present and the elevation.",
                 "site": "Pyramid Trough",
-                "principal investigator": "Hawes, I.",
+                "principal investigator": "Ian Hawes",
                 "email": "ian.hawes@waikato.ac.nz",
                 "status": "Planned"
             },
@@ -243,7 +243,7 @@
                 "name": "Cyanobacterial Reflectance Measurements",
                 "description": "Use robotic and manual techniques to assess the spectral reflectance of cyanobacterial and moss communities at the Boulder Pavement and Pyramid Trough.",
                 "site": "Pyramid Trough",
-                "principal investigator": "Hawes, I.",
+                "principal investigator": "Ian Hawes",
                 "email": "ian.hawes@waikato.ac.nz",
                 "status": "Planned"
             },
@@ -262,7 +262,7 @@
                 "name": "AWS Install",
                 "description": "Measure energy balance gradients with elevation by installing one automatic weather station and auxiliary environmental measurements.",
                 "site": "Pyramid Trough",
-                "principal investigator": "MacDonnell, S..",
+                "principal investigator": "Shelly MacDonnell",
                 "email": "shelly.macdonnell@canterbury.ac.nz",
                 "status": "Planned"
             },
@@ -281,7 +281,7 @@
                 "name": "Soil Moisture Sensors and Stream Pressure Transducers",
                 "description": "Install soil moisture sensors and stream pressure transducers to evaluate wetness distribution and hydrological connectivity.",
                 "site": "Pyramid Trough",
-                "principal investigator": "MacDonnell, S..",
+                "principal investigator": "Shelly MacDonnell",
                 "email": "shelly.macdonnell@canterbury.ac.nz",
                 "status": "Planned"
             },
@@ -300,7 +300,7 @@
                 "name": "Discharge Gauging Sensors",
                 "description": "Install discharge gauging sensors to measure stream discharge.",
                 "site": "Pyramid Trough",
-                "principal investigator": "MacDonnell, S..",
+                "principal investigator": "Shelly MacDonnell",
                 "email": "shelly.macdonnell@canterbury.ac.nz",
                 "status": "Planned"
             },
@@ -319,7 +319,7 @@
                 "name": "Snow Distribution",
                 "description": "Measure and monitor snow distribution with elevation using drones and automatic cameras.",
                 "site": "Pyramid Trough",
-                "principal investigator": "MacDonnell, S..",
+                "principal investigator": "Shelly MacDonnell",
                 "email": "shelly.macdonnell@canterbury.ac.nz",
                 "status": "Planned"
             },
@@ -338,7 +338,7 @@
                 "name": "Snow and Water Sampling",
                 "description": "Take snow and water samples for isotope analysis.",
                 "site": "Pyramid Trough",
-                "principal investigator": "MacDonnell, S..",
+                "principal investigator": "Shelly MacDonnell",
                 "email": "shelly.macdonnell@canterbury.ac.nz",
                 "status": "Planned"
             },

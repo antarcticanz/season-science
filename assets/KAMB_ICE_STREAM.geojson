@@ -15,7 +15,7 @@
         "site": "Kamb Ice Stream 2",
         "name": "ApRES",
         "description": "To measure ice shelf basal melt.",
-        "principal investigator": "Levy, R.",
+        "principal investigator": "Richard Levy",
         "email": "r.levy@gns.cri.nz",
         "status": "Active",
         "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/038c2e99-953e-4d0f-bbcc-999c30fb87e3"
@@ -35,7 +35,7 @@
         "name": "GNSS and Total Station Geodetic Stations",
         "desription": "To measure ice shelf movement.",
         "site": "Kamb Ice Stream 3",
-        "principal investigator": "Levy, R.",
+        "principal investigator": "Richard Levy",
         "email": "r.levy@gns.cri.nz",
         "status": "Active",
         "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/ddfeafde-8ccd-4cae-8b36-f1690fa74256"
@@ -54,7 +54,7 @@
         "event": "K862A",
         "name": "ApRES",
         "site": "Kamb Ice Stream 3",
-        "principal investigator": "Levy, R.",
+        "principal investigator": "Richard Levy",
         "description": "To measure ice shelf basal melt.",
         "email": "r.levy@gns.cri.nz",
         "status": "Active",

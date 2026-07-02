@@ -14,7 +14,7 @@
         "event": "K891A",
         "name": "Sea Ice Mass Balance Station",
         "description": "To record ice temperature profiles and snow depths.",
-        "principal investigator": "Smith, I.J.",
+        "principal investigator": "Inga Smith",
         "email": "inga.smith@otago.ac.nz",
         "status": "Planned",
         "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/79234cb5-401a-48de-9d58-0f65b881fb7a"
@@ -33,7 +33,7 @@
         "event": "K891A",
         "name": "Sea Ice Core Sampling",
         "description": "To carry out physical and chemical property analysis (e.g., salinity, density, structure, isotopes).",
-        "principal investigator": "Smith, I.J.",
+        "principal investigator": "Inga Smith",
         "email": "inga.smith@otago.ac.nz",
         "status": "Planned",
         "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/79234cb5-401a-48de-9d58-0f65b881fb7a"
@@ -52,7 +52,7 @@
         "event": "K891A",
         "name": "Sea Water Sampling",
         "description": "To carry out physical and chemical property analysis (e.g., salinity, density, structure, isotopes).",
-        "principal investigator": "Smith, I.J.",
+        "principal investigator": "Inga Smith",
         "email": "inga.smith@otago.ac.nz",
         "status": "Planned",        
         "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/79234cb5-401a-48de-9d58-0f65b881fb7a"
@@ -71,7 +71,7 @@
         "event": "K891A",
         "name": "Snow sampling",
         "description": "To carry out physical and chemical property analysis (e.g., salinity, density, structure, isotopes).",
-        "principal investigator": "Smith, I.J.",
+        "principal investigator": "Inga Smith",
         "email": "inga.smith@otago.ac.nz",
         "status": "Planned",
         "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/79234cb5-401a-48de-9d58-0f65b881fb7a"
@@ -90,7 +90,7 @@
         "event": "K891A",
         "name": "AWS Install",
         "description": "Install two new AWS.",
-        "principal investigator": "Smith, I.J.",
+        "principal investigator": "Inga Smith",
         "email": "inga.smith@otago.ac.nz",
         "status": "Planned"
       },
@@ -108,7 +108,7 @@
         "event": "K891A",
         "name": "Ice-Ocean-Buoy Deployment",
         "description": "To measure sea-ice-ocean physical measurements.",
-        "principal investigator": "Smith, I.J.",
+        "principal investigator": "Inga Smith",
         "email": "inga.smith@otago.ac.nz",
         "status": "Planned"
       },
@@ -126,7 +126,7 @@
         "event": "K891A",
         "name": "Ice-Ocean-Buoy Deployment",
         "description": "To measure sea-ice-ocean physical measurements.",
-        "principal investigator": "Smith, I.J.",
+        "principal investigator": "Inga Smith",
         "email": "inga.smith@otago.ac.nz",
         "status": "Planned"
       },
@@ -144,7 +144,7 @@
         "event": "K891A",
         "name": "Ice-Ocean-Buoy Deployment",
         "description": "To measure sea-ice-ocean physical measurements.",
-        "principal investigator": "Smith, I.J.",
+        "principal investigator": "Inga Smith",
         "email": "inga.smith@otago.ac.nz",
         "status": "Planned"
       },
@@ -162,7 +162,7 @@
             "event": "K891A",
             "name": "Ice-Ocean-Buoy Deployment",
             "description": "To measure sea-ice-ocean physical measurements.",
-            "principal investigator": "Smith, I.J.",
+            "principal investigator": "Inga Smith",
             "email": "inga.smith@otago.ac.nz",
             "status": "Planned"
           },
@@ -180,7 +180,7 @@
             "event": "K891A",
             "name": "LASSITOS-EM Deployment",
             "description": "To measure sea ice.",
-            "principal investigator": "Smith, I.J.",
+            "principal investigator": "Inga Smith",
             "email": "inga.smith@otago.ac.nz",
             "status": "Planned"
           },
@@ -198,7 +198,7 @@
             "event": "K891A",
             "name": "Sea Ice Measurent Instrument Buoy Deployment",
             "description": "Two buoys to be deployed.",
-            "principal investigator": "Smith, I.J.",
+            "principal investigator": "Inga Smith",
             "email": "inga.smith@otago.ac.nz",
             "status": "Planned"
           },
@@ -216,7 +216,7 @@
             "event": "K891A",
             "name": "Sea Ice Tracker/SVP Deployment",
             "description": "To monitor sea ice breakout and drift.",
-            "principal investigator": "Smith, I.J.",
+            "principal investigator": "Inga Smith",
             "email": "inga.smith@otago.ac.nz",
             "status": "Planned",
             "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/58cb4eb4-6a1a-4182-a644-0d79161b01f1"

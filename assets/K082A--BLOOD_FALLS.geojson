@@ -15,7 +15,7 @@
         "name": "Water Sampling",
         "description": "Measuring isotope, genetic, and associated analysis.",
         "site": "Blood Falls/Lake Bonney",
-        "principal investigator": "Seabrook. S.",
+        "principal investigator": "Sarah Seabrook",
         "email": "sarah.seabrook@otago.ac.nz",
         "status": "Planned"
       },
@@ -34,7 +34,7 @@
         "name": "Lake Physical Measurements",
         "description": "ADCP (currents), temperature, salinity, oxygen, CO2, methane, turbidity, radon, and other proxies.",
         "site": "Lake Bonney",
-        "principal investigator": "Seabrook. S.",
+        "principal investigator": "Sarah Seabrook",
         "email": "sarah.seabrook@otago.ac.nz",
         "status": "Planned"
       },
