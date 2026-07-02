@@ -669,7 +669,10 @@ app.layout = html.Div(
                     className="title-pane__logo",
                 ),
                 html.Button(
-                    "ⓘ Info",
+                    [
+                        html.Span("ⓘ", className="title-pane__info-icon"),
+                        "About",
+                    ],
                     id="btn-info",
                     className="title-pane__info-btn",
                 ),
@@ -801,7 +804,7 @@ app.layout = html.Div(
                         ),
                         html.P(
                             "Click any point on the map to view its details. Use the layer switcher "
-                            "(bottom-right) to toggle between satellite basemaps.",
+                            "(top-right) to toggle between satellite basemaps, or the ruler tool to measure distances.",
                             className="info-modal__para",
                         ),
                     ], className="info-modal__body"),

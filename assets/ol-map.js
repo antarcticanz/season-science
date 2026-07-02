@@ -878,6 +878,146 @@ function buildLayer(entry) {
     if (panel) panel.style.display = "none";
   });
 
+  // ---- Ruler / measure tool ----------------------------------------
+  const rulerIconSvg = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+         fill="none" stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="8" width="20" height="8" rx="1.5"/>
+      <line x1="6" y1="8" x2="6" y2="11"/>
+      <line x1="10" y1="8" x2="10" y2="12.5"/>
+      <line x1="14" y1="8" x2="14" y2="11"/>
+      <line x1="18" y1="8" x2="18" y2="12.5"/>
+    </svg>`;
+
+  const measureSource = new ol.source.Vector();
+  const measureLayer = new ol.layer.Vector({
+    source: measureSource,
+    style: new ol.style.Style({
+      stroke: new ol.style.Stroke({ color: "rgba(255,255,255,0.9)", width: 2, lineDash: [8, 6] }),
+      image: new ol.style.Circle({
+        radius: 4,
+        fill: new ol.style.Fill({ color: "#fff" }),
+        stroke: new ol.style.Stroke({ color: "rgba(0,0,0,0.25)", width: 1 }),
+      }),
+    }),
+    zIndex: 200,
+  });
+  map.addLayer(measureLayer);
+
+  const measureTooltipEl = document.createElement("div");
+  measureTooltipEl.className = "measure-tooltip";
+  const measureTooltipOverlay = new ol.Overlay({
+    element: measureTooltipEl,
+    offset: [12, -8],
+    positioning: "center-left",
+    stopEvent: false,
+  });
+  map.addOverlay(measureTooltipOverlay);
+
+  const rulerControl = document.createElement("div");
+  rulerControl.className = "ol-ruler-control";
+  rulerControl.style.pointerEvents = "auto";
+  rulerControl.innerHTML = `
+    <button class="ol-layers-btn ol-ruler-btn" title="Measure distance" aria-label="Measure distance" style="pointer-events:auto;">
+      ${rulerIconSvg}
+    </button>`;
+  layersControl.parentNode.insertBefore(rulerControl, layersControl.nextSibling);
+
+  ["click", "dblclick", "mousedown", "mouseup", "pointerdown", "pointerup"].forEach(function (evtName) {
+    rulerControl.addEventListener(evtName, function (e) { e.stopPropagation(); });
+  });
+
+  const rulerBtn = rulerControl.querySelector(".ol-ruler-btn");
+  let drawInteraction = null;
+  let measureSketch = null;
+  let rulerActive = false;
+
+  function formatDist(m) {
+    return m < 1000 ? `${Math.round(m)} m` : `${(m / 1000).toFixed(1)} km`;
+  }
+
+  function onMeasurePointerMove(e) {
+    if (!measureSketch) return;
+    const dist = ol.sphere.getLength(measureSketch.getGeometry(), { projection: "EPSG:3031" });
+    measureTooltipEl.textContent = formatDist(dist);
+    measureTooltipOverlay.setPosition(e.coordinate);
+  }
+
+  function clearMeasure() {
+    measureSource.clear();
+    measureTooltipEl.className = "measure-tooltip";
+    measureTooltipEl.textContent = "";
+    measureTooltipOverlay.setPosition(undefined);
+  }
+
+  function activateMeasure() {
+    rulerActive = true;
+    rulerBtn.classList.add("ol-ruler-btn--active");
+    map.getViewport().style.cursor = "crosshair";
+    clearMeasure();
+    popupContainer.style.display = "none";
+    popupOverlay.setPosition(undefined);
+
+    drawInteraction = new ol.interaction.Draw({
+      source: measureSource,
+      type: "LineString",
+      style: new ol.style.Style({
+        stroke: new ol.style.Stroke({ color: "rgba(255,255,255,0.85)", width: 2, lineDash: [6, 5] }),
+        image: new ol.style.Circle({
+          radius: 4,
+          fill: new ol.style.Fill({ color: "#fff" }),
+          stroke: new ol.style.Stroke({ color: "rgba(0,0,0,0.3)", width: 1 }),
+        }),
+      }),
+    });
+    map.addInteraction(drawInteraction);
+    map.on("pointermove", onMeasurePointerMove);
+
+    drawInteraction.on("drawstart", function (e) {
+      measureSketch = e.feature;
+    });
+
+    drawInteraction.on("drawend", function (e) {
+      const geom = e.feature.getGeometry();
+      const coords = geom.getCoordinates();
+      const dist = ol.sphere.getLength(geom, { projection: "EPSG:3031" });
+      measureTooltipEl.textContent = formatDist(dist);
+      measureTooltipEl.className = "measure-tooltip measure-tooltip--final";
+      measureTooltipOverlay.setPosition(coords[coords.length - 1]);
+      measureSketch = null;
+      map.un("pointermove", onMeasurePointerMove);
+      map.removeInteraction(drawInteraction);
+      drawInteraction = null;
+      map.getViewport().style.cursor = "";
+      rulerActive = false;
+      rulerBtn.classList.remove("ol-ruler-btn--active");
+    });
+  }
+
+  function deactivateMeasure() {
+    if (drawInteraction) {
+      drawInteraction.abortDrawing();
+      map.removeInteraction(drawInteraction);
+      drawInteraction = null;
+    }
+    map.un("pointermove", onMeasurePointerMove);
+    map.getViewport().style.cursor = "";
+    rulerActive = false;
+    rulerBtn.classList.remove("ol-ruler-btn--active");
+    measureSketch = null;
+    clearMeasure();
+  }
+
+  rulerBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    if (rulerActive || measureSource.getFeatures().length > 0) {
+      deactivateMeasure();
+    } else {
+      activateMeasure();
+    }
+  });
+
   // ---- Popup helpers -----------------------------------------------
   function renderFeaturePage(props, pageIndex, total) {
     const site = props.name || "Location";
@@ -1003,6 +1143,7 @@ function buildLayer(entry) {
 
   // ---- Popup click handler -----------------------------------------
   map.on("singleclick", function (evt) {
+    if (rulerActive) return;
     popupOverlay.setPosition(undefined);
     popupContainer.style.display = "none";
 
