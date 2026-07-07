@@ -1340,6 +1340,46 @@
           -77.868009
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K051A",
+        "site": "Cape Crozier",
+        "name": "Instrumentation Frame",
+        "description": "Framing that used to hold the camera and AWS.",
+        "principal investigator": "Michelle LaRue",
+        "email": "michelle.larue@canterbury.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/f1a48a2b-d0b0-4a20-839d-bc88050b12ba"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.2111251,
+          -77.465345
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K051A",
+        "site": "Cape Crozier",
+        "name": "Timelapse Camera",
+        "description": "Estimate population size of the Emperor Penguin colony, providing ground validation for satellite-derived population estimates.",
+        "principal investigator": "Michelle LaRue",
+        "email": "michelle.larue@canterbury.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/f1a48a2b-d0b0-4a20-839d-bc88050b12ba"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.211667,
+          -77.465278
+        ]
+      }
     }
   ]
 }
