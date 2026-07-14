@@ -1380,6 +1380,26 @@
           -77.465278
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K892AA",
+        "site": "McMurdo Sound",
+        "name": "Oceanographic Mooring",
+        "description": "To characterise the Ice Shelf Water outflow and the scale of its inter-annual variability.",
+        "principal investigator": "Natalie Robinson",
+        "email": "natalie.robinson@vuw.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/66dd4683-3ba7-41c3-b27a-f431422ae8b3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          165.40590000,
+          -77.81830000
+        ]
+      }
     }
   ]
 }
