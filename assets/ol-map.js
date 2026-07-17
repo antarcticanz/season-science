@@ -1020,6 +1020,35 @@ function buildLayer(entry) {
     const informationUrl = information && /^https?:\/\//i.test(information)
       ? escapeHtml(information) : null;
 
+    const coords = props.__coords__;
+    const coordsAttr = coords
+      ? `${coords[1].toFixed(6)}, ${coords[0].toFixed(6)}`
+      : null;
+    const coordsRowHtml = coordsAttr ? `
+      <div class="popup-info-row">
+        <button class="copy-coords-btn" data-coords="${coordsAttr}" title="Copy coordinates (lat, lon) to clipboard" aria-label="Copy coordinates">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span class="copy-coords-label">Get Coordinates</span>
+        </button>
+      </div>` : "";
+    const infoRowHtml = informationUrl ? `
+      <div class="popup-info-row">
+        <a class="popup-info-link" href="${informationUrl}" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+          More Information
+        </a>
+      </div>` : "";
+    const infoSectionHtml = (coordsRowHtml || infoRowHtml)
+      ? `<div class="popup-info">${coordsRowHtml}${infoRowHtml}</div>`
+      : "";
+
     const paginationHtml = total > 1 ? `
       <div class="popup-pagination">
         <button class="popup-nav-btn" id="popup-prev" ${pageIndex === 0 ? "disabled" : ""}>&#8592;</button>
@@ -1048,16 +1077,7 @@ function buildLayer(entry) {
           </svg>
         </button>
       </div>
-      ${informationUrl ? `<div class="popup-info">
-        <a class="popup-info-link" href="${informationUrl}" target="_blank" rel="noopener noreferrer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-            <polyline points="15 3 21 3 21 9"/>
-            <line x1="10" y1="14" x2="21" y2="3"/>
-          </svg>
-          More Information
-        </a>
-      </div>` : ""}
+      ${infoSectionHtml}
     `;
 
     if (total > 1) {
@@ -1121,7 +1141,13 @@ function buildLayer(entry) {
 
     const rawFeatures = [];
     map.forEachFeatureAtPixel(evt.pixel, function (feature) {
-      rawFeatures.push(feature.getProperties());
+      const props = feature.getProperties();
+      const geom = feature.getGeometry();
+      if (geom && geom.getType() === "Point") {
+        const [lon, lat] = ol.proj.toLonLat(geom.getCoordinates(), "EPSG:3031");
+        props.__coords__ = [lon, lat];
+      }
+      rawFeatures.push(props);
     }, { hitTolerance: 10 });
 
     if (rawFeatures.length === 0) return;
@@ -1134,6 +1160,7 @@ function buildLayer(entry) {
         const existing = seen.get(key);
         const cur = existing.__statuses__ || [existing.status];
         if (!cur.includes(props.status)) existing.__statuses__ = [...cur, props.status];
+        if (!existing.__coords__ && props.__coords__) existing.__coords__ = props.__coords__;
       } else {
         const merged = { ...props };
         seen.set(key, merged);
@@ -1157,14 +1184,18 @@ function buildLayer(entry) {
 
 // ---- Copy-to-clipboard -------------------------------------------
 document.addEventListener("click", function (e) {
-  const btn = e.target.closest(".copy-email-btn");
+  const btn = e.target.closest(".copy-email-btn, .copy-coords-btn");
   if (!btn) return;
-  const email = btn.dataset.email;
-  if (!email) return;
-  navigator.clipboard.writeText(email).then(() => {
+  const value = btn.dataset.email || btn.dataset.coords;
+  if (!value) return;
+  navigator.clipboard.writeText(value).then(() => {
     const oldHtml = btn.innerHTML;
+    btn.classList.add("copied");
     btn.textContent = "Copied";
-    setTimeout(() => { btn.innerHTML = oldHtml; }, 1200);
+    setTimeout(() => {
+      btn.innerHTML = oldHtml;
+      btn.classList.remove("copied");
+    }, 1200);
   });
 });
 

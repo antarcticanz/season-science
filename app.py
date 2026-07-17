@@ -1035,18 +1035,26 @@ app.clientside_callback(
 
         const fileMap = {json.dumps(_ALL_LAYER_FILES)};
 
-        const visibleIds = Object.entries(visibilityData)
-            .filter(([id, vis]) => vis && fileMap[id])
-            .map(([id]) => id);
+        const filesToFetch = [];
+        const seen = new Set();
+        Object.entries(visibilityData).forEach(([id, vis]) => {{
+            if (!vis || !fileMap[id]) return;
+            const primary = fileMap[id];
+            if (!seen.has(primary)) {{ seen.add(primary); filesToFetch.push(primary); }}
+            if (primary.endsWith("--PLANNED.geojson")) {{
+                const active = primary.replace("--PLANNED.geojson", "--ACTIVE.geojson");
+                if (!seen.has(active)) {{ seen.add(active); filesToFetch.push(active); }}
+            }}
+        }});
 
-        if (visibleIds.length === 0) {{
+        if (filesToFetch.length === 0) {{
             alert("No visible layers to export.");
             return window.dash_clientside.no_update;
         }}
 
         Promise.all(
-            visibleIds.map(id =>
-                fetch("/assets/" + fileMap[id])
+            filesToFetch.map(file =>
+                fetch("/assets/" + file)
                     .then(r => r.ok ? r.json() : null)
                     .catch(() => null)
             )
@@ -1054,6 +1062,21 @@ app.clientside_callback(
             const features = [];
             results.forEach(fc => {{
                 if (fc && fc.features) features.push(...fc.features);
+            }});
+            const sortKey = (f) => {{
+                const ev = (f && f.properties && f.properties.event) || "";
+                const m = /^K(\\d+)([A-Za-z]*)$/.exec(ev);
+                if (m) return [0, parseInt(m[1], 10), m[2].toUpperCase()];
+                return [1, ev.toString().toUpperCase()];
+            }};
+            features.sort((a, b) => {{
+                const ka = sortKey(a), kb = sortKey(b);
+                if (ka[0] !== kb[0]) return ka[0] - kb[0];
+                if (ka[0] === 0) {{
+                    if (ka[1] !== kb[1]) return ka[1] - kb[1];
+                    return ka[2] < kb[2] ? -1 : ka[2] > kb[2] ? 1 : 0;
+                }}
+                return ka[1] < kb[1] ? -1 : ka[1] > kb[1] ? 1 : 0;
             }});
             const merged = {{
                 type: "FeatureCollection",
@@ -1077,7 +1100,7 @@ app.clientside_callback(
     """,
     Output("export-download-link", "href"),
     Input("btn-export-geojson", "n_clicks"),
-    Input("layer-visibility-store", "data"),
+    State("layer-visibility-store", "data"),
     prevent_initial_call=True,
 )
 

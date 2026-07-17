@@ -564,6 +564,43 @@ body {
 }
 
 /* ================================================================
+   GET COORDINATES LINK-BUTTON (matches .popup-info-link)
+   ================================================================ */
+.popup-info-row {
+  display: block;
+  margin-top: 2px;
+}
+
+.popup-info-row:first-child {
+  margin-top: 0;
+}
+
+.copy-coords-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-accent-export);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.copy-coords-btn:hover {
+  color: var(--color-text-primary);
+  text-decoration: underline;
+}
+
+.copy-coords-btn.copied {
+  color: var(--color-copy-success);
+  text-decoration: none;
+}
+
+/* ================================================================
    OL MAP CONTROLS — zoom + layers button, right-aligned
    ================================================================ */
 .ol-zoom {
