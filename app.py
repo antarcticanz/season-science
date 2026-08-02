@@ -236,14 +236,6 @@ LAYER_REGISTRY = [
         "visible": True,
     },
     {
-        "id": "K500A--PLANNED",
-        "group": "K500A - PAMS",
-        "file": "K500A--PLANNED.geojson",
-        "status": "Planned",
-        "value": "K500A--PLANNED",
-        "visible": True,
-    },
-    {
         "id": "K850A--PLANNED",
         "group": "K850A - Penguin Census",
         "file": "K850A--PLANNED.geojson",
@@ -552,6 +544,14 @@ def health():
 @server.route("/assets/computed/offline.geojson")
 def computed_offline():
     return jsonify({"type": "FeatureCollection", "features": _OFFLINE_FEATURES})
+
+
+@server.route("/assets/computed/active_manifest.json")
+def computed_active_manifest():
+    files = sorted(
+        f for f in os.listdir(_ASSETS_DIR) if f.endswith("--ACTIVE.geojson")
+    )
+    return jsonify(files)
 
 
 # -------------------------------------------------------------------
@@ -957,7 +957,6 @@ def compute_visibility(*args):
 # -------------------------------------------------------------------
 @app.callback(
     [o for g, entries in _ALL_SIDEBAR_GROUPS.items() for o in (
-        Output(_children_id(g), "disabled"),
         Output(_children_id(g), "value", allow_duplicate=True),
         Output(_wrap_id(g), "style"),
     )],
@@ -975,7 +974,6 @@ def toggle_nested(*args):
         parent_on = bool(parent_values[i] and group_name in parent_values[i])
         multi = len(entries) > 1
         cur = current_children[i] or []
-        result.append(not parent_on)
         if not is_bulk and parent_on and not cur and multi:
             result.append([e["value"] for e in entries])
         else:

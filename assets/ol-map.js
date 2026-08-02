@@ -309,16 +309,6 @@ const LAYER_REGISTRY = [
     visible: true,
   },
   {
-    id: "K500A--PLANNED",
-    group: "K500A - PAMS",
-    file: "K500A--PLANNED.geojson",
-    status: "Planned",
-    color: "rgba(215, 235, 20, 0.9)",
-    filterStatus: "planned",
-    zIndex: 20,
-    visible: true,
-  },
-  {
     id: "K850A--PLANNED",
     group: "K850A - Penguin Census",
     file: "K850A--PLANNED.geojson",
@@ -527,6 +517,10 @@ function makeScaledPointStyle(fillColor) {
 // ------------------------------------------------------------------
 let __instruments_active_events__ = [];
 
+// Manifest of --ACTIVE.geojson files that actually exist on disk.
+// Populated once at startup so buildLayer skips fetches for missing pairs.
+const ACTIVE_MANIFEST = new Set();
+
 const instrumentsActiveStyleFn = (function () {
   const cache = {};
   return function (feature, resolution) {
@@ -629,14 +623,16 @@ function buildLayer(entry) {
 
   if (entry.filterStatus === "planned" && entry.file.endsWith("--PLANNED.geojson")) {
     const activeFile = entry.file.replace("--PLANNED.geojson", "--ACTIVE.geojson");
-    fetch(`/assets/${activeFile}`)
-      .then((r) => r.ok ? r.json() : null)
-      .then((json) => {
-        if (!json) return;
-        const features = new ol.format.GeoJSON().readFeatures(json, projOpts);
-        source.addFeatures(features);
-      })
-      .catch(() => {});
+    if (ACTIVE_MANIFEST.has(activeFile)) {
+      fetch(`/assets/${activeFile}`)
+        .then((r) => r.ok ? r.json() : null)
+        .then((json) => {
+          if (!json) return;
+          const features = new ol.format.GeoJSON().readFeatures(json, projOpts);
+          source.addFeatures(features);
+        })
+        .catch((err) => console.error(`Layer "${entry.id}" ACTIVE load error:`, err));
+    }
   }
 
   const style = entry.id === "instruments_active"
@@ -710,16 +706,23 @@ function buildLayer(entry) {
   // ---- Basemap registry --------------------------------------------
   const BASEMAP_REGISTRY = [
     {
+      id: "esri_imagery",
+      label: "ESRI Satellite",
+      capsUrl: "https://services.arcgisonline.com/arcgis/rest/services/Polar/Antarctic_Imagery/MapServer/WMTS/1.0.0/WMTSCapabilities.xml",
+      format: "image/jpg",
+    },
+    {
       id: "bas",
       label: "BAS Satellite",
       capsUrl: "https://tiles.arcgis.com/tiles/tPxy1hrFDhJfZ0Mf/arcgis/rest/services/Antarctica_and_the_Southern_Ocean/MapServer/wmts?SERVICE=WMTS&REQUEST=GetCapabilities",
       format: "image/png",
     },
     {
-      id: "esri_imagery",
-      label: "ESRI Satellite",
-      capsUrl: "https://services.arcgisonline.com/arcgis/rest/services/Polar/Antarctic_Imagery/MapServer/WMTS/1.0.0/WMTSCapabilities.xml",
-      format: "image/jpg",
+      id: "landcare_ramp_rema",
+      label: "Landcare RAMP/REMA",
+      capsUrl: "https://prod-ada-3.landcareresearch.co.nz/mapcache/atda/wmts/1.0.0/WMTSCapabilities.xml",
+      layerName: "ada_basemap_combined-HDPI",
+      format: "image/png; mode=8bit",
     },
   ];
 
@@ -729,7 +732,7 @@ function buildLayer(entry) {
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
       const xml = await resp.text();
       const caps = new ol.format.WMTSCapabilities().read(xml);
-      const layerName = caps.Contents.Layer[0].Identifier;
+      const layerName = entry.layerName || caps.Contents.Layer[0].Identifier;
       const options = ol.source.WMTS.optionsFromCapabilities(caps, {
         layer: layerName,
         format: entry.format,
@@ -750,6 +753,17 @@ function buildLayer(entry) {
 
   const baseLayers = await Promise.all(BASEMAP_REGISTRY.map(loadBasemapLayer));
   baseLayers.forEach((l) => l.setVisible(l.get("basemap-id") === "esri_imagery"));
+
+  // ---- Load ACTIVE manifest before building layers -----------------
+  try {
+    const resp = await fetch("/assets/computed/active_manifest.json");
+    if (resp.ok) {
+      const files = await resp.json();
+      files.forEach((f) => ACTIVE_MANIFEST.add(f));
+    }
+  } catch (err) {
+    console.error("ACTIVE manifest load error:", err);
+  }
 
   // ---- Build all data layers from registry -------------------------
   const dataLayers = LAYER_REGISTRY.map(buildLayer);
