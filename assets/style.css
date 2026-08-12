@@ -639,12 +639,20 @@ body {
   background: var(--color-bg-control-hover) !important;
 }
 
-/* NOTE: Do NOT add ol-unselectable class to this control — OL sets
+/* NOTE: Do NOT add ol-unselectable class to these controls — OL sets
    pointer-events:none on it, which swallows all clicks and makes the
    button invisible to the mouse. */
-.ol-layers-control {
+.ol-basemaps-control {
   position: absolute;
   top: 92px;
+  right: 12px;
+  left: auto;
+  z-index: 10;
+}
+
+.ol-overlays-control {
+  position: absolute;
+  top: 134px;
   right: 12px;
   left: auto;
   z-index: 10;
@@ -675,7 +683,7 @@ body {
    ================================================================ */
 .ol-ruler-control {
   position: absolute;
-  top: 134px;
+  top: 176px;
   right: 12px;
   left: auto;
   z-index: 10;
@@ -766,6 +774,119 @@ body {
 }
 
 /* ================================================================
+   OVERLAYS MENU (ASPA / ASMA polygon toggles)
+   ================================================================ */
+.overlays-menu {
+  position: absolute;
+  top: 0;
+  right: 42px;
+  left: auto;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+  padding: 8px;
+  min-width: 260px;
+  font-family: "Inter", system-ui, sans-serif;
+  z-index: 20;
+}
+
+.overlays-menu__heading {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.overlays-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--color-text-primary);
+  transition: background 0.12s;
+}
+
+.overlays-menu__item:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.overlays-menu__checkbox {
+  margin: 0;
+  cursor: pointer;
+  accent-color: #7fb2ff;
+}
+
+.overlays-menu__swatch {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  flex-shrink: 0;
+}
+
+.overlays-menu__label {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.overlays-menu__short {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.overlays-menu__full {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+}
+
+/* ================================================================
+   POLYGON HOVER TOOLTIP (ASPA / ASMA)
+   ================================================================ */
+.polygon-tooltip {
+  background: rgba(15, 25, 35, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-family: "Inter", system-ui, sans-serif;
+  color: #e8f4ff;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  max-width: 260px;
+  z-index: 30;
+}
+
+.polygon-tooltip__type {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #9ec8ff;
+  margin-bottom: 2px;
+}
+
+.polygon-tooltip__name {
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 2px;
+}
+
+.polygon-tooltip__meta {
+  font-size: 0.74rem;
+  color: rgba(232, 244, 255, 0.72);
+}
+
+/* ================================================================
    HEADER INFO BUTTON
    ================================================================ */
 .title-pane__info-btn {
@@ -800,68 +921,780 @@ body {
 }
 
 /* ================================================================
-   INFO MODAL
+   HEADER TUTORIAL CHIP (re-launches the guided tour)
    ================================================================ */
-.info-modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  display: flex;
+.title-pane__tutorial-chip {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  z-index: 2000;
-}
-
-.info-modal__inner {
-  background: var(--color-bg-elevated);
-  border: 1px solid var(--color-border-subtle);
-  border-radius: 10px;
-  padding: 28px 32px 24px;
-  max-width: 520px;
-  width: 90%;
-  position: relative;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.65);
+  gap: 6px;
+  background: var(--color-bg-control);
+  border: 1px solid var(--color-border-control);
+  border-radius: 20px;
+  padding: 6px 14px;
+  margin-right: 10px;
+  font-size: 0.82rem;
+  font-weight: 500;
   font-family: "Inter", system-ui, sans-serif;
-}
-
-.info-modal__close {
-  position: absolute;
-  top: 12px;
-  right: 14px;
-  background: transparent;
-  border: none;
-  font-size: 1rem;
   color: var(--color-text-muted);
   cursor: pointer;
-  line-height: 1;
-  padding: 4px 7px;
-  border-radius: 4px;
-  transition: color 0.15s, background 0.15s;
+  letter-spacing: 0.1px;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  white-space: nowrap;
+  flex-shrink: 0;
+  user-select: none;
 }
 
-.info-modal__close:hover {
+.title-pane__tutorial-chip:hover {
+  background: var(--color-bg-control-hover);
+  border-color: #4a6a85;
   color: var(--color-text-primary);
-  background: rgba(255, 255, 255, 0.07);
 }
 
-.info-modal__title {
-  font-size: 1.1rem;
-  font-weight: 700;
+.title-pane__tutorial-chip:focus-visible {
+  outline: 2px solid #6ab4ff;
+  outline-offset: 2px;
+}
+
+.title-pane__tutorial-chip-glyph {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+/* ================================================================
+   GUIDED TOUR — popup + scrim (ported from EBR .aa-tour* block)
+   ================================================================
+   Class hooks: .aa-tour, .aa-tour--hidden, .aa-tour__header,
+   .aa-tour__title, .aa-tour__close, .aa-tour__body, .aa-tour__footer,
+   .aa-tour__exit, .aa-tour__back, .aa-tour__next, .aa-tour__next--finish,
+   .aa-tour__tail (+ --top/--bottom/--left/--right), .aa-tour__scrim.
+   z-index: tour = 1080, scrim = 1070 (both clear the About sidebar at
+   z-index 90). */
+
+.aa-tour {
+  position: fixed;
+  z-index: 1080;
+  top: 0;
+  left: 0;
+  max-width: 360px;
+  min-width: 260px;
+  padding: 0;
+  background: var(--color-bg-elevated);
   color: var(--color-text-primary);
-  margin: 0 0 16px 0;
-  padding-bottom: 10px;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 6px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+  font-family: "Inter", system-ui, sans-serif;
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.15s ease;
+}
+
+.aa-tour--hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.aa-tour__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
   border-bottom: 1px solid var(--color-border-subtle);
+  background: transparent;
 }
 
-.info-modal__body {
+.aa-tour__title {
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: normal;
+  line-height: 1.25;
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+.aa-tour__close {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  color: var(--color-text-muted);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.aa-tour__close:hover {
+  color: #ffffff;
+  background: rgba(106, 180, 255, 0.08);
+}
+
+.aa-tour__close:focus-visible {
+  outline: 2px solid #6ab4ff;
+  outline-offset: 2px;
+}
+
+.aa-tour__body {
+  padding: 14px 16px;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--color-text-primary);
+}
+
+.aa-tour__body p {
+  margin: 0;
+}
+
+.aa-tour__footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px 12px 12px;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+/* EXIT — outlined muted. Pushed left via margin-right: auto. */
+.aa-tour__exit {
+  margin-right: auto;
+  min-height: 32px;
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 6px;
+  color: var(--color-text-muted);
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.aa-tour__exit:hover {
+  color: #ffb347;
+  border-color: #ffb347;
+  background: rgba(255, 179, 71, 0.06);
+}
+
+.aa-tour__exit:focus-visible {
+  outline: 2px solid #ffb347;
+  outline-offset: 2px;
+}
+
+/* BACK — neutral secondary. Pushed to the left so NEXT sits at the right. */
+.aa-tour__back {
+  margin-right: auto;
+  min-height: 32px;
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 6px;
+  color: var(--color-text-primary);
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.aa-tour__back:hover {
+  color: #ffffff;
+  border-color: var(--color-text-muted);
+  background: var(--color-bg-surface);
+}
+
+.aa-tour__back:focus-visible {
+  outline: 2px solid #6ab4ff;
+  outline-offset: 2px;
+}
+
+.aa-tour__back:disabled,
+.aa-tour__back[disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* NEXT — primary CTA (planned-blue). */
+.aa-tour__next {
+  min-height: 32px;
+  padding: 6px 14px;
+  background: rgba(106, 180, 255, 0.08);
+  border: 1px solid #6ab4ff;
+  border-radius: 6px;
+  color: #6ab4ff;
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease,
+              background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.aa-tour__next:hover {
+  background: rgba(106, 180, 255, 0.14);
+  box-shadow: 0 0 12px rgba(106, 180, 255, 0.5);
+}
+
+.aa-tour__next:focus-visible {
+  outline: 2px solid #6ab4ff;
+  outline-offset: 2px;
+}
+
+/* FINISH variant — active-green inset border-glow. */
+.aa-tour__next--finish {
+  box-shadow: inset 0 0 0 1px #4dd966;
+}
+
+.aa-tour__next--finish:hover {
+  box-shadow: inset 0 0 0 1px #4dd966, 0 0 12px rgba(106, 180, 255, 0.5);
+}
+
+/* ---------- Pointer tail (CSS-only triangle) ---------- */
+
+.aa-tour__tail {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.aa-tour__tail--top {
+  top: -10px;
+  left: 24px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid var(--color-bg-elevated);
+}
+.aa-tour__tail--top::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid var(--color-border-subtle);
+  z-index: -1;
+}
+
+.aa-tour__tail--bottom {
+  bottom: -10px;
+  left: 24px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid var(--color-bg-elevated);
+}
+.aa-tour__tail--bottom::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: -10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid var(--color-border-subtle);
+  z-index: -1;
+}
+
+.aa-tour__tail--left {
+  left: -10px;
+  top: 24px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid var(--color-bg-elevated);
+}
+.aa-tour__tail--left::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: -10px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid var(--color-border-subtle);
+  z-index: -1;
+}
+
+.aa-tour__tail--right {
+  right: -10px;
+  top: 24px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid var(--color-bg-elevated);
+}
+.aa-tour__tail--right::before {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: -10px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid var(--color-border-subtle);
+  z-index: -1;
+}
+
+/* ---------- Scrim (optional dim overlay) ---------- */
+
+.aa-tour__scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 1070;
+  background: rgba(6, 10, 16, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.aa-tour__scrim.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ================================================================
+   TOUR INLINE ICONS
+   ================================================================
+   Small chip-style icons rendered inline in tour body text so users
+   can match the sentence to the actual on-screen control. Each
+   variant embeds the exact SVG used by the corresponding map
+   button — icon colour is hardcoded (#dce8f0) because SVG data
+   URIs don't inherit CSS `currentColor`. */
+
+.tour-icon {
+  display: inline-flex;
+  vertical-align: -5px;
+  width: 22px;
+  height: 22px;
+  margin: 0 3px;
+  border: 1px solid var(--color-border-control);
+  border-radius: 4px;
+  background-color: var(--color-bg-control);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px 14px;
+  flex-shrink: 0;
+}
+
+.tour-icon--globe {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23dce8f0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/></svg>');
+}
+
+.tour-icon--layers {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23dce8f0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 12 12 17 22 12"/><polyline points="2 17 12 22 22 17"/></svg>');
+}
+
+.tour-icon--ruler {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23dce8f0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="8" width="20" height="8" rx="1.5"/><line x1="6" y1="8" x2="6" y2="11"/><line x1="10" y1="8" x2="10" y2="12.5"/><line x1="14" y1="8" x2="14" y2="11"/><line x1="18" y1="8" x2="18" y2="12.5"/></svg>');
+}
+
+/* Marker variant renders as a coloured dot (no chip border) so it
+   reads as a map marker rather than a UI control. */
+.tour-icon--marker {
+  border: 0;
+  background-color: transparent;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7" fill="%236ab4ff" stroke="%23ffffff" stroke-width="2.5"/></svg>');
+  background-size: 18px 18px;
+}
+
+/* ================================================================
+   ACCESSIBILITY
+   ================================================================ */
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0);
+  white-space: nowrap; border: 0;
+}
+
+/* ================================================================
+   ABOUT SIDEBAR — right-hand slide-out pane
+   ================================================================
+   Ported from EBR's .aa-sidebar / .aa-sd-* stack. Palette adapted to
+   season-science tokens: planned-blue (#6ab4ff) drives the "Overview"
+   section and tile accent; active-green (#4dd966) drives the "Interact"
+   section. Class hooks:
+     .aa-sidebar (+ .aa-sidebar--about) — the fixed pane
+     .aa-sidebar__header, __header-title, __close, __scroll
+     .aa-sd-intro, .aa-sd-tiles, .aa-sd-tile{,__value,__label,__hint}
+     .aa-sd-section (+ variants), .aa-sd-card (+ variants),
+     .aa-sd-footnote-wrap, .aa-sd-footnote
+   Toggle: .about-sidebar-open on .app-root (see app.py callback). */
+
+:root {
+  --about-sidebar-width: 440px;
+}
+
+/* Panel — fixed to right, slides in on class-toggle. */
+.aa-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(var(--about-sidebar-width), 100vw);
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-surface);
+  border-left: 1px solid var(--color-border-subtle);
+  transform: translateX(100%);
+  transition: transform 0.28s ease;
+  box-shadow: -18px 0 40px rgba(0, 0, 0, 0.45);
+}
+
+.app-root.about-sidebar-open .aa-sidebar--about {
+  transform: translateX(0);
+}
+
+/* Shrink the body-row (sidebar + map) from the right when the pane
+   opens, so the map reflows into the remaining width rather than
+   being hidden behind the panel. */
+.body-row {
+  transition: padding-right 0.28s ease;
+}
+
+.app-root.about-sidebar-open .body-row {
+  padding-right: var(--about-sidebar-width);
+}
+
+/* --- Header --- */
+.aa-sidebar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-border-subtle);
+  flex: 0 0 auto;
+  background: linear-gradient(180deg,
+    rgba(106, 180, 255, 0.10) 0%,
+    rgba(20, 20, 20, 0) 100%);
+}
+
+.aa-sidebar__header-title {
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+}
+
+.aa-sidebar__close {
+  background: transparent;
+  border: 1px solid var(--color-border-subtle);
+  color: var(--color-text-muted);
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  transition: color 0.15s ease, border-color 0.15s ease,
+              background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.aa-sidebar__close:hover,
+.aa-sidebar__close:focus-visible {
+  color: #6ab4ff;
+  border-color: #6ab4ff;
+  box-shadow: 0 0 10px rgba(106, 180, 255, 0.35);
+  outline: none;
+}
+
+/* --- Scroll region --- */
+.aa-sidebar__scroll {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-scrollbar-thumb) transparent;
+}
+
+.aa-sidebar__scroll::-webkit-scrollbar { width: 8px; }
+
+.aa-sidebar__scroll::-webkit-scrollbar-thumb {
+  background: var(--color-scrollbar-thumb);
+  border-radius: 999px;
+}
+
+.aa-sidebar__scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--color-scrollbar-thumb-hover);
+}
+
+/* --- Intro --- */
+.aa-sd-intro {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+/* --- Metric tiles --- */
+.aa-sd-tiles {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.aa-sd-tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  padding: 16px 18px 16px 22px;
+  background:
+    linear-gradient(140deg, rgba(106, 180, 255, 0.06) 0%,
+                            rgba(77, 217, 102, 0.03) 60%,
+                            rgba(20, 20, 20, 0) 100%),
+    var(--color-bg-elevated);
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, border-color 0.15s ease,
+              box-shadow 0.15s ease;
+}
+
+.aa-sd-tile:hover {
+  transform: translateX(1px);
+  border-color: rgba(106, 180, 255, 0.35);
+  box-shadow: 0 0 18px rgba(106, 180, 255, 0.14);
+}
+
+.aa-sd-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(180deg, #6ab4ff, #4dd966);
+  box-shadow: 0 0 12px rgba(106, 180, 255, 0.45);
+}
+
+.aa-sd-tile__value {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  line-height: 1.05;
+  text-shadow: 0 0 12px rgba(106, 180, 255, 0.28);
+}
+
+.aa-sd-tile__label {
+  margin-top: 6px;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+}
+
+.aa-sd-tile__hint {
+  margin-top: 6px;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.aa-sd-tiles__caption {
+  display: block;
+  margin-top: -6px;
+  font-size: 11px;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+}
+
+/* --- Narrative sections --- */
+.aa-sd-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.aa-sd-section__head {
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.aa-sd-section__eyebrow {
+  display: inline-block;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border-subtle);
+  color: var(--color-text-muted);
+  background: var(--color-bg-control);
+}
+
+.aa-sd-section--blue .aa-sd-section__eyebrow {
+  color: #6ab4ff;
+  border-color: rgba(106, 180, 255, 0.4);
+  background: rgba(106, 180, 255, 0.08);
+}
+
+.aa-sd-section--green .aa-sd-section__eyebrow {
+  color: #4dd966;
+  border-color: rgba(77, 217, 102, 0.4);
+  background: rgba(77, 217, 102, 0.08);
+}
+
+.aa-sd-section__heading {
+  margin: 10px 0 0 0;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+}
+
+.aa-sd-section__cards {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.info-modal__para {
-  font-size: 0.88rem;
-  color: var(--color-text-primary);
-  line-height: 1.6;
+/* --- Accent cards --- */
+.aa-sd-card {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: border-color 0.15s ease, transform 0.15s ease,
+              box-shadow 0.15s ease;
+}
+
+.aa-sd-card__bar {
+  flex: 0 0 4px;
+  background: var(--color-border-subtle);
+}
+
+.aa-sd-card__inner {
+  flex: 1 1 auto;
+  padding: 12px 14px 12px 12px;
+}
+
+.aa-sd-card__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.aa-sd-card__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--color-bg-base);
+}
+
+.aa-sd-card__title {
   margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.aa-sd-card__body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 12.5px;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+}
+
+/* Blue variant — "Overview". */
+.aa-sd-card--blue .aa-sd-card__bar {
+  background: linear-gradient(180deg, #6ab4ff, rgba(106, 180, 255, 0.15));
+  box-shadow: inset -1px 0 6px rgba(106, 180, 255, 0.35);
+}
+
+.aa-sd-card--blue .aa-sd-card__badge {
+  background: #6ab4ff;
+  box-shadow: 0 0 8px rgba(106, 180, 255, 0.45);
+}
+
+.aa-sd-card--blue:hover {
+  border-color: rgba(106, 180, 255, 0.5);
+  transform: translateX(1px);
+  box-shadow: 0 0 18px rgba(106, 180, 255, 0.12);
+}
+
+/* Green variant — "Interact". */
+.aa-sd-card--green .aa-sd-card__bar {
+  background: linear-gradient(180deg, #4dd966, rgba(77, 217, 102, 0.15));
+  box-shadow: inset -1px 0 6px rgba(77, 217, 102, 0.35);
+}
+
+.aa-sd-card--green .aa-sd-card__badge {
+  background: #4dd966;
+  box-shadow: 0 0 8px rgba(77, 217, 102, 0.45);
+}
+
+.aa-sd-card--green:hover {
+  border-color: rgba(77, 217, 102, 0.5);
+  transform: translateX(1px);
+  box-shadow: 0 0 18px rgba(77, 217, 102, 0.12);
+}
+
+/* --- Footnote --- */
+.aa-sd-footnote-wrap {
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border-subtle);
+  text-align: center;
+}
+
+.aa-sd-footnote {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+}
+
+/* Mobile — pane covers content, no push. */
+@media (max-width: 640px) {
+  .aa-sidebar {
+    width: 100vw;
+    box-shadow: none;
+    z-index: 200;
+  }
+  .app-root.about-sidebar-open .body-row {
+    padding-right: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aa-sidebar,
+  .body-row,
+  .aa-sd-card {
+    transition: none !important;
+  }
 }

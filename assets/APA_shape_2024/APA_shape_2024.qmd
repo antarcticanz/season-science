@@ -1,0 +1,122 @@
+<!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
+<qgis version="3.34.12-Prizren">
+  <identifier>D:/OneDrive - SECRETARÍA DEL TRATADO ANTÁRTICO/A TAREAS/desarrollo shapefiles ASPA y ASMA/Pre entrega 1 11 2024/ASMA_ASPA_2024.shp</identifier>
+  <parentidentifier>https://documents.ats.aq/gis/APA_shape_2024.ZIP</parentidentifier>
+  <language>English</language>
+  <type>dataset</type>
+  <title>Antarctic Treaty Protected Areas - Shapefiles
+</title>
+  <abstract>
+This shape contains the location of the Antarctic Treaty Protected Areas (ASPA) and Antarctic Specially Managed Area (ASMA). This layer shows the boundaries of each area as well as information related to Proposing Party, legal status, primary reason for designation, the Antarctic Environmental Domain and Antarctic Conservation Biogeographic Region. 
+</abstract>
+  <keywords vocabulary="ASMA">
+    <keyword>Any area</keyword>
+    <keyword> including any marine area</keyword>
+    <keyword> where activities are being conducted or may in the future be conducted</keyword>
+    <keyword> designated by te Antarctic Treaty Consultative Meeting to assist in the planning and co-ordination of activities</keyword>
+    <keyword> avoid possible conflicts</keyword>
+    <keyword> improve co-operation</keyword>
+  </keywords>
+  <keywords vocabulary="ASPA">
+    <keyword>Any area</keyword>
+    <keyword> including any marine area</keyword>
+    <keyword> designated by the Antarctic Treaty Consultative Meeting to protect outstanding environmental</keyword>
+    <keyword> scientific</keyword>
+    <keyword> historic</keyword>
+    <keyword> aesthetic or wilderness values</keyword>
+    <keyword> any combination of those values</keyword>
+    <keyword> or ongoing or planned scientific research.
+</keyword>
+  </keywords>
+  <keywords vocabulary="gmd:topicCategory">
+    <keyword>Environmental Policy</keyword>
+    <keyword>Gescientific information</keyword>
+    <keyword>Natural areas</keyword>
+    <keyword> landscape</keyword>
+    <keyword> ecosystems</keyword>
+  </keywords>
+  <contact>
+    <contactAddress>
+      <type>postal</type>
+      <address>Maipu 757 piso 5</address>
+      <city>CABA</city>
+      <administrativearea>Buenos Aires</administrativearea>
+      <postalcode>C1006ACI</postalcode>
+      <country>Argentina</country>
+    </contactAddress>
+    <name>Jose Luis Agraz</name>
+    <organization>Secretariat of the Antarctic Treaty</organization>
+    <position>Information Officer</position>
+    <voice>"+541139914250"</voice>
+    <fax>"+541139914253"</fax>
+    <email>io@antarctictreaty.org</email>
+    <role>custodian</role>
+  </contact>
+  <links>
+    <link url="ats.aq" size="" type="WWW:LINK" description="ATS Website" name="APA" mimeType="text/html" format="web"/>
+  </links>
+  <history></history>
+  <history>This polygonal geometry shapefile represents the spatial location of the Antarctic Specially Protected Areas (ASPA) and the Antarctic Specially Managed Areas (ASMA) corresponding to the 2024 version. 
+
+As of the 2018 version, the Antarctic Treaty Secretariat made the corresponding modifications and additions for each area in accordance with the updates reported in each of the management plans declared by the Consultative Parties responsible for the management of these areas. 
+
+The update of the dataset is the result of the review work of each management plan for each of the protected areas, where new polygonal entities were modified, replaced or incorporated into the shapefile, as well as new information was modified and added to the corresponding database. For this task, we worked with the QGIS Geographic Information System with the support of open-access satellite images provided by Google.
+
+The input for this update is the result of information sent by each Consultative Party to the Antarctic Treaty Secretariat, which aims to provide access through web map portals and databases to information on Antarctic protected areas.
+
+Inquiry Link 
+https://www.ats.aq/devph/es/apa-database
+
+In summary, the updated dataset is composed of each polygonal entity for each protected area, whether ASPA or ASMA, unlike the 2018 version, which only included ASPAs. 
+On the other hand, it is necessary to consider that some of these areas did not have any modifications, so in these cases the entity corresponding to the year 2018 was left.
+
+As for the attribute table, it is composed of the following fields:
+
+- Name: Field that indicates the official name of each protected and/or managed area. The names are as agreed in Decision 1 (2002) and other Measures adopted by the ATCM
+- Propon: Field that indicates the original proposing party.
+- DesigInstr: A field that indicates the original management plan designated.
+- Area_km: Field indicating the area in km2 for each protected area. In the case that an ASPA area is composed of several polygons, the area consigned in each of these is the general area of the ASPA repeated in each of them.
+- PrimProtDe: Field that indicates the main reason for the designation.
+- EnvDomain: A field that indicates the primary environmental domain represented.
+- Marine: A field that indicates whether the protected area has a marine component. 
+- ACBR: Field that indicates the biogeographic regions of Antarctic conservation.
+- Año_versi: This field was completed with the value 2024 for the polygons that were updated and with 2018 for those spaces that were not updated.
+- Update: the criterion used to complete this field is the binary, with the value being 1 when the space was updated and the value 0 in the opposite situation.
+- Tipo_apa: Field that indicates whether the protected area is ASPA or ASMA.
+- ID: A field that indicates the unique identifier of each polygon.
+- Numero_apa: Field indicating the official number assigned to the ASPA/ASMA
+</history>
+  <dates>
+    <date type="Created" value="2024-11-30T00:00:00"/>
+    <date type="Published" value="2024-11-30T00:00:00"/>
+    <date type="Revised" value="2024-11-30T00:00:00"/>
+  </dates>
+  <fees>Attribution 4.0 International
+</fees>
+  <rights>Unless otherwise indicated, copyright © for all material on this package and all related publications belongs to the Antarctic Treaty Secretariat (ATS). ATS copyrighted material maybe used as long as the source is indicated.
+</rights>
+  <license>Creative Commons Attribution 4.0</license>
+  <encoding></encoding>
+  <crs>
+    <spatialrefsys nativeFormat="Wkt">
+      <wkt>PROJCRS["WGS 84 / Antarctic Polar Stereographic",BASEGEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]],CONVERSION["Antarctic Polar Stereographic",METHOD["Polar Stereographic (variant B)",ID["EPSG",9829]],PARAMETER["Latitude of standard parallel",-71,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8832]],PARAMETER["Longitude of origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8833]],PARAMETER["False easting",0,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",north,MERIDIAN[90,ANGLEUNIT["degree",0.0174532925199433]],ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,MERIDIAN[0,ANGLEUNIT["degree",0.0174532925199433]],ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Antarctic Digital Database and small scale topographic mapping."],AREA["Antarctica."],BBOX[-90,-180,-60,180]],ID["EPSG",3031]]</wkt>
+      <proj4>+proj=stere +lat_0=-90 +lat_ts=-71 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
+      <srsid>996</srsid>
+      <srid>3031</srid>
+      <authid>EPSG:3031</authid>
+      <description>WGS 84 / Antarctic Polar Stereographic</description>
+      <projectionacronym>stere</projectionacronym>
+      <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys>
+  </crs>
+  <extent>
+    <spatial minz="0" maxy="-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368" minx="179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368" miny="179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368" dimensions="2" maxx="-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368" maxz="0" crs="EPSG:3031"/>
+    <temporal>
+      <period>
+        <start></start>
+        <end></end>
+      </period>
+    </temporal>
+  </extent>
+</qgis>

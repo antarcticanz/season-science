@@ -19,3 +19,5 @@ env/
 Thumbs.db
 .vscode/
 .idea/
+# Internal team notes (local only)
+team/

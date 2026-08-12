@@ -5,6 +5,11 @@ from collections import OrderedDict
 from flask import jsonify
 from dash import Dash, html, dcc, Input, Output, State, ALL, ctx, no_update
 
+from components.tour_popup import tour_popup
+from components.about_sidebar import about_sidebar
+from tour_callbacks import register_tour_callbacks
+from tour_clientside import register_tour_clientside, build_tour_steps_meta
+
 # -------------------------------------------------------------------
 # LAYER REGISTRY
 #
@@ -636,13 +641,28 @@ app.layout = html.Div(
                     src="/assets/ANZ_Logo_Horizontal_Badge_White_RGB.png",
                     className="title-pane__logo",
                 ),
-                html.Button(
+                html.Div(
                     [
-                        html.Span("ⓘ", className="title-pane__info-icon"),
-                        "About",
+                        html.Button(
+                            [
+                                "Take the tutorial",
+                                html.Span("▶", className="title-pane__tutorial-chip-glyph"),
+                            ],
+                            id="topbar-tutorial",
+                            type="button",
+                            n_clicks=0,
+                            className="title-pane__tutorial-chip",
+                        ),
+                        html.Button(
+                            [
+                                html.Span("ⓘ", className="title-pane__info-icon"),
+                                "About",
+                            ],
+                            id="btn-info",
+                            className="title-pane__info-btn",
+                        ),
                     ],
-                    id="btn-info",
-                    className="title-pane__info-btn",
+                    style={"display": "flex", "alignItems": "center"},
                 ),
             ],
             className="title-pane",
@@ -654,7 +674,7 @@ app.layout = html.Div(
                 # Sidebar — fully dynamic from LAYER_REGISTRY
                 html.Div(
                     [
-                        html.Div("Planned Science Events 2026-27", className="sidebar__heading"),
+                        html.Div("Planned Science Events 2026-27", id="section-science-events", className="sidebar__heading"),
 
                         html.Div(
                             [
@@ -684,7 +704,7 @@ app.layout = html.Div(
                                 html.Button("All",  id="btn-loc-select-all",   className="sidebar__bulk-btn sidebar__bulk-btn--sm"),
                                 html.Button("None", id="btn-loc-deselect-all", className="sidebar__bulk-btn sidebar__bulk-btn--sm"),
                             ], className="sidebar__bulk-actions sidebar__bulk-actions--compact"),
-                        ], className="sidebar__section-header"),
+                        ], id="section-locations", className="sidebar__section-header"),
 
                         html.Hr(className="sidebar__hr"),
 
@@ -698,7 +718,7 @@ app.layout = html.Div(
                                 html.Button("All",  id="btn-instr-select-all",   className="sidebar__bulk-btn sidebar__bulk-btn--sm"),
                                 html.Button("None", id="btn-instr-deselect-all", className="sidebar__bulk-btn sidebar__bulk-btn--sm"),
                             ], className="sidebar__bulk-actions sidebar__bulk-actions--compact"),
-                        ], className="sidebar__section-header"),
+                        ], id="section-instruments", className="sidebar__section-header"),
 
                         html.Hr(className="sidebar__hr"),
 
@@ -723,7 +743,7 @@ app.layout = html.Div(
                                 html.Button("All",  id="btn-camp-select-all",   className="sidebar__bulk-btn sidebar__bulk-btn--sm"),
                                 html.Button("None", id="btn-camp-deselect-all", className="sidebar__bulk-btn sidebar__bulk-btn--sm"),
                             ], className="sidebar__bulk-actions sidebar__bulk-actions--compact"),
-                        ], className="sidebar__section-header"),
+                        ], id="section-camp-sites", className="sidebar__section-header"),
 
                         html.Hr(className="sidebar__hr"),
 
@@ -753,41 +773,56 @@ app.layout = html.Div(
             className="body-row",
         ),
 
-        html.Div(
-            html.Div(
-                [
-                    html.Button("✕", id="btn-info-close", className="info-modal__close"),
-                    html.H2("About this map", className="info-modal__title"),
-                    html.Div([
-                        html.P(
-                            "This interactive map shows Antarctica New Zealand supported science "
-                            "activities and instruments for the 2026–27 season.",
-                            className="info-modal__para",
-                        ),
-                        html.P(
-                            "Use the sidebar to explore planned science events by location and site, "
-                            "view active and offline instruments grouped by event, and browse "
-                            "historical field camp sites.",
-                            className="info-modal__para",
-                        ),
-                        html.P(
-                            "Click any point on the map to view its details. Use the layer switcher "
-                            "(top-right) to toggle between satellite basemaps, or the ruler tool to measure distances.",
-                            className="info-modal__para",
-                        ),
-                    ], className="info-modal__body"),
-                ],
-                className="info-modal__inner",
-            ),
-            id="info-modal",
-            className="info-modal",
-            style={"display": "none"},
+        # About sidebar — right-hand slide-out pane. Always in DOM;
+        # visibility toggled via `.about-sidebar-open` class on .app-root
+        # by the callback near the bottom of this file.
+        about_sidebar(
+            planned_events=len(SCIENCE_GROUPS),
+            active_instruments=len(_ACTIVE_FEATURES),
+            protected_areas=148,  # 142 ASPA + 6 ASMA in APA_shape_2024
         ),
 
         html.Div(id="js-sink", style={"display": "none"}),
 
         dcc.Store(id="layer-visibility-store", data=DEFAULT_VISIBILITY),
+
+        # ---- Guided tour: routing + stores + sinks + popup mount ----
+        # dcc.Location powers the auto-launch trigger (Input on url.pathname).
+        # Single-page app — the pathname is only used as a "shell mounted"
+        # signal, not for actual routing.
+        dcc.Location(id="url"),
+
+        # Persistent per-tab state (session storage → survives refresh
+        # within the tab, resets when the browser tab closes).
+        dcc.Store(
+            id="tour-state-map",
+            storage_type="session",
+            data={"first_visit": True, "current_step": None, "dismissed": False},
+        ),
+
+        # Transient signal stores (memory → cleared on refresh).
+        dcc.Store(id="tour-esc-map-signal", storage_type="memory"),
+        dcc.Store(id="tour-auto-launch-map", storage_type="memory"),
+
+        # Steps metadata — hydrated once at boot, read as State by
+        # positioning + scroll clientside callbacks.
+        dcc.Store(
+            id="tour-steps-meta",
+            storage_type="memory",
+            data=build_tour_steps_meta(),
+        ),
+
+        # Invisible sink Divs — clientside callbacks write to .children
+        # to force execution without touching visible DOM.
+        html.Div(id="tour-pos-sink-map", style={"display": "none"}),
+        html.Div(id="tour-kbd-sink-map", style={"display": "none"}),
+        html.Div(id="tour-scroll-sink", style={"display": "none"}),
+        html.Div(id="tour-mount-sink-map", style={"display": "none"}),
+
+        # Popup mount (fixed-position; visibility gated by CSS + callback).
+        *tour_popup(tab="map"),
     ],
+    id="app-root",
     className="app-root",
 )
 
@@ -1104,22 +1139,40 @@ app.clientside_callback(
 
 
 # -------------------------------------------------------------------
-# Info modal open/close
+# About sidebar open/close
 # -------------------------------------------------------------------
+# Toggles `.about-sidebar-open` on the .app-root container. CSS slides the
+# pane in from the right and shrinks .body-row to reflow the map into the
+# remaining width. Mount-fire guard (`triggered.value`) prevents the
+# spurious n_clicks=0 fire that can slip past prevent_initial_call on
+# certain refresh paths.
 app.clientside_callback(
     """
-    function(openClicks, closeClicks) {
+    function(openClicks, closeClicks, currentClass) {
         const triggered = (window.dash_clientside.callback_context.triggered || [])[0];
         if (!triggered) return window.dash_clientside.no_update;
-        if (triggered.prop_id === "btn-info.n_clicks") return {"display": "flex"};
-        return {"display": "none"};
+        if (!triggered.value) return window.dash_clientside.no_update;
+        const OPEN = "about-sidebar-open";
+        const base = (currentClass || "")
+            .split(/\\s+/)
+            .filter(function (c) { return c && c !== OPEN; });
+        if (triggered.prop_id === "btn-info.n_clicks") base.push(OPEN);
+        return base.join(" ");
     }
     """,
-    Output("info-modal", "style"),
+    Output("app-root", "className"),
     Input("btn-info", "n_clicks"),
-    Input("btn-info-close", "n_clicks"),
+    Input("about-sidebar-close-btn", "n_clicks"),
+    State("app-root", "className"),
     prevent_initial_call=True,
 )
+
+
+# -------------------------------------------------------------------
+# Guided tour — register last so all layout elements exist
+# -------------------------------------------------------------------
+register_tour_callbacks(app)
+register_tour_clientside(app)
 
 
 # -------------------------------------------------------------------

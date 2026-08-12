@@ -488,6 +488,34 @@ const LAYER_REGISTRY = [
 ];
 
 // ------------------------------------------------------------------
+// POLYGON OVERLAY REGISTRY (ASPA / ASMA — Antarctic Treaty areas)
+// ------------------------------------------------------------------
+// ASMA drawn first (lower zIndex) so ASPAs — the smaller, more specific
+// sites nested inside broader ASMA zones — sit on top.
+const POLYGON_REGISTRY = [
+  {
+    id: "asma",
+    shortLabel: "ASMA",
+    label: "Antarctic Specially Managed Areas",
+    file: "APA_ASMA.geojson",
+    fill: "rgba(255, 220, 80, 0.14)",
+    outline: "rgba(255, 225, 100, 0.9)",
+    outlineWidth: 1.25,
+    zIndex: 3,
+  },
+  {
+    id: "aspa",
+    shortLabel: "ASPA",
+    label: "Antarctic Specially Protected Areas",
+    file: "APA_ASPA.geojson",
+    fill: "rgba(255, 100, 165, 0.15)",
+    outline: "rgba(255, 130, 185, 0.9)",
+    outlineWidth: 1.25,
+    zIndex: 4,
+  },
+];
+
+// ------------------------------------------------------------------
 // Scale-dependent point style (cached per radius bucket)
 // ------------------------------------------------------------------
 function makeScaledPointStyle(fillColor) {
@@ -653,6 +681,42 @@ function buildLayer(entry) {
 }
 
 // ------------------------------------------------------------------
+// Build one OL polygon overlay layer (ASPA / ASMA)
+// ------------------------------------------------------------------
+function buildPolygonLayer(entry) {
+  const source = new ol.source.Vector();
+  const projOpts = { dataProjection: "EPSG:4326", featureProjection: "EPSG:3031" };
+
+  fetch(`/assets/${entry.file}`)
+    .then((r) => {
+      if (!r.ok) throw new Error(`HTTP ${r.status} loading ${entry.file}`);
+      return r.json();
+    })
+    .then((json) => {
+      const features = new ol.format.GeoJSON().readFeatures(json, projOpts);
+      features.forEach((f) => f.set("__polygonLayerId__", entry.id));
+      source.addFeatures(features);
+      console.log(`Loaded polygon overlay "${entry.id}": ${features.length} features`);
+    })
+    .catch((err) => console.error(`Polygon overlay "${entry.id}" load error:`, err));
+
+  const style = new ol.style.Style({
+    fill: new ol.style.Fill({ color: entry.fill }),
+    stroke: new ol.style.Stroke({ color: entry.outline, width: entry.outlineWidth }),
+  });
+
+  const layer = new ol.layer.Vector({
+    source,
+    style,
+    visible: false,
+    zIndex: entry.zIndex,
+  });
+  layer.set("id", entry.id);
+  layer.set("__isPolygonOverlay__", true);
+  return layer;
+}
+
+// ------------------------------------------------------------------
 // Main
 // ------------------------------------------------------------------
 (async () => {
@@ -767,11 +831,12 @@ function buildLayer(entry) {
 
   // ---- Build all data layers from registry -------------------------
   const dataLayers = LAYER_REGISTRY.map(buildLayer);
+  const polygonLayers = POLYGON_REGISTRY.map(buildPolygonLayer);
 
   // ---- Map ---------------------------------------------------------
   const map = new ol.Map({
     target,
-    layers: [...baseLayers, ...dataLayers],
+    layers: [...baseLayers, ...polygonLayers, ...dataLayers],
     view: new ol.View({
       projection: projection3031,
       center: [0, 0],
@@ -807,10 +872,19 @@ function buildLayer(entry) {
         </button>`).join("")}`;
   }
 
-  // ---- Layers control button (right side, below zoom) -------------
+  // ---- Basemap control button (right side, below zoom) ------------
+  const globeIconSvg = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+         fill="none" stroke="currentColor" stroke-width="1.8"
+         stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9"/>
+      <ellipse cx="12" cy="12" rx="4" ry="9"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+    </svg>`;
+
   const layersIconSvg = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-         fill="none" stroke="currentColor" stroke-width="2"
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+         fill="none" stroke="currentColor" stroke-width="1.8"
          stroke-linecap="round" stroke-linejoin="round">
       <polygon points="12 2 2 7 12 12 22 7 12 2"/>
       <polyline points="2 12 12 17 22 12"/>
@@ -828,29 +902,30 @@ function buildLayer(entry) {
 
   const zoomEl = await waitForZoom();
 
-  const layersControl = document.createElement("div");
+  const basemapsControl = document.createElement("div");
   // NOTE: Do NOT add ol-unselectable — OL sets pointer-events:none on it,
   // which swallows all clicks and makes the button invisible to the mouse.
-  layersControl.className = "ol-layers-control";
-  layersControl.style.pointerEvents = "auto";
-  layersControl.innerHTML = `
-    <button class="ol-layers-btn" title="Switch base map" aria-label="Switch base map" style="pointer-events:auto;">
-      ${layersIconSvg}
+  basemapsControl.id = "basemaps-control";
+  basemapsControl.className = "ol-basemaps-control";
+  basemapsControl.style.pointerEvents = "auto";
+  basemapsControl.innerHTML = `
+    <button class="ol-layers-btn" title="Basemaps" aria-label="Switch basemap" style="pointer-events:auto;">
+      ${globeIconSvg}
     </button>
     <div class="bm-panel" id="bm-panel" style="display:none;"></div>`;
 
-  zoomEl.parentNode.insertBefore(layersControl, zoomEl.nextSibling);
+  zoomEl.parentNode.insertBefore(basemapsControl, zoomEl.nextSibling);
   renderBmPanel();
 
   // Block ALL mouse events from falling through to the map (prevents double-click zoom etc.)
   ["click", "dblclick", "mousedown", "mouseup", "pointerdown", "pointerup"].forEach(function (evtName) {
-    layersControl.addEventListener(evtName, function (e) {
+    basemapsControl.addEventListener(evtName, function (e) {
       e.stopPropagation();
     });
   });
 
   // Toggle the panel on button click
-  layersControl.querySelector(".ol-layers-btn").addEventListener("click", function (e) {
+  basemapsControl.querySelector(".ol-layers-btn").addEventListener("click", function (e) {
     e.stopPropagation();
     const panel = document.getElementById("bm-panel");
     panel.style.display = panel.style.display === "none" ? "block" : "none";
@@ -860,6 +935,54 @@ function buildLayer(entry) {
   target.addEventListener("click", function () {
     const panel = document.getElementById("bm-panel");
     if (panel) panel.style.display = "none";
+    const overlayMenu = document.getElementById("overlays-menu");
+    if (overlayMenu) overlayMenu.style.display = "none";
+  });
+
+  // ---- Overlays control (ASPA / ASMA polygon toggles) --------------
+  const overlaysControl = document.createElement("div");
+  overlaysControl.id = "overlays-control";
+  overlaysControl.className = "ol-overlays-control";
+  overlaysControl.style.pointerEvents = "auto";
+  overlaysControl.innerHTML = `
+    <button class="ol-layers-btn" title="Overlay layers" aria-label="Toggle map overlay layers" style="pointer-events:auto;">
+      ${layersIconSvg}
+    </button>
+    <div class="overlays-menu" id="overlays-menu" style="display:none;">
+      <div class="overlays-menu__heading">Layers</div>
+      ${POLYGON_REGISTRY.map(entry => `
+        <label class="overlays-menu__item">
+          <input type="checkbox" class="overlays-menu__checkbox"
+                 data-polygon-id="${entry.id}">
+          <span class="overlays-menu__swatch"
+                style="background:${entry.fill};border-color:${entry.outline};"></span>
+          <span class="overlays-menu__label">
+            <span class="overlays-menu__short">${entry.shortLabel}</span>
+            <span class="overlays-menu__full">${entry.label}</span>
+          </span>
+        </label>`).join("")}
+    </div>`;
+
+  basemapsControl.parentNode.insertBefore(overlaysControl, basemapsControl.nextSibling);
+
+  ["click", "dblclick", "mousedown", "mouseup", "pointerdown", "pointerup"].forEach(function (evtName) {
+    overlaysControl.addEventListener(evtName, function (e) {
+      e.stopPropagation();
+    });
+  });
+
+  overlaysControl.querySelector(".ol-layers-btn").addEventListener("click", function (e) {
+    e.stopPropagation();
+    const menu = document.getElementById("overlays-menu");
+    menu.style.display = menu.style.display === "none" ? "block" : "none";
+  });
+
+  overlaysControl.querySelectorAll(".overlays-menu__checkbox").forEach((cb) => {
+    cb.addEventListener("change", function () {
+      const id = cb.dataset.polygonId;
+      const layer = polygonLayers.find((l) => l.get("id") === id);
+      if (layer) layer.setVisible(cb.checked);
+    });
   });
 
   // ---- Ruler / measure tool ----------------------------------------
@@ -900,13 +1023,14 @@ function buildLayer(entry) {
   map.addOverlay(measureTooltipOverlay);
 
   const rulerControl = document.createElement("div");
+  rulerControl.id = "ruler-control";
   rulerControl.className = "ol-ruler-control";
   rulerControl.style.pointerEvents = "auto";
   rulerControl.innerHTML = `
     <button class="ol-layers-btn ol-ruler-btn" title="Measure distance" aria-label="Measure distance" style="pointer-events:auto;">
       ${rulerIconSvg}
     </button>`;
-  layersControl.parentNode.insertBefore(rulerControl, layersControl.nextSibling);
+  overlaysControl.parentNode.insertBefore(rulerControl, overlaysControl.nextSibling);
 
   ["click", "dblclick", "mousedown", "mouseup", "pointerdown", "pointerup"].forEach(function (evtName) {
     rulerControl.addEventListener(evtName, function (e) { e.stopPropagation(); });
@@ -1147,6 +1271,54 @@ function buildLayer(entry) {
     }
   }
 
+  // ---- Polygon hover tooltip (ASPA / ASMA) -------------------------
+  const polygonTooltipEl = document.createElement("div");
+  polygonTooltipEl.className = "polygon-tooltip";
+  polygonTooltipEl.style.display = "none";
+  const polygonTooltipOverlay = new ol.Overlay({
+    element: polygonTooltipEl,
+    offset: [12, 0],
+    positioning: "center-left",
+    stopEvent: false,
+  });
+  map.addOverlay(polygonTooltipOverlay);
+
+  const POLYGON_META = Object.fromEntries(
+    POLYGON_REGISTRY.map((e) => [e.id, e])
+  );
+
+  map.on("pointermove", function (evt) {
+    if (evt.dragging || rulerActive) {
+      polygonTooltipEl.style.display = "none";
+      return;
+    }
+    let hit = null;
+    map.forEachFeatureAtPixel(evt.pixel, function (feature) {
+      const layerId = feature.get("__polygonLayerId__");
+      if (!layerId) return;
+      hit = { feature, layerId };
+      return true;
+    }, { hitTolerance: 0 });
+
+    if (!hit) {
+      polygonTooltipEl.style.display = "none";
+      return;
+    }
+
+    const meta = POLYGON_META[hit.layerId];
+    const props = hit.feature.getProperties();
+    const name = props.Name || "Unnamed";
+    const area = props.Area_km;
+    const areaStr = (typeof area === "number") ? `${area.toLocaleString(undefined, {maximumFractionDigits: 2})} km²` : "—";
+    const marine = String(props.Marine) === "1" ? "Marine" : "Terrestrial";
+    polygonTooltipEl.innerHTML = `
+      <div class="polygon-tooltip__type">${escapeHtml(meta.label)}</div>
+      <div class="polygon-tooltip__name">${escapeHtml(name)}</div>
+      <div class="polygon-tooltip__meta">${marine} &middot; ${areaStr}</div>`;
+    polygonTooltipEl.style.display = "block";
+    polygonTooltipOverlay.setPosition(evt.coordinate);
+  });
+
   // ---- Popup click handler -----------------------------------------
   map.on("singleclick", function (evt) {
     if (rulerActive) return;
@@ -1155,6 +1327,8 @@ function buildLayer(entry) {
 
     const rawFeatures = [];
     map.forEachFeatureAtPixel(evt.pixel, function (feature) {
+      // Polygon overlays (ASPA/ASMA) use a separate hover tooltip.
+      if (feature.get("__polygonLayerId__")) return;
       const props = feature.getProperties();
       const geom = feature.getGeometry();
       if (geom && geom.getType() === "Point") {
