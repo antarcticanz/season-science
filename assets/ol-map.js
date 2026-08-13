@@ -768,18 +768,22 @@ function buildPolygonLayer(entry) {
   projection3031.setExtent(antarcticaExtent);
 
   // ---- Basemap registry --------------------------------------------
+  // `attribution` is threaded onto the WMTS source so OL's built-in
+  // .ol-attribution widget shows only the visible basemap's credit.
   const BASEMAP_REGISTRY = [
     {
       id: "esri_imagery",
       label: "ESRI Satellite",
       capsUrl: "https://services.arcgisonline.com/arcgis/rest/services/Polar/Antarctic_Imagery/MapServer/WMTS/1.0.0/WMTSCapabilities.xml",
       format: "image/jpg",
+      attribution: "Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community.",
     },
     {
       id: "bas",
       label: "BAS Satellite",
       capsUrl: "https://tiles.arcgis.com/tiles/tPxy1hrFDhJfZ0Mf/arcgis/rest/services/Antarctica_and_the_Southern_Ocean/MapServer/wmts?SERVICE=WMTS&REQUEST=GetCapabilities",
       format: "image/png",
+      attribution: "Produced by the Mapping and Geographic Information Centre, British Antarctic Survey, 2025, version 1.",
     },
     {
       id: "landcare_ramp_rema",
@@ -787,6 +791,7 @@ function buildPolygonLayer(entry) {
       capsUrl: "https://prod-ada-3.landcareresearch.co.nz/mapcache/atda/wmts/1.0.0/WMTSCapabilities.xml",
       layerName: "ada_basemap_combined-HDPI",
       format: "image/png; mode=8bit",
+      attribution: "© Landcare Research NZ Ltd CC BY 3.0 NZ. Basemap data from RAMP, via NSIDC, & REMA from Byrd Polar and Climate Research Center and the Polar Geospatial Center.",
     },
   ];
 
@@ -802,6 +807,7 @@ function buildPolygonLayer(entry) {
         format: entry.format,
         crossOrigin: "anonymous",
       });
+      if (entry.attribution) options.attributions = entry.attribution;
       const layer = new ol.layer.Tile({ source: new ol.source.WMTS(options) });
       layer.set("basemap-id", entry.id);
       return layer;
@@ -849,6 +855,14 @@ function buildPolygonLayer(entry) {
 
   map.addOverlay(popupOverlay);
   window.__ol_map__ = map;
+
+  // Replace OL's default (non-collapsible on wide screens) Attribution
+  // control with one that starts collapsed — user clicks the "i" toggle
+  // to expand and read the active basemap's credit.
+  map.getControls().getArray().slice().forEach(function (c) {
+    if (c instanceof ol.control.Attribution) map.removeControl(c);
+  });
+  map.addControl(new ol.control.Attribution({ collapsible: true, collapsed: true }));
 
   // ---- Basemap switcher -------------------------------------------
   let activeBasemapId = "esri_imagery";
@@ -924,11 +938,15 @@ function buildPolygonLayer(entry) {
     });
   });
 
-  // Toggle the panel on button click
+  // Toggle the panel on button click; close the overlays menu if it's open
+  // so the two panels never overlap.
   basemapsControl.querySelector(".ol-layers-btn").addEventListener("click", function (e) {
     e.stopPropagation();
     const panel = document.getElementById("bm-panel");
-    panel.style.display = panel.style.display === "none" ? "block" : "none";
+    const otherMenu = document.getElementById("overlays-menu");
+    const isOpen = panel.style.display !== "none";
+    if (otherMenu) otherMenu.style.display = "none";
+    panel.style.display = isOpen ? "none" : "block";
   });
 
   // Close panel when clicking anywhere else on the map
@@ -974,7 +992,10 @@ function buildPolygonLayer(entry) {
   overlaysControl.querySelector(".ol-layers-btn").addEventListener("click", function (e) {
     e.stopPropagation();
     const menu = document.getElementById("overlays-menu");
-    menu.style.display = menu.style.display === "none" ? "block" : "none";
+    const otherPanel = document.getElementById("bm-panel");
+    const isOpen = menu.style.display !== "none";
+    if (otherPanel) otherPanel.style.display = "none";
+    menu.style.display = isOpen ? "none" : "block";
   });
 
   overlaysControl.querySelectorAll(".overlays-menu__checkbox").forEach((cb) => {

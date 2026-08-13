@@ -639,6 +639,65 @@ body {
   background: var(--color-bg-control-hover) !important;
 }
 
+/* ================================================================
+   ATTRIBUTION (bottom-right, collapsed-by-default)
+   Shows only the visible basemap's credit. Users click the "i"
+   toggle to expand.
+   ================================================================ */
+.ol-attribution {
+  bottom: 12px !important;
+  right: 12px !important;
+  left: auto !important;
+  max-width: 420px;
+  background: var(--color-bg-elevated) !important;
+  color: var(--color-text-primary) !important;
+  border: 1px solid var(--color-border-subtle) !important;
+  border-radius: 4px !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: 11px !important;
+  line-height: 16px !important;
+  padding: 6px 10px !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.ol-attribution.ol-collapsed {
+  padding: 0 !important;
+  background: var(--color-bg-control) !important;
+  border: 1px solid var(--color-border-control) !important;
+}
+.ol-attribution ul {
+  white-space: normal !important;
+  word-wrap: break-word;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none;
+  color: var(--color-text-primary) !important;
+  text-shadow: none !important;
+}
+.ol-attribution ul li {
+  margin: 2px 0;
+  text-shadow: none !important;
+}
+.ol-attribution a { color: var(--color-accent-export) !important; }
+.ol-attribution button {
+  width: 34px;
+  height: 34px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important;
+  color: var(--color-text-primary) !important;
+  border: none !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.ol-attribution button:hover {
+  background: var(--color-bg-control-hover) !important;
+}
+
 /* NOTE: Do NOT add ol-unselectable class to these controls — OL sets
    pointer-events:none on it, which swallows all clicks and makes the
    button invisible to the mouse. */
