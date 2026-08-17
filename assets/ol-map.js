@@ -1140,6 +1140,10 @@ function buildPolygonLayer(entry) {
 
   rulerBtn.addEventListener("click", function (e) {
     e.stopPropagation();
+    const bmPanel = document.getElementById("bm-panel");
+    if (bmPanel) bmPanel.style.display = "none";
+    const overlaysMenu = document.getElementById("overlays-menu");
+    if (overlaysMenu) overlaysMenu.style.display = "none";
     if (rulerActive || measureSource.getFeatures().length > 0) {
       deactivateMeasure();
     } else {
