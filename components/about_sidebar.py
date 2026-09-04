@@ -151,7 +151,7 @@ def _section(eyebrow: str, heading: str, items: list, variant: str) -> html.Sect
 def about_sidebar(
     planned_events: int,
     active_instruments: int,
-    protected_areas: int = 148,
+    protected_areas: int = 83,
 ) -> html.Aside:
     """Fixed right-hand pane; visibility class-toggled on `.app-root`."""
 

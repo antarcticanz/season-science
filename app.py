@@ -835,7 +835,7 @@ app.layout = html.Div(
         about_sidebar(
             planned_events=len(SCIENCE_GROUPS),
             active_instruments=len(_ACTIVE_FEATURES),
-            protected_areas=148,  # 142 ASPA + 6 ASMA in APA_shape_2024
+            protected_areas=83,  # 77 unique ASPAs + 6 ASMAs (by Numero_apa — one area may span multiple polygons)
         ),
 
         # Research-summary popover — anchored to per-activity ⓘ icons in the

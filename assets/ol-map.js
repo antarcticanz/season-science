@@ -1336,8 +1336,10 @@ function buildPolygonLayer(entry) {
     const area = props.Area_km;
     const areaStr = (typeof area === "number") ? `${area.toLocaleString(undefined, {maximumFractionDigits: 2})} km²` : "—";
     const marine = String(props.Marine) === "1" ? "Marine" : "Terrestrial";
+    const num = props.Numero_apa;
+    const codeLabel = (num != null) ? `${meta.shortLabel} ${num}` : meta.shortLabel;
     polygonTooltipEl.innerHTML = `
-      <div class="polygon-tooltip__type">${escapeHtml(meta.label)}</div>
+      <div class="polygon-tooltip__type">${escapeHtml(codeLabel)}</div>
       <div class="polygon-tooltip__name">${escapeHtml(name)}</div>
       <div class="polygon-tooltip__meta">${marine} &middot; ${areaStr}</div>`;
     polygonTooltipEl.style.display = "block";
