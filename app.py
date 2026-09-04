@@ -626,7 +626,7 @@ def _build_group_divs(groups, group_extras=None, summaries=None):
         event_code = _group_event_code(group_name)
         if event_code in summaries:
             info_btn = html.Button(
-                "ⓘ",
+                "",  # icon rendered via CSS ::before (SVG mask)
                 id={"type": "summary-info-btn", "code": event_code},
                 className="sidebar__info-btn",
                 n_clicks=0,

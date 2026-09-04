@@ -1774,16 +1774,34 @@ body {
 }
 .sidebar__info-btn {
   flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 20px;
+  padding: 0;
+  margin-right: 2px;
   background: transparent;
   border: none;
   color: var(--color-badge-planned-text);
-  font-size: 15px;
-  line-height: 1;
-  padding: 2px 6px;
-  margin-right: 2px;
   cursor: pointer;
   border-radius: 3px;
   transition: color 0.15s, background 0.15s;
+}
+.sidebar__info-btn::before {
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+  background-color: currentColor;
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><circle cx='10' cy='10' r='8.5' fill='none' stroke='black' stroke-width='1.6'/><circle cx='10' cy='6' r='1.2' fill='black'/><rect x='9.15' y='8.6' width='1.7' height='6' rx='0.7' fill='black'/></svg>");
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><circle cx='10' cy='10' r='8.5' fill='none' stroke='black' stroke-width='1.6'/><circle cx='10' cy='6' r='1.2' fill='black'/><rect x='9.15' y='8.6' width='1.7' height='6' rx='0.7' fill='black'/></svg>");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
 }
 .sidebar__info-btn:hover {
   color: var(--color-text-primary);
