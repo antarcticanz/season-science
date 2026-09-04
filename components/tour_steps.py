@@ -56,7 +56,7 @@ MAP_STEPS = [
             "Science Activity Dashboard",
         ],
         "body": (
-            "This map shows planned science events, active instruments and "
+            "This map shows planned science activities, active instruments and "
             "field camp sites supported by Antarctica New Zealand"
         ),
         "position": "center",
@@ -65,11 +65,11 @@ MAP_STEPS = [
     },
     {
         "target": "section-science-events",
-        "title": "Planned Science Events",
+        "title": "Planned Science Activities",
         "body": (
-            "Toggle science events (K-codes) on and off here. Events with "
-            "multiple sites can be expanded — pick individual locations, or "
-            "use Select all / Deselect all above."
+            "Toggle science activities (K-codes) on and off here. Activities "
+            "with multiple sites can be expanded — pick individual locations, "
+            "or use Select all / Deselect all above."
         ),
         "position": "right",
         "offset_x": 12,

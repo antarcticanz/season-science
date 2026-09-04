@@ -32,7 +32,7 @@
       "properties": {
         "event": "K044A",
         "name": "Snow Pit Sampling",
-        "description": "Sample a 2 m snow pit for snow chemistry and biomarker analysis (biomarkers, soluble ions, fluorescence and trace elements, dust).",
+        "description": "Sample a 2 m snow pit for snow chemistry and biomarker analysis (biomarkers, soluble ions, fluorescence, trace elements, dust).",
         "site": "Upper Priestly Glacier",
         "principal investigator": "Holly Winton",
         "email": "holly.winton@vuw.ac.nz",
@@ -51,7 +51,7 @@
       "properties": {
         "event": "K044A",
         "name": "Snow Surface Sampling",
-        "description": "Collect daily surface snow samples over 3 week period for snow chemistry and biomarker analysis.",
+        "description": "Collect daily surface snow samples for snow chemistry and biomarker analysis.",
         "site": "Upper Priestly Glacier",
         "principal investigator": "Holly Winton",
         "email": "holly.winton@vuw.ac.nz",
@@ -70,7 +70,7 @@
       "properties": {
         "event": "K044A",
         "name": "Meteorological Measurements",
-        "description": "Colect meterological data over three weeks.",
+        "description": "Collect meterological data.",
         "site": "Upper Priestly Glacier",
         "principal investigator": "Holly Winton",
         "email": "holly.winton@vuw.ac.nz",

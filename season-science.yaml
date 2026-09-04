@@ -33,7 +33,7 @@ resources:
     - name: season-science
       description: season-science
       autoscale:
-        minReplicas: 1
+        minReplicas: 0
         # maxReplicas: 5
       resources:
         cpu: 500m

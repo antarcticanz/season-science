@@ -1346,8 +1346,8 @@
       "properties": {
         "event": "K051A",
         "site": "Cape Crozier",
-        "name": "Instrumentation Frame",
-        "description": "Framing that used to hold the camera and AWS.",
+        "name": "Timelapse Camera",
+        "description": "Estimate population size of the Emperor Penguin colony, providing ground validation for satellite-derived population estimates.",
         "principal investigator": "Michelle LaRue",
         "email": "michelle.larue@canterbury.ac.nz",
         "status": "Active",

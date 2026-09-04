@@ -2,13 +2,16 @@ import re
 import json
 import os
 from collections import OrderedDict
+import markdown
 from flask import jsonify
 from dash import Dash, html, dcc, Input, Output, State, ALL, ctx, no_update
 
 from components.tour_popup import tour_popup
 from components.about_sidebar import about_sidebar
+from components.summary_popover import summary_popover
 from tour_callbacks import register_tour_callbacks
 from tour_clientside import register_tour_clientside, build_tour_steps_meta
+from summary_clientside import register_summary_clientside
 
 # -------------------------------------------------------------------
 # LAYER REGISTRY
@@ -121,6 +124,14 @@ LAYER_REGISTRY = [
         "visible": True,
     },
     {
+        "id": "K051A--PLANNED",
+        "group": "K051A - Southern Ocean Connections",
+        "file": "K051A--PLANNED.geojson",
+        "status": "Planned",
+        "value": "K051A--PLANNED",
+        "visible": True,
+    },
+    {
         "id": "K053A--PLANNED",
         "group": "K053A - Pack-Ice Survey",
         "file": "K053A--PLANNED.geojson",
@@ -209,6 +220,14 @@ LAYER_REGISTRY = [
         "visible": True,
     },
     {
+        "id": "K091A--PLANNED",
+        "group": "K091A - Toothfish Survey",
+        "file": "K091A--PLANNED.geojson",
+        "status": "Planned",
+        "value": "K091A--PLANNED",
+        "visible": True,
+    },
+    {
         "id": "K102A--PLANNED",
         "group": "K102A - Geomagnetic",
         "file": "K102A--PLANNED.geojson",
@@ -230,14 +249,6 @@ LAYER_REGISTRY = [
         "file": "K150B--PLANNED.geojson",
         "status": "Planned",
         "value": "K150B--PLANNED",
-        "visible": True,
-    },
-    {
-        "id": "K170A--PLANNED",
-        "group": "K170A - AHT",
-        "file": "K170A--PLANNED.geojson",
-        "status": "Planned",
-        "value": "K170A--PLANNED",
         "visible": True,
     },
     {
@@ -273,14 +284,6 @@ LAYER_REGISTRY = [
         "visible": True,
     },
     {
-        "id": "K882B--PLANNED",
-        "group": "K882B - Hauwai",
-        "file": "K882B--PLANNED.geojson",
-        "status": "Planned",
-        "value": "K882B--PLANNED",
-        "visible": True,
-    },
-    {
         "id": "K884A--PLANNED",
         "group": "K884A - Sponges",
         "file": "K884A--PLANNED.geojson",
@@ -298,7 +301,7 @@ LAYER_REGISTRY = [
     },
     {
         "id": "K893A--COMMONWEALTH_GLACIER",
-        "group": "K893A - Super Site",
+        "group": "K893A - Super Sites",
         "file": "K893A--COMMONWEALTH_GLACIER.geojson",
         "status": "Commonwealth Glacier",
         "value": "K893A--COMMONWEALTH_GLACIER",
@@ -306,7 +309,7 @@ LAYER_REGISTRY = [
     },
     {
         "id": "K893A--LOWER_WRIGHT_GLACIER",
-        "group": "K893A - Super Site",
+        "group": "K893A - Super Sites",
         "file": "K893A--LOWER_WRIGHT_GLACIER.geojson",
         "status": "Lower Wright Glacier",
         "value": "K893A--LOWER_WRIGHT_GLACIER",
@@ -314,7 +317,7 @@ LAYER_REGISTRY = [
     },
     {
         "id": "K893A--PYRAMID_TROUGH",
-        "group": "K893A - Super Site",
+        "group": "K893A - Super Sites",
         "file": "K893A--PYRAMID_TROUGH.geojson",
         "status": "Pyramid Trough",
         "value": "K893A--PYRAMID_TROUGH",
@@ -391,6 +394,33 @@ _EVENT_CODE_MAP.setdefault("K500A", "PAMS")
 
 _ACTIVE_FC = _load_geojson("INSTALLATIONS_ACTIVE.geojson")
 _ACTIVE_FEATURES = _ACTIVE_FC.get("features", [])
+
+
+def _load_json_asset(filename, default):
+    try:
+        with open(os.path.join(_ASSETS_DIR, filename), encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return default
+
+
+_RAW_SUMMARIES = _load_json_asset("research_summaries.json", {})
+_MD = markdown.Markdown(extensions=["tables", "fenced_code"])
+RESEARCH_SUMMARIES = {}
+for _code, _entry in _RAW_SUMMARIES.items():
+    RESEARCH_SUMMARIES[_code] = {
+        "title": _entry.get("title", _code),
+        "html": _MD.convert(_entry.get("body", "")),
+    }
+    _MD.reset()
+
+
+def _group_event_code(group_name):
+    # Handle both hyphen ("K020A - ...") and en-dash ("K872B – ApRES").
+    for sep in (" - ", " – "):
+        if sep in group_name:
+            return group_name.split(sep, 1)[0].strip()
+    return group_name.strip()
 
 _ACTIVE_BY_EVENT = OrderedDict()
 for _f in _ACTIVE_FEATURES:
@@ -562,8 +592,9 @@ def computed_active_manifest():
 # -------------------------------------------------------------------
 # Sidebar builder — driven entirely by LAYER_REGISTRY
 # -------------------------------------------------------------------
-def _build_group_divs(groups, group_extras=None):
+def _build_group_divs(groups, group_extras=None, summaries=None):
     group_extras = group_extras or {}
+    summaries = summaries or {}
     group_divs = []
 
     for group_name, entries in groups.items():
@@ -581,15 +612,33 @@ def _build_group_divs(groups, group_extras=None):
 
         wrap_children = [children_checklist] + (group_extras.get(group_name) or [])
 
+        parent_checklist = dcc.Checklist(
+            id=_parent_id(group_name),
+            options=[{"label": group_name, "value": group_name}],
+            value=[group_name] if any(e["visible"] for e in entries) else [],
+            className="layer-checklist",
+            inputClassName="layer-checklist__input",
+            labelClassName="layer-checklist__label",
+        )
+
+        row_children = [parent_checklist]
+        event_code = _group_event_code(group_name)
+        if event_code in summaries:
+            row_children.append(
+                html.Button(
+                    "ⓘ",
+                    id={"type": "summary-info-btn", "code": event_code},
+                    className="sidebar__info-btn",
+                    n_clicks=0,
+                    **{
+                        "aria-label": f"Open research summary for {group_name}",
+                        "data-summary-code": event_code,
+                    },
+                )
+            )
+
         group_divs.append(html.Div([
-            dcc.Checklist(
-                id=_parent_id(group_name),
-                options=[{"label": group_name, "value": group_name}],
-                value=[group_name] if any(e["visible"] for e in entries) else [],
-                className="layer-checklist",
-                inputClassName="layer-checklist__input",
-                labelClassName="layer-checklist__label",
-            ),
+            html.Div(row_children, className="sidebar__row"),
             html.Div(
                 wrap_children,
                 id=_wrap_id(group_name),
@@ -613,7 +662,7 @@ def build_sidebar():
                 className="sidebar__nested-actions",
             )
         ]
-    })
+    }, summaries=RESEARCH_SUMMARIES)
 
 
 def build_location_sidebar():
@@ -674,7 +723,7 @@ app.layout = html.Div(
                 # Sidebar — fully dynamic from LAYER_REGISTRY
                 html.Div(
                     [
-                        html.Div("Planned Science Events 2026-27", id="section-science-events", className="sidebar__heading"),
+                        html.Div("Planned Science Activities 2026-27", id="section-science-events", className="sidebar__heading"),
 
                         html.Div(
                             [
@@ -781,6 +830,19 @@ app.layout = html.Div(
             active_instruments=len(_ACTIVE_FEATURES),
             protected_areas=148,  # 142 ASPA + 6 ASMA in APA_shape_2024
         ),
+
+        # Research-summary popover — anchored to per-activity ⓘ icons in the
+        # sidebar. Always in DOM; visibility class-toggled by summary_clientside.
+        summary_popover(),
+
+        dcc.Store(id="summary-data-store", data=RESEARCH_SUMMARIES),
+        dcc.Store(
+            id="summary-popover-state",
+            storage_type="memory",
+            data={"open": False, "code": None},
+        ),
+        html.Div(id="summary-render-sink", style={"display": "none"}),
+        html.Div(id="summary-doc-sink", style={"display": "none"}),
 
         html.Div(id="js-sink", style={"display": "none"}),
 
@@ -1173,6 +1235,7 @@ app.clientside_callback(
 # -------------------------------------------------------------------
 register_tour_callbacks(app)
 register_tour_clientside(app)
+register_summary_clientside(app)
 
 
 # -------------------------------------------------------------------

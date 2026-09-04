@@ -1,0 +1,32 @@
+{
+  "type": "FeatureCollection",
+  "name": "K091A",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+	{
+      "type": "Feature",
+      "properties": {
+        "event": "K091A",
+        "name": "Antarctic toothfish survey",
+        "description": "Perform toothfish stock assessment.",
+		    "site": "Ross Sea",
+        "principal investigator": "Sophie Mormede",
+        "email": "sofishconsulting@gmail.com",
+        "status": "Planned",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/srv/eng/catalog.search#/metadata/e464de1e-d674-40c0-a145-472a1eb4a7a2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.347,
+          -77.207
+        ]
+      }
+    }
+  ]
+}

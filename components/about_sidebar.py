@@ -17,7 +17,7 @@ from dash import html
 
 
 INTRO = (
-    "This interactive map shows planned science events, active instruments "
+    "This interactive map shows planned science activities, active instruments "
     "and field camp sites supported by Antarctica New Zealand for the "
     "2026–27 season. Use the sidebar and map controls to explore "
     "what's happening on the ice."
@@ -35,7 +35,7 @@ OVERVIEW = [
         ),
     },
     {
-        "title": "Continent-wide observation network",
+        "title": "Ross Dependency observation network",
         "body": (
             "Automated weather stations, GNSS receivers, ApRES ice-radar "
             "and seafloor moorings run year-round. Active instruments are "
@@ -158,18 +158,18 @@ def about_sidebar(
     metrics = [
         {
             "value": str(planned_events),
-            "label": "Planned science events",
+            "label": "Planned science activities",
             "hint": "K-codes with field activity this season",
         },
         {
             "value": str(active_instruments),
             "label": "Active instruments",
-            "hint": "Automated stations reporting from the continent",
+            "hint": "Instruments deployed in the Ross Dependency",
         },
         {
             "value": str(protected_areas),
             "label": "Protected areas",
-            "hint": "ASPA + ASMA treaty polygons available as overlays",
+            "hint": "Antarctic Specially Protected Areas + Antarctic Specially Managed Areas available as overlays",
         },
     ]
 

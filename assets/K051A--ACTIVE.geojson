@@ -1,0 +1,52 @@
+{
+  "type": "FeatureCollection",
+  "name": "K051A",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K051A",
+        "site": "Cape Crozier",
+        "name": "Timelapse Imagery of Adelie and Emperor Penguins",
+        "description": "Estimate population size of the Emperor and adelie penguin colonies, providing ground validation for satellite-derived population estimates.",
+        "principal investigator": "Michelle LaRue",
+        "email": "michelle.larue@canterbury.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/f1a48a2b-d0b0-4a20-839d-bc88050b12ba"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.211667,
+          -77.465278
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "event": "K051A",
+        "site": "Cape Crozier",
+        "name": "Timelapse Imagery of Adelie and Emperor Penguins",
+        "description": "Estimate population size of the Emperor and adelie penguin colonies, providing ground validation for satellite-derived population estimates.",
+        "principal investigator": "Michelle LaRue",
+        "email": "michelle.larue@canterbury.ac.nz",
+        "status": "Active",
+        "information": "https://antcat.antarcticanz.govt.nz/geonetwork/cat/eng/catalog.search#/metadata/f1a48a2b-d0b0-4a20-839d-bc88050b12ba"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.2111251,
+          -77.465345
+        ]
+      }
+    }
+  ]
+}
