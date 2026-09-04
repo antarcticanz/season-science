@@ -75,6 +75,17 @@ MAP_STEPS = [
         "offset_x": 12,
     },
     {
+        "target": "summary-info-tour-anchor",
+        "title": "Research summaries",
+        "body": (
+            "Click the ⓘ next to any activity to open a short summary of "
+            "the research — what the team is doing this season, where, "
+            "and why."
+        ),
+        "position": "right",
+        "offset_x": 12,
+    },
+    {
         "target": "section-locations",
         "title": "Locations",
         "body": (

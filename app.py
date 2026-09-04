@@ -596,6 +596,7 @@ def _build_group_divs(groups, group_extras=None, summaries=None):
     group_extras = group_extras or {}
     summaries = summaries or {}
     group_divs = []
+    first_info_icon_added = False
 
     for group_name, entries in groups.items():
         default_children = [e["value"] for e in entries if e["visible"]]
@@ -624,18 +625,24 @@ def _build_group_divs(groups, group_extras=None, summaries=None):
         row_children = [parent_checklist]
         event_code = _group_event_code(group_name)
         if event_code in summaries:
-            row_children.append(
-                html.Button(
-                    "ⓘ",
-                    id={"type": "summary-info-btn", "code": event_code},
-                    className="sidebar__info-btn",
-                    n_clicks=0,
-                    **{
-                        "aria-label": f"Open research summary for {group_name}",
-                        "data-summary-code": event_code,
-                    },
-                )
+            info_btn = html.Button(
+                "ⓘ",
+                id={"type": "summary-info-btn", "code": event_code},
+                className="sidebar__info-btn",
+                n_clicks=0,
+                **{
+                    "aria-label": f"Open research summary for {group_name}",
+                    "data-summary-code": event_code,
+                },
             )
+            # Wrap the FIRST info icon so the guided tour has a stable anchor.
+            if not first_info_icon_added:
+                row_children.append(
+                    html.Span(info_btn, id="summary-info-tour-anchor")
+                )
+                first_info_icon_added = True
+            else:
+                row_children.append(info_btn)
 
         group_divs.append(html.Div([
             html.Div(row_children, className="sidebar__row"),
